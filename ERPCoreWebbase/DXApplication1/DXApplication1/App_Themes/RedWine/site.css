@@ -1,0 +1,67 @@
+﻿#LayoutSplitter .HeadPane
+{
+    background: #78002b url("HeaderBack.jpg") no-repeat left top;
+}
+
+.mail #LayoutSplitter .RightPane.HeadPane,
+.contacts #LayoutSplitter .RightPane.HeadPane,
+.feeds #LayoutSplitter .RightPane.HeadPane 
+{
+    background-position: -250px 0;
+}
+
+.calendar #LayoutSplitter .RightPane.HeadPane 
+{
+    background-position: -300px 0;
+}
+
+#LayoutSplitter .RightPane.HeadPane
+{
+    border-left-color: White;
+}
+
+.CalendarNavArea
+{
+    background: #d5d5d5;
+}
+
+.HeadPane .ActionToolbar .Spacer b
+{
+    background: White;
+}
+
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item .dxm-content,
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item.dxm-hovered .dxm-content
+{
+    color: White;
+}
+
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-content
+{
+    padding-top: 4px;
+    padding-left: 6px;
+}
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-image
+{
+    margin-right: 12px;
+	margin-top: -1px;
+}
+
+.HeadPane .ActionToolbar .SearchBox
+{
+    margin-top: 1px;
+}
+
+.print .ContactReportToolbar .dxmMenuSeparator_RedWine,
+.print .ScheduleReportToolbar .dxmMenuSeparator_RedWine
+{
+    width: 100%;
+}
+.print .MailReportToolbar .dxmMenuSeparator_RedWine
+{
+    width: 50%;
+}
+.print .dxmMenuSeparator_RedWine .dx 
+{
+    background: transparent;
+}

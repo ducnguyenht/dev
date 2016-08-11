@@ -1,0 +1,10 @@
+﻿<div style="font-size:13px">
+  <p style="font-size:14px">
+    <span class="style1">
+      <b>Danh mục phím tắt</b>
+    </span>
+  </p>
+  <p style="font-size:13px">
+    <img src="../UserControls/Image/ShortcutHelper.PNG" alt="some_text"/>
+  </p>
+</div>

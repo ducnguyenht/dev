@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="WebModule.Root1" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server" enableviewstate="false">
+    <title>DP360GDP</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+    <link href="Content/styles.css" rel="Stylesheet" type="text/css" />
+    <link type="text/css" rel="Stylesheet" href="Content/sprite.css" />
+    <%--<link href="styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <script src='<%# ResolveUrl("~/scripts/jquery-1.4.4.js") %>' type="text/javascript"></script>
+    <script src='<%# ResolveUrl("~/scripts/shortcut.js") %>' type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadHolder" runat="server" />
+</head>
+<body class="<% 
+                if(Page is WebModule.Interfaces.IERPCoreWebModuleBase) 
+                {
+                    Response.Write(((WebModule.Interfaces.IERPCoreWebModuleBase)Page).AccessObjectId);
+                } 
+            %>">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Path="~/scripts/script.js" />
+            <asp:ScriptReference Path="~/scripts/wizards.js" />
+        </Scripts>
+    </asp:ScriptManager>
+    <asp:ContentPlaceHolder ID="RootHolder" runat="server" />
+    <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="ClientLoadingPanel"
+        Modal="true" />
+    <dx:ASPxHiddenField ID="HiddenField" runat="server" ClientInstanceName="ClientHiddenField" />
+    </form>
+</body>
+</html>

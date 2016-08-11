@@ -1,0 +1,557 @@
+﻿body 
+{
+    background: white;
+    color: Black;
+    font-family: Segoe UI, 'Lucida Sans Unicode', 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+.SidePaneContentWrapper
+{
+    min-height: 100%;
+}
+.SidePaneContent 
+{
+    padding-bottom: 95px;
+}
+.Logo
+{
+    height: 68px;
+    margin-top: -68px;
+}
+.Logo img 
+{
+    display: block;
+    margin: 0 auto;
+}
+
+.CollapsedPane 
+{
+    display: none;
+}
+
+/* HeaderPane */
+
+.HeadPane .ActionToolbar,
+.HeadPane .NavigationToolbar
+{
+    width: 100%;
+    height: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.mail .HeadPane .ActionToolbar 
+{
+    min-width: 512px;
+}
+.calendar .HeadPane .ActionToolbar 
+{
+    min-width: 238px;
+}
+.contacts .HeadPane .ActionToolbar 
+{
+    min-width: 425px;
+}
+.feeds .HeadPane .ActionToolbar 
+{
+    min-width: 383px;
+}
+.HeadPane .ActionToolbar > tbody > tr > td 
+{
+    padding: 0;
+}
+.HeadPane .ActionToolbar .Strut
+{
+    width: 100%;
+}
+.HeadPane .ActionToolbar .Spacer b
+{
+    display: block;
+    width: 1px;
+    height: 52px;
+}
+
+#LayoutSplitter .HeadPane .dxm-main.NavigationMenu
+{
+    padding-left: 0px;
+}
+#LayoutSplitter .HeadPane .dxm-main.ActionMenu
+{
+    padding-left: 15px;
+}
+#LayoutSplitter .HeadPane .dxm-main.InfoMenu
+{
+    padding-right: 14px;
+}
+
+#LayoutSplitter .HeadPane .NavigationMenu.dxm-main .dxm-item,
+#LayoutSplitter .HeadPane .NavigationMenu.dxm-main .dxm-item.dxm-hovered
+{
+    background: transparent;
+    border-color: transparent;
+}
+#LayoutSplitter .HeadPane .NavigationMenu.dxm-main .dxm-image-l .dxm-item .dxm-content
+{
+    padding-top: 14px;
+}
+#LayoutSplitter .HeadPane .NavigationMenu.dxm-main .dxm-image-l .dxm-item .dxm-image
+{
+    margin-top: -4px;
+    margin-right: 4px;
+}
+#LayoutSplitter .HeadPane .NavigationMenu.dxm-main .dxm-popOut img 
+{
+    margin-top: 10px;
+}
+
+#LayoutSplitter .HeadPane .NavigationMenu,
+#LayoutSplitter .HeadPane .NavigationMenu.dxm-main,
+#LayoutSplitter .HeadPane .NavigationMenu.dxm-main .dxm-item,
+#LayoutSplitter .HeadPane .NavigationMenu.dxm-main .dxm-content,
+#LayoutSplitter .HeadPane .ActionMenu,
+#LayoutSplitter .HeadPane .ActionMenu.dxm-main,
+#LayoutSplitter .HeadPane .InfoMenu,
+#LayoutSplitter .HeadPane .InfoMenu.dxm-main
+{
+    background: transparent;
+}
+
+.ActionToolbar .SearchBox
+{
+    margin-top: 1px;
+    margin: 0 23px;
+    padding-left: 5px;
+    border-collapse: separate!important;
+}
+.ActionToolbar .SearchBoxButton
+{
+    background: White!important;
+    border-color: White!important;
+}
+
+.Landscape .ActionToolbar .SearchBox 
+{
+    width: 220px;
+}
+.Portrait .ActionToolbar .SearchBox
+{
+    width: 145px!important;
+}
+
+/* Mail */
+
+.dxgv 
+{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#MailGrid .hgl,
+#ContactDataView .hgl,
+#FeedGrid .hgl
+{
+    background: #e2eafd;
+}
+.MailTree 
+{
+    margin-top: 10px;
+}
+#MailTree .unread,
+#MailGrid .unread 
+{
+    font-weight: bold;
+}
+
+.MailPreviewPanel,
+.FeedItemPreviewPanel
+{
+    overflow: auto;
+}
+.MailPreviewPanel .MailPreview,
+.FeedItemPreviewPanel .FeedPreview
+{
+    padding: 22px;
+}
+
+.MailPreviewPanel .MailPreview .Subject,
+.FeedItemPreviewPanel .FeedPreview .Subject
+{
+    font-size: 13px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.MailPreviewPanel .MailPreview .Info,
+.FeedItemPreviewPanel .FeedPreview .Info
+{
+    color: #8C8C8C;
+    padding-bottom: 22px;
+}
+.FeedItemPreviewPanel .FeedPreview .Info a
+{
+    margin-left: 13px;
+}
+.MailPreviewPanel .MailPreview .Separator,
+.FeedItemPreviewPanel .FeedPreview .Separator
+{
+    background: #DEDEDE;
+    height: 1px;
+}
+.MailPreviewPanel .MailPreview .Body,
+.FeedItemPreviewPanel .FeedPreview .Body
+{
+    padding-top: 10px;
+}
+
+#MailForm 
+{
+    padding: 18px;
+}
+#MailForm .LayoutTable
+{
+    width: 100%;
+    border-spacing: 0;
+}
+#MailForm .LayoutTable > tbody > tr > td 
+{
+    padding: 0;
+}
+#MailForm .Editor
+{
+    width: 100%;
+}
+#MailForm .Label 
+{
+    padding-right: 13px !important;
+}
+#MailForm .Separator
+{
+    height: 6px;
+}
+
+#AddressBookButton 
+{
+    white-space: nowrap;
+    padding-left: 8px;
+}
+.AddressBookList
+{
+    padding: 10px 0 30px;
+}
+.AddressBookPopupButton
+{
+    float: right;
+    margin: 9px 9px 9px 0;
+}
+
+/* Calendar */
+
+.CalendarNavArea
+{
+    height: 100%;
+    background: White;
+}
+.DateNavigatorContainer
+{
+    padding: 25px 0;
+    background: White;
+}
+.DateNavigator 
+{
+    margin: 0 auto;
+}
+
+/* Contacts */
+
+.ContactsNavArea 
+{
+    height: 100%;
+}
+.ContactsNavArea .field
+{
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 5px 0;
+}
+.ContactsNavArea .field .label
+{
+    float: left;
+    padding-left: 18px;
+    width: 78px;
+}
+.ContactsNavArea .field .editor
+{
+    float: left;
+    white-space: nowrap;
+    overflow: auto;
+}
+.ContactsNavArea .field .label
+{
+    padding-top: 3px;
+}
+
+.Landscape .ContactCard 
+{
+    width: 420px !important;
+    height: 200px !important;
+}
+.Portrait .ContactCard 
+{
+    width: 320px !important;
+    height: 290px !important;
+}
+.ContactCard .CommandItems 
+{
+    text-align: right; 
+    height: 25px;
+}
+.ContactCard .CommandItems img 
+{
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.ContactCard .Photo,
+.ContactCard .Info 
+{
+    float: left;
+}
+.ContactCard .Photo
+{
+    /*width: 150px;*/
+    height: 150px;
+    margin-left: 25px;
+}
+.ContactCard .Info .item 
+{
+    clear: both;
+    width: 220px;
+    padding: 4px 0;
+    margin-left: 22px;
+}
+.Portrait .ContactCard .Info .item 
+{
+    width: 290px;
+}
+.Portrait .ContactCard .Info .item b 
+{
+    display: inline-block;
+    width: 66px;
+    vertical-align: top;
+}
+.Portrait .ContactCard .Info .item .body 
+{
+    display: inline-block;
+    width: 220px;
+}
+
+.Landscape #ContactForm > table
+{
+    padding: 40px 0;
+}
+.Portrait #ContactForm > table
+{
+    padding: 10px 0;
+}
+.Landscape #ContactForm .InfoLayoutGroup > div
+{
+    width: 250px;
+}
+.Portrait #ContactForm .InfoLayoutGroup > div
+{
+    width: 250px;
+}
+.Landscape #ContactForm .PhotoLayoutGroup > div
+{
+    width: 400px;
+}
+.Portrait #ContactForm .PhotoLayoutGroup > div
+{
+    width: 300px;
+}
+.Landscape #ContactForm .EmptyLayoutItem > div
+{
+    width: 70px;
+}
+.Portrait #ContactForm .EmptyLayoutItem > div
+{
+    width: 0px;
+}
+
+.print .Report 
+{
+    margin: 0 auto;
+}
+
+.clear 
+{
+	clear: both;
+	height: 0;
+	width: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+/* 2013-07-26 Khoa.Truong MOD START 
+** Allows collapses/expands LeftPane in Landscape screen */
+/*.Landscape #CollapsePaneImage,
+.Landscape #ExpandPaneImage
+{
+    display: none!important;
+}*/
+/* 2013-07-26 Khoa.Truong MOD END */
+
+#CollapsePaneImage 
+{
+    margin-top: 3px;
+}
+#ExpandPaneImage
+{
+    margin-top: 6px;
+}
+
+.content-title 
+{
+    padding: 0px 10px 10px 10px;
+}
+
+.hidden 
+{
+    visibility: hidden;
+}
+
+.intro-wrapper
+{
+    padding: 20px;
+    width: 958px;
+}
+.intro-wrapper h1.intro-title
+{
+    font-size: 34px;
+    margin-bottom: 16px;
+    font-family:Segoe UI Light, Segoe UI, Helvetica Neue, Helvetica;
+}
+img.intro-image
+{
+    width: 400px;
+}
+.intro-paragraph
+{
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.intro-content 
+{
+    padding-left: 10px;
+}
+.float-left 
+{
+    float: left;
+}
+.float-right 
+{
+    float: right;
+}
+.double-left 
+{
+    float: left;
+}
+.double-right 
+{
+    float: right;
+}
+.intro-wrapper span.intro-title
+{
+    font-size: 24px;
+    margin-bottom: 0px;
+    color: #666;
+    font-weight: lighter;
+    font-family:Segoe UI Light, Segoe UI, Helvetica Neue, Helvetica;
+    display: block;
+}
+.intro-wrapper ul
+{
+    font-size: 14px !important;
+    padding: 0px 0px 0px 19px;
+    margin: 0px !important;
+}
+.intro-wrapper ul li 
+{
+    list-style-type: circle;
+    padding: 3px 0px;
+}
+.margin-none 
+{
+    margin: 0px !important;
+}
+.col1
+{
+    width: 528px;
+    padding: 0px 10px;
+}
+.col2 
+{
+    width: 459px;
+    padding: 0px 10px;
+}
+.mailto
+{
+    padding-left: 18px;
+    background-image: url('../images/icon/16x16/icon-small-email.png');
+    background-repeat: no-repeat;
+    background-position: 0 -2px;
+}
+
+.button-left-margin 
+{
+    margin-left: 4px;
+}
+.button-right-margin 
+{
+    margin-right: 4px;
+}
+
+.gridContainer
+{
+    width:100%; height:780px; overflow:auto
+}
+        
+.wrapColumn
+{
+    overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+
+.captionFormName
+{
+    margin:10px 0 10px 10px;
+}
+
+.
+quickHelp
+{
+        border: 1px solid #CCCCCC;
+        color: #f0c;
+        font-size: 9px;
+        font-family: Verdana, Geneva, Arial, sans-serif;
+        background-color:White;
+        text-align: left;
+        position: absolute;
+        bottom: 68px;
+        left: 20px;         
+        width: auto;
+        line-height:20px;
+        right:25px;
+        height: 20px;         
+ 
+}
+
+.captionStyle { vertical-align:middle; margin-top:10px; padding-top:30px}
+
+#leftsubmitcontainer > :not(script), 
+#centersubmitcontainer > :not(script), 
+#rightsubmitcontainer > :not(script)
+{
+    float: left;
+    margin: 0 2px;
+}
+

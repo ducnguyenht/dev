@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/GUI/Root.Master" AutoEventWireup="true"
+    CodeBehind="Main.master.cs" Inherits="WebModule.GUI.Main" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+        <script type="text/javascript" src="../scripts/script.js"></script>
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .position-relative 
+        {
+            position:relative;
+        }
+        .position-absolute 
+        {
+            position: absolute;
+        }
+        .full-width 
+        {
+            width:100% !important;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <dx:ASPxSplitter ID="ASPxSplitter1" runat="server" Height="100%">
+        <Styles>
+            <Pane>
+                <Paddings Padding="0px" />
+                <Border BorderWidth="0px" />
+            </Pane>
+            <Separator>
+                <BorderTop BorderWidth="0px" />
+                <BorderBottom BorderWidth="0px" />
+            </Separator>
+        </Styles>
+        <Panes>
+            <dx:SplitterPane Name="LeftPane" ShowCollapseBackwardButton="True"
+                MaxSize="450px" Size="220px">
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <dx:ASPxSplitter ID="ASPxSplitter2" runat="server" Orientation="Vertical" 
+                            Height="100%" Width="100%" SeparatorVisible="False">
+                            <Panes>
+                                <dx:SplitterPane MaxSize="24px" MinSize="24px" Size="24px">
+                                    <PaneStyle>
+                                        <BorderBottom BorderWidth="1px" />
+                                    </PaneStyle>
+                                    <ContentCollection>
+                                        <dx:SplitterContentControl runat="server" SupportsDisabledAttribute="True">
+                                            <dx:ASPxTextBox ID="ASPxTextBox2" runat="server" NullText="Tìm chức năng" 
+                                                Width="100%" Height="24px" HelpText="Tìm chức năng">
+                                                <Paddings PaddingBottom="5px" PaddingLeft="28px" PaddingTop="5px" />
+                                                <BackgroundImage HorizontalPosition="6px" ImageUrl="~/images/search.png" 
+                                                    Repeat="NoRepeat" VerticalPosition="center" />
+                                                <Border BorderWidth="0px" />
+                                            </dx:ASPxTextBox>
+                                        </dx:SplitterContentControl>
+                                    </ContentCollection>
+                                </dx:SplitterPane>
+                                <dx:SplitterPane ScrollBars="Auto">
+                                    <ContentCollection>
+                                        <dx:SplitterContentControl runat="server" SupportsDisabledAttribute="True">
+                                            <dx:ASPxNavBar ID="ASPxNavBar1" runat="server" CssClass="nav-left" 
+                                                DataSourceID="NavBarDataSource" RenderMode="Lightweight" Width="100%">
+                                                <GroupHeaderStyle>
+                                                    <BorderLeft BorderWidth="0px" />
+                                                    <BorderRight BorderWidth="0px" />
+                                                </GroupHeaderStyle>
+                                                <GroupContentStyle BackColor="White">
+                                                </GroupContentStyle>
+                                            </dx:ASPxNavBar>
+                                        </dx:SplitterContentControl>
+                                    </ContentCollection>
+                                </dx:SplitterPane>
+                            </Panes>
+                            <Styles>
+                                <Pane>
+                                    <Paddings Padding="0px" />
+                                    <Border BorderWidth="0px" />
+                                </Pane>
+                            </Styles>
+                            <Border BorderWidth="0px" />
+                        </dx:ASPxSplitter>
+                        <asp:XmlDataSource ID="NavBarDataSource" runat="server" DataFile="~/App_Data/AuthorizationNavBar.xml"
+                            XPath="/groups/*"></asp:XmlDataSource>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="ContentPane">
+                <Separator>
+                    <SeparatorStyle>
+                        <Border BorderWidth="1px" />
+                        <BorderTop BorderWidth="0px" />
+                    </SeparatorStyle>
+                </Separator>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <asp:ContentPlaceHolder ID="Content" runat="server" />
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+        </Panes>
+    </dx:ASPxSplitter>
+</asp:Content>

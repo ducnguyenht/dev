@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<organizations>
+  <organizarion id="1" name="NAAN Solution" parentid="0"/>
+  <organizarion id="2" name="ABC Co. Ltd." parentid="0"/>
+  <organizarion id="3" name="HR" parentid="1" />
+  <organizarion id="3" name="HR" parentid="2" />
+</organizations>

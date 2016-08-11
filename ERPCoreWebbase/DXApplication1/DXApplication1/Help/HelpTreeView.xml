@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<helper LinkId="root" Text="root">
+  <helper LinkId="sales" Text="Mua hàng">
+    <helper LinkId="~/Help/ItemUnitInstruction.xml" Text="Cấu hình đơn vị tính"/>
+    <helper LinkId="~/Help/Shortcut.xml" Text="Hướng dẫn phím tắt"/>
+    <helper LinkId="~/Help/CreateFilter.xml" Text="Tạo bộ lọc Filter trên lưới danh sách"/>
+    <helper LinkId="~/Help/FindInCombobox.xml" Text="Thao tác tìm kiếm trên combobox"/>
+  </helper>
+</helper>
+ 

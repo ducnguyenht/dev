@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="reportmaterial" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="reportmaterial">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="MaSo" type="xs:int" minOccurs="0" />
+                <xs:element name="HangHoa" type="xs:string" minOccurs="0" />
+                <xs:element name="Lo" type="xs:string" minOccurs="0" />
+                <xs:element name="Kho" type="xs:string" minOccurs="0" />
+                <xs:element name="DVT" type="xs:string" minOccurs="0" />
+                <xs:element name="HanSuDung" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SoLuong" type="xs:short" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <reportmaterial>    
+    <MaSo>10200</MaSo>
+    <HangHoa>Nguyên vật liệu 1</HangHoa>
+    <Lo>L1</Lo>
+    <Kho>K1</Kho>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2013-09-20T00:00:00+04:00</HanSuDung>
+    <SoLuong>5</SoLuong>
+  </reportmaterial>
+  <reportmaterial>
+    <MaSo>10201</MaSo>
+    <HangHoa>Nguyên vật liệu 1</HangHoa>
+    <Lo>L1</Lo>
+    <Kho>K1</Kho>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2013-08-20T00:00:00+04:00</HanSuDung>
+    <SoLuong>15</SoLuong>
+  </reportmaterial>
+  <reportmaterial>
+    <MaSo>10204</MaSo>
+    <HangHoa>Nguyên vật liệu 1</HangHoa>
+    <Lo>L1</Lo>
+    <Kho>K2</Kho>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2013-06-20T00:00:00+04:00</HanSuDung>
+    <SoLuong>12</SoLuong>
+  </reportmaterial>
+  <reportmaterial>
+    <MaSo>10204</MaSo>
+    <HangHoa>Nguyên vật liệu 1</HangHoa>
+    <Lo>L2</Lo>
+    <Kho>K2</Kho>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2013-06-20T00:00:00+04:00</HanSuDung>
+    <SoLuong>23</SoLuong>
+  </reportmaterial>
+  
+  
+</NewDataSet>

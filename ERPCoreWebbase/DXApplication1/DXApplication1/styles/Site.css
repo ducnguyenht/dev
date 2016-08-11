@@ -1,0 +1,794 @@
+﻿/* Reset */
+
+body, form, div, li,
+h1, h2, h3, h4, h5, h6,
+pre, form, fieldset, tr, td
+p,blockquote
+{ 
+	margin: 0;
+	padding: 0;
+}
+p
+{
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+
+fieldset, img 
+{ 
+	border: 0;
+}
+
+ol, ul 
+{
+	list-style: none;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 
+{
+	font-size: 100%;
+	font-weight: normal;
+}
+:focus
+{
+	outline: none;
+}
+a
+{
+	text-decoration: none;
+}
+html, body, form 
+{
+	height: 100%;
+	min-width: 1000px;
+}
+body
+{
+	font-family: Segoe UI, 'Lucida Sans Unicode', 'Trebuchet MS', Helvetica, sans-serif;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
+	color: #434343;	
+	background-color: #F5F5F5;
+}
+/* Content */
+.content
+{
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;	
+}
+.base
+{
+	min-height: 100%;
+	min-width: 1000px;
+	width: 100%;
+}
+/* Header */
+.header 
+{
+	min-width: 100%;
+	height: 35px;
+	background-color: #323232;
+	letter-spacing: -0.05em;
+	text-transform: uppercase;
+}
+.header-title
+{
+	float: left;
+	padding-top: 8px;
+}
+.header-title a
+{
+	text-decoration: none;
+}
+.header-navigation
+{
+	position: relative;
+	float: right;
+	margin-top: 13px;
+}
+
+/* Main*/
+.main
+{
+	background: #F5F5F5;
+}
+
+/* Footer */
+.footer
+{
+	min-width: 1000px;
+	background-color: #323232;
+	margin-top: -122px;
+	overflow: hidden;
+}
+.footer,
+.footerSpace
+{
+	height: 122px;
+}
+.footer-copyright
+{
+	float: left;
+	margin: 19px 0 0 -20px;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.20);
+}
+.footer-text
+{
+	color: #FFF;
+	font-size: 12px;
+}
+
+.footer-connect
+{
+	float: right;
+	margin-top: 38px;
+}
+.footer-connect-text
+{
+	padding-right: 20px;
+}
+
+.contentHeader
+{
+	height: 50px;
+	width: 100%;
+	background-color: #818181;
+	border-bottom: 1px solid #646464;	
+}
+.contentHeader img
+{
+	float: right;
+	position: relative;
+    top: 50%;
+    height: 37px;
+    margin-top: -19px;
+}
+.mainContent > .content
+{
+	top: -50px;
+	left: -4px;
+	position: relative;
+}
+.tabControl, .pageControl
+{
+	margin-top: 5px;	
+}
+.selectedTab
+{
+	margin-top: 1px;
+}
+.tabCenter
+{	
+	background-repeat: repeat-x;
+	white-space: nowrap;
+	padding: 13px 19px 5px 19px;
+	vertical-align: top;
+}
+.selectedTab .tabCenter
+{	
+	padding-top: 13px;
+}
+.unselectedTab .tabCenter
+{
+	background-image: url(../Images/tab/center.png);
+}
+.selectedTab .tabCenter
+{
+	background-image: url(../Images/tab/active_center.png);
+}
+
+.tabCenter .tabText
+{
+	font-family: Lucida Sans Unicode;
+	font-size: 12px;
+	text-transform: uppercase;
+	cursor: inherit;
+}
+*:first-child+html .tabText
+{
+	position: relative;
+	top: -4px;
+}
+.left
+{
+	float: left;
+}
+.right
+{
+	float: right;
+}
+/* Home Page */
+.home-top,
+.featuredSession .container 
+{
+	background-color: #B4CCF6;
+}
+.home-top
+{
+	height: 350px;
+	border-bottom: 1px solid #A7BEE6;	
+}
+.home-top .content
+{
+	padding-top: 22px;
+}
+.home-center
+{
+	height: 400px;
+}
+
+.featuredSession
+{
+	white-space: nowrap;
+}
+.featuredSession .arrowLeft,
+.featuredSession .arrowRight,
+.featuredSession .image,
+.featuredSession .info
+{
+	display: inline-block;	
+	margin-left: 23px;
+	vertical-align: middle;
+	/*IE 7*/
+	zoom: 1;        
+    *display: inline;
+}
+.featuredSession .arrowLeft
+{
+	margin-left: 0px;
+}
+.featuredSession .arrowLeft,
+.featuredSession .arrowRight 
+{
+	margin-top: -3px;
+}
+.featuredSession .image img
+{
+	width: 385px;
+	height: 306px;
+}
+.featuredSession .container
+{
+	display: inline-block;
+	/*IE 7*/
+	zoom: 1;        
+    *display: inline;
+}
+.featuredSession .info
+{
+	width: 477px;
+	margin-top: -15px;
+	white-space: normal;
+}
+.featuredSession .session
+{
+	height: 160px;
+}
+.featuredSession .session .title,
+.featuredSession .session .description,
+.featuredSession .speaker .name,
+.featuredSession .speaker .description,
+.featuredSession .attendButton 
+{
+	display: block;
+}
+.featuredSession .session .title,
+.featuredSession .speaker .name
+{
+	font-family: Segoe UI Light, Segoe UI;
+	color: #393939;
+	line-height: 1.2;
+	padding-bottom: 0px;	
+}
+.featuredSession .session .title
+{
+	font-size: 37px;
+	padding-right: 30px;
+}
+.featuredSession .session .description
+{
+	margin-top: 7px;
+}
+.featuredSession .session .description,
+.featuredSession .speaker .description
+{
+	color: #4F4F4F;
+}
+.featuredSession .session .description
+{
+	line-height: 1.4;
+}
+.featuredSession .speaker .description
+{
+	
+	font-size: 12px;
+}
+.featuredSession .attendButton
+{
+	float: right;
+	margin: 7px 75px 0;
+}
+.featuredSession .speaker .name
+{
+	font-size: 25px;
+}
+.featuredSession .speaker
+{
+	float: left;
+}
+
+.home-center-main
+{
+	width: 828px;
+	margin: 35px 86px 0px 86px;	
+}
+.registrationPreview
+{
+	width: 494px;
+	padding-right: 49px;
+	float: left;	
+}
+.registrationPreview-content
+{
+	margin-top: 16px;
+	font-size: 14px;
+}
+.registrationPreview-content p
+{
+	margin-top: 20px;
+}
+.registrationPreview-content .doRegister span
+{
+	float: left;
+}
+.doRegister 
+{
+	margin-top: 20px;
+}
+.regButton 
+{
+	float: right;
+	margin: -9px 110px 0px 0px;
+}
+.errorPanel
+{
+	width: 81%;
+	height: 54px;
+	padding-top: 33px;	
+	margin: 43px auto -50px auto;	
+	background-color: #F8EAEA;
+	font-size: 14px;
+	text-align: center;
+}
+.home-center-main .title
+{	
+	font-size: 21px;
+}
+.starsPreview
+{
+	width: 285px;
+	float: right;
+}
+.star
+{
+	margin-top: 20px;
+	float: left;
+}
+.star-photo
+{
+	float: left;
+	width: 64px;
+	height: 69px;
+	padding-right: 10px;
+	background-image: url(../Images/speakerPhotoFrame.png);
+	background-repeat: no-repeat;
+}
+.star-photo img
+{
+	position: relative;
+	left: 7px;
+	top: 6px;
+	width: 50px;
+	height: 55px;
+}
+.star-description
+{
+	width: 211px;
+	float: left;
+}
+.star-name
+{
+	font-size: 16px;
+	position: relative;
+	top: -5px;
+}
+.star-text
+{
+	font-size: 11px;
+	line-height: 1.2;
+}
+
+/* Registration */
+.mainContent.registration
+{
+	padding-bottom: 100px;	
+}
+.tabPageContent
+{
+	padding-top: 74px;
+	margin-left: 100px;
+}
+.alreadyRegistered .tabPageContent
+{
+	margin-top: 45px;
+}
+.confirmArea
+{
+	margin-left: 143px;
+	margin-bottom: 100px;
+}
+.confirmArea .confirmInfo 
+{
+	padding: 0 0 16px 11px;
+	border-bottom: 1px solid #c2c2c2;
+	width: 795px;
+}
+.regColumn
+{		
+	width: 49%;
+	vertical-align: top;
+}
+.regFieldHolder .regLabel,
+.regFieldHolder .regCheckBox
+{
+	float: left;
+	width: 28%;
+}
+.regFieldHolder
+{
+	position: relative;
+	*position: inherit;
+}
+.regFieldHolder .regLabel
+{
+	margin-top: 6px;
+}
+.registration .invalidEditorIE
+{
+	border-color: #FDBCBC;
+}
+.regFieldHolder .ccExpDate.withValidation
+{
+	margin-right: 49px;
+}
+.regFieldHolder .regLabel.right
+{
+	float: none;
+}
+.regFieldHolder .chbField
+{
+	float: left;
+}
+.regFieldHolder
+{
+	margin-top: 8px;
+	height: 32px;
+}
+.confirmArea .regFieldHolder
+{
+	position: relative;
+	top: 27px;
+	left: 11px;
+	height: auto;
+	margin-top: 14px;
+}
+.confirmArea .regFieldHolder .regLabel
+{
+	width: 154px;
+	margin-top: 7.5px;
+	color: #afafaf;
+	line-height: 100%;
+}
+.confirmArea .regFieldHolder .regValue
+{
+	font-size: 19px;
+}
+.confirmArea .regFieldHolder.regDate
+{
+	margin-top: 36px;
+}
+.finishArea 
+{
+	font-size: 38px;
+	text-align: center;
+	margin: 55px;
+}
+.finishAreaButton
+{
+	margin-top: 76px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.ccExpDate
+{
+	vertical-align: middle;
+}
+.ccExpDate .month,
+.ccExpDate .year
+{
+	position: relative;
+	float: left;
+}
+.ccExpDate .year
+{
+	margin-left: 4px;
+}
+.regFieldHolder.afterSpace
+{
+	margin-top: 48px;
+}
+.registration .buttons
+{
+	position: relative;
+	float: right;
+	right: 92px;
+	bottom: 37px;
+}
+
+/*Schedule*/
+
+.dxConnectScheduler
+{
+	margin-top: 70px;
+}
+.dxConnectScheduler .dxscSel
+{
+	background-color: transparent !important;
+}
+.dxConnectScheduler .dxscAptSelDiv
+{
+	border-style: none;
+}
+
+.printButton
+{	
+	position: absolute;
+	right: 0px;
+	margin-top: 25px;
+}
+.printButton a
+{
+	font-family: 'Lucida Sans Unicode', 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: 12px;
+	color: #232323;
+	text-transform: uppercase;
+}
+
+.categories
+{
+	float: right;
+	position: relative;
+	top: 85px;
+	height: 20px;
+}
+.categories td.cell
+{
+	vertical-align: bottom;
+	padding-left: 20px;
+}
+.categories .color
+{
+	width: 11px;
+	height: 11px;
+	margin-top: 0.5px;
+	margin-right: 4px;
+}
+.categories .dxeBase_DXConnect
+{
+	font-size: 12px;
+	vertical-align: middle;
+}
+/*Appointment*/
+.apt
+{
+	border: 1px solid #A2A2A2;	
+}
+
+.apt .status
+{
+	float: left;
+	width: 5px;
+}
+.apt .session
+{
+	height: 100%;
+	padding: 9px;
+	padding: 5px 9px 0 14px;
+}
+.apt .session .title
+{
+	font-family: Segoe UI, 'Lucida Sans Unicode', 'Trebuchet MS', Helvetica, sans-serif;
+	color: #2f599f;
+	font-size: 16px;
+	cursor: pointer;
+	line-height: 1.3;
+}
+.apt .session .title:hover
+{
+	text-decoration: underline;
+}
+.apt .session .speaker
+{
+	display: block;
+	margin-top: 1px;
+	font: italic 12px Segoe UI, 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	color: #434343;
+}
+
+.apt .attending 
+{
+	margin-top: -28px;
+	margin-right: 11px;
+	float: right;
+	height: 16px;
+}
+.apt .attending .combo
+{
+	border: none;
+	border-collapse: collapse;
+}
+.apt .attending .combo input
+{
+	font: 12px 'Segoe UI', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;	
+	color: #434343;	
+	margin: 0 0 0 0.8px !important;
+	text-align: center;
+	height: 15px !important;
+	line-height: 125%;
+}
+.apt .attending .combo .dxbebt img
+{
+	margin-top: 4px;
+	/*IE 7*/
+	*margin-top: 3px;
+}
+.apt .attending .combo .dxeIIC,
+.apt .attending .combo .dxeIIC img
+{
+	/*IE 7*/
+	position: relative;
+}
+.apt .attending .combo .dxic
+{
+	padding: 0 !important;
+	vertical-align: bottom;
+}
+.apt .attending .comboItem
+{
+	font: 11px 'Segoe UI', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	background-color: #F5F5F5;
+	padding: 2px 7px;		
+}
+.apt .attending .comboItemHover
+{
+	background-color: #DADADA;
+}
+.apt .attending .comboListBox
+{
+	border: 1px solid #898989;
+    width: 160px;
+}
+
+/* Detail Sessions */
+.aptDetails
+{
+	padding: 20px;
+}
+.aptDetails .attending 
+{
+	font-size: 30px;
+	display: block;
+	margin-bottom: 30px;
+	color: #434343;
+}
+.aptDetails
+{
+	font-family: Segoe UI, 'Lucida Sans Unicode', 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: 14px;
+}
+.aptDetails .column
+{
+	width: 50%;	
+	padding-bottom: 35px;
+}
+.aptDetails .itemHolder
+{
+	display: block;
+	height: 27px;
+	padding: 3px 0 0 7px;
+}
+.aptDetails .rating
+{
+	margin-top: -1px;	
+}
+.aptDetails .itemName,
+.aptDetails .itemData
+{
+	line-height: 130%;
+}
+.aptDetails .itemName
+{
+	width: 25%;
+	color: #AFAFAF;
+	float: left;
+}
+
+.aptDetails .itemData
+{
+	width: 74%;
+	float: right;
+	margin-top: -1px;
+}
+.aptDetails .itemData .dxeBase_DXConnect
+{
+	font-size: 16px;
+}
+.aptDetails .description
+{
+	padding: 0 9px;
+}
+
+/* Print Schedule */
+.toolbar .dxsplLCC 
+{
+	background-color: #818181;
+	border-bottom: solid 1px #646464;
+}
+.toolbar .dxeTextBox_DXConnect
+{
+	width: 95px;
+}
+
+/* Contacts page */
+.contacts
+{
+    font-size: 12px;
+}
+.contacts a
+{
+    color: #3F69AE;
+    text-decoration: underline;
+}
+.contacts h3
+{
+	font-size: 21px;
+	margin: 40px 0 10px;
+}
+.contacts h4
+{
+	font-size: 16px;
+	margin: 40px 0 8px;
+}
+
+.map 
+{
+	margin: 42px 0 0 20px;
+	float: right;
+}
+.map .mapBox 
+{
+	padding: 3px;
+	border: solid 1px #B8B8B8;
+	background-color: White;
+	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.18);
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.18);
+}
+.map iframe
+{
+	width: 495px;
+	height: 350px;
+	border: 0;
+}

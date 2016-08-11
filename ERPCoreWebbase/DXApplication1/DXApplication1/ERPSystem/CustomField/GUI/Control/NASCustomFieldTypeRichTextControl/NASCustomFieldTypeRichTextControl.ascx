@@ -1,0 +1,1 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NASCustomFieldTypeRichTextControl.ascx.cs" Inherits="WebModule.ERPSystem.CustomField.GUI.Control.NASCustomFieldTypeRichTextControl.NASCustomFieldTypeRichTextControl" %>

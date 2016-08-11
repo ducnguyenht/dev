@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="category_grid_ghichu" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="category_grid_mahang" xml:space="preserve">
+    <value>Mã nhóm Hàng Hóa</value>
+  </data>
+  <data name="category_grid_mota" xml:space="preserve">
+    <value>Diễn giải</value>
+  </data>
+  <data name="category_grid_tenhang" xml:space="preserve">
+    <value>Tên Nhóm Hàng Hóa</value>
+  </data>
+  <data name="category_grid_thaotac" xml:space="preserve">
+    <value>Thao Tác</value>
+  </data>
+  <data name="equivitem_grid_grid_ghichu" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="equivitem_grid_grid_mahang" xml:space="preserve">
+    <value>Goods Equal Code</value>
+  </data>
+  <data name="equivitem_grid_grid_mota" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="equivitem_grid_grid_tenhang" xml:space="preserve">
+    <value>Goods Equal Name</value>
+  </data>
+  <data name="equivitem_grid_grid_thaotac" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="equivitem_grid_mahang" xml:space="preserve">
+    <value>Goods Code</value>
+  </data>
+  <data name="equivitem_grid_mota" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="equivitem_grid_tenhang" xml:space="preserve">
+    <value>Goods Name</value>
+  </data>
+  <data name="item_grid_mahang" xml:space="preserve">
+    <value>Unit Code</value>
+  </data>
+  <data name="item_grid_mansx" xml:space="preserve">
+    <value>Producer</value>
+  </data>
+  <data name="item_grid_mota" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="item_grid_tenhang" xml:space="preserve">
+    <value>Goods Name</value>
+  </data>
+  <data name="item_grid_thaotac" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="uItemEdit_ASPxImage3_ToolTip" xml:space="preserve">
+    <value>Phương Pháp Tạo Mã</value>
+  </data>
+  <data name="uItemEdit_ASPxLabel1_Text" xml:space="preserve">
+    <value>Mã Hàng Hóa</value>
+  </data>
+  <data name="uItemEdit_ASPxLabel2_Text" xml:space="preserve">
+    <value>Tên Hàng Hóa</value>
+  </data>
+  <data name="uItemEdit_ASPxLabel3_Text" xml:space="preserve">
+    <value>Mô Tả</value>
+  </data>
+  <data name="uItemEdit_ASPxLabel5_Text" xml:space="preserve">
+    <value>Nhà Sản Xuất</value>
+  </data>
+  <data name="uItemEdit_ASPxLabel6_Text" xml:space="preserve">
+    <value>Ghi chú : * là trường bắt buộc nhập</value>
+  </data>
+  <data name="uItemEdit_ASPxTextBox2_ErrorText" xml:space="preserve">
+    <value>Chưa nhập Tên Hàng Hóa</value>
+  </data>
+  <data name="uItemEdit_ASPxTextBox2_NullText" xml:space="preserve">
+    <value>Tối đa 50 ký tự</value>
+  </data>
+  <data name="uItemEdit_cboMansx_mansx" xml:space="preserve">
+    <value>Mã Nhà Sản Xuất</value>
+  </data>
+  <data name="uItemEdit_cboMansx_tennsx" xml:space="preserve">
+    <value>Tên Nhà Sản Xuất</value>
+  </data>
+  <data name="uItemEdit_grdDonvitinh_diengiai" xml:space="preserve">
+    <value>Diễn Giải</value>
+  </data>
+  <data name="uItemEdit_grdDonvitinh_hinhanh" xml:space="preserve">
+    <value>Hình Ảnh</value>
+  </data>
+  <data name="uItemEdit_grdDonvitinh_madvtcha" xml:space="preserve">
+    <value>Đơn Vị Tính Cha</value>
+  </data>
+  <data name="uItemEdit_grdDonvitinh_madvtcon" xml:space="preserve">
+    <value>Đơn Vị Tính</value>
+  </data>
+  <data name="uItemEdit_grdDonvitinh_soluong" xml:space="preserve">
+    <value>Số Lượng</value>
+  </data>
+  <data name="uItemEdit_grdDonvitinh_thaotac" xml:space="preserve">
+    <value>Thao Tác</value>
+  </data>
+  <data name="uItemEdit_grdNhomhang_ghichu" xml:space="preserve">
+    <value>Ghi Chú</value>
+  </data>
+  <data name="uItemEdit_grdNhomhang_manhom" xml:space="preserve">
+    <value>Mã Nhóm Hàng Hóa</value>
+  </data>
+  <data name="uItemEdit_grdNhomhang_mota" xml:space="preserve">
+    <value>Mô Tả</value>
+  </data>
+  <data name="uItemEdit_grdNhomhang_tennhom" xml:space="preserve">
+    <value>Tên Nhóm Hàng Hóa</value>
+  </data>
+  <data name="uItemEdit_grdNhomhang_thaotac" xml:space="preserve">
+    <value>Thao Tác</value>
+  </data>
+  <data name="uItemEdit_popup_header" xml:space="preserve">
+    <value>Update Item List</value>
+  </data>
+  <data name="uItemEdit_tab_chitiet" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="uItemEdit_tab_dvt" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="uItemEdit_tab_khac" xml:space="preserve">
+    <value>Other Info</value>
+  </data>
+  <data name="uItemEdit_tab_nhapp" xml:space="preserve">
+    <value>Distributors</value>
+  </data>
+  <data name="uItemEdit_tab_nhomhang" xml:space="preserve">
+    <value>Category Code</value>
+  </data>
+  <data name="uItemEdit_tab_thongtin" xml:space="preserve">
+    <value>General Info</value>
+  </data>
+  <data name="uItemEdit_txtMahang_ErrorText" xml:space="preserve">
+    <value>Chưa nhập Mã Hàng Hóa</value>
+  </data>
+  <data name="uItemEdit_txtMahang_NullText" xml:space="preserve">
+    <value>Tối đa 8 ký tự</value>
+  </data>
+  <data name="uItemEdit_txtMota_NullText" xml:space="preserve">
+    <value>Tối đa 200 ký tự</value>
+  </data>
+  <data name="uItemEdit_txtMota_Text" xml:space="preserve">
+    <value>Mô Tả</value>
+  </data>
+  <data name="unit_grid_ghichu" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="unit_grid_madvt" xml:space="preserve">
+    <value>Unit Code</value>
+  </data>
+  <data name="unit_grid_mota" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="unit_grid_tendvt" xml:space="preserve">
+    <value>Unit Name</value>
+  </data>
+  <data name="unit_grid_thaotac" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="validation_regex_code" xml:space="preserve">
+    <value>[\S\x00-\x7F]{0,36}</value>
+    <comment>Any single non-whitespace character and maximum is 36</comment>
+  </data>
+</root>

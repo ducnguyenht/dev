@@ -1,0 +1,402 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="reportproduct" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="reportproduct">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="MaSo" type="xs:string" minOccurs="0" />
+                <xs:element name="HangHoa" type="xs:string" minOccurs="0" />
+                <xs:element name="Lo" type="xs:string" minOccurs="0" />
+                <xs:element name="Kho" type="xs:string" minOccurs="0" />
+                <xs:element name="Vitri" type="xs:string" minOccurs="0" />
+                <xs:element name="DVT" type="xs:string" minOccurs="0" />
+                <xs:element name="HanSuDung" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SoLuong" type="xs:short" minOccurs="0" />
+                <xs:element name="Dongia" type="xs:double" minOccurs="0" />
+                <xs:element name="Total" type="xs:double" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <reportproduct>
+    <MaSo>MHH001</MaSo>
+    <HangHoa>Hàng hóa 1</HangHoa>
+    <Lo>L01</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>20</SoLuong>
+    <Dongia>5000000</Dongia>
+    <Total>100000000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH001</MaSo>
+    <HangHoa>Hàng hóa 1</HangHoa>
+    <Lo>L01</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>48</SoLuong>
+    <Dongia>100000</Dongia>
+    <Total>4800000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH001</MaSo>
+    <HangHoa>Hàng hóa 1</HangHoa>
+    <Lo>L01</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>9</SoLuong>
+    <Dongia>10000</Dongia>
+    <Total>90000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH002</MaSo>
+    <HangHoa>Hàng hóa 2</HangHoa>
+    <Lo>L01</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>20</SoLuong>
+    <Dongia>20000</Dongia>
+    <Total>400000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH003</MaSo>
+    <HangHoa>Hàng hóa 3</HangHoa>
+    <Lo>L01</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>20</SoLuong>
+    <Dongia>50000</Dongia>
+    <Total>1000000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH004</MaSo>
+    <HangHoa>Hàng hóa 4</HangHoa>
+    <Lo>L01</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>20</SoLuong>
+    <Dongia>200000</Dongia>
+    <Total>4000000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH005</MaSo>
+    <HangHoa>Hàng hóa 5</HangHoa>
+    <Lo>L02</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>20</SoLuong>
+    <Dongia>20000</Dongia>
+    <Total>400000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH005</MaSo>
+    <HangHoa>Hàng hóa 5</HangHoa>
+    <Lo>L02</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>45</SoLuong>
+    <Dongia>20000</Dongia>
+    <Total>9000000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH005</MaSo>
+    <HangHoa>Hàng hóa 5</HangHoa>
+    <Lo>L02</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>7</SoLuong>
+    <Dongia>10000</Dongia>
+    <Total>70000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH006</MaSo>
+    <HangHoa>Hàng hóa 6</HangHoa>
+    <Lo>L02</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>25</SoLuong>
+    <Dongia>150000</Dongia>
+    <Total>3750000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH007</MaSo>
+    <HangHoa>Hàng hóa 7</HangHoa>
+    <Lo>L02</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>25</SoLuong>
+    <Dongia>150000</Dongia>
+    <Total>3750000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH008</MaSo>
+    <HangHoa>Hàng hóa 8</HangHoa>
+    <Lo>L02</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>25</SoLuong>
+    <Dongia>150000</Dongia>
+    <Total>3750000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH009</MaSo>
+    <HangHoa>Hàng hóa 9</HangHoa>
+    <Lo>L02</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>25</SoLuong>
+    <Dongia>150000</Dongia>
+    <Total>3750000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH009</MaSo>
+    <HangHoa>Hàng hóa 9</HangHoa>
+    <Lo>L02</Lo>
+    <Kho>K01</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-07-02T00:00:00+04:00</HanSuDung>
+    <SoLuong>48</SoLuong>
+    <Dongia>20000</Dongia>
+    <Total>9600000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH010</MaSo>
+    <HangHoa>Hàng hóa 10</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Thùng</DVT>
+    <HanSuDung>2016-06-18T00:00:00+04:00</HanSuDung>
+    <SoLuong>25</SoLuong>
+    <Dongia>5000000</Dongia>
+    <Total>125000000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH011</MaSo>
+    <HangHoa>Hàng hóa 11</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-06-18T00:00:00+04:00</HanSuDung>
+    <SoLuong>50</SoLuong>
+    <Dongia>150000</Dongia>
+    <Total>7500000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH012</MaSo>
+    <HangHoa>Hàng hóa 12</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-06-18T00:00:00+04:00</HanSuDung>
+    <SoLuong>50</SoLuong>
+    <Dongia>150000</Dongia>
+    <Total>7500000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH013</MaSo>
+    <HangHoa>Hàng hóa 13</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-06-18T00:00:00+04:00</HanSuDung>
+    <SoLuong>50</SoLuong>
+    <Dongia>150000</Dongia>
+    <Total>7500000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH014</MaSo>
+    <HangHoa>Hàng hóa 14</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>50</SoLuong>
+    <Dongia>150000</Dongia>
+    <Total>7500000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH014</MaSo>
+    <HangHoa>Hàng hóa 14</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>10</SoLuong>
+    <Dongia>10000</Dongia>
+    <Total>100000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH015</MaSo>
+    <HangHoa>Hàng hóa 15</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>50</SoLuong>
+    <Dongia>20000</Dongia>
+    <Total>10000000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH016</MaSo>
+    <HangHoa>Hàng hóa 16</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>60</SoLuong>
+    <Dongia>20000</Dongia>
+    <Total>1200000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH016</MaSo>
+    <HangHoa>Hàng hóa 16</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D01-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>10</SoLuong>
+    <Dongia>10000</Dongia>
+    <Total>100000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH017</MaSo>
+    <HangHoa>Hàng hóa 17</HangHoa>
+    <Lo>L03</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D02-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>60</SoLuong>
+    <Dongia>200000</Dongia>
+    <Total>120000000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH018</MaSo>
+    <HangHoa>Hàng hóa 18</HangHoa>
+    <Lo>L04</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D02-K01</Vitri>
+    <DVT>Hộp</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>60</SoLuong>
+    <Dongia>200000</Dongia>
+    <Total>120000000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH019</MaSo>
+    <HangHoa>Hàng hóa 19</HangHoa>
+    <Lo>L04</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D02-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>10</SoLuong>
+    <Dongia>8000</Dongia>
+    <Total>80000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH020</MaSo>
+    <HangHoa>Hàng hóa 20</HangHoa>
+    <Lo>L04</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D02-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>10</SoLuong>
+    <Dongia>8000</Dongia>
+    <Total>80000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH021</MaSo>
+    <HangHoa>Hàng hóa 21</HangHoa>
+    <Lo>L04</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D02-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>10</SoLuong>
+    <Dongia>8000</Dongia>
+    <Total>80000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH022</MaSo>
+    <HangHoa>Hàng hóa 22</HangHoa>
+    <Lo>L04</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D02-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>10</SoLuong>
+    <Dongia>8000</Dongia>
+    <Total>80000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH023</MaSo>
+    <HangHoa>Hàng hóa 23</HangHoa>
+    <Lo>L04</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D02-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>10</SoLuong>
+    <Dongia>8000</Dongia>
+    <Total>80000</Total>
+  </reportproduct>
+  <reportproduct>
+    <MaSo>MHH024</MaSo>
+    <HangHoa>Hàng hóa 24</HangHoa>
+    <Lo>L04</Lo>
+    <Kho>K02</Kho>
+    <Vitri>K01-D02-K01</Vitri>
+    <DVT>Vĩ</DVT>
+    <HanSuDung>2016-03-14T00:00:00+04:00</HanSuDung>
+    <SoLuong>10</SoLuong>
+    <Dongia>8000</Dongia>
+    <Total>80000</Total>
+  </reportproduct>
+
+  
+  
+</NewDataSet>

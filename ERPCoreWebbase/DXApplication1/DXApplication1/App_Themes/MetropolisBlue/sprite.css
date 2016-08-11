@@ -1,0 +1,61 @@
+.Sprite_Feeds,
+.Sprite_Mail,
+.Sprite_Contacts,
+.Sprite_Calendar,
+.Sprite_NavButton,
+.Sprite_ExpandPane,
+.Sprite_CollapsePane,
+.Sprite_Arrow
+{
+    background-image: url('sprite.png')!important;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.Sprite_Feeds
+{
+    background-position: 0px 0px;
+    width: 50px;
+    height: 50px;
+}
+.Sprite_Mail
+{
+    background-position: -51px 0px;
+    width: 50px;
+    height: 50px;
+}
+.Sprite_Contacts
+{
+    background-position: -102px 0px;
+    width: 50px;
+    height: 50px;
+}
+.Sprite_Calendar
+{
+    background-position: -153px 0px;
+    width: 50px;
+    height: 50px;
+}
+.Sprite_NavButton
+{
+    background-position: -204px 0px;
+    width: 50px;
+    height: 50px;
+}
+.Sprite_ExpandPane
+{
+    background-position: -255px 0px;
+    width: 30px;
+    height: 32px;
+}
+.Sprite_CollapsePane
+{
+    background-position: -286px 0px;
+    width: 30px;
+    height: 32px;
+}
+.Sprite_Arrow
+{
+    background-position: -300px -34px!important;
+    width: 16px!important;
+    height: 16px!important;
+}

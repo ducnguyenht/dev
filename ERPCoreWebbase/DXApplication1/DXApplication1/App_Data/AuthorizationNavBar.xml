@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<groups>
+  <group Text="Quản trị viên">
+    <item Text="Người dùng" NavigateUrl="~/GUI/DanhmucUser.aspx" />
+    <item Text="Phòng ban" NavigateUrl="~/GUI/Administrator/Department.aspx"/>
+    <item Text="Tổ chức trực thuộc" NavigateUrl="~/GUI/Administrator/AffiliatedOrganization.aspx"/>
+    <item Text="Phân quyền người dùng" NavigateUrl="~/GUI/Administrator/UserAuthorization.aspx"/>  
+  </group>
+  <group Text="Mua hàng">
+    <item Text="Cấu hình danh mục" NavigateUrl="User.aspx" />
+    <item Text="Quản lý mua hàng" NavigateUrl="Organization.aspx"/>
+    <item Text="Vấn đề" NavigateUrl="Role.aspx"/>
+    <item Text="Báo cáo" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Bán hàng">
+    <item Text="Chính sách khuyến mãi" NavigateUrl="User.aspx" />
+    <item Text="Công nợ" NavigateUrl="Organization.aspx"/>
+    <item Text="Quản lý bán hàng" NavigateUrl="Role.aspx"/>
+    <item Text="Vấn đề" NavigateUrl="UserAuthorization.aspx"/>
+    <item Text="Báo cáo" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Quản lý kho">
+    <item Text="Cấu hình kho" NavigateUrl="User.aspx" />
+    <item Text="Nhập kho" NavigateUrl="Organization.aspx"/>
+    <item Text="Xuất kho" NavigateUrl="Role.aspx"/>
+    <item Text="Chuyển kho" NavigateUrl="UserAuthorization.aspx"/>
+    <item Text="Kiểm khu" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Xuất nhập khẩu">
+    <item Text="Cấu kế toán" NavigateUrl="User.aspx" />
+    <item Text="Hạch toán" NavigateUrl="Organization.aspx"/>
+    <item Text="Kết chuyển" NavigateUrl="Role.aspx"/>
+    <item Text="Sổ kế toán" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Sản xuất">
+    <item Text="Cấu kế toán" NavigateUrl="User.aspx" />
+    <item Text="Hạch toán" NavigateUrl="Organization.aspx"/>
+    <item Text="Kết chuyển" NavigateUrl="Role.aspx"/>
+    <item Text="Sổ kế toán" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Nhân sự">
+    <item Text="Cấu kế toán" NavigateUrl="User.aspx" />
+    <item Text="Hạch toán" NavigateUrl="Organization.aspx"/>
+    <item Text="Kết chuyển" NavigateUrl="Role.aspx"/>
+    <item Text="Sổ kế toán" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Chăm sóc khách hàng">
+    <item Text="Cấu kế toán" NavigateUrl="User.aspx" />
+    <item Text="Hạch toán" NavigateUrl="Organization.aspx"/>
+    <item Text="Kết chuyển" NavigateUrl="Role.aspx"/>
+    <item Text="Sổ kế toán" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Quản lý thu chi">
+    <item Text="Cấu kế toán" NavigateUrl="User.aspx" />
+    <item Text="Hạch toán" NavigateUrl="Organization.aspx"/>
+    <item Text="Kết chuyển" NavigateUrl="Role.aspx"/>
+    <item Text="Sổ kế toán" NavigateUrl="UserAuthorization.aspx"/>
+  </group> 
+  <group Text="Kế toán">
+    <item Text="Cấu kế toán" NavigateUrl="User.aspx" />
+    <item Text="Hạch toán" NavigateUrl="Organization.aspx"/>
+    <item Text="Kết chuyển" NavigateUrl="Role.aspx"/>
+    <item Text="Sổ kế toán" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Báo cáo">
+    <item Text="Cấu kế toán" NavigateUrl="User.aspx" />
+    <item Text="Hạch toán" NavigateUrl="Organization.aspx"/>
+    <item Text="Kết chuyển" NavigateUrl="Role.aspx"/>
+    <item Text="Sổ kế toán" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+  <group Text="Phân tích dữ liệu">
+    <item Text="Cấu kế toán" NavigateUrl="User.aspx" />
+    <item Text="Hạch toán" NavigateUrl="Organization.aspx"/>
+    <item Text="Kết chuyển" NavigateUrl="Role.aspx"/>
+    <item Text="Sổ kế toán" NavigateUrl="UserAuthorization.aspx"/>
+  </group>
+</groups>

@@ -1,0 +1,89 @@
+﻿#LayoutSplitter .HeadPane
+{
+	background: #cfe0e7 url("HeaderBack.jpg") no-repeat left top;
+}
+
+.mail #LayoutSplitter .RightPane.HeadPane,
+.contacts #LayoutSplitter .RightPane.HeadPane,
+.feeds #LayoutSplitter .RightPane.HeadPane 
+{
+    background-position: -250px 0;
+}
+
+.calendar #LayoutSplitter .RightPane.HeadPane 
+{
+    background-position: -300px 0;
+}
+
+.calendar #LayoutSplitter .SidePane,
+.contacts #LayoutSplitter .SidePane,
+.feeds #LayoutSplitter .SidePane
+{
+	background: #edf3f4;
+}
+
+.CalendarNavArea
+{
+	background: #edf3f4;
+}
+
+.HeadPane .ActionToolbar .Spacer b
+{
+    background: #7eacb1;
+}
+
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item .dxm-content,
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item.dxm-hovered .dxm-content
+{
+    color: #40758d !important;
+}
+
+#LayoutSplitter .HeadPane .ActionToolbar .ActionMenu .dxm-item,
+#LayoutSplitter .HeadPane .ActionToolbar .InfoMenu .dxm-item
+{
+    background: transparent;
+}
+#LayoutSplitter .HeadPane .ActionToolbar .ActionMenu .dxm-item.dxm-hovered,
+#LayoutSplitter .HeadPane .ActionToolbar .InfoMenu .dxm-item.dxm-hovered
+{
+    background: #7eacb1;
+}
+
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-content
+{
+    padding-top: 4px;
+}
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-image
+{
+    margin-right: 10px;
+	margin-top: -1px;
+}
+
+.HeadPane .ActionToolbar .SearchBox
+{
+    margin-top: 3px;
+}
+
+.ContactCard 
+{
+    border: 1px solid #7eacb1;
+}
+.contacts .dxdvContent_Glass
+{
+    padding: 5px;
+}
+
+.print .ContactReportToolbar .dxmMenuFullHeightSeparator_Glass,
+.print .ScheduleReportToolbar .dxmMenuFullHeightSeparator_Glass
+{
+    width: 100%;
+}
+.print .MailReportToolbar .dxmMenuFullHeightSeparator_Glass
+{
+    width: 50%;
+}
+.print .dxmMenuFullHeightSeparator_Glass,
+.print .dxmMenuFullHeightSeparator_Glass .dx 
+{
+    background: transparent;
+}

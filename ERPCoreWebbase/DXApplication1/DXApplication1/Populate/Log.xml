@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<messages>
+  <message>Start populate accounting data</message>
+  <message>Connecting to datasource...</message>
+  <message>Connect successfully!</message>
+  <message>Start query data from datasource</message>
+  <message>End query data from datasource</message>
+  <message>Start transform data</message>
+  <message>End transform data</message>
+  <message>Start insert data to destination</message>
+  <message>Insert account level 1...</message>
+  <message>Insert account level 2...</message>
+  <message>Insert account level 3...</message>
+  <message>End insert data to destination</message>
+  <message>End populate accounting data</message>
+</messages>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item AccessObjectGroupId="default" Text="Trang Chủ" NavigateUrl="~/Default.aspx" SpriteClassName="Sprite_Home" />
+  <Item AccessObjectGroupId="system" Text="Hệ Thống" NavigateUrl="~/GUI/Administrator/Default.aspx" SpriteClassName="Sprite_System" />
+
+  <Item AccessObjectGroupId="authorization" Text="Phân Quyền" NavigateUrl="~/NAANAdmin/Authorization/Department.aspx" SpriteClassName="Sprite_Authorization" />
+  <!--
+     06/09/2013 Duc.Vo Issue E-451 Delete-code
+  <Item AccessObjectGroupId="authorization" Text="Phân Quyền" NavigateUrl="~/NAANAdmin/Authorization/Authorization.aspx" SpriteClassName="Sprite_Authorization" />
+  <Item AccessObjectGroupId="managecontent" Text="Quản Lý Nội Dung" NavigateUrl="~/ManageContent/Default.aspx" SpriteClassName="Sprite_ManageContent" />
+  <Item AccessObjectGroupId="branch" Text="Chi Nhánh" NavigateUrl="~/Branch/Authorization.aspx" SpriteClassName="Sprite_Branch" />
+  -->
+  <Item AccessObjectGroupId="purchase" Text="Nghiệp Vụ Mua" NavigateUrl="~/GUI/IntroPages/DefaultPurchasing.aspx" SpriteClassName="Sprite_Purchasing" />
+  <Item AccessObjectGroupId="sales" Text="Nghiệp Vụ Bán" NavigateUrl="~/GUI/IntroPages/DefaultSales.aspx" SpriteClassName="Sprite_Sales"/>
+  <Item AccessObjectGroupId="warehouse" Text="Quản Lý Kho" NavigateUrl="~/GUI/IntroPages/DefaultWarehouse.aspx" SpriteClassName="Sprite_Warehouse"/>
+  <!--
+      06/09/2013 Duc.Vo Issue E-451 Delete-code
+  <Item AccessObjectGroupId="imexport" Text="Xuất Nhập Khẩu" NavigateUrl="~/ImExporting/CombineProduct.aspx" SpriteClassName="Sprite_ExportAndImport"/>
+  <Item AccessObjectGroupId="produce" Text="Sản Xuất" NavigateUrl="~/Produce/ProduceRequirement.aspx" SpriteClassName="Sprite_Production"/>
+  <Item AccessObjectGroupId="human" Text="Nhân Sự" NavigateUrl="" SpriteClassName="Sprite_HR"/>
+  <Item AccessObjectGroupId="care" Text="Khách Hàng" NavigateUrl="" SpriteClassName="Sprite_CRM"/>
+  <Item AccessObjectGroupId="care" Text="Cộng Tác Viên" NavigateUrl="" SpriteClassName="Sprite_CRM_Partner"/>
+  <Item AccessObjectGroupId="member" Text="Thành Viên" NavigateUrl="~/Member/Business.aspx" SpriteClassName="Sprite_Member"/>
+  -->
+  <Item AccessObjectGroupId="payreceive" Text="Quản Lý Thu Chi" NavigateUrl="~/Voucher/Receipt/GUI/ReceiptVoucherListing.aspx" SpriteClassName="Sprite_PayReceiving"/>
+  <Item AccessObjectGroupId="bank" Text="Ngân Hàng" NavigateUrl="~/Banking/GUI/BankListing.aspx" SpriteClassName="Sprite_Warehouse"/>
+  <Item AccessObjectGroupId="account" Text="Kế Toán" NavigateUrl="~/GUI/IntroPages/DefaultAccounting.aspx" SpriteClassName="Sprite_Accounting"/>
+  
+  <!--
+      06/09/2013 Duc.Vo Issue E-451 Delete-code
+  <Item AccessObjectGroupId="report" Text="Báo Cáo" NavigateUrl="" SpriteClassName=""/>
+  <Item AccessObjectGroupId="analyze" Text="Phân Tích" NavigateUrl="" SpriteClassName="Sprite_Analysis"/>
+  <Item AccessObjectGroupId="plan" Text="Kế Hoạch" NavigateUrl="" SpriteClassName="Sprite_Plan"/>
+  <Item AccessObjectGroupId="support" Text="Hỗ Trợ" NavigateUrl="" SpriteClassName="Sprite_Support"/>
+  -->
+</Items>

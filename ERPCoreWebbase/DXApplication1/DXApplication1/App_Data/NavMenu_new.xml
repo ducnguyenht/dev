@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menus>
+  <GroupName Text="Hệ Thống">
+  </GroupName>
+  <!--
+  06/09/2013 Duc.Vo Issue E-451 Delete-code
+  -->
+  <GroupName Text="Mua Hàng">
+    <Menu MenuItem="Danh Mục Nhóm Nhà Cung Cấp" NavigateUrl="~\Purchasing\suppliergroup.aspx"></Menu>
+    <Menu MenuItem="Danh Mục Nhà Cung Cấp" NavigateUrl="~\Purchasing\supplier.aspx"></Menu>
+    <Menu MenuItem="Danh Mục Nhóm Nhà Sản Xuất" NavigateUrl="~\Purchasing\manufacturergroup.aspx"></Menu>
+    <Menu MenuItem="Danh Mục Nhà Sản Xuất" NavigateUrl="~\Purchasing\manufacturer.aspx"></Menu>    
+    <Menu MenuItem="Danh Mục Đơn Vị Tính Nguyên Vật Liệu" NavigateUrl="~\Purchasing\BuyingMaterialUnit.aspx"></Menu>    
+    <Menu MenuItem="Danh Mục Nhóm Nguyên Vật Liệu" NavigateUrl="~\Purchasing\BuyingMaterialCategory.aspx"></Menu>
+    <Menu MenuItem="Danh Mục Nguyên Vật Liệu " NavigateUrl="~\Purchasing\BuyingMaterial.aspx"></Menu>
+    <Menu MenuItem="Danh Mục Tiêu Chuẩn Lưu Trữ" NavigateUrl="~\Purchasing\StorageStandard.aspx"></Menu>    
+    <Menu MenuItem="Danh Mục Đơn Vị Tính Dược Phẩm" NavigateUrl="~\Purchasing\unit.aspx"></Menu>
+    <Menu MenuItem="Danh Mục Nhóm Dược Phẩm" NavigateUrl="~\Purchasing\productgroup.aspx"></Menu>    
+    <Menu MenuItem="Danh Mục Dược Phẩm" NavigateUrl="~\Purchasing\product.aspx"></Menu>
+    
+    <Menu MenuItem="Danh Mục Nhóm Dịch Vụ" NavigateUrl="~\Purchasing\BuyingServiceCategory.aspx"></Menu>
+    <Menu MenuItem="Danh Mục Dịch Vụ" NavigateUrl="~\Purchasing\BuyingService.aspx"></Menu>
+    <Menu MenuItem="Phiếu Yêu Cầu" NavigateUrl="~\Purchasing\requitement.aspx"></Menu>
+    <Menu MenuItem="Báo Giá" NavigateUrl="~\Purchasing\quotation.aspx"></Menu>
+    <Menu MenuItem="Chọn Nhà Cung Cấp" NavigateUrl="~\Purchasing\SelectSuppliers.aspx"></Menu>
+    <Menu MenuItem="Phiếu Đặt Hàng" NavigateUrl="~\Purchasing\purchase.aspx"></Menu>
+    <Menu MenuItem="Tiến Độ Đơn Hàng" NavigateUrl="~\Purchasing\delivery.aspx"></Menu>
+    <Menu MenuItem="Công Nợ Nhà Cung Cấp" NavigateUrl="~\Purchasing\payment.aspx"></Menu>
+  </GroupName>
+  <GroupName Text="Bán Hàng">
+  </GroupName>
+  <GroupName Text="Quản Lý Kho">
+  </GroupName>
+  <!--
+  06/09/2013 Duc.Vo Issue E-451 Delete-code
+  <GroupName Text="Xuất Nhập Khẩu">
+  </GroupName>
+  <GroupName Text="Sản Xuất">
+  </GroupName>
+  <GroupName Text="Nhân Sự">
+  </GroupName>
+  <GroupName Text="Chăm Sóc Khách Hàng">
+  </GroupName>
+  -->
+  <GroupName Text="Quản Lý Thu Chi">
+  </GroupName>
+  <GroupName Text="Kế Toán">
+  </GroupName>
+  <!--
+    06/09/2013 Duc.Vo Issue E-451 Delete-code
+  <GroupName Text="Báo Cáo">
+  </GroupName>
+  <GroupName Text="Phân Tích Dữ Liệu">
+  </GroupName>
+  -->
+</Menus>

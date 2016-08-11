@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages>
+  <system />
+  <system-user>
+    <Item Text="" ToolTip="New Contact" Name="new" SpriteClassName="Sprite_NewContact" />
+    <Item Text="" ToolTip="Back" Name="back" SpriteClassName="Sprite_Back" />
+    <Item Text="" ToolTip="Save" Name="save" SpriteClassName="Sprite_Save" />
+  </system-user>
+  <calendar>
+    <Item Text="" ToolTip="New Appointment" Name="new" SpriteClassName="Sprite_NewAppointment" />
+  </calendar>
+  <contacts>
+    <Item Text="" ToolTip="New Contact" Name="new" SpriteClassName="Sprite_NewContact" />
+    <Item Text="" ToolTip="Back" Name="back" SpriteClassName="Sprite_Back" />
+    <Item Text="" ToolTip="Save" Name="save" SpriteClassName="Sprite_Save" />
+  </contacts>
+  <feeds>
+    <Item Text="" ToolTip="Back" Name="back" SpriteClassName="Sprite_Back" />
+  </feeds>
+</Pages>
+

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<div style="font-size:13px">
+  <b>Thao tác tìm kiếm trên combobox</b>
+
+  <p style="font-size:13px">
+    Để tìm kiếm trên combobox ta thực hiện như sau:
+  </p>
+
+  <ol>
+    <li>Vào: Nghiệp vụ mua/Đặt hàng/Phiếu mua hàng.</li>
+    <li>
+      Click theo hình hướng dẫn để tạo mới đơn hàng
+      <img class="style2" src="../Help/Images/Combobox1.png" />
+    </li>
+    <li>
+      Ta có thể chọn hàng hoá cụ thể hoặc nhập mã hàng hoá để tìm kiếm<br />
+
+      <p>
+        <img class="style3" src="../Help/Images/Combobox2.png" />
+      </p>
+
+    </li>
+  </ol>
+  <p>
+    <strong>VD: Tìm mã hàng hoá là _AZA002 - tên hàng hoá là AZAROIN</strong>
+  </p>
+  <img class="style4" src="../Help/Images/Combobox3.png" />
+  <p>
+    Ta chỉ cần nhập AZA
+  </p>
+  <p>
+    <img class="style5" src="../Help/Images/Combobox4.png" />
+  </p>
+  <p>
+    Hoặc ta nhập ZA00
+  </p>
+  <p>
+    <img class="style6" src="../Help/Images/Combobox5.png" />
+  </p>
+  <p>
+    * Ta
+    cũng có thể nhập tên hàng hoá để tìm kiếm
+  </p>
+
+<p>
+  <img class="style7" src="../Help/Images/Combobox6.png" />
+</p>
+</div>

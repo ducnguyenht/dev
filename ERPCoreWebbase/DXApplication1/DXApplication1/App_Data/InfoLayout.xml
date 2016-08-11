@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item Text="" ToolTip="Print" Name="print" SpriteClassName="Sprite_Print" Target="_blank" />
+  <Item Text="" ToolTip="Theme" Name="theme" SpriteClassName="Sprite_Theme">
+    <Item Text="DevEx" Name="DevEx" SpriteClassName="Sprite_Theme_DevEx" />
+    <Item Text="Metropolis" Name="Metropolis" SpriteClassName="Sprite_Theme_Metropolis" />
+    <Item Text="Metropolis Blue" Name="MetropolisBlue" SpriteClassName="Sprite_Theme_MetropolisBlue" />
+    <Item Text="Office2010 Black" Name="Office2010Black" SpriteClassName="Sprite_Theme_Office2010Black" />
+    <Item Text="Office2010 Blue" Name="Office2010Blue" SpriteClassName="Sprite_Theme_Office2010Blue" />
+    <Item Text="Office2010 Silver" Name="Office2010Silver" SpriteClassName="Sprite_Theme_Office2010Silver" />
+    <Item Text="Aqua" Name="Aqua" SpriteClassName="Sprite_Theme_Aqua" />
+    <Item Text="Glass" Name="Glass" SpriteClassName="Sprite_Theme_Glass" />
+    <Item Text="Black Glass" Name="BlackGlass" SpriteClassName="Sprite_Theme_BlackGlass" />
+    <Item Text="Plastic Blue" Name="PlasticBlue" SpriteClassName="Sprite_Theme_PlasticBlue" />
+    <Item Text="Red Wine" Name="RedWine" SpriteClassName="Sprite_Theme_RedWine" />
+    <Item Text="Soft Orange" Name="SoftOrange" SpriteClassName="Sprite_Theme_SoftOrange" />
+    <Item Text="Youthful" Name="Youthful" SpriteClassName="Sprite_Theme_Youthful" />
+    <Item Text="Office2003 Blue" Name="Office2003Blue" SpriteClassName="Sprite_Theme_Office2003Blue" />
+    <Item Text="Office2003 Olive" Name="Office2003Olive" SpriteClassName="Sprite_Theme_Office2003Olive" />
+    <Item Text="Office2003 Silver" Name="Office2003Silver" SpriteClassName="Sprite_Theme_Office2003Silver" />
+    <Item Text="Default" Name="" SpriteClassName="Sprite_Theme_Default" />
+  </Item>
+  <Item Text="" ToolTip="Help" Name="help" SpriteClassName="Sprite_Large_Help">
+    <Item Text="Hỗ trợ nội bộ" NavigateUrl="" Target="_blank" SpriteClassName="Sprite_Support" />
+    <Item Text="Hỗ trợ từ NAAN Solution" NavigateUrl="" Target="_blank" SpriteClassName="Sprite_Support" />
+    <Item Text="Hướng dẫn sử dụng" NavigateUrl="~/Help/Help.aspx" SpriteClassName="Sprite_Support" />
+  </Item>
+</Items>

@@ -1,0 +1,75 @@
+﻿#LayoutSplitter .HeadPane
+{
+	background: white;
+}
+#LayoutSplitter .dxsplPane_MetropolisBlue, 
+#LayoutSplitter .dxsplPaneCollapsed_MetropolisBlue,
+#LayoutSplitter .dxheControl_MetropolisBlue
+{
+    border: 1px solid #c0c0c0;
+}
+
+.HeadPane .ActionToolbar .Spacer b
+{
+    background: #c0c0c0;
+}
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item .dxm-content,
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item .dxm-content.dxm-hovered
+{
+    color: #0072C6;
+}
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-content
+{
+    padding-top: 4px;
+    padding-left: 6px;
+}
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-image
+{
+	margin-top: -1px;
+	margin-right: 12px;
+}
+
+.HeadPane .ActionToolbar .SearchBox
+{
+    margin-top: 1px;
+}
+
+.CalendarNavArea
+{
+	background: white;
+}
+
+.ContactCard 
+{
+    border: 1px solid #c0c0c0;
+}
+.contacts .dxdvContent_MetropolisBlue
+{
+    padding: 18px;
+}
+
+.print .ContactReportToolbar .dxmMenuSeparator_MetropolisBlue,
+.print .ScheduleReportToolbar .dxmMenuSeparator_MetropolisBlue
+{
+    width: 100%;
+}
+.print .MailReportToolbar .dxmMenuSeparator_MetropolisBlue
+{
+    width: 50%;
+}
+.print .dxmMenuSeparator_MetropolisBlue .dx 
+{
+    background: transparent;
+}
+
+/***2013-09-20 ERP-573 Khoa.Truong INS START***/
+#LayoutSplitter .dxeHD [class^="dxeListBoxItem"] 
+{
+    font-weight: bold;
+}
+#LayoutSplitter [class^="dxpcFooter"], #LayoutSplitter .dxpc-footer
+{
+    border-top: 1px Solid #C0C0C0;
+    background-color:#f0f0f0;
+}
+/***2013-09-20 ERP-573 Khoa.Truong INS END***/

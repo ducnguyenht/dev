@@ -1,0 +1,62 @@
+﻿#LayoutSplitter .HeadPane
+{
+    background: #8aa150;
+}
+
+.CalendarNavArea
+{
+    background: #e5eecf;
+}
+
+.DateNavigatorContainer
+{
+    background: #e5eecf;
+}
+
+.HeadPane .ActionToolbar .Spacer b
+{
+    background: White;
+}
+
+#LayoutSplitter .dxsplPane_Youthful, 
+#LayoutSplitter .dxsplPaneCollapsed_Youthful,
+#LayoutSplitter .dxheControl_Youthful
+{
+    border: 1px solid White;
+}
+
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item .dxm-content,
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item.dxm-hovered .dxm-content
+{
+    color: #e5eecf;
+}
+
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-content
+{
+    padding-top: 5px;
+}
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-image
+{
+    margin-right: 10px;
+	margin-top: -1px;
+}
+
+.HeadPane .ActionToolbar .SearchBox
+{
+    margin-top: 1px;
+}
+
+.print .ContactReportToolbar .dxmMenuFullHeightSeparator_Youthful,
+.print .ScheduleReportToolbar .dxmMenuFullHeightSeparator_Youthful
+{
+    width: 100%;
+}
+.print .MailReportToolbar .dxmMenuFullHeightSeparator_Youthful
+{
+    width: 50%;
+}
+.print .dxmMenuFullHeightSeparator_Youthful,
+.print .dxmMenuFullHeightSeparator_Youthful .dx 
+{
+    background: transparent;
+}

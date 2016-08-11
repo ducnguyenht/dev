@@ -1,0 +1,40 @@
+﻿<div style="font-size:13px">
+  <p style="font-size:14px">
+    <span class="style1">
+      <b>Nhập đơn vị tính cho hàng hóa</b>
+    </span>
+  </p>
+  <p style="font-size:13px">
+    Để tạo hai cây đơn vị tính như hình dưới ta làm các bước sau:
+  </p>
+  <br />
+  <img src="../UserControls/Image/UnitHelper1.png" alt="some_text"/>
+  <br />
+  <ol>
+    <li>Vào: Nghiệp vụ mua/cấu hình danh mục/hàng hóa</li>
+    <li>Click: Tạo mới hàng hóa</li>
+    <li>
+      Nhập cây đơn vị đầu tiên:
+      <br />
+      <ul>
+        <li>
+          Đơn vị tính cao nhất: “Thùng”
+          <br />
+          - Làm từ bước 1 đến bước 3 theo hình hướng dẫn.
+          <img src="../UserControls/Image/UnitHelper2.png" alt="some_text"/>
+        </li>
+        <li>
+          Nhập đơn vị tính con thứ 2: “hộp”
+          <br />
+          - Làm từ bước 4 đến bước 6 theo hình hướng dẫn.
+          <img src="../UserControls/Image/UnitHelper3.PNG"/>
+        </li>
+        <li>
+          Nhập đơn vị tính con thứ 3: “vỉ” tương tự nhập đơn vị tính con thứ 2
+          <br />
+          Nhập cây đơn vị thứ 2: “bao” gồm “100” “viên” tương tự nhập cây đơn vị thứ 1, nhập “bao” trước và “viên” sau (như mục 3).
+        </li>
+      </ul>
+    </li>
+  </ol>
+</div>

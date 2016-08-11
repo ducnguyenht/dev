@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<groups>
+  <default>
+    <subgroup Text="Nhóm Chức Năng">
+      <item Text="Hệ Thống" NavigateUrl="~/GUI/Administrator/Default.aspx" />
+      
+      <!--
+      06/09/2013 Duc.Vo Issue E-451 Delete-code
+      <item Text="Phân Quyền" NavigateUrl="~/NAANAdmin/Authorization/Authorization.aspx" />
+      <item Text="Quản Lý Nội Dung" NavigateUrl="~/ManageContent/Default.aspx" />
+      <item Text="Chi Nhánh" NavigateUrl="~/Branch/Authorization.aspx" />
+      -->
+
+      <item Text="Nghiệp Vụ Mua" NavigateUrl="~/GUI/IntroPages/DefaultPurchasing.aspx" />
+      <item Text="Nghiệp Vụ Bán" NavigateUrl="~/GUI/IntroPages/DefaultSales.aspx" />
+      <item Text="Quản Lý Kho" NavigateUrl="~/GUI/IntroPages/DefaultWarehouse.aspx" />
+
+      <!--
+      06/09/2013 Duc.Vo Issue E-451 Delete-code
+      <item Text ="Xuất Nhập Khẩu" NavigateUrl ="~/ImExporting/CombineProduct.aspx"/>
+      <item Text ="Sản Xuất" NavigateUrl ="~/Produce/ProduceRequirement.aspx"/>
+      <item Text ="Nhân Sự" NavigateUrl =""/>
+      <item Text ="Khách Hàng" NavigateUrl =""/>
+      <item Text ="Cộng Tác Viên" NavigateUrl =""/>
+      <item Text ="Thành Viên" NavigateUrl =""/>
+      -->
+
+      <item Text ="Quản Lý Thu Chi" NavigateUrl ="~/PayReceiving/PaymentOrder.aspx"/>
+      <!--<item Text ="Ngân Hàng" NavigateUrl ="#"/>-->
+      <item Text="Kế Toán" NavigateUrl="~/GUI/IntroPages/DefaultAccounting.aspx" />
+
+      <!--
+      06/09/2013 Duc.Vo Issue E-451 Delete-code
+      <item Text ="Báo Cáo" NavigateUrl =""/>
+      <item Text ="Phân Tích" NavigateUrl =""/>
+      <item Text ="Kế Hoạch" NavigateUrl =""/>
+      <item Text ="Hỗ Trợ" NavigateUrl =""/>
+      -->
+    </subgroup>
+  </default>
+  <system>
+    <!--
+      06/09/2013 Duc.Vo Issue E-451 Delete-code
+    <subgroup Text="Cơ Sở Dữ Liệu">
+      <item Text="Cấu Hình Cơ Sở Dữ Liệu" NavigateUrl="~/NAANAdmin/SystemConfig/DbConnectionConfiguration.aspx" />
+    </subgroup>
+    -->
+    <subgroup Text="MailServer">
+      <item Text="Cấu Hình Mail Server" NavigateUrl="~/NAANAdmin/SystemConfig/MailServerConfiguration.aspx" />
+    </subgroup>
+    <subgroup Text="ETL">
+    </subgroup>
+    <subgroup Text="Tài Nguyên">
+      <item Text="Ứng Dụng" NavigateUrl="~/Authorization/Application.aspx" />
+      <item Text="Sơ Đồ Tài Nguyên" NavigateUrl="~/Authorization/Resource.aspx" />
+    </subgroup>
+  </system>
+  <authorization>
+    <subgroup Text="Phòng Ban">
+      <item Text="Danh Sách Phòng Ban" NavigateUrl="~/NAANAdmin/Authorization/Department.aspx"/>
+    </subgroup>
+    <subgroup Text="Người Dùng">
+      <item Text="Người Dùng" NavigateUrl="~/NAANAdmin/Authorization/UserManagement.aspx" />
+    </subgroup>
+    <subgroup Text="Quyền Truy Xuất">
+      <item Text="Phân Quyền" NavigateUrl="~/NAANAdmin/Authorization/Authorization.aspx" />
+    </subgroup>
+  </authorization>
+  <managecontent>
+    <subgroup Text="Thư Viện">
+
+    </subgroup>
+    <subgroup Text="Nội Dung Trang">
+
+    </subgroup>
+    <subgroup Text="Dịch Thuật">
+
+    </subgroup>
+  </managecontent>
+  <branch>
+    <subgroup Text="Danh Sách Chi Nhánh">
+      <item Text="Danh Sách Chi Nhánh" NavigateUrl="~/Branch/Department.aspx"/>
+    </subgroup>
+    <subgroup Text="Người Dùng">
+      <item Text="Người Dùng" NavigateUrl="~/Branch/UserManagement.aspx" />
+    </subgroup>
+    <subgroup Text="Truy Xuất">
+      <item Text="Phân Quyền" NavigateUrl="~/Branch/Authorization.aspx" />
+    </subgroup>
+  </branch>
+  <purchase>
+    <subgroup Text="Cấu Hình Danh Mục">
+      <item Text="Hàng Hóa" NavigateUrl="~\Purchasing\CombineProduct.aspx"/>
+      <item Text="Nguyên Vật Liệu" NavigateUrl="~\Purchasing\CombineMaterial.aspx"/>
+      <item Text="Công Cụ Dụng Cụ" NavigateUrl="~\Purchasing\CombineDevice.aspx"/>
+      <item Text="Dịch Vụ" NavigateUrl="~\Purchasing\CombineService.aspx"/>
+      <item Text="Hoạt Chất" NavigateUrl="~\Purchasing\ActiveElement.aspx"/>
+      <item Text="Nhà Sản Xuất" NavigateUrl="~\Purchasing\CombineManufacturer.aspx"/>
+      <item Text="Nhà Cung Cấp" NavigateUrl="~\Purchasing\CombineSupplier.aspx"/>
+      <item Text="Hợp Tác Nguyên Tắc" NavigateUrl="~\Purchasing\CooperativePrinciples.aspx"/>
+    </subgroup>
+    <subgroup Text ="Đặt Hàng" >
+      <item Text="Nhu Cầu" NavigateUrl="~\Purchasing\Requitement.aspx"/>
+      <item Text="Báo Giá" NavigateUrl="~\Purchasing\Quotation.aspx"/>
+      <item Text="Chọn Nhà Cung Cấp" NavigateUrl="~\Purchasing\SelectSuppliers.aspx"/>
+      <item Text="Phiếu Mua Hàng" NavigateUrl="~\Purchasing\Purchase.aspx"/>
+      <item Text="Phiếu Mua Công Cụ Dụng Cụ" NavigateUrl="~\Purchasing\PurchaseDevice.aspx"/>
+      <item Text="Phiếu Mua Tài Sản Cố Định" NavigateUrl="~\Purchasing\PurchaseFixedAssets.aspx"/>
+      <item Text="Phiếu Mua Nguyên Vật Liệu" NavigateUrl="~\Purchasing\PurchaseMaterials.aspx"/>
+      <item Text="Trả Hàng" NavigateUrl="~\Purchasing\ReturnProducts.aspx"/>
+    </subgroup>
+    <subgroup Text ="Tiến Độ" >
+      <item Text="Tiến Độ Đơn Hàng" NavigateUrl="~\Purchasing\delivery.aspx"/>
+      <item Text="Tiến Độ Doanh Số" NavigateUrl="~\Purchasing\ProcessOfSalesTotal.aspx"/>
+      <item Text="Công Nợ Nhà Cung Cấp" NavigateUrl="~\Purchasing\Debit.aspx"/>
+    </subgroup>
+    <subgroup Text ="Báo Cáo">
+    </subgroup>
+    <subgroup Text ="Phân Tích">
+      <item Text ="Đánh Giá" NavigateUrl=""/>
+    </subgroup>
+    <subgroup Text ="Vấn Đề">
+    </subgroup>
+  </purchase>
+  <warehouse>
+    <subgroup Text="Cấu Hình Danh Mục">
+      <item Text="Thể Loại" NavigateUrl="~\Warehouse\WarehouseCategory.aspx"/>
+      <item Text="Đơn Vị Lưu Trữ" NavigateUrl="~\Warehouse\WarehouseUnit.aspx"/>
+      <item Text="Tiêu Chuẩn" NavigateUrl="~\Warehouse\WarehouseStorage.aspx"/>
+      <item Text="Danh Mục Kho" NavigateUrl="~\Warehouse\Warehouse.aspx"/>
+    </subgroup>
+    <subgroup Text="Nhập Kho">
+      <item Text="Phiếu Nhập Kho" NavigateUrl="~\Warehouse\ListInputComm.aspx"/>
+      <item Text="Thao Tác Nhập" NavigateUrl="~\Warehouse\InputWarehousing.aspx"/>
+    </subgroup>
+    <subgroup Text="Xuất Kho">
+      <item Text="Phiếu Xuất Kho" NavigateUrl="~\Warehouse\ListOutputComm.aspx"/>
+      <item Text="Thao Tác Xuất" NavigateUrl="~\Warehouse\OutputWarehousing.aspx"/>
+    </subgroup>
+    <subgroup Text="Tồn Kho">
+      <item Text="Ngưỡng Tồn Hàng Hóa" NavigateUrl="~\Warehouse\SourceExist.aspx"/>
+      <item Text="Ngưỡng Tồn Nguyên Vật Liệu" NavigateUrl="~\Warehouse\SourceExistMaterial.aspx"/>
+      <item Text="Ngưỡng Tồn Thành Phẩm" NavigateUrl="~\Warehouse\SourceExistProduct.aspx"/>
+      <item Text="Ngưỡng Tồn Công Cụ Dụng Cụ" NavigateUrl="~\Warehouse\SourceExistequipment.aspx"/>
+      <item Text="Tồn Theo Vị Trí" NavigateUrl="~\Warehouse\ReportInventory.aspx"/>
+      <item Text="Tồn Hàng Hóa" NavigateUrl="~\Warehouse\ReportProduct.aspx"/>
+      <item Text="Tồn Nguyên Vật Liệu" NavigateUrl="~\Warehouse\ReportMaterial.aspx"/>
+      <item Text="Tồn Thành Phẩm" NavigateUrl="~\Warehouse\ReportFinishedProduct.aspx"/>
+      <item Text="Tồn Công Cụ Dụng Cụ" NavigateUrl="~\Warehouse\ReportDevice.aspx"/>
+    </subgroup>
+    <subgroup Text="Kiểm Kho">
+      <item Text="Kiểm Kho" NavigateUrl="~\Warehouse\ListWarehouseInventory.aspx"/>
+      <item Text="Điều Chỉnh" NavigateUrl="~\Warehouse\ListEntry.aspx"/>
+    </subgroup>
+    <subgroup Text="Mẫu biểu">
+      <item Text="Chứng Từ Kế Toán Kho" NavigateUrl="~\Warehouse\Report\WarehouseVoucher.aspx"/>
+      <item Text="Báo cáo" NavigateUrl="~\Warehouse\Report\WarehouseReport.aspx"/>
+    </subgroup>
+    <subgroup Text="Phân Tích">
+    </subgroup>
+    <subgroup Text ="Vấn Đề">
+    </subgroup>
+    <subgroup Text ="Số liệu ban đầu">
+      <item Text="Hàng tồn kho đầu kì" NavigateUrl="~\Warehouse\InitInventory.aspx"/>
+    </subgroup>
+  </warehouse>
+  <imexport>
+    <subgroup Text="Cấu Hình Danh Mục">
+      <item Text="Hàng Hóa" NavigateUrl="~\ImExporting\CombineProduct.aspx"/>
+      <item Text="Nguyên Vật Liệu " NavigateUrl="~\ImExporting\CombineMaterial.aspx"/>
+      <item Text="Dịch Vụ" NavigateUrl="~\ImExporting\CombineService.aspx"/>
+      <item Text="Nhà Sản Xuất" NavigateUrl="~\ImExporting\CombineManufacturer.aspx"/>
+      <item Text="Nhà Cung Cấp" NavigateUrl="~\ImExporting\CombineSupplier.aspx"/>
+      <item Text="Loại Hình Thanh Toán" NavigateUrl="~\ImExporting\PayType.aspx"/>
+    </subgroup>
+    <subgroup Text ="Kho Trung Chuyển" >
+      <item Text="Thể Loại Kho" NavigateUrl="~\ImExporting\WarehouseCategory.aspx"/>
+      <item Text="Danh Mục Kho" NavigateUrl="~\ImExporting\Warehouse.aspx"/>
+      <item Text="Phiếu Nhập Kho" NavigateUrl="~\ImExporting\ListInputComm.aspx"/>
+      <item Text="Phiếu Xuất Kho" NavigateUrl="~\ImExporting\ListOutputComm.aspx"/>
+    </subgroup>
+    <subgroup Text ="Đặt Hàng" >
+      <item Text="Nhu Cầu" NavigateUrl="~\ImExporting\requitement.aspx"/>
+      <item Text="Báo Giá" NavigateUrl="~\ImExporting\quotation.aspx"/>
+      <item Text="Chọn Nhà Cung Cấp" NavigateUrl="~\ImExporting\SelectSuppliers.aspx"/>
+      <item Text="Phiếu Đặt Hàng" NavigateUrl="~\ImExporting\purchase.aspx"/>
+      <item Text="Trả Hàng" NavigateUrl="~\ImExporting\BringBackProduct.aspx"/>
+    </subgroup>
+    <subgroup Text ="Tiến Độ" >
+      <item Text="Tiến Độ Đơn Hàng" NavigateUrl="~\ImExporting\delivery.aspx"/>
+      <item Text="Công Nợ Nhà Cung Cấp" NavigateUrl="~\ImExporting\Debit.aspx"/>
+      <item Text="Tiến Độ Chuẩn Bị Hình Thức Thanh Toán" NavigateUrl=""/>
+      <item Text="Tiến Độ Khai Báo Hải Quan" NavigateUrl=""/>
+    </subgroup>
+    <subgroup Text ="Báo Cáo">
+    </subgroup>
+    <subgroup Text ="Phân Tích">
+      <item Text ="Đánh Giá" NavigateUrl=""/>
+    </subgroup>
+    <subgroup Text ="Vấn Đề">
+    </subgroup>
+  </imexport>
+  <sales>
+    <subgroup Text="Cấu Hình Danh Mục">
+      <item Text="Khách Hàng" NavigateUrl="~/Sales/Customer.aspx"/>
+      <item Text="Cộng Tác Viên" NavigateUrl="~/Sales/Partner.aspx"/>
+      <item Text="Nguyên Vật Liệu" NavigateUrl="~/Sales/Material.aspx"/>
+      <item Text="Dịch Vụ" NavigateUrl="~/Sales/Service.aspx"/>
+      <item Text="Hàng Hóa" NavigateUrl="~/Sales/Product.aspx"/>
+    </subgroup>
+    <subgroup Text="Chính Sách">
+      <item Text="Chính Sách Khuyến Mãi" NavigateUrl="~/Sales/PromotionPolicy.aspx"/>
+      <item Text="Chính Sách Tạo Giá Bán" NavigateUrl="~/Sales/PricePolicy.aspx"/>
+      <item Text="Hiệu Chỉnh Giá Bán" NavigateUrl="~/Sales/ModifyPrice.aspx"/>
+      <item Text="Chính Sách Nhận Hàng Trả" NavigateUrl="~/Sales/ConditionReceiveReturn.aspx"/>
+      <item Text="Hợp Tác Nguyên Tắc" NavigateUrl="~/Sales/CooperativePrinciples.aspx"/>
+    </subgroup>
+    <subgroup Text="Quản Lý Bán Hàng">
+      <item Text="Phiếu Bán Hàng" NavigateUrl="~/Sales/OrderList.aspx"/>
+      <item Text="Tiến Độ Đơn Hàng" NavigateUrl="~/Sales/Delivery.aspx"/>
+      <item Text="Tiến Độ Doanh Số" NavigateUrl="~/Sales/ProcessOfSalesTotal.aspx"/>
+      <item Text="Nhận Hàng Trả" NavigateUrl="~/Sales/ReturnProducts.aspx"/>
+    </subgroup>
+    <subgroup Text="Công Nợ">
+      <item Text="Công Nợ Khách Hàng" NavigateUrl="~/Sales/LiabiCustsomers.aspx"/>
+      <item Text="Công Nợ Cộng Tác Viên" NavigateUrl="~/Sales/LiabiPartners.aspx"/>
+    </subgroup>
+    <subgroup Text="Báo Cáo">
+    </subgroup>
+    <subgroup Text="Phân Tích">
+    </subgroup>
+    <subgroup Text="Vấn đề">
+    </subgroup>
+  </sales>
+  <payreceive>
+    <subgroup Text="Nghiệp Vụ Thu">
+      <item Text="Phiếu Thu" NavigateUrl="~\PayReceiving\ReceiptVoucher.aspx"/>
+      <item Text="Báo Có" NavigateUrl="~\PayReceiving\CreditNote.aspx"/>
+      <item Text="Cấu Hình Phân Loại Nghiệp Vụ Thu" NavigateUrl="~\PayReceiving\ReceiptConfig.aspx"/>
+      <item Text="Lịch Nhắc" NavigateUrl="~\PayReceiving\ReceiptSchedule.aspx"/>
+    </subgroup>
+    <subgroup Text="Nghiệp Vụ Chi">
+      <item Text="Phiếu Chi" NavigateUrl="~\PayReceiving\PaymentVoucher.aspx"/>
+      <item Text="Ủy Nhiệm Chi" NavigateUrl="~\PayReceiving\PaymentOrder.aspx"/>
+      <item Text="Cấu Hình Phân Loại Nghiệp Vụ Chi" NavigateUrl="~\PayReceiving\PaymentConfig.aspx"/>
+      <item Text="Lịch Nhắc" NavigateUrl="~\PayReceiving\PaymentSchedule.aspx"/>
+    </subgroup>
+    <subgroup Text="Mẫu Biểu">
+      <item Text="Chứng Từ - Tiền Tệ" NavigateUrl="~\PayReceiving\Report\DiaryCurrency.aspx"/>
+      <item Text="Báo Cáo" NavigateUrl="~\PayReceiving\Report\PayReceivingReport.aspx"/>
+    </subgroup>
+    <subgroup Text="Phân Tích">
+    </subgroup>
+    <subgroup Text ="Vấn Đề">
+    </subgroup>
+  </payreceive>
+  <account>
+    <subgroup Text="Cấu Hình Kế Toán">
+      <item Text="Hệ Thống Tài Khoản" NavigateUrl="~\Accounting\Account.aspx"/>
+      <item Text="Chu Kỳ Kế Toán" NavigateUrl="~\Accounting\AccountCycle.aspx"/>
+      <item Text="Nhập Dữ Liệu Đầu" NavigateUrl="~\Accounting\BegingBalance.aspx"/>
+      <item Text="Kết Chuyển" NavigateUrl="~\Accounting\Transfer.aspx"/>
+      <item Text="Sơ Đồ Định Khoản" NavigateUrl="~\Accounting\BookAccount.aspx"/>
+      <item Text="Phương Pháp Tính Giá Tồn Kho" NavigateUrl="~\Accounting\ProdctPriceInventCaculation.aspx"/>
+      <item Text="Ngoại Tệ" NavigateUrl="~\Accounting\Currency.aspx"/>
+      <item Text="Hóa đơn GTGT" NavigateUrl="~\Accounting\VATReceipt.aspx"/>
+    </subgroup>
+    <subgroup Text="Tạo Hóa Đơn">
+      <item Text="Tách Gộp Chứng Từ Mua" NavigateUrl="~\Accounting\GrossSplitPurchase.aspx"/>
+      <item Text="Tách Gộp Chứng Từ Bán" NavigateUrl="~\Accounting\GrossSplitSale.aspx"/>
+      <item Text="Tách Gộp Phiếu Thu" NavigateUrl="~\Accounting\ReceiptVoucherSplit.aspx"/>
+      <item Text="In Hóa Đơn" NavigateUrl="~\Accounting\VATReceiptForPrinting.aspx"/>
+    </subgroup>
+    <subgroup Text="Hạch Toán">
+      <item Text="Phiếu Bán" NavigateUrl="~\Accounting\Phieuban.aspx"/>
+      <item Text="Phiếu Mua" NavigateUrl="~\Accounting\PurchaseOrder.aspx"/>
+      <item Text="Phiếu Xuất Kho" NavigateUrl="~\Accounting\InventoryVoucher.aspx"/>
+      <item Text="Phiếu Nhập Kho" NavigateUrl="~\Accounting\InventoryVoucher_im.aspx"/>
+      <item Text="Phiếu Thu" NavigateUrl="~\Accounting\ReceiptVoucherN.aspx"/>
+      <item Text="Phiếu Chi" NavigateUrl="~\Accounting\PaymentVoucherN.aspx"/>
+      <item Text="Ủy Nhiệm Chi" NavigateUrl="~\Accounting\PaymentOrderN.aspx"/>
+      <item Text="Hạch Toán Chung" NavigateUrl="~\Accounting\GeneralAccount.aspx"/>
+    </subgroup>
+    <subgroup Text="Kết Chuyển">
+      <item Text="Kết Chuyển" NavigateUrl="~\Accounting\DeferredExpense.aspx"/>
+      <item Text="Phục Hồi Kết Chuyển" NavigateUrl="~\Accounting\RestoreDeferredExpense.aspx"/>
+    </subgroup>
+    <subgroup Text="Báo Cáo">
+      <item Text="Nhật Ký Chung" NavigateUrl="~\Accounting\Report\DiaryGeneral.aspx"/>
+      <item Text="Nhật Ký Sổ Cái" NavigateUrl="~\Accounting\Report\DiaryLedger.aspx"/>
+      <item Text="Chứng Từ Ghi Sổ" NavigateUrl="~\Accounting\Report\VoucherLedger.aspx"/>
+      <item Text="Nhật Ký - Chứng Từ" NavigateUrl="~\Accounting\Report\DiaryVoucher.aspx"/>
+      <item Text="Báo Cáo Thuế" NavigateUrl="~\Accounting\Report\TaxReport.aspx"/>
+    </subgroup>
+    <subgroup Text ="Phân Tích">
+    </subgroup>
+    <subgroup Text ="Vấn Đề">
+    </subgroup>
+  </account>
+  <produce>
+    <subgroup Text="Cấu hình">
+      <item Text="Thành Phẩm" NavigateUrl="~\Produce\Config\FinishedProduct.aspx"/>
+      <item Text="Sản Phẩm Dở Dang" NavigateUrl="~\Produce\Config\UnFinishedProduct.aspx"/>
+      <item Text="Nguyên Vật Liệu" NavigateUrl="~\Produce\Config\Material.aspx"/>
+      <item Text="Nhà Xưởng, Máy Móc" NavigateUrl="~\Produce\Config\FinishedProduct.aspx"/>
+      <item Text="Công Cụ Sản Xuất" NavigateUrl="~\Produce\Config\FinishedProduct.aspx"/>
+      <item Text="Công Đoạn" NavigateUrl="~\Produce\Config\Phase.aspx"/>
+      <item Text="Công Đoạn Sản Phẩm" NavigateUrl="~\Produce\PhaseProduct.aspx"/>
+    </subgroup>
+    <subgroup Text="Kế Hoạch Sản Xuất">
+      <item Text="Nhu Cầu Sản Xuất" NavigateUrl="~\Produce\ProduceRequirement.aspx"/>
+      <item Text="Nhu Cầu Nguyên Vật Liệu" NavigateUrl="~\Produce\MaterialRequirement.aspx"/>
+      <item Text="Nhu Cầu Nhân Sự" NavigateUrl="~\Produce\HumanRequirement.aspx"/>
+      <item Text="Nhu Cầu Trang Thiết Bị" NavigateUrl="~\Produce\EquipmentRequirement.aspx"/>
+      <item Text="Ước Tính Giá Thành Sản Phẩm" NavigateUrl="~\Produce\PriceEstimates.aspx"/>
+      <item Text="Hoạch Định Chi Tiết" NavigateUrl="~\Produce\PlanningDetail.aspx"/>
+      <item Text="Biểu Đồ Sản Xuất" NavigateUrl="~\Produce\GanttChart.aspx"/>
+    </subgroup>
+    <subgroup Text="Sản xuất">
+      <item Text="Phiếu Sản Xuất" NavigateUrl="~\Produce\ProductionCommand.aspx"/>
+      <item Text="Thực Thi Phiếu Sản Xuất" NavigateUrl="~\Produce\ProductionCommandExecution.aspx"/>
+    </subgroup>
+    <subgroup Text="Kho Sản Xuất">
+      <item Text="Thể Loại" NavigateUrl="~\Produce\WarehouseCategory.aspx"/>
+      <item Text="Danh Mục Kho" NavigateUrl="~\Produce\Warehouse.aspx"/>
+      <item Text="Phiếu Nhập Kho" NavigateUrl="~\Produce\ListInputComm.aspx"/>
+      <item Text="Phiếu Xuất Kho" NavigateUrl="~\Produce\ListOutputComm.aspx"/>
+    </subgroup>
+    <subgroup Text="Vận Chuyển">
+    </subgroup>
+    <subgroup Text="Báo Cáo">
+      <item Text="Danh sách mẫu biểu" NavigateUrl="~\Produce\Report\ProduceReport.aspx"/>
+    </subgroup>
+    <subgroup Text="Phân Tích">
+    </subgroup>
+    <subgroup Text="Vấn Đề">
+    </subgroup>
+  </produce>
+  <member>
+    <subgroup Text="Cấu Hình Danh Mục">
+      <item Text="Danh Bạ Doanh Nghiệp" NavigateUrl="~\Member\Business.aspx"/>
+      <item Text="Doanh Nhân" NavigateUrl="~\Member\BusinessPerson.aspx"/>
+      <item Text="Thành Viên" NavigateUrl=""/>
+    </subgroup>
+    <subgroup Text="Phát Triển Thành Viên">
+      <item Text="Thành Viên Tiềm Năng" NavigateUrl=""/>
+      <item Text="Giới Thiệu Thành Viên" NavigateUrl=""/>
+      <item Text="Lựa Chọn Thành Viên" NavigateUrl=""/>
+      <item Text="Thành Viên Trực Tuyến" NavigateUrl=""/>
+    </subgroup>
+    <subgroup Text="Chương Trình Tài Trợ">
+      <item Text="Xây Dựng Chương Trình" NavigateUrl=""/>
+      <item Text="Tiếp Nhận Tài Trợ" NavigateUrl=""/>
+    </subgroup>
+    <subgroup Text="Quản Lý Tài Liệu">
+      <item Text="Phiếu Khởi Tạo Tài Liệu" NavigateUrl=""/>
+      <item Text="Thao Tác Với Tài Liệu" NavigateUrl=""/>
+      <item Text="Kiểm Duyệt Tài Liệu" NavigateUrl=""/>
+    </subgroup>
+    <subgroup Text="Quản Lý Nội Bộ">
+      <item Text="Tổ Chức" NavigateUrl=""/>
+      <item Text="Nhân Sự" NavigateUrl=""/>
+    </subgroup>
+  </member>
+</groups>

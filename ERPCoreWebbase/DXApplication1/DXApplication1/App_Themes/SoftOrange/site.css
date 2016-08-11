@@ -1,0 +1,82 @@
+﻿#LayoutSplitter .HeadPane
+{
+    background: #e9e9e9;
+}
+
+.HeadPane .ActionToolbar .Spacer b
+{
+    background: #d3d3d3;
+    width: 3px;
+}
+
+#LayoutSplitter .HeadPane .ActionToolbar .ActionMenu .dxm-item,
+#LayoutSplitter .HeadPane .ActionToolbar .InfoMenu .dxm-item
+{
+    background: transparent;
+}
+
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item .dxm-content,
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item.dxm-hovered .dxm-content
+{
+    color: #777777;
+}
+
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-content
+{
+    padding-top: 2px;
+}
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-image
+{
+    margin-right: 10px;
+	margin-top: -1px;
+}
+
+.HeadPane .ActionToolbar .SearchBox
+{
+    margin-top: 2px;
+}
+
+.contacts.Landscape .ContactCard 
+{
+    height: 240px !important;
+}
+.contacts.Portrait .ContactCard 
+{
+    height: 315px !important;
+}
+.contacts.Portrait .ContactCard .Info .item .body
+{
+    width: 218px;
+}
+.ContactCard 
+{
+    border: 3px solid #d3d3d3;
+}
+.contacts .dxdvContent_SoftOrange 
+{
+    padding: 20px;
+}
+
+.contacts #LayoutSplitter .ContactViewBar 
+{
+    border-width: 0;
+}
+
+.feeds #LayoutSplitter .FeedNavBar 
+{
+    border-top-width: 3px !important;
+}
+
+.print .ContactReportToolbar .dxmMenuSeparator_SoftOrange,
+.print .ScheduleReportToolbar .dxmMenuSeparator_SoftOrange
+{
+    width: 100%;
+}
+.print .MailReportToolbar .dxmMenuSeparator_SoftOrange
+{
+    width: 50%;
+}
+.print .dxmMenuSeparator_SoftOrange .dx 
+{
+    background: transparent;
+}

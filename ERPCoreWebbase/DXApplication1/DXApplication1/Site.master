@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Root.Master" AutoEventWireup="true" CodeBehind="Site.master.cs"
+    Inherits="WebModule.Site" %>
+
+<asp:Content ID="Header" ContentPlaceHolderID="HeadHolder" runat="Server">
+    <asp:ContentPlaceHolder ID="HeadHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="RootHolder" runat="Server">
+    <dx:ASPxSplitter ID="LayoutSplitter" ClientIDMode="Static" runat="server" FullscreenMode="True"
+        Width="100%" Height="100%" Orientation="Horizontal" SeparatorVisible="false"
+        AllowResize="False" ClientInstanceName="ClientLayoutSplitter" ResizingMode="Live">
+        <Panes>
+            <dx:SplitterPane Name="LeftPane" Size="262">
+                <Panes>
+                    <dx:SplitterPane Name="LeftHeadPart" Size="80">
+                        <ContentCollection>
+                            <dx:SplitterContentControl ID="SplitterContentControl1" runat="server">
+                                <dx:NavigationToolbar runat="server" />
+                            </dx:SplitterContentControl>
+                        </ContentCollection>
+                        <PaneStyle CssClass="HeadPane" BorderTop-BorderWidth="0">
+                            <BorderTop BorderWidth="0px"></BorderTop>
+                        </PaneStyle>
+                    </dx:SplitterPane>
+                    <dx:SplitterPane Name="SidePane" ScrollBars="Auto">
+                        <ContentCollection>
+                            <dx:SplitterContentControl ID="SplitterContentControl2" runat="server">
+                                <div class="SidePaneContentWrapper">
+                                    <div class="SidePaneContent">
+                                        <asp:ContentPlaceHolder ID="SideHolder" runat="server">
+                                            <dx:FunctionNavBar ID="FunctionNavBar1" runat="server" />
+                                        </asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                                <div class="Logo">
+                                    <dx:ASPxImage ID="LogoImage" runat="server" SpriteCssClass="Sprite_Logo" />
+                                </div>
+                            </dx:SplitterContentControl>
+                        </ContentCollection>
+                        <PaneStyle CssClass="SidePane" />
+                    </dx:SplitterPane>
+                </Panes>
+                <PaneStyle BorderRight-BorderWidth="0">
+                    <BorderRight BorderWidth="0px"></BorderRight>
+                </PaneStyle>
+                <CollapsedStyle CssClass="CollapsedPane" />
+                <ContentCollection>
+                    <dx:SplitterContentControl runat="server" SupportsDisabledAttribute="True">
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="RightPane">
+                <Panes>
+                    <dx:SplitterPane Name="RightHeadPart" Size="80" MaxSize="80" AutoHeight="false">
+                        <ContentCollection>
+                            <dx:SplitterContentControl ID="SplitterContentControl3" runat="server">
+                                <dx:ActionToolbar runat="server" />
+                            </dx:SplitterContentControl> 
+                        </ContentCollection>
+                        <PaneStyle CssClass="HeadPane" BorderTop-BorderWidth="0">
+                            <BorderTop BorderWidth="0px"></BorderTop>
+                        </PaneStyle>
+                    </dx:SplitterPane>
+                    <dx:SplitterPane Name="MainPane">
+                        <ContentCollection>
+                            <dx:SplitterContentControl ID="SplitterContentControl4" runat="server">
+                                <dx:ASPxSplitter ClientInstanceName="MainContentSplitter" ID="MainContentSplitter" runat="server" 
+                                        Height="100%" Width="100%" Orientation="Vertical" 
+                                    SeparatorVisible="False" ResizingMode="Live">
+                                    <Panes>
+                                        <dx:SplitterPane ScrollBars="Auto" Name="ContentContainer">
+                                            <PaneStyle>
+                                                <Border BorderWidth="0px" />
+                                                <Paddings Padding="0px" />
+                                            </PaneStyle>
+                                            <ContentCollection>
+                                                <dx:SplitterContentControl runat="server" SupportsDisabledAttribute="True">
+                                                    <asp:ContentPlaceHolder ID="MainHolder" runat="server" />
+                                                </dx:SplitterContentControl>
+                                            </ContentCollection>
+                                        </dx:SplitterPane>
+                                        <dx:SplitterPane Name="SubmitContainer" Size="50" MinSize="50" MaxSize="50" 
+                                            ShowCollapseBackwardButton="True">
+                                            <PaneStyle>
+                                                <Border BorderWidth="0px" />
+                                            </PaneStyle>
+                                            <ContentCollection>
+                                                <dx:SplitterContentControl runat="server" SupportsDisabledAttribute="True">
+                                                    <div style="position: relative">
+                                                        <div id="submitcontainer" style="position: relative; height: 50px">
+                                                            <div id="submitcontainer_inner" style="position: absolute; left: 0; right:0; width: auto; top:0;"> 
+                                                                <div style="float: left; padding-left: 8px; position: relative; z-index:701" id="leftsubmitcontainer">
+                                                                    <asp:ContentPlaceHolder ID="LeftSubmitContainer" runat="server" />
+                                                                </div>
+                                                                <div id="centersubmitcontainer_outer" style="position: absolute; left: 0; right: 0; width: auto; 
+                                                                        text-align: center; z-index:700">
+                                                                    <div id="centersubmitcontainer" style="display: inline-block;">
+                                                                        <asp:ContentPlaceHolder ID="CenterSubmitContainer" runat="server" />
+                                                                    </div>
+                                                                </div>
+                                                                <div style="float: right; padding-right: 8px; position: relative; z-index:701" id="rightsubmitcontainer">
+                                                                    <asp:ContentPlaceHolder ID="RightSubmitContainer" runat="server" />
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </dx:SplitterContentControl>
+                                            </ContentCollection>
+                                        </dx:SplitterPane>
+                                    </Panes>
+                                    <Styles>
+                                        <Pane>
+                                            <Paddings Padding="0" />
+                                        </Pane>
+                                    </Styles>
+                                    <ClientSideEvents PaneResized="function(s,e) {submitContainer.adjust();}" />
+                                </dx:ASPxSplitter>
+                            </dx:SplitterContentControl>
+                        </ContentCollection>
+                    </dx:SplitterPane>
+                </Panes>
+                <PaneStyle CssClass="RightPane" />
+                <ContentCollection>
+                    <dx:SplitterContentControl runat="server" SupportsDisabledAttribute="True">
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+        </Panes>
+        <Styles>
+            <Pane Paddings-Padding="0">
+                <Paddings Padding="0px"></Paddings>
+            </Pane>
+        </Styles>
+        <ClientSideEvents PaneResized="ERPCore.ClientLayoutSplitter_PaneResized" />
+    </dx:ASPxSplitter>
+</asp:Content>

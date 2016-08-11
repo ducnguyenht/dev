@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<div style="font-size:13px">
+  <b>Tạo bộ lọc Filter trên lưới danh sách</b>
+
+  <p style="font-size:13px">
+    Để tạo bộ lọc trên lưới danh sách ta thực hiện các bước sau:
+  </p>
+
+  <ol>
+    <li>Vào: Nghiệp vụ mua/Cấu hình danh mục/Hàng hóa</li>
+    <li>
+      Click theo hình hướng dẫn để hiện bảng phân loại đối tượng
+      <img src="../Help/Images/CreatFilter1.png" />
+    </li>
+    <li>
+      Chọn đối tượng
+    </li>
+    <br />
+
+      <p>
+        <img src="../Help/Images/CreatFilter2.png" />
+      </p>
+
+      <li>
+        Chọn cách lọc.
+        <ul>
+          <li>
+            - Begins with: bắt đầu với ...
+            <br />
+            - Contains: có chứa ...
+            <br />
+            - Doesn't contain: không chứa ...
+            <br />
+            - End with: kết thúc với ...
+          </li>
+          <img src="../Help/Images/CreatFilter3.png" />
+        </ul>
+      </li>
+    </ol>
+  <p>
+    <strong>VD: Lọc mã hàng hoá là _DIC001</strong>
+  </p>
+  <p>
+    <img class="style1" src="../Help/Images/CreatFilter4.png" />
+  </p>
+
+  <p>
+    Ta chỉ cần nhập _DIC với cách lọc Begins with
+  </p>
+  <p>
+    <img class="style2" src="../Help/Images/CreatFilter5.png" />
+  </p>
+  <p>
+    Hoặc ta nhập IC00 với cách lọc Contains
+  </p>
+  <p>
+    <img class="style1" src="../Help/Images/CreatFilter6.png" />
+  </p>
+  <p>
+    * Ta có thể thực hiện tương tự những bước trên để lọc &quot;Tên hàng hoá&quot; hoặc &quot;Nhà
+    sản xuất&quot;
+  </p>
+</div>

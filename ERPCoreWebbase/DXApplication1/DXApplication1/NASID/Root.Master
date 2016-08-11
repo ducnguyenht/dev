@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WebModule.Main" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Dược Phẩm 360 - NAAN Solution</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul[class^="dxnbLite"].nav-left li:first div[class^="dxnb-header"]').css("border-top", "none");
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="Head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <dx:ASPxSplitter ID="MainSplitter" runat="server" Height="100%" Width="100%" FullscreenMode="True" Orientation="Vertical">
+        <Styles>
+            <Pane>
+                <Paddings Padding="0px" />
+                <Border BorderWidth="0px" />
+            </Pane>
+        </Styles>
+        <Panes>
+            <dx:SplitterPane Name="HeaderPane" Size="87px">
+                <PaneStyle>
+                    <BorderBottom BorderWidth="1px" />
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <div class="header">
+                            <div class="title">
+                                <img alt="banner" src="../images/NASID/NASERPBanner.png" />
+                            </div>
+                            <div class="login">
+                                <div id="login_logged">
+                        Chào
+                        <dx:ASPxLabel ID="lblLoginName" Font-Bold="true" runat="server" Text="Admin">
+                        </dx:ASPxLabel><span> | </span><dx:ASPxHyperLink Cursor="pointer" 
+                            ID="hplLoginStatus" runat="server" 
+                            Text="Đăng xuất" ForeColor="Black" CssClass="link-logout">
+                        </dx:ASPxHyperLink>
+                    </div>
+                            </div>
+                            <div class="menutop">
+								<%-- DXCOMMENT: Configure the application's top menu --%>
+                                <dx:ASPxMenu ID="MenuTop" runat="server" RenderMode="Lightweight" Width="100%" 
+                                    DataSourceID="MenuDataSource" ItemAutoWidth="False" 
+                                    SelectParentItem="True">
+                                    <Border BorderWidth="0px" />
+                                    <BorderTop BorderWidth="1px" />
+                                </dx:ASPxMenu>
+                            </div>
+                        </div>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="MainPane" Separator-Visible="False">
+                <Separator Visible="False"></Separator>
+				<PaneStyle CssClass="noborder">
+                    <BorderBottom BorderWidth="1px" />
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <asp:ContentPlaceHolder ID="Content" runat="server" />
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="FooterPane" Size="60px" PaneStyle-BackColor="#EDEDED">
+                <Separator Visible="False"></Separator>
+
+<PaneStyle BackColor="#EDEDED"></PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <img style="padding-top: 20px;" alt="footer" src="../images/NASID/NASERPFooter.png" />
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+        </Panes>
+    </dx:ASPxSplitter>
+    </form>
+    <%-- DXCOMMENT: Configure the application's top menu --%>
+    <asp:XmlDataSource ID="MenuDataSource" runat="server" 
+        DataFile="~/App_Data/AuthorizationMenu.xml" XPath="/items/*"></asp:XmlDataSource>
+</body>
+</html>

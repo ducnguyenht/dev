@@ -1,0 +1,53 @@
+﻿#LayoutSplitter .HeadPane
+{
+	background: #a9acb4;
+}
+#LayoutSplitter .RightPane.HeadPane
+{
+    border-left-color: White;
+}
+
+.DateNavigatorContainer
+{
+	background: #f6f7f9;
+}
+
+.HeadPane .ActionToolbar .Spacer b
+{
+    background: White;
+}
+
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu
+{
+    color: White;
+}
+
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-content
+{
+    padding-top: 4px;
+    padding-left: 6px;
+}
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-image
+{
+    margin-top: -1px;
+    margin-right: 12px;
+}
+
+.HeadPane .ActionToolbar .SearchBox
+{
+    margin-top: 1px;
+}
+
+.print .ContactReportToolbar .dxmMenuSeparator_Office2010Silver,
+.print .ScheduleReportToolbar .dxmMenuSeparator_Office2010Silver
+{
+    width: 100%;
+}
+.print .MailReportToolbar .dxmMenuSeparator_Office2010Silver
+{
+    width: 50%;
+}
+.print .dxmMenuSeparator_Office2010Silver .dx 
+{
+    background: transparent;
+}

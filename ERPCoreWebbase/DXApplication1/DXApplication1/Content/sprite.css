@@ -1,0 +1,929 @@
+.Sprite_Frameworks,
+.Sprite_Attachment_Light,
+.Sprite_NewAppointment,
+.Sprite_Feeds,
+.Sprite_NewContact,
+.Sprite_Large_Help,
+.Sprite_Contacts,
+.Sprite_Search_Pressed,
+.Sprite_Calendar,
+.Sprite_MarkAs,
+.Sprite_NewMail,
+.Sprite_Back,
+.Sprite_Mail,
+.Sprite_RemoveLarge,
+.Sprite_Search,
+.Sprite_Theme,
+.Sprite_Save,
+.Sprite_Reply,
+.Sprite_Search_Hover,
+.Sprite_SentItems,
+.Sprite_Inbox, 
+.Sprite_Announcements,
+.Sprite_ASP,
+.Sprite_DXTREME,
+.Sprite_Drafts,
+.Sprite_BuyNow,
+.Sprite_MarkAsUnread,
+.Sprite_About,
+.Sprite_DownloadSource,
+.Sprite_MarkAsRead,
+.Sprite_EditContact,
+.Sprite_RemoveSmall
+{
+    background-image: url('sprite.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.Sprite_Logo
+{
+    background-image: url('NASERPLogo.png');    
+    width: 240px;
+    height: 52px;    
+}
+.Sprite_Frameworks
+{
+    background-position: -201px 0px;
+    width: 16px;
+    height: 16px;
+}
+
+.Sprite_NewAppointment
+{
+    background-position: 0px -41px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Feeds
+{
+    background-position: -33px -41px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_NewContact
+{
+    background-position: -99px -41px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Large_Help
+{
+    background-position: -132px -41px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Contacts
+{
+    background-position: -165px -41px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Calendar
+{
+    background-position: 0px -74px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_MarkAs
+{
+    background-position: -33px -74px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_NewMail
+{
+    background-position: -66px -74px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Back
+{
+    background-position: -99px -74px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Mail
+{
+    background-position: -132px -74px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_RemoveLarge
+{
+    background-position: -165px -74px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Search
+{
+    background-position: -198px -74px;
+    width: 23px;
+    height: 23px;
+}
+.Sprite_Theme
+{
+    background-position: 0px -107px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Save
+{
+    background-image: url('../images/icon/Edit/Save_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 1px;
+    vertical-align: middle;
+}
+.Sprite_Reply
+{
+    background-position: -99px -107px;
+    width: 32px;
+    height: 32px;
+}
+.Sprite_Search_Hover
+{
+    background-position: -132px -107px;
+    width: 23px;
+    height: 23px;
+}
+.Sprite_Search_Pressed
+{
+    background-position: -198px -41px;
+    width: 23px;
+    height: 23px;
+}
+.Sprite_SentItems
+{
+    background-position: -158px -107px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_Inbox
+{
+    background-position: -180px -107px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_Announcements
+{
+    background-position: -202px -107px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_ASP
+{
+    background-position: 0px -140px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_DXTREME
+{
+    background-position: -22px -140px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_Drafts
+{
+    background-position: -44px -140px;
+    width: 16px;
+    height: 16px;
+}
+/*.Sprite_Attachment
+{
+    background-position: -66px -140px;
+    width: 16px;
+    height: 16px;
+}*/
+.Sprite_BuyNow
+{
+    background-position: -83px -140px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_MarkAsUnread
+{
+    background-position: -100px -140px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_About
+{
+    background-position: -117px -140px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_DownloadSource
+{
+    background-position: -134px -140px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_MarkAsRead
+{
+    background-position: -151px -140px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_EditContact
+{
+    background-position: -168px -140px;
+    width: 16px;
+    height: 16px;
+}
+.Sprite_RemoveSmall
+{
+    background-position: -185px -140px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Theme */
+.Sprite_Theme_DevEx,
+.Sprite_Theme_Office2010Black,
+.Sprite_Theme_Office2010Blue,
+.Sprite_Theme_Office2010Silver,
+.Sprite_Theme_Metropolis,
+.Sprite_Theme_MetropolisBlue,
+.Sprite_Theme_Aqua,
+.Sprite_Theme_Glass,
+.Sprite_Theme_BlackGlass,
+.Sprite_Theme_PlasticBlue,
+.Sprite_Theme_RedWine,
+.Sprite_Theme_SoftOrange,
+.Sprite_Theme_Youthful,
+.Sprite_Theme_Office2003Blue,
+.Sprite_Theme_Office2003Olive,
+.Sprite_Theme_Office2003Silver,
+.Sprite_Theme_Default
+{
+    background-image: none;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.Sprite_Theme_DevEx
+{
+    background-color: #CDCCF5;
+}
+.Sprite_Theme_Office2010Black
+{
+    background-color: #474747;
+}
+.Sprite_Theme_Office2010Blue
+{
+    background-color: #B5CCE5;
+}
+.Sprite_Theme_Office2010Silver
+{
+    background-color: #E7EAEF;
+}
+.Sprite_Theme_Metropolis
+{
+    background-color: #7F7F7F;
+}
+.Sprite_Theme_MetropolisBlue
+{
+    background-color: #0072C6;
+}
+.Sprite_Theme_Aqua
+{
+    background-color: #96B9EC;
+}
+.Sprite_Theme_Glass
+{
+    background-color: #C8DDE8;
+}
+.Sprite_Theme_BlackGlass
+{
+    background-color: #4D5A63;
+}
+.Sprite_Theme_PlasticBlue
+{
+    background-color: #5066B3;
+}
+.Sprite_Theme_RedWine
+{
+    background-color: #8A0E3C;
+}
+.Sprite_Theme_SoftOrange
+{
+    background-color: #F06F30;
+}
+.Sprite_Theme_Youthful
+{
+    background-color: #9CC524;
+}
+.Sprite_Theme_Office2003Blue
+{
+    background-color: #B5CEF2;
+}
+.Sprite_Theme_Office2003Olive
+{
+    background-color: #D4DEB6;
+}
+.Sprite_Theme_Office2003Silver
+{
+    background-color: #D1D1E0;
+}
+.Sprite_Theme_Default
+{
+    background-color: #DCDCDC;
+}
+
+/*START: ERPCore Navigation Sprite*/
+.Sprite_Home, 
+.Sprite_System, 
+.Sprite_Purchasing, 
+.Sprite_Sales, 
+.Sprite_Warehouse, 
+.Sprite_ExportAndImport, 
+.Sprite_Production, 
+.Sprite_HR, 
+.Sprite_CRM, 
+.Sprite_Accounting, 
+.Sprite_PayReceiving,
+.Sprite_Analysis,
+.Sprite_Projects
+{
+    background-image: url('function-group-sprite.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.Sprite_Home.LightTheme
+{
+    background-position: -32px -352px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Home.DarkTheme
+{
+    background-position: 0px -352px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_System.LightTheme
+{
+    background-position: -32px -320px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_System.DarkTheme
+{
+    background-position: 0px -320px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_ExportAndImport.LightTheme
+{
+    background-position: -30px -288px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_ExportAndImport.DarkTheme
+{
+    background-position: 0px -288px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Production.LightTheme
+{
+    background-position: -32px -256px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Production.DarkTheme
+{
+    background-position: 0px -256px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Analysis.LightTheme
+{
+    background-position: -32px -224px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Analysis.DarkTheme
+{
+    background-position: 0px -224px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_HR.LightTheme
+{
+    background-position: -32px -192px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_HR.DarkTheme
+{
+    background-position: 0px -192px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Sales.LightTheme
+{
+    background-position: -32px -160px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Sales.DarkTheme
+{
+    background-position: 0px -160px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Warehouse.LightTheme
+{
+    background-position: -32px -128px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Warehouse.DarkTheme
+{
+    background-position: 0px -128px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Accounting.LightTheme
+{
+    background-position: -32px -96px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Accounting.DarkTheme
+{
+    background-position: 0px -96px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Projects.LightTheme
+{
+    background-position: -32px -64px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Projects.DarkTheme
+{
+    background-position: 0px -64px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_CRM.LightTheme
+{
+    background-position: -32px -32px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_CRM.DarkTheme
+{
+    background-position: 0px -32px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Purchasing.LightTheme
+{
+    background-position: -32px 0px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Purchasing.DarkTheme
+{
+    background-position: 0px 0px;
+    height: 32px;
+    width: 32px;
+}
+.Sprite_Support
+{
+    background-image: url('../images/support.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width:16px;
+    height:16px;
+}
+/*END: ERPCore Navigation Sprite*/
+
+/*START: ERPCore Command Sprite*/
+.Sprite_ReAct 
+{
+    background-image: url('../images/icon/32x32/react.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0px 0px;
+    width:32px;
+    height:32px;
+}
+/*END: ERPCore Command Sprite*/
+
+
+/*START: Button with icon*/
+.Sprite_Edit
+{
+    background-image: url('../images/icon/Edit/Edit_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 1px;
+    vertical-align: middle;
+}
+.Sprite_New
+{
+    background-image: url('../images/icon/Actions/AddFile_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 1px;
+    vertical-align: middle;
+}
+.Sprite_Delete
+{
+    background-image: url('../images/icon/Actions/DeleteList_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 1px;
+    vertical-align: middle;
+}
+.Sprite_Apply
+{
+    background-image: url('../images/icon/Actions/Apply_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 1px;
+    vertical-align: middle;
+}
+.Sprite_Cancel
+{
+    background-image: url('../images/icon/Actions/Cancel_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 1px;
+    vertical-align: middle;
+}
+.Sprite_Clear
+{
+    background-image: url('../images/icon/Actions/Clear_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_MoveUp
+{
+    background-image: url('../images/icon/Arrows/MoveUp_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_MoveDown
+{
+    background-image: url('../images/icon/Arrows/MoveDown_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Info
+{
+    background-image: url('../images/icon/Support/Info_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_Caption
+{
+    background-image: url('../images/icon/Support/Info_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: top !important;
+}
+
+.Sprite_Print
+{
+    background-image: url('../images/icon/Print/Print_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+/**/
+.Sprite_Upload
+{
+    background-image: url('../images/icon/16x16/icon-small-upload.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Download
+{
+    background-image: url('../images/icon/Actions/Download_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Backward
+{
+    background-image: url('../images/icon/Navigation/Backward_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Forward
+{
+    background-image: url('../images/icon/Navigation/Forward_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Help
+{
+    background-image: url('../images/icon/Support/Index_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Repeat
+{
+    background-image: url('../images/icon/Actions/Refresh2_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Refresh
+{
+    background-image: url('../images/icon/Actions/Refresh_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Copy
+{
+    background-image: url('../images/icon/Edit/Copy_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Cut
+{
+    background-image: url('../images/icon/Edit/Cut_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Paste
+{
+    background-image: url('../images/icon/Edit/Paste_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Document
+{
+    background-image: url('../images/icon/Support/Article_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Attachment
+{
+    background-image: url('../images/icon/Mail/Attachment_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Finished
+{
+    background-image: url('../images/icon/Tasks/Status_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Reject
+{
+    background-image: url('../images/icon/Edit/Delete_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Remove
+{
+    background-image: url('../images/icon/Edit/Delete_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+/**/
+.Sprite_Approve
+{
+    background-image: url('../images/icon/Actions/Approve_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_AssignTo
+{
+    background-image: url('../images/icon/People/AssignTo_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Role
+{
+    background-image: url('../images/icon/People/Role_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    background-position: 0px -1px;
+    vertical-align: middle;
+}
+.Sprite_Permission
+{
+    background-image: url('../images/icon/16x16/ico-permissions.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Personal
+{
+    background-image: url('../images/icon/People/Customer_32x32.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+.Sprite_Chart
+{
+    background-image: url('../images/icon/Chart/Chart_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_Grid
+{
+    background-image: url('../images/icon/Grid/Grid_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_MyAccount
+{
+    background-image: url('../images/icon/People/Customer_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.Sprite_SignOut
+{
+    background-image: url('../images/icon/Actions/Close_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_Lock
+{
+    background-image: url('../images/icon/Actions/Lock_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_Choice
+{
+    background-image: url('../images/icon/Actions/Choice_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_Balance
+{
+    background-image: url('../images/icon/Actions/Balance_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_SendMail
+{
+    background-image: url('../images/icon/Mail/Send_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_Publish
+{
+    background-image: url('../images/icon/Miscellaneous/Publish_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_Database
+{
+    background-image: url('../images/icon/Data/Database_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_Allocation
+{
+    background-image: url('../images/icon/Navigation/DocumentMap_16x16.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.Sprite_Tax
+{
+    background-image: url('../images/icon/Actions/Tax.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 1px;
+    vertical-align: middle;
+}
+/*END: Button with icon*/

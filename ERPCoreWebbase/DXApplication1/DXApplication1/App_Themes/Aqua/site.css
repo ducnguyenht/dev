@@ -1,0 +1,79 @@
+﻿#LayoutSplitter .HeadPane
+{
+	background: #bfdbff url("HeaderBack.jpg") no-repeat left top;
+}
+
+.mail #LayoutSplitter .RightPane.HeadPane,
+.contacts #LayoutSplitter .RightPane.HeadPane,
+.feeds #LayoutSplitter .RightPane.HeadPane 
+{
+    background-position: -250px 0;
+}
+
+.calendar #LayoutSplitter .RightPane.HeadPane 
+{
+    background-position: -300px 0;
+}
+
+.calendar #LayoutSplitter .SidePane,
+.contacts #LayoutSplitter .SidePane,
+.feeds #LayoutSplitter .SidePane
+{
+	background: #f2f8ff;
+}
+
+#LayoutSplitter .RightPane.HeadPane
+{
+    border-left-color: White;
+}
+
+.HeadPane .ActionToolbar .Spacer b
+{
+    background: White;
+}
+
+#LayoutSplitter .HeadPane .NavigationToolbar .NavigationMenu .dxm-item .dxm-content
+{
+    color: White;
+}
+
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-content
+{
+    padding-top: 4px;
+}
+
+#LayoutSplitter .ActionToolbar .SubMenu.dxm-popup .dxm-item .dxm-image
+{
+    margin-right: 10px;
+	margin-top: -1px;
+}
+
+.HeadPane .ActionToolbar .SearchBox
+{
+    margin-top: 3px;
+}
+
+.CalendarNavArea 
+{
+	background: #f2f8ff;
+}
+
+.ContactCard 
+{
+    border: 1px solid #a3c0e8;
+}
+
+.print .ContactReportToolbar .dxmMenuFullHeightSeparator_Aqua,
+.print .ScheduleReportToolbar .dxmMenuFullHeightSeparator_Aqua
+{
+    width: 100%;
+}
+.print .MailReportToolbar .dxmMenuFullHeightSeparator_Aqua
+{
+    width: 50%;
+}
+.print .dxmMenuFullHeightSeparator_Aqua,
+.print .dxmMenuFullHeightSeparator_Aqua .dx 
+{
+    background: transparent;
+}

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <item Text="Máy tính" NavigateUrl="#" />
+  <item Text="Trò chuyện" NavigateUrl="#" />
+  <item Text="Hỗ trợ nội bộ" NavigateUrl="#" />
+  <item Text="Hỗ trợ từ NAAN Solution" NavigateUrl="#" />
+  <item Text="Tạo phím tắt" NavigateUrl="#" />
+</items>

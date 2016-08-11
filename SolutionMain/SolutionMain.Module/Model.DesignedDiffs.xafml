@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="SolutionMain" Logo="ExpressAppLogo">
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="13.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="13.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="StandardFormWithCustomUserControl" ViewId="StandardFormWithCustomUserControl" Index="0" IsNewNode="True" />
+          <Item Id="CustomForm" ViewId="BaseObject_ListView" Caption="Custom Form" ImageName="Attention" IsNewNode="True" />
+          <Item Id="Task" ViewId="Task_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <Dashboards EnableCustomization="False" />
+  </Options>
+  <Views>
+    <DashboardView Id="StandardFormWithCustomUserControl" ImageName="BO_Attention" Caption="Standard Form With Custom User Control" IsNewNode="True">
+      <Items IsNewNode="True">
+        <CustomUserControlViewItem Id="CustomUserControlViewItem" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+          <LayoutItem Id="CustomUserControlViewItem" ViewItem="CustomUserControlViewItem" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DashboardView>
+  </Views>
+</Application>

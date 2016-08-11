@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TestRunTimeLimit="3" >
+	<Applications>
+		<!-- Win -->
+		<Application
+			Name="[WinProjectName]"
+			FileName="[WinAppBin]\[WinProjectName].exe"
+			AdapterAssemblyName="[WinAdapterAssemblyName]"
+			CommunicationPort="4100"/>
+		<!-- Web -->
+		<Application
+			Name="SolutionMain.Web"
+			Url="http://localhost:2302/"
+			PhysicalPath="D:\duc.nguyenDemo\TestMultiProject\SolutionMain\SolutionMain.Web\"
+			AdapterAssemblyName="[WebAdapterAssemblyName]"/>
+		<!-- For IIS -->
+		<!--Application
+			Name="SolutionMain.Web"
+			Url="http://localhost/SolutionMain.Web/Default.aspx"
+			AdapterAssemblyName="[WebAdapterAssemblyName]"/-->
+	</Applications>
+	<TestDatabases>
+		<Database xsi:type="TestMSSQLDatabase" Server=".\SQLEXPRESS" DBName="SolutionMainEasyTest"/>
+	</TestDatabases>
+
+	<Aliases>
+		<Alias Name="DomainUserName" Value="%USERDOMAIN%\%USERNAME%" />
+		<Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+		<Alias Name="WebAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WebAdapter.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+		<Alias Name="WinAppBin" Value="[ConfigPath]\..\..\Solution2Main.Web" />
+		<Alias Name="WebAppBin" Value="D:\duc.nguyenDemo\TestMultiProject\SolutionMain\SolutionMain.Web\" /><!--[ConfigPath]\..\..\SolutionMain.Web-->
+  </Aliases>
+</Options>
+
+

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="13.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Class1_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="8.2788671023965144">
+            <LayoutGroup Id="Class1" Direction="Horizontal" RelativeSize="100">
+              <LayoutItem Id="Code1" SizeConstraintsType="Default" RelativeSize="45.720250521920669" />
+              <LayoutItem Id="Name2" SizeConstraintsType="Default" RelativeSize="54.279749478079331" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Class2s_Group" Direction="Vertical" RelativeSize="91.721132897603482">
+            <LayoutItem Id="Class2s" SizeConstraintsType="Default" RelativeSize="92.161520190023751" CaptionLocation="Top" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Class2_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Class2" RelativeSize="100" Direction="Horizontal">
+              <LayoutItem Id="Code2" ViewItem="Code2" SizeConstraintsType="Default" Index="0" RelativeSize="37.169811320754718" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="Name2" ViewItem="Name2" SizeConstraintsType="Default" Index="1" RelativeSize="35.094339622641506" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="Class1" SizeConstraintsType="Default" Index="2" RelativeSize="27.735849056603772" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

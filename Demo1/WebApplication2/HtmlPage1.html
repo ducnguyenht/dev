@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.min.js"></script>-->
+    <script type="text/javascript">
+        $(document).ready(function () {       
+            $("#login_button").click(function () {
+                $.ajax({
+                    type: "POST",
+                    timeout: 0,
+                    url: "http://localhost:4434/ODataService4.svc/DemoCRUDWCF",
+                    data: '{"Name" :"Thai ga gaga","Age":10 }',
+                    //url :http://localhost:4434/ODataService4.svc/DemoCRUDWCF
+                    //POST : {"Name":"Thai ga11","Age":10,"DOB":"2016-01-23" }
+                    //DELETE : http://localhost:4434/ODataService4.svc/DemoCRUDWCF(guid'b5abcaf8-002b-472b-a720-29b04a20065f')
+                    //PUT : http://localhost:4434/ODataService4.svc/DemoCRUDWCF(guid'261d39b1-7d9c-439e-aee8-9b1fcfbb607e')
+                    //{"Name":"Thai ga11","Age":10,"DOB":"2016-01-23" }
+                    //Patch : http://localhost:4434/ODataService4.svc/DemoCRUDWCF(guid'261d39b1-7d9c-439e-aee8-9b1fcfbb607e')
+                    //{"Name":"Thai ga11","Age":10,"DOB":"2016-01-23" }
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        alert("asdf");
+                        var test = jQuery.parseJSON(msg.d);
+                        var allow = parseInt(test.allow);
+                        if (allow == 1) {
+                            window.location.href = test.info;
+                        } else {
+                            $("#error-message").html(test.info);
+                            $("#error-message").dialog('open');
+                        }
+                    }
+                });
+            });          
+        });
+    </script>
+</head>
+<body>
+    <form class="mws-form">
+        <div class="mws-form-row">
+            <input type="button" id="login_button" value="Login" class="mws-button green mws-login-button" />
+        </div>
+    </form></body>
+</html>

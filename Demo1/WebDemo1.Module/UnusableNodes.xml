@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign Id="ActionDesign">
+    <Actions Id="Actions">
+      <Action Id="18577f33-cb23-4f7e-af26-d9d8e1929eeb" Caption="demoaction" />
+    </Actions>
+  </ActionDesign>
+</Application>

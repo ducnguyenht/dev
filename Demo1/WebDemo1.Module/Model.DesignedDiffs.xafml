@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="WebDemo1" Logo="ExpressAppLogo">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="DemoCRUDWCF_ListView" Caption="Demo CRUDWCF dich" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="13.2.7.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="13.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Employee_ListView" FreezeColumnIndices="True" IsGroupPanelVisible="True" AutoExpandAllGroups="True">
+      <Columns>
+        <ColumnInfo Id="FirstName" Index="0" />
+        <ColumnInfo Id="LastName" Index="1" />
+        <ColumnInfo Id="Birthday" Index="2" />
+        <ColumnInfo Id="FullName" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="HoiVien_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="8.7356321839080469">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="HoiVien" RelativeSize="100" Direction="Vertical" Caption="Name">
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="ChiHois_Group" Removed="True" />
+        </LayoutGroup>
+        <LayoutItem Id="ChiHois" ViewItem="ChiHois" SizeConstraintsType="Default" Index="1" RelativeSize="91.264367816091948" IsNewNode="True" />
+      </Layout>
+    </DetailView>
+    <DetailView Id="Task_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="DemoAction" ActionContainer="Demo.DemoAction" Caption="Action" IsNewNode="True" />
+        <PropertyEditor Id="ImageUrl" DataSourcePropertyIsNullMode="SelectNothing" />
+        <ActionContainerViewItem Id="Select" Caption="Select(13)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="24.217118997912316">
+            <LayoutGroup Id="Task" RelativeSize="71.551724137931032">
+              <LayoutItem Id="Subject" SizeConstraintsType="Default" RelativeSize="38.554216867469883" />
+              <LayoutItem Id="AssignTo" SizeConstraintsType="Default" RelativeSize="28.91566265060241" />
+              <LayoutItem Id="ImageUrl" SizeConstraintsType="Default" RelativeSize="32.53012048192771" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="75.782881002087677" Caption="Description" Direction="Horizontal">
+            <LayoutItem Id="Description" SizeConstraintsType="Default" RelativeSize="44.522968197879855" />
+            <LayoutItem Id="DemoAction" ViewItem="DemoAction" SizeConstraintsType="Default" Index="1" RelativeSize="55.477031802120145" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Task_ListView_Copy" ClassName="WebDemo1.Module.BusinessObjects.DBWebDemo.Task" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Description" PropertyName="Description" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Subject" PropertyName="Subject" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="AssignTo" PropertyName="AssignTo" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="ImageUrl" PropertyName="ImageUrl" Width="70" Index="2" IsNewNode="True" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

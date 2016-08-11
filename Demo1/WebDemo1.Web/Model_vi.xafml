@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="DemoCRUDWCF_ListView" Caption="Demo CRUDWCF dich" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

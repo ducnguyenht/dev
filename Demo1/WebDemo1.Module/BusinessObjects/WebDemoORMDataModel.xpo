@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="8cae5521-8166-4e39-a7bc-ec7863f44ae3" dbName="DBWebDemo" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyIj4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0ic2VydmVyIiB2YWx1ZT0iTkFTMTBcU1FMRVhQUkVTUyIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0iZGF0YWJhc2UiIHZhbHVlPSJEQldlYkRlbW8iIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InVzZUludGVncmF0ZWRTZWN1cml0eSIgdmFsdWU9IkZhbHNlIiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJ1c2VyaWQiIHZhbHVlPSJzYSIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icGFzc3dvcmQiIHZhbHVlPSIxMjM0NTYiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InJlYWQgb25seSIgdmFsdWU9IjEiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImdlbmVyYXRlQ29ubmVjdGlvbkhlbHBlciIgdmFsdWU9InRydWUiIC8+DQogIDwvcGFyYW1ldGVyPg0KPC9EZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3M+" namespace="WebDemo1.Module.BusinessObjects.DBWebDemo" connectionString="XpoProvider=MSSqlServer;data source=NAS10\SQLEXPRESS;user id=sa;password=123456;initial catalog=DBWebDemo;Persist Security Info=true" dataBaseShemaInfo="H4sIAAAAAAAEAN1Z224URxB9R+IfVn6md/t+QetFsAZiQQLBJuK1L9X2JLszq7nY5u9T410MtiEhYbSj5MGWurpa06e76tSp3vmTq/VqcgF1U1Tl4QGb0oMni4cP5s98AydtVfszOC5zNUGvsnl81RSHB+dtu3k8m11eXk4vxbSqz2acUjb78PPrk3gOa0+Ksml9GeHgZlX6+1UH+NXJZH7qwwqa/pPX40+WLwyfTL/4NSxeQgm1X33YvAm/Q2zZfPZ57sb9ednbFm3dwXy2G9xMHhVNb3i/Sb6FRfarBp1uG298X3ZFOk4Ly7U33noClGUiGWfEgbREcuU0N1nJ6OaznfPN4mW16tZlcwvJN8040WPYTi5Oumt089kXtlu+f4Xwn6L8EmkWIpjoDQkxMsQXIvEsB8JtFDaJaJS195Di8tkPgD2CJtbFpsV43D9gIzPjilviPAUijcokBA6EGaqklsYpNjjgp01TnJWn1f7RimiT54kTkCoSKTwQG20mWWfNmbSOCzE02uM1Usr7erV/tNSCpcJl4kU2RDobSQBJibE6RCeSi+F+2n4L7desO/L5t+TF90JeQUWtQqQkcOORvIImeCoCwxycxCyXEdSg5PWiqJu2H+//xj0AUwyxRp0CYvWeOCoM0dlH6qJjxsqh4/u1HwstXh54HSxhzCJZBxaIzUxhckuZrOHJ0MHRPivq9jz5j/tHq5IWgnJOZKKpL8KKeG4EkUpmE42zTOYxs1nsJZtpTOASSpHkABk8MeQ05DhitGZAbfSJ3q9X/9Fs5iEZp4MnOgDeOCSHWAGJLHphsvVcBf7/yWaWJKU0YHz3kGXuRabwmjBupdTGZZsHr83P174YoTA7HkPkjBIKPU1nQ5GmgyCJ5j7FBec5DQ11Wa03vhyBt5JMUSIiQoVGFQI5kWADJTmjls5UWsZgaLBvYuw2fhxFrZWzlmHg2oCVVwbUG95KwH/aARWJ8vz9PP29JNWtVuNkrZMGpEeMiVEMZe8SsdwBUcyD5V4qLFtDoz2Fpi3WVVngJkdoEYNnzjlJIHO836gCNsM2EUGxCntjsQCZoRG/Pa/aEdol6l0EloCg0BJbnrIOk1iJYLMU0nA3agMh9yI5pFWWGpYIJKnwFMCTILGH5Fpp43kA8PfZ+kckx7IG3Ed6MwJ5OQfOKVSV2mZArAKbx4iFSiZnsGQJH4d///i1q9ox1JWLvWLMJNmYEapDnubIYZjaWjEjbbSDM9dPxdn5Cv9GeNkKmjojDSrlmB2RTqPmAI1liUemEjCdoh+cqP3ZCAStJTMGUiIp9EKS6UB88Abv2VDtFHdcDd4WLrumrdZQjxDGydmEeoPQyDSRRisSUtaEuoD0xKWxIg7K0bvxZ5d5/2wO6W1dxWvjZLY1/7Z9Y18cwcXzq00NTTM98q2fXjAx5Y8mu+nDfjQ1U/posuxWbVfDYQldiyz/aPK2C6sivoKPp9UfUB4GaxMzSmJfT0E6DNdPn7j+3nLlmwaa/gLedTenO3+acGuQi6vdvramky7fMr2DdXUBdx231ru+S9/A4n0Zz315Bkj91+Pt0XxtD3M8mQ3UbTHy3r6xjfm2qLYYtes1lG2zi9F75lvOR9C/4UL9osBQuLPi9tzDB/PZnR9XFn8CoHV90IUZAAA=" generateConnectionHelper="true" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="7d70eb72-813a-4f67-9df7-b198a2d40380">
+      <xpObject Id="826a7a8a-e01f-4121-9e48-4259627f54c9" name="Task" baseClass="XPObject" userFileName="Task" designerFileName="Task.Designer" className="Task" persistent="GeneralXpObject1" virtualName="Task">
+        <fields>
+          <generalXpObjectHasFields Id="67a4a69f-fb80-4806-8f68-60ac5fcb8fbc">
+            <field Id="f33b7ca7-bcc1-42bc-a1fb-28c38d3c7588" name="Subject" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c2f30e91-02db-451f-a2ad-c176450493ed">
+            <field Id="74f12528-9a0e-475f-bb2e-170546479518" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="bc824d16-bdb7-4c21-96e9-551a659d0bd1">
+            <field Id="3c8da2d2-e45c-43ae-8c8f-f6f621489233" name="AssignTo" virtualColumnType="Employee" logicalType="Employee" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="d19f9984-e6fb-45b8-bfcd-8bea15541e92">
+            <field Id="08e8039f-a3f7-498c-be40-786bc93d9cb9" name="ImageUrl" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="e9df0c1b-6566-4128-84b8-105cb04f3c2c">
+      <xpObject Id="b5c65bc0-b27a-41b6-8033-bbe94cc14ce5" name="Employee" baseClass="XPObject" userFileName="Employee" designerFileName="Employee.Designer" className="Employee" persistent="GeneralXpObject2" virtualName="Employee">
+        <fields>
+          <generalXpObjectHasFields Id="53277ec1-a8d7-4563-a788-777744d4b087">
+            <field Id="aee151c0-c6db-41aa-9037-6fac09c91784" name="FirstName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3bb141c5-fce6-422e-a780-1a216c7a9bf5">
+            <field Id="cc1ea6b8-1181-4b1b-8f15-e444d872d704" name="LastName" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="07066b4f-bd93-4449-a6d9-181e745856b5">
+            <field Id="5d633022-4d0d-4125-a273-454f7c79814f" name="Birthday" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f2425df8-98b8-4c36-9492-90d0c1375ecb">
+            <persistentAlias Id="ef3e3a68-6f83-4250-ab7d-2c4ca6e6bb2f" name="FullName" virtualColumnType="String" expression="[FirstName] + ' ' + [LastName]" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="702010b4-054b-44ea-a610-849f087a51af" sourceCollectionName="Tasks" name="TaskReferencesEmployee" targetFieldName="AssignTo">
+            <xpObjectMoniker Id="826a7a8a-e01f-4121-9e48-4259627f54c9" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="b88c9e26-ce93-4b55-b928-231fc8cbb462">
+            <collectionField Id="cd2259bc-be07-430d-8652-4bb76ec907cf" name="Tasks" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

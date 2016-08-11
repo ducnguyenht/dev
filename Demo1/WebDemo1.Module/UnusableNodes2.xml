@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Task_DetailView">
+      <Items Id="Items">
+        <ActionContainerViewItem Id="DemoAction" ActionContainer="Demo.DemoAction" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>

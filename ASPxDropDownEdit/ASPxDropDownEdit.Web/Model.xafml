@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems StartupNavigationItem="Master_ListView" />
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="12.2.6.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

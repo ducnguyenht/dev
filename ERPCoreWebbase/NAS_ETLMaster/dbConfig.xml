@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dbConfig>
+  <ID>192.168.1.133</ID>
+  <DBName>ERPCORE</DBName>
+</dbConfig>

@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EBE0CA4A-FE37-4CFC-BC84-D90D74000C72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NAS.DAL</RootNamespace>
+    <AssemblyName>NAS.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting\AccountChart\Account.cs" />
+    <Compile Include="Accounting\AccountChart\Account.designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\AccountChart\AccountCategory.cs" />
+    <Compile Include="Accounting\AccountChart\AccountCategory.designer.cs">
+      <DependentUpon>AccountCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\AccountChart\AccountType.cs" />
+    <Compile Include="Accounting\AccountChart\AccountType.designer.cs">
+      <DependentUpon>AccountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Configure\Allocation.cs" />
+    <Compile Include="Accounting\Configure\AllocationAccountActorType.cs" />
+    <Compile Include="Accounting\Configure\AllocationAccountTemplate.cs" />
+    <Compile Include="Accounting\Configure\AllocationType.cs" />
+    <Compile Include="Accounting\Currency\Currency.cs" />
+    <Compile Include="Accounting\Currency\CurrencyType.cs" />
+    <Compile Include="Accounting\Entry\BookingEntry.cs" />
+    <Compile Include="Accounting\Entry\BookingEntry.Designer.cs">
+      <DependentUpon>BookingEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\JournalAllocation\GeneralJournalCustomType.cs" />
+    <Compile Include="Accounting\JournalAllocation\GeneralJournalObject.cs" />
+    <Compile Include="Accounting\Journal\BookingEntryTransaction.cs" />
+    <Compile Include="Accounting\Journal\BookingEntryTransaction.Designer.cs">
+      <DependentUpon>BookingEntryTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\AccountingPeriod.cs" />
+    <Compile Include="Accounting\Journal\AccountingPeriod.Designer.cs">
+      <DependentUpon>AccountingPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\BalanceForwardTransaction.cs" />
+    <Compile Include="Accounting\Journal\BalanceForwardTransaction.Designer.cs">
+      <DependentUpon>BalanceForwardTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\GeneralJournal.cs" />
+    <Compile Include="Accounting\Journal\GeneralJournal.Designer.cs">
+      <DependentUpon>GeneralJournal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\GeneralJournalBalanceForward.cs" />
+    <Compile Include="Accounting\Journal\GeneralJournalBalanceForward.Designer.cs">
+      <DependentUpon>GeneralJournalBalanceForward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\GeneralLedger.cs" />
+    <Compile Include="Accounting\Journal\GeneralLedger.Designer.cs">
+      <DependentUpon>GeneralLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\JounalTypeConstant.cs" />
+    <Compile Include="Accounting\Journal\ManualBookingTransaction.cs" />
+    <Compile Include="Accounting\Journal\PaymentVouchesTransaction.cs" />
+    <Compile Include="Accounting\Journal\PaymentVouchesTransaction.Designer.cs">
+      <DependentUpon>PaymentVouchesTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\PurchaseInvoiceInventoryAccountingTransaction.cs" />
+    <Compile Include="Accounting\Journal\PurchaseInvoiceInventoryAccountingTransaction.Designer.cs">
+      <DependentUpon>PurchaseInvoiceInventoryAccountingTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\PurchaseInvoiceTransaction.cs" />
+    <Compile Include="Accounting\Journal\PurchaseInvoiceTransaction.Designer.cs">
+      <DependentUpon>PurchaseInvoiceTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\ReceiptVouchesTransaction.cs" />
+    <Compile Include="Accounting\Journal\ReceiptVouchesTransaction.Designer.cs">
+      <DependentUpon>ReceiptVouchesTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\SaleInvoiceTransaction.cs" />
+    <Compile Include="Accounting\Journal\SaleInvoiceTransaction.Designer.cs">
+      <DependentUpon>SaleInvoiceTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\SalesInvoiceInventoryAccountingTransaction.cs" />
+    <Compile Include="Accounting\Journal\SalesInvoiceInventoryAccountingTransaction.Designer.cs">
+      <DependentUpon>SalesInvoiceInventoryAccountingTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\Transaction.cs" />
+    <Compile Include="Accounting\Journal\Transaction.Designer.cs">
+      <DependentUpon>Transaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\Journal\TransactionObject.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifact.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactDetail.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactHumanActor.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactHumanActorType.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactIdentifier.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactIdentifierType.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactIssuedLog.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactOrgActor.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactSummary.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactSummaryType.cs" />
+    <Compile Include="Accounting\LegalInvoice\LegalInvoiceArtifactType.cs" />
+    <Compile Include="Accounting\Period\AccountingPeriodComposite.cs" />
+    <Compile Include="Accounting\Period\AccountingPeriodType.cs" />
+    <Compile Include="Accounting\Tax\Tax.cs" />
+    <Compile Include="BI\Accounting\Account\AccountingPeriodDim.cs" />
+    <Compile Include="BI\Accounting\Account\CorrespondFinancialAccountDim.cs" />
+    <Compile Include="BI\Accounting\Account\FinancialAccountDim.cs" />
+    <Compile Include="BI\Accounting\Cash\FinancialCashTypeDim.cs" />
+    <Compile Include="BI\Accounting\Cash\FinancialCash_Fact.cs" />
+    <Compile Include="BI\Accounting\Cash\FinancialVoucherDim.cs" />
+    <Compile Include="BI\Accounting\CurrencyDim.cs" />
+    <Compile Include="BI\Accounting\Finance\ActualPrice\FinancialActualPriceDetail.cs" />
+    <Compile Include="BI\Accounting\Finance\ActualPrice\FinancialActualPriceSummary_Fact.cs" />
+    <Compile Include="BI\Accounting\Finance\DiaryJournal\DiaryJournal_Detail.cs" />
+    <Compile Include="BI\Accounting\Finance\DiaryJournal\DiaryJournal_Fact.cs" />
+    <Compile Include="BI\Accounting\Finance\DiaryJournal\FinancialCreditAccountDim.cs" />
+    <Compile Include="BI\Accounting\Finance\DiaryJournal\FinancialDebitAccountDim.cs" />
+    <Compile Include="BI\Accounting\Finance\DiaryJournal\FinancialDoubleEntry_Fact.cs" />
+    <Compile Include="BI\Accounting\Finance\OnTheWayBuyingGood\FinancialOnTheWayBuyingGoodDetail.cs" />
+    <Compile Include="BI\Accounting\Finance\OnTheWayBuyingGood\FinancialOnTheWayBuyingGoodSummary.cs" />
+    <Compile Include="BI\Accounting\Finance\OnTheWayBuyingGood\OnTheWayBuyingGoodArtifact.cs" />
+    <Compile Include="BI\Accounting\Finance\PrepaidExpense\FinancialPrepaidExpenseDetail.cs" />
+    <Compile Include="BI\Accounting\Finance\PrepaidExpense\FinancialPrepaidExpenseSummary_Fact.cs" />
+    <Compile Include="BI\Accounting\Finance\SalesOrManufactureExpense\FinancialSalesOrManufactureExpenseDetail.cs" />
+    <Compile Include="BI\Accounting\Finance\SalesOrManufactureExpense\FinancialSalesOrManufactureExpenseSummary_Fact.cs" />
+    <Compile Include="BI\Accounting\Finance\SalesOrManufactureExpense\SalesOrManufactureExpenseByGroup.cs" />
+    <Compile Include="BI\Accounting\FinancialAssetDim.cs" />
+    <Compile Include="BI\Accounting\FinancialRevenueByItem_Fact.cs" />
+    <Compile Include="BI\Accounting\FinancialTransactionDim.cs" />
+    <Compile Include="BI\Accounting\CustomerLiability\FinancialCustomerLiabilitySummary_Fact.cs" />
+    <Compile Include="BI\Accounting\CustomerLiability\FinancialCustomerLiabilityDetail.cs" />
+    <Compile Include="BI\Accounting\GeneralLedger\FinancialGeneralLedgerByMonth.cs" />
+    <Compile Include="BI\Accounting\GeneralLedger\FinancialGeneralLedgerByYear_Fact.cs" />
+    <Compile Include="BI\Accounting\GoodsInInventory\GoodsInInventoryDetail.cs" />
+    <Compile Include="BI\Accounting\GoodsInInventory\GoodsInInventorySummary_Fact.cs" />
+    <Compile Include="BI\Accounting\GoodsInTransit\GoodsInTransitForSaleDetail.cs" />
+    <Compile Include="BI\Accounting\GoodsInTransit\GoodsInTransitForSaleSummary_Fact.cs" />
+    <Compile Include="BI\Accounting\ItemInventory\FinancialItemInventorySummary_Fact.cs" />
+    <Compile Include="BI\Accounting\ItemInventory\FinancialEntryDetail.cs" />
+    <Compile Include="BI\Accounting\SupplierLiability\FinancialSupplierLiabilityDetail.cs" />
+    <Compile Include="BI\Accounting\SupplierLiability\FinancialSupplierLiabilitySummary_Fact.cs" />
+    <Compile Include="BI\Actor\CustomerOrgDim.cs" />
+    <Compile Include="BI\Actor\DepartmentDim.cs" />
+    <Compile Include="BI\Actor\OwnerOrgDim.cs" />
+    <Compile Include="BI\Actor\PersonDim.cs" />
+    <Compile Include="BI\Actor\SupplierOrgDim.cs" />
+    <Compile Include="BI\BillDim\InvoiceDim.cs" />
+    <Compile Include="BI\Inventory\CorrespondInventoryDim.cs" />
+    <Compile Include="BI\Inventory\InventoryCommandDim.cs" />
+    <Compile Include="BI\Inventory\InventoryDim.cs" />
+    <Compile Include="BI\Inventory\InventoryEntryDetail.cs" />
+    <Compile Include="BI\Inventory\InventoryTransactionDim.cs" />
+    <Compile Include="BI\Inventory\ItemInventoryByArtifact.cs" />
+    <Compile Include="BI\Item\ItemDim.cs" />
+    <Compile Include="BI\Item\UnitDim.cs" />
+    <Compile Include="Buy\StockCart\PurchaseInvoicePuttingStockCart.cs" />
+    <Compile Include="Buy\StockCart\PurchaseInvoicePuttingStockCart.Designer.cs">
+      <DependentUpon>PurchaseInvoicePuttingStockCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataPeriod.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataPeriod.Designer.cs">
+      <DependentUpon>CustomFieldDataPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataRichText.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataRichText.Designer.cs">
+      <DependentUpon>CustomFieldDataRichText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataImage.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataImage.Designer.cs">
+      <DependentUpon>CustomFieldDataImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataDateTime.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataDateTime.Designer.cs">
+      <DependentUpon>CustomFieldDataDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataFloat.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataFloat.Designer.cs">
+      <DependentUpon>CustomFieldDataFloat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataInt.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataInt.Designer.cs">
+      <DependentUpon>CustomFieldDataInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataString.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataString.Designer.cs">
+      <DependentUpon>CustomFieldDataString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\PredefinitionData.cs" />
+    <Compile Include="DbConfig.cs" />
+    <Compile Include="ETL\DailyRecurrencePattern.cs" />
+    <Compile Include="ETL\DayByMonthRecurrencePattern.cs" />
+    <Compile Include="ETL\ETLBusinessObject.cs" />
+    <Compile Include="ETL\ETLCategory.cs" />
+    <Compile Include="ETL\ETLJob.cs" />
+    <Compile Include="ETL\ETLJobDetail.cs" />
+    <Compile Include="ETL\ETLJobScheduler.cs" />
+    <Compile Include="ETL\ETLJobSchedulerDetail.cs" />
+    <Compile Include="ETL\JobLog\ETLJobLog.cs" />
+    <Compile Include="ETL\JobLog\ETLJobRunningState.cs" />
+    <Compile Include="ETL\JobLog\ETLJobRunningStatus.cs" />
+    <Compile Include="ETL\JobLog\HourDim.cs" />
+    <Compile Include="ETL\JobLog\MinuteDim.cs" />
+    <Compile Include="ETL\MonthByYearRecurrencePattern.cs" />
+    <Compile Include="ETL\ObjectLog\ETLEntryObjectHistory.cs" />
+    <Compile Include="ETL\ObjectLog\ETLObjectLog.cs" />
+    <Compile Include="ETL\RecurrencePattern.cs" />
+    <Compile Include="ETL\RecurrenceRange.cs" />
+    <Compile Include="ETL\WeekDayByMonthRecurrencePattern.cs" />
+    <Compile Include="ETL\WeeklyRecurrencePattern.cs" />
+    <Compile Include="IDALValidate.cs" />
+    <Compile Include="Interface\IDALValidate.cs" />
+    <Compile Include="Inventory\Audit\InventoryAuditArtifact.cs" />
+    <Compile Include="Inventory\Audit\InventoryAuditItemUnit.cs" />
+    <Compile Include="Inventory\Audit\QualityItem.cs" />
+    <Compile Include="Inventory\Audit\QualityItemType.cs" />
+    <Compile Include="Inventory\Command\CommanDynamicField\InventoryCommandCustomType.cs" />
+    <Compile Include="Inventory\Command\CommanDynamicField\InventoryCommandObject.cs" />
+    <Compile Include="Inventory\Command\InventoryCommand.cs" />
+    <Compile Include="Inventory\Command\InventoryCommandActor.cs" />
+    <Compile Include="Inventory\Command\InventoryCommandActorType.cs" />
+    <Compile Include="Inventory\Command\InventoryCommandFinancialTransaction.cs" />
+    <Compile Include="Inventory\Command\InventoryCommandItemTransaction.cs" />
+    <Compile Include="Inventory\Item\RecordedType.cs" />
+    <Compile Include="Inventory\Item\RecordedType.Designer.cs">
+      <DependentUpon>RecordedType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Item\InventoryItem.cs" />
+    <Compile Include="Inventory\Item\InventoryItem.Designer.cs">
+      <DependentUpon>InventoryItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\COGS\COGS.cs" />
+    <Compile Include="Inventory\Journal\InventoryJournalCustomType.cs" />
+    <Compile Include="Inventory\Journal\InventoryJournalFinancial.cs" />
+    <Compile Include="Inventory\Journal\InventoryJournalObject.cs" />
+    <Compile Include="Inventory\Journal\InventoryTransactionCustomType.cs" />
+    <Compile Include="Inventory\Journal\InventoryTransactionObject.cs" />
+    <Compile Include="Inventory\Journal\MoveInventoryTransaction.cs" />
+    <Compile Include="Inventory\Journal\PurchaseInvoiceInventoryTransaction.cs" />
+    <Compile Include="Inventory\Journal\SalesInvoiceInventoryTransaction.cs" />
+    <Compile Include="Inventory\Journal\InventoryJournal.cs" />
+    <Compile Include="Inventory\Journal\InventoryTransaction.cs" />
+    <Compile Include="Inventory\Ledger\InventoryJournalBalanceForward.cs" />
+    <Compile Include="Inventory\Ledger\InventoryTransactionBalanceForward.cs" />
+    <Compile Include="Inventory\Ledger\InventoryLedger.cs" />
+    <Compile Include="Inventory\Ledger\InventoryLedger.Designer.cs">
+      <DependentUpon>InventoryLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Lot\Lot.cs" />
+    <Compile Include="Inventory\Operation\CommanderStockCartType.cs" />
+    <Compile Include="Inventory\Operation\CommanderStockCartType.Designer.cs">
+      <DependentUpon>CommanderStockCartType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Operation\CommanderStockCart.cs" />
+    <Compile Include="Inventory\Operation\CommanderStockCart.Designer.cs">
+      <DependentUpon>CommanderStockCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Operation\CommanderStockCartStatus.cs" />
+    <Compile Include="Inventory\Operation\CommanderStockCartStatus.Designer.cs">
+      <DependentUpon>CommanderStockCartStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Operation\CommanderStockCartItem.cs" />
+    <Compile Include="Inventory\Operation\CommanderStockCartItem.Designer.cs">
+      <DependentUpon>CommanderStockCartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Operation\PickingStockCart.cs" />
+    <Compile Include="Inventory\Operation\PickingStockCart.Designer.cs">
+      <DependentUpon>PickingStockCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Operation\MovingStockCart.cs" />
+    <Compile Include="Inventory\Operation\MovingStockCart.Designer.cs">
+      <DependentUpon>MovingStockCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Operation\PuttingStockCart.cs" />
+    <Compile Include="Inventory\Operation\PuttingStockCart.Designer.cs">
+      <DependentUpon>PuttingStockCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\StockCart\StockCartActor.cs" />
+    <Compile Include="Inventory\StockCart\StockCartActor.Designer.cs">
+      <DependentUpon>StockCartActor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\StockCart\StockCartActorType.cs" />
+    <Compile Include="Inventory\StockCart\StockCartActorType.Designer.cs">
+      <DependentUpon>StockCartActorType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\StockCart\StockCartItem.cs" />
+    <Compile Include="Inventory\StockCart\StockCartItem.Designer.cs">
+      <DependentUpon>StockCartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\StockCart\StockCart.cs" />
+    <Compile Include="Inventory\StockCart\StockCart.Designer.cs">
+      <DependentUpon>StockCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\BillActorType.cs" />
+    <Compile Include="Invoice\BillItemTax.cs" />
+    <Compile Include="Invoice\BillTax.cs" />
+    <Compile Include="Invoice\BillTax.Designer.cs">
+      <DependentUpon>BillTax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\BillActor.cs" />
+    <Compile Include="Invoice\BillActor.Designer.cs">
+      <DependentUpon>BillActor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\BillPromotion.cs" />
+    <Compile Include="Invoice\BillPromotion.Designer.cs">
+      <DependentUpon>BillPromotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\BillItem.cs" />
+    <Compile Include="Invoice\BillItem.Designer.cs">
+      <DependentUpon>BillItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\Bill.cs" />
+    <Compile Include="Invoice\Bill.Designer.cs">
+      <DependentUpon>Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\BillTaxClaim.cs" />
+    <Compile Include="Invoice\BillType.cs" />
+    <Compile Include="Invoice\BillType.Designer.cs">
+      <DependentUpon>BillType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\InvoiceDynamicField\BillCustomType.cs" />
+    <Compile Include="Invoice\InvoiceDynamicField\BillObject.cs" />
+    <Compile Include="Invoice\SalesInvoice.cs" />
+    <Compile Include="Invoice\SalesInvoice.Designer.cs">
+      <DependentUpon>SalesInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\PurchaseInvoice.cs" />
+    <Compile Include="Invoice\PurchaseInvoice.Designer.cs">
+      <DependentUpon>PurchaseInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\SaleInvoiceArtiface.cs" />
+    <Compile Include="Invoice\SaleInvoiceArtiface.Designer.cs">
+      <DependentUpon>SaleInvoiceArtiface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\PromotionType.cs" />
+    <Compile Include="Invoice\PromotionType.Designer.cs">
+      <DependentUpon>PromotionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\TaxType.cs" />
+    <Compile Include="Invoice\TaxType.Designer.cs">
+      <DependentUpon>TaxType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Bank\Bank.cs" />
+    <Compile Include="Nomenclature\Bank\BankBranch.cs" />
+    <Compile Include="Nomenclature\Inventory\InventoryUnit.cs" />
+    <Compile Include="Nomenclature\Inventory\InventoryUnit.Designer.cs">
+      <DependentUpon>InventoryUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Inventory\Inventory.cs" />
+    <Compile Include="Nomenclature\Inventory\Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\Item.Logic.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\Item.NonPersistent.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemSupplier.Method.cs">
+      <DependentUpon>ItemSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemSupplier.NonPersistent.cs">
+      <DependentUpon>ItemSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemTax.cs" />
+    <Compile Include="Nomenclature\Item\ItemUnit.cs" />
+    <Compile Include="Nomenclature\Item\ItemUnit.Designer.cs">
+      <DependentUpon>ItemUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\AuthenticationProvider.cs" />
+    <Compile Include="Nomenclature\Organization\AuthenticationProvider.Designer.cs">
+      <DependentUpon>AuthenticationProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldType.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldType.Designer.cs">
+      <DependentUpon>CustomFieldType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomField.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomField.Designer.cs">
+      <DependentUpon>CustomField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\CustomFieldData.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldData.Designer.cs">
+      <DependentUpon>CustomFieldData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldData.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldData.Designer.cs">
+      <DependentUpon>ObjectCustomFieldData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\ObjectCustomField.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomField.Designer.cs">
+      <DependentUpon>ObjectCustomField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\ObjectTypeCustomField.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectTypeCustomField.Designer.cs">
+      <DependentUpon>ObjectTypeCustomField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\ObjectType.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectType.Designer.cs">
+      <DependentUpon>ObjectType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemCustomType.cs" />
+    <Compile Include="Nomenclature\Item\ItemCustomType.Designer.cs">
+      <DependentUpon>ItemCustomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\ObjectDocument\Object.cs" />
+    <Compile Include="CMS\ObjectDocument\Object.Designer.cs">
+      <DependentUpon>Object.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemObject.cs" />
+    <Compile Include="Nomenclature\Item\ItemObject.Designer.cs">
+      <DependentUpon>ItemObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemUnitRelationType.cs" />
+    <Compile Include="Nomenclature\Item\ItemUnitRelationType.Designer.cs">
+      <DependentUpon>ItemUnitRelationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\BuyerOrg.cs" />
+    <Compile Include="Nomenclature\Organization\BrokerOrg.cs" />
+    <Compile Include="Nomenclature\Organization\CustomerOrg.cs" />
+    <Compile Include="Nomenclature\Organization\NASLoginAccount.cs" />
+    <Compile Include="Nomenclature\Organization\NASLoginAccount.Designer.cs">
+      <DependentUpon>NASLoginAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\DepartmentPerson.cs" />
+    <Compile Include="Nomenclature\Organization\DepartmentPerson.Designer.cs">
+      <DependentUpon>DepartmentPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\Department.cs" />
+    <Compile Include="Nomenclature\Organization\Department.Designer.cs">
+      <DependentUpon>Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\DepartmentType.cs" />
+    <Compile Include="Nomenclature\Organization\DepartmentType.Designer.cs">
+      <DependentUpon>DepartmentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\Item.cs" />
+    <Compile Include="Nomenclature\Item\Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemSupplier.cs" />
+    <Compile Include="Nomenclature\Item\ItemSupplier.Designer.cs">
+      <DependentUpon>ItemSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemTradingType.cs" />
+    <Compile Include="Nomenclature\Item\ItemTradingType.Designer.cs">
+      <DependentUpon>ItemTradingType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\LoginAccount.cs" />
+    <Compile Include="Nomenclature\Organization\LoginAccount.Designer.cs">
+      <DependentUpon>LoginAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\ManufacturerOrg.cs" />
+    <Compile Include="Nomenclature\Organization\ManufacturerOrg.Designer.cs">
+      <DependentUpon>ManufacturerOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\Organization.cs" />
+    <Compile Include="Nomenclature\Organization\Organization.Designer.cs">
+      <DependentUpon>Organization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\OrganizationCategory.cs" />
+    <Compile Include="Nomenclature\Organization\OrganizationCustomType.cs" />
+    <Compile Include="Nomenclature\Organization\OrganizationObject.cs" />
+    <Compile Include="Nomenclature\Organization\OrganizationType.cs" />
+    <Compile Include="Nomenclature\Organization\OrganizationType.Designer.cs">
+      <DependentUpon>OrganizationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\OwnerOrg.cs" />
+    <Compile Include="Nomenclature\Organization\OwnerOrg.Designer.cs">
+      <DependentUpon>OwnerOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\Person.cs" />
+    <Compile Include="Nomenclature\Organization\Person.Designer.cs">
+      <DependentUpon>Person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\SalesOrg.cs" />
+    <Compile Include="Nomenclature\Organization\ServiceOrg.cs" />
+    <Compile Include="Nomenclature\Organization\ServiceOrg.Designer.cs">
+      <DependentUpon>ServiceOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\SupplierOrg.cs" />
+    <Compile Include="Nomenclature\Organization\SupplierOrg.Designer.cs">
+      <DependentUpon>SupplierOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\SupplierOrg.NonPersistent.cs">
+      <DependentUpon>SupplierOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Organization\TradingCategory.cs" />
+    <Compile Include="Nomenclature\Organization\TradingOrg.cs" />
+    <Compile Include="Nomenclature\Organization\TradingOrg.Designer.cs">
+      <DependentUpon>TradingOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\Unit.cs" />
+    <Compile Include="Nomenclature\Item\Unit.Designer.cs">
+      <DependentUpon>Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nomenclature\Item\ItemUnitTypeConfig.cs" />
+    <Compile Include="Nomenclature\UnitItem\UnitType.cs" />
+    <Compile Include="Report\FinancialBalanceAccount_Fact.cs" />
+    <Compile Include="Report\FinancialBusinessResult_Fact.cs" />
+    <Compile Include="Report\FinancialDescriptionReportT1_Fact.cs" />
+    <Compile Include="Report\FinancialDescriptionReportT2_Fact.cs" />
+    <Compile Include="RowStatusState.cs" />
+    <Compile Include="Sales\PickingStockCart\SalesInvoicePickingStockCart.cs" />
+    <Compile Include="Sales\Price\PriceCaculator.cs" />
+    <Compile Include="Sales\Price\PriceFormulaTaxAdded.cs" />
+    <Compile Include="Sales\Price\PricePolicy.cs" />
+    <Compile Include="Sales\Price\PricePolicyCondition.cs" />
+    <Compile Include="Sales\Price\PricePolicyItemUnitCondition.cs" />
+    <Compile Include="Sales\Price\PricePolicyManufacturerCondition.cs" />
+    <Compile Include="Sales\Price\PricePolicySupplierCondition.cs" />
+    <Compile Include="Sales\Price\PricePolicyType.cs" />
+    <Compile Include="Staging\Accounting\Journal\AccountActor.cs" />
+    <Compile Include="Staging\Accounting\Journal\AccountActorType.cs" />
+    <Compile Include="Staging\Accounting\Journal\AccountingTransaction.cs" />
+    <Compile Include="Staging\Accounting\Journal\AccountRole.cs" />
+    <Compile Include="Staging\Accounting\Journal\AccountRoleType.cs" />
+    <Compile Include="Staging\Accounting\Journal\AccountingTransactionType.cs" />
+    <Compile Include="Staging\Accounting\Journal\BookingAsset.cs" />
+    <Compile Include="Staging\Accounting\Journal\BookingAssetType.cs" />
+    <Compile Include="Staging\Accounting\Journal\BusinessArtifact.cs" />
+    <Compile Include="Staging\Accounting\Journal\BusinessArtifactType.cs" />
+    <Compile Include="Staging\Accounting\Journal\DoubleEntryJournal.cs" />
+    <Compile Include="Staging\Accounting\Ledger\DoubleEntryLedger.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeRule.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactType.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleData.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleDataFormat.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleDataType.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleDefinition.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleNumberData.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleStringData.cs" />
+    <Compile Include="System\ArtifactCode\ReferenceArtifact.cs" />
+    <Compile Include="System\ArtifactCode\RuleRepeaterType.cs" />
+    <Compile Include="System\Log\BusinessObject.cs" />
+    <Compile Include="System\Log\ObjectEntryLog.cs" />
+    <Compile Include="System\Privilege\SpecialPrivilege.cs" />
+    <Compile Include="System\Privilege\SpecialPrivilege.Designer.cs">
+      <DependentUpon>SpecialPrivilege.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Privilege\PrivilegeDepartment.cs" />
+    <Compile Include="System\Privilege\PrivilegeDepartment.Designer.cs">
+      <DependentUpon>PrivilegeDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Resource\App.cs" />
+    <Compile Include="System\Resource\App.Designer.cs">
+      <DependentUpon>App.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Resource\AppComponent.cs" />
+    <Compile Include="System\Resource\AppComponent.Designer.cs">
+      <DependentUpon>AppComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Resource\AppOperation.cs" />
+    <Compile Include="System\Resource\AppOperation.Designer.cs">
+      <DependentUpon>AppOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Resource\AppComponentOperation.cs" />
+    <Compile Include="System\Resource\AppComponentOperation.Designer.cs">
+      <DependentUpon>AppComponentOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Resource\AppComponentContent.cs" />
+    <Compile Include="System\Resource\AppComponentContent.Designer.cs">
+      <DependentUpon>AppComponentContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Resource\AppComponentData.cs" />
+    <Compile Include="System\Resource\AppComponentData.Designer.cs">
+      <DependentUpon>AppComponentData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Resource\AppComponentContentType.cs" />
+    <Compile Include="System\Resource\AppComponentContentType.Designer.cs">
+      <DependentUpon>AppComponentContentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\ShareDim\DayDim.cs" />
+    <Compile Include="System\ShareDim\MonthDim.cs" />
+    <Compile Include="System\ShareDim\YearDim.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Vouches\Allocation\VoucherAllocation.cs" />
+    <Compile Include="Vouches\Allocation\VoucherAllocationBookingAccount.cs" />
+    <Compile Include="Vouches\Allocation\VoucherAllocationRole.cs" />
+    <Compile Include="Vouches\Allocation\VoucherAllocationSubject.cs" />
+    <Compile Include="Vouches\ExchangeRate.cs" />
+    <Compile Include="Vouches\ForeignCurrency.cs" />
+    <Compile Include="Vouches\PaymentVouches.cs" />
+    <Compile Include="Vouches\ReceiptVouches.cs" />
+    <Compile Include="Vouches\PaymentVouchesType.cs" />
+    <Compile Include="Vouches\ReceiptVouchesType.cs" />
+    <Compile Include="Vouches\VoucherCustomType.cs" />
+    <Compile Include="Vouches\VoucherObject.cs" />
+    <Compile Include="Vouches\VouchesAmount.cs" />
+    <Compile Include="Vouches\Vouches.cs" />
+    <Compile Include="Vouches\VouchesActor.cs" />
+    <Compile Include="Vouches\VouchesActorType.cs" />
+    <Compile Include="Vouches\VouchesType.cs" />
+    <Compile Include="XpoHelper.cs" />
+    <Compile Include="MSSQLDbConfigEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{DA0E6C19-C0B6-4868-BAE5-68E8E146BB4A}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BI\ShareDim\" />
+    <Folder Include="DW\" />
+    <Folder Include="SA\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

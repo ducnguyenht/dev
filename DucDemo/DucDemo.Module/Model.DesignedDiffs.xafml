@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="DucDemo" Logo="ExpressAppLogo">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="@45df1880-2d52-4f35-8c92-845e87f0997d" ViewId="Order_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options UseServerMode="True" />
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="13.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Lop_ListView" UseServerMode="True" FreezeColumnIndices="True" MasterDetailMode="ListViewAndDetailView">
+      <Columns>
+        <ColumnInfo Id="DisplayName" Index="0" />
+        <ColumnInfo Id="Id" Index="1" />
+        <ColumnInfo Id="Name" Index="2" />
+        <ColumnInfo Id="Truong" Index="3" />
+      </Columns>
+    </ListView>
+    <ListView Id="SinhVien_ListView" UseServerMode="True" FreezeColumnIndices="True" ShowAutoFilterRow="False" PreviewColumnName="">
+      <Columns>
+        <ColumnInfo Id="DisplayName" Index="0" />
+        <ColumnInfo Id="Id" Index="1" />
+        <ColumnInfo Id="Name" Index="2" />
+        <ColumnInfo Id="Lop" Index="3" />
+      </Columns>
+    </ListView>
+    <ListView Id="Truong_ListView" UseServerMode="True" FreezeColumnIndices="True">
+      <Columns>
+        <ColumnInfo Id="Name" Index="0" />
+        <ColumnInfo Id="Id" Index="1" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

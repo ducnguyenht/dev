@@ -1,0 +1,19 @@
+@model Localization.Models.Data
+<h2>@LocalizationText.HomePageTitle</h2>
+
+@using (Html.BeginForm("Post", "Home", FormMethod.Post)) { 
+    @Html.DevExpress().TextBox(
+    settings => {
+        settings.Name = "Name";
+        settings.Width = 200;
+        settings.ShowModelErrors = true;
+        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+    }).Bind(Model.Name).GetHtml()
+    
+    @Html.DevExpress().Button(
+    settings => {
+        settings.Name = "Submit";
+        settings.Text = "Submit";
+        settings.UseSubmitBehavior = true;
+    }).GetHtml()
+}

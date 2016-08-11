@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3BF7B5E-A95B-4EE6-8CFF-84587A2C905E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NAS.BO</RootNamespace>
+    <AssemblyName>NAS.BO</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v13.2.Extensions, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Evaluant.Antlr, Version=0.3.0.37313, Culture=neutral, PublicKeyToken=973cde3f1cafed03, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Evaluant.Antlr.dll</HintPath>
+    </Reference>
+    <Reference Include="Evaluant.Calculator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Evaluant.Calculator.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounting\AccountingBO.cs" />
+    <Compile Include="Accounting\COGSBO.cs" />
+    <Compile Include="Accounting\Configure\AllocationGetter\AllocationGetter.cs" />
+    <Compile Include="Accounting\Configure\AllocationGetter\PaymentVoucherAllocationGetter.cs" />
+    <Compile Include="Accounting\Configure\AllocationGetter\ReceiptVoucherAllocationGetter.cs" />
+    <Compile Include="Accounting\CurrencyBO.cs" />
+    <Compile Include="Accounting\ExchangeRateBO.cs" />
+    <Compile Include="Accounting\GeneralJournalBO.cs" />
+    <Compile Include="Accounting\GeneralLedgerBO.cs" />
+    <Compile Include="Accounting\Journal\AccountingPeriodTypeBO.cs" />
+    <Compile Include="Accounting\Journal\BalanceForwardTransactionBO.cs" />
+    <Compile Include="Accounting\Journal\AccountingPeriodBO.cs" />
+    <Compile Include="Accounting\Journal\GeneralJournalBO.cs" />
+    <Compile Include="Accounting\Journal\GeneralLedgerBO.cs" />
+    <Compile Include="Accounting\Journal\ManualBookingTransactionBO.cs" />
+    <Compile Include="Accounting\Journal\PaymentVoucherTransactionBO.cs" />
+    <Compile Include="Accounting\Journal\PurchaseInvoiceTransactionBO.cs" />
+    <Compile Include="Accounting\Journal\ReceiptVoucherTransactionBO.cs" />
+    <Compile Include="Accounting\Journal\SaleInvoiceTransactionBO.cs" />
+    <Compile Include="Accounting\Journal\TransactionBO.cs" />
+    <Compile Include="Accounting\Journal\TransactionBOBase.cs" />
+    <Compile Include="Accounting\Journal\VoucherTransactionBOBase.cs" />
+    <Compile Include="Accounting\LegalInvoiceArtifact\LegalInvoiceArtifactBO.cs" />
+    <Compile Include="Accounting\Report\BO_S04a4_dn.cs" />
+    <Compile Include="Accounting\Report\BO_S04a6_dn.cs" />
+    <Compile Include="Accounting\Report\BO_s10_dn.cs" />
+    <Compile Include="Accounting\Report\FinancialCustomerLiabilitySummary_FactBO.cs" />
+    <Compile Include="Accounting\Report\BO_GeneralLedger.cs" />
+    <Compile Include="Accounting\TaxBO.cs" />
+    <Compile Include="Accounting\FinancialTransactionBO.cs" />
+    <Compile Include="Buy\PurchaseInvoiceInventoryBO.cs" />
+    <Compile Include="CMS\CMSBO.cs" />
+    <Compile Include="CMS\ObjectDocument\BasicCustomFieldTypeBOBase.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldBO.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataDateTimeBO.cs" />
+    <Compile Include="CMS\ObjectDocument\DynamicObjectListSerialize.cs" />
+    <Compile Include="CMS\ObjectDocument\DynamicObjectListSerializeDataItem.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldBO.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldDataFloatBO.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectBO.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldDataIntegerBO.cs" />
+    <Compile Include="CMS\ObjectDocument\CustomFieldDataStringBO.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldDataMultiSelectionListBO.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldDataPreDefinitionBO.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldDataPreDefinitionStrategy\ICustomFieldDataPreDefinitionDataGetter.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldDataSingleSelectionListBO.cs" />
+    <Compile Include="CMS\ObjectDocument\ObjectCustomFieldDataUserDefinedListBO.cs" />
+    <Compile Include="ETL\Accounting\DiaryJournal\ETL_DiaryJournal.cs" />
+    <Compile Include="ETL\Accounting\ETLAccountingBO.cs" />
+    <Compile Include="ETL\Accounting\ETLFinancialRevenueByItemBO.cs" />
+    <Compile Include="ETL\Accounting\FinancialActualPrice\FinancialActualPrice152Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialActualPrice\FinancialActualPrice153Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialActualPrice\FinancialActualPrice155Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialActualPrice\FinancialActualPrice156Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialActualPrice\FinancialActualPrice158Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialActualPrice\FinancialActualPriceStrategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialActualPrice\TempData\ETL_FinanciaActualPriceDetail.cs" />
+    <Compile Include="ETL\Accounting\DiaryJournal\DiaryJournalBO.cs" />
+    <Compile Include="ETL\Accounting\FinancialDistributedAccounting\FinancialDistributedAccountingBO.cs" />
+    <Compile Include="ETL\Accounting\FinancialDistributedAccounting\TempData\ETL_FinancialDistributedAccounting_Fact.cs" />
+    <Compile Include="ETL\Accounting\FinancialGeneralLedger\FinancialGeneralLedgerBO.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory151Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory152Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory153Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory154Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory155Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory156Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory157Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory158Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventory159Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\FinancialItemInventoryBase.cs" />
+    <Compile Include="ETL\Accounting\FinancialItemInventory\TempData\ETL_FinancialItemInventoryDetaill.cs" />
+    <Compile Include="ETL\Accounting\FinancialLiability\FinancialCustomerLiabilityBO.cs" />
+    <Compile Include="ETL\Accounting\FinancialLiability\FinancialLiabilityBO.cs" />
+    <Compile Include="ETL\Accounting\FinancialLiability\FinancialSupplierLiabilityBO.cs" />
+    <Compile Include="ETL\Accounting\FinancialOntheWay\FinancialOnTheWayBuyingGoodBO.cs" />
+    <Compile Include="ETL\Accounting\FinancialOntheWay\TempData\ETL_FinancialOnTheWayBuyingGoodDetail.cs" />
+    <Compile Include="ETL\Accounting\FinancialPrepaidExpense\FinancialPrepaidExpense352Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialPrepaidExpense\FinancialPrepaidExpense142Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialPrepaidExpense\FinancialPrepaidExpense242Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialPrepaidExpense\FinancialPrepaidExpense335Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialPrepaidExpense\FinancialPrepaidExpenseStrategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialPrepaidExpense\TempData\ETL_FinancialPrepaidExpenseDetail.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense154Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense241Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense621Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense622Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense623Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense627Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense631Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense641Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpense642Strategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\SalesOrManufacturerExpenseStrategy.cs" />
+    <Compile Include="ETL\Accounting\FinancialSalesOrManufactureExpense\TempData\ETL_FinancialSalesOrManufacturerExpense.cs" />
+    <Compile Include="ETL\Accounting\GoodsInInventory\GoodsFinishedStrategy.cs" />
+    <Compile Include="ETL\Accounting\GoodsInInventory\GoodsInInventoryStategy.cs" />
+    <Compile Include="ETL\Accounting\GoodsInInventory\GoodsInTaxStrategy.cs" />
+    <Compile Include="ETL\Accounting\GoodsInInventory\GoodsInTransitForSaleStrategy.cs" />
+    <Compile Include="ETL\Accounting\GoodsInInventory\GoodsInInventoryBase.cs" />
+    <Compile Include="ETL\Accounting\GoodsInInventory\TempData\ETL_GoodsInInventoryDetail.cs" />
+    <Compile Include="ETL\Accounting\GoodsInInventory\GoodsAsMerchandiseStrategy.cs" />
+    <Compile Include="ETL\Accounting\Interface\IELTLogicJob.cs" />
+    <Compile Include="ETL\Accounting\TempData\ETL_FinnancialCustomerLiabilityDetail.cs" />
+    <Compile Include="ETL\Accounting\TempData\ETL_FinancialRevenueByItem.cs" />
+    <Compile Include="ETL\Accounting\TempData\ETL_FinnancialSupplierLiabilityDetail.cs" />
+    <Compile Include="ETL\Accounting\TempData\ETL_GeneralJournal.cs" />
+    <Compile Include="ETL\Accounting\TempData\ETL_GeneralLedger.cs" />
+    <Compile Include="ETL\Accounting\TempData\ETL_Transaction.cs" />
+    <Compile Include="ETL\Accounting\TempData\SplitJournal.cs" />
+    <Compile Include="ETL\Bill\ETLBillBO.cs" />
+    <Compile Include="ETL\Bill\TempData\ETL_Bill.cs" />
+    <Compile Include="ETL\Bill\TempData\ETL_BillItem.cs" />
+    <Compile Include="ETL\Bill\TempData\ETL_FinancialRevenueByItem.cs" />
+    <Compile Include="ETL\DimBO.cs" />
+    <Compile Include="ETL\Inventory\ETLInventoryBO_temp.cs" />
+    <Compile Include="ETL\Inventory\ETLInventoryBO.cs" />
+    <Compile Include="ETL\Inventory\TempData\ETL_COGS.cs" />
+    <Compile Include="ETL\Inventory\TempData\ETL_InventoryJournal.cs" />
+    <Compile Include="ETL\Inventory\TempData\ETL_InventoryLedger.cs" />
+    <Compile Include="ETL\Inventory\TempData\ETL_InventoryTransaction.cs" />
+    <Compile Include="ETL\RecycleBin\RecycleBin.cs" />
+    <Compile Include="ETL\ETLEntryObjectHistoryBO.cs" />
+    <Compile Include="ETL\ETLJobBO.cs" />
+    <Compile Include="ETL\ETLLogBO.cs" />
+    <Compile Include="ETL\ETLDBHelper.cs" />
+    <Compile Include="ETL\Voucher\ETLVoucherBO.cs" />
+    <Compile Include="ETL\Voucher\TempData\ETL_Voucher.cs" />
+    <Compile Include="General.cs" />
+    <Compile Include="Inventory\Audit\InventoryAuditArtifactBO.cs" />
+    <Compile Include="Inventory\Command\BookingBussinessBO.cs" />
+    <Compile Include="Inventory\Command\TransactionJournalBussinessBO.cs" />
+    <Compile Include="Inventory\Command\CMSObjectRelationBO.cs" />
+    <Compile Include="Inventory\Command\COGSBussinessBO.cs" />
+    <Compile Include="Inventory\Command\Report\RPT_InputInventoryCommand.cs" />
+    <Compile Include="Inventory\Command\Report\RPT_InventoryCommand.cs" />
+    <Compile Include="Inventory\Command\Report\RPT_OutputInventoryCommand.cs" />
+    <Compile Include="Inventory\Journal\InitInventoryItemUnitObject.cs" />
+    <Compile Include="Inventory\Journal\InventoryBalancePriceBO.cs" />
+    <Compile Include="Inventory\Journal\InventoryJournalBO.cs" />
+    <Compile Include="Inventory\Journal\InventoryTransactionBO.cs" />
+    <Compile Include="Inventory\Ledger\InventoryLedgerBO.cs" />
+    <Compile Include="Invoice\BillBOBase.cs" />
+    <Compile Include="Invoice\SalesInvoiceBO.cs" />
+    <Compile Include="Invoice\PurchaseInvoiceBO.cs" />
+    <Compile Include="Nomenclature\Inventory\InventoryBO.cs" />
+    <Compile Include="Nomenclature\Items\ItemBO.cs" />
+    <Compile Include="Nomenclature\Items\UnitBO.cs" />
+    <Compile Include="Nomenclature\Organization\CustomerOrgBO.cs" />
+    <Compile Include="Nomenclature\Organization\DepartmentBO.cs" />
+    <Compile Include="Nomenclature\Organization\LoginAccountBO.cs" />
+    <Compile Include="Nomenclature\Organization\ManufacturerOrgBO.cs" />
+    <Compile Include="Nomenclature\Organization\OrganizationBO.cs" />
+    <Compile Include="Nomenclature\Organization\SupplierOrgBO.cs" />
+    <Compile Include="Nomenclature\Supplier\SupplierBO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseInvoice\PurchaseInvoiceBO.cs" />
+    <Compile Include="Sale\PricePolicy\PricePolicyBO.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Predicator\RuleConditionItemUnit.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Predicator\RuleConditionManufacturer.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Predicator\RuleConditionSupplier.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Predicator\RuleExceptionItemUnit.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Predicator\RuleExceptionManufacturer.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Predicator\RuleExceptionSupplier.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Rules\Rule.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Rules\RuleAction.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Rules\RuleCondition.cs" />
+    <Compile Include="Sale\PricePolicy\RuleWiz\Rules\RulePart.cs" />
+    <Compile Include="Sale\SaleInvoiceBO.cs" />
+    <Compile Include="Sale\SalesInvoicePickingStockCartBO.cs" />
+    <Compile Include="SystemConfig\DbConfigBLO.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleData.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataFormater.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataFormaterDateTime.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataFormaterNumber.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataFormaterString.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataFormaterStringACSI.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataFormaterStringLowerCase.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataFormaterStringMixed.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataFormaterStringUpperCase.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataType.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataTypeDateTime.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataTypeNumber.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeFormater\CodeRuleDataTypeString.cs" />
+    <Compile Include="System\ArtifactCode\ArtifactCodeRuleBO.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleDataBO.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleDefinitionBO.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleNumberDataBO.cs" />
+    <Compile Include="System\ArtifactCode\CodeRuleStringDataBO.cs" />
+    <Compile Include="System\Log\BusinessObjectBO.cs" />
+    <Compile Include="System\Log\ObjectEntryLogBO.cs" />
+    <Compile Include="Vouches\PaymentVouchesBO.cs" />
+    <Compile Include="Vouches\ReceiptVouchesBO.cs" />
+    <Compile Include="Vouches\VoucherBO.cs" />
+    <Compile Include="Vouches\VoucherBookingEntryBO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\NAS.DAL.csproj">
+      <Project>{EBE0CA4A-FE37-4CFC-BC84-D90D74000C72}</Project>
+      <Name>NAS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{DA0E6C19-C0B6-4868-BAE5-68E8E146BB4A}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ETL\Accounting\DiaryJournal\TempData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\Evaluant.Antlr.dll" />
+    <Content Include="Lib\Evaluant.Calculator.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PureMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,37 +9,48 @@ namespace PureMVC.Controllers
 {
     public class StoreController : Controller
     {
-        //
-        // GET: http://localhost:5913/Store
-        public string Index()
+        // GET: http://localhost:5913/Store/Details/1
+        public ActionResult Details(int id)
         {
-            return "Hello from Store.Index()";
+            var album = new Album { Title = "Album " + id };
+            return View(album);
         }
-        //
-        // GET: http://localhost:5913/Store/Browse
-        public string Browse()
+        public ActionResult Browse(string genre)
         {
-            return "Hello from Store.Browse()";
+            var genreModel = new Genre { Name = genre };
+            return View(genreModel);
         }
-        //
-        // GET: http://localhost:5913/Store/BrowseParam?genre=Disco
-        public string BrowseParam(string genre)
-        {
-            string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
-            return message;
-        }
-        //
-        // GET: http://localhost:5913/Store/Details
-        public string Details()
-        {
-            return "Hello from Store.Details()";
-        }
-        //
-        // GET: http://localhost:5913/Store/DetailsParam/5
-        public string DetailsParam(int id)
-        {
-            string message = "Store.Details, ID = " + id;
-            return message;
-        }
+        ////
+        //// GET: http://localhost:5913/Store
+        //public string Index()
+        //{
+        //    return "Hello from Store.Index()";
+        //}
+        ////
+        //// GET: http://localhost:5913/Store/Browse
+        //public string Browse()
+        //{
+        //    return "Hello from Store.Browse()";
+        //}
+        ////
+        //// GET: http://localhost:5913/Store/BrowseParam?genre=Disco
+        //public string BrowseParam(string genre)
+        //{
+        //    string message = HttpUtility.HtmlEncode("Store.Browse, Genre = " + genre);
+        //    return message;
+        //}
+        ////
+        //// GET: http://localhost:5913/Store/Details
+        //public string Details()
+        //{
+        //    return "Hello from Store.Details()";
+        //}
+        ////
+        //// GET: http://localhost:5913/Store/DetailsParam/5
+        //public string DetailsParam(int id)
+        //{
+        //    string message = "Store.Details, ID = " + id;
+        //    return message;
+        //}
     }
 }

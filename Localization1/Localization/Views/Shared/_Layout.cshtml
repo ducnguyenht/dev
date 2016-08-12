@@ -1,0 +1,65 @@
+@using Localization.Content
+<!DOCTYPE HTML>
+<script type="text/javascript">
+    function dnLangInit(s, e) {
+        s.SetValue(ASPxClientUtils.GetCookie("dnLangCulture"));
+    }
+    function dnLangSelectedIndexChanged(s) {
+        ASPxClientUtils.SetCookie("dnLangCulture", s.GetValue());
+        $("#dnformLang").submit();
+    }
+</script>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    @Html.DevExpress().GetStyleSheets(
+        new StyleSheet { ExtensionSuite = ExtensionSuite.All }
+    )
+    @Html.DevExpress().GetScripts(
+        new Script { ExtensionSuite = ExtensionSuite.All }
+    )
+</head>
+
+<body>
+    @Html.DevExpress().Menu(
+         settings => {
+             settings.Name = "Menu";
+             settings.Items.Add(item => {
+                 item.Text = LocalizationText.MenuItemOne;
+             });
+             settings.Items.Add(item => {
+                 item.Text = LocalizationText.MenuItemTwo;
+             });
+         }).GetHtml()
+
+    <br />
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "#dnformLang" }))
+    {
+        
+       @Html.DevExpress().ComboBox(settings =>
+       {
+           settings.Name = "ComboBox";
+           settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+           settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+           settings.Properties.Items.Add("German", "de-DE");
+           settings.Properties.Items.Add("English", "en-US");
+           settings.Properties.ClientSideEvents.SelectedIndexChanged = "dnLangSelectedIndexChanged";
+           settings.Properties.ClientSideEvents.Init = "dnLangInit";
+       }).GetHtml()      
+    }
+    @RenderBody()
+</body>
+</html>
+@*@Html.DevExpress().ComboBox(
+        settings => {
+            settings.Name = "ComboBox";
+            settings.Width = 180;
+            settings.SelectedIndex = 0;
+            settings.Properties.ValueType = typeof(string);
+            settings.Properties.Items.Add("German", "de-DE");
+            settings.Properties.Items.Add("English", "en-US");
+            settings.Properties.ClientSideEvents.SelectedIndexChanged = "SelectedIndexChanged";
+            settings.Properties.ClientSideEvents.Init = "Init";
+        }
+    ).GetHtml()*@

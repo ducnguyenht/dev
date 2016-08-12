@@ -16,18 +16,31 @@ namespace PureMVC.Controllers
             return View(album);
         }
         // GET: http://localhost:5913/Store/Browse/?Genre=Disco
+        //http://localhost:5913/store/browse/?genre=Disco1
         public ActionResult Browse(string genre)
         {
             var genreModel = new Genre { Name = genre };
             return View(genreModel);
         }
-        ////
+        //http://localhost:5913/store
+        public ActionResult Index()
+        {
+            var genres = new List<Genre>
+            {
+            new Genre { Name = "Disco"},
+            new Genre { Name = "Jazz"},
+            new Genre { Name = "Rock"}
+            };
+            return View(genres);
+        }
+        //
+
         //// GET: http://localhost:5913/Store
         //public string Index()
         //{
         //    return "Hello from Store.Index()";
         //}
-        ////
+
         //// GET: http://localhost:5913/Store/Browse
         //public string Browse()
         //{

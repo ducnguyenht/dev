@@ -8,10 +8,14 @@ namespace PureMVC.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        public string Index()
+        // GET: http://localhost:5913/
+        //public string Index()
+        //{
+        //    return "Hello from Home";
+        //}
+        public ActionResult Index()
         {
-            return "Hello from Home";
+            return View();
         }
     }
 }

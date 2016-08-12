@@ -15,6 +15,7 @@ namespace PureMVC.Controllers
             var album = new Album { Title = "Album " + id };
             return View(album);
         }
+        // GET: http://localhost:5913/Store/Browse/?Genre=Disco
         public ActionResult Browse(string genre)
         {
             var genreModel = new Genre { Name = genre };

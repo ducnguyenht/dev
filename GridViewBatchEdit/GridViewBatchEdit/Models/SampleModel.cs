@@ -30,7 +30,7 @@ namespace GridViewBatchEdit.Models
                 {
                     ID = i,
                     SampleString = "Test String" + i,
-                    SampleDate = new DateTime(2000 + i, 12, 16),
+                    //SampleDate = new DateTime(2000 + i, 12, 16),
                     SampleBool = i % 2 == 0,
                     SampleDecimal = i * 10000,
                 }).ToList();

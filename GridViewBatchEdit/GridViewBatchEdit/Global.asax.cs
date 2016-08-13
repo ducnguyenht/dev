@@ -32,7 +32,7 @@ namespace GridViewBatchEdit
                 ci = (CultureInfo)Session["Culture"];
                 if (ci == null)
                 {
-                    string langName = "de-DE";
+                    string langName = "vi-VN";
                     ci = new CultureInfo(langName);
                     Session["Culture"] = ci;
                 }

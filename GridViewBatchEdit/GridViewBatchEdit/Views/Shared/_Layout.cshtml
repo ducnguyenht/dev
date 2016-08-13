@@ -15,11 +15,13 @@
 </head>
 <body>
 <div>
-@if (Session["Culture"] != null && Session["Culture"].ToString() != "de-DE") {
+@*@if (Session["Culture"] != null && Session["Culture"].ToString() != "de-DE") {*@
+    @Html.ActionLink("VN", "ChangeCulture", "Home", new { lang = "vi-VN", returnUrl = this.Request.RawUrl }, null);
+
 	@Html.ActionLink("DE", "ChangeCulture", "Home", new {lang = "de-DE", returnUrl = this.Request.RawUrl}, null);
-} else {
+@*} else {*@
     @Html.ActionLink("EN", "ChangeCulture", "Home", new { lang = "en", returnUrl = this.Request.RawUrl }, null);
-}
+@*}*@
 </div>
     @RenderBody()
 </body>

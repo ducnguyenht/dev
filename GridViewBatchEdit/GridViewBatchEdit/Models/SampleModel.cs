@@ -10,25 +10,13 @@ namespace GridViewBatchEdit.Models
     public class SampleModel
     {
         [Key]
-        //[Display(Name = "ID", ResourceType = typeof(Translate))]
         public int ID { get; set; }
         [Required]
         [CustomDisplayName("String1")]
-        //[Display(Name = "SampleString", ResourceType = typeof(Translate))]
         public string SampleString { get; set; }
         public DateTime SampleDate { get; set; }
         public bool? SampleBool { get; set; }
         public decimal SampleDecimal { get; set; }
-
-
-        //public SampleModel(int id, string sampleString, DateTime date, bool sampleBool, decimal sampleDecimal)
-        //{
-        //    ID = id;
-        //    SampleString = sampleString;
-        //    SampleDate = date;
-        //    SampleBool = sampleBool;
-        //    SampleDecimal = sampleDecimal;
-        //}
     }
     public static class SampleModelList
     {

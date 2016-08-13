@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-@using Localization.Content
+<!DOCTYPE HTML>
+
 <script type="text/javascript">
     function Init(s, e) {
         s.SetValue(ASPxClientUtils.GetCookie("Culture"));
@@ -24,26 +24,21 @@
 
 <body>
     @Html.DevExpress().Menu(
-         settings =>
-         {
+         settings => {
              settings.Name = "Menu";
-             settings.Items.Add(item =>
-             {
+             settings.Items.Add(item => {
                  item.Text = LocalizationText.MenuItemOne;
              });
-             settings.Items.Add(item =>
-             {
+             settings.Items.Add(item => {
                  item.Text = LocalizationText.MenuItemTwo;
              });
          }).GetHtml()
 
     <br />
 
-    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form" }))
-    {
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form" })) {
         @Html.DevExpress().ComboBox(
-            settings =>
-            {
+            settings => {
                 settings.Name = "ComboBox";
                 settings.Width = 180;
                 settings.SelectedIndex = 0;

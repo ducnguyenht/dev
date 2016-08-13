@@ -112,6 +112,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Home\Index.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -125,6 +126,7 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
+    <Content Include="Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -138,10 +140,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LocalizationText.en-US.resx</DependentUpon>
     </Compile>
-    <Compile Include="Content\LocalizationText.de-DE.Designer.cs">
+    <Compile Include="Content\LocalizationText.vi-VN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LocalizationText.de-DE.resx</DependentUpon>
+      <DependentUpon>LocalizationText.vi-VN.resx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -161,9 +163,9 @@
       <LastGenOutput>LocalizationText.en-US.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Content\LocalizationText.de-DE.resx">
+    <EmbeddedResource Include="Content\LocalizationText.vi-VN.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LocalizationText.de-DE.Designer.cs</LastGenOutput>
+      <LastGenOutput>LocalizationText.vi-VN.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\LocalizationText.resx">

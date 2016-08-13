@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HomePageTitle" xml:space="preserve">
-    <value>Home Page Title - German Culture</value>
+    <value>Home Page Title - vn Culture</value>
   </data>
   <data name="MenuItemOne" xml:space="preserve">
-    <value>Menu Item One - German Culture</value>
+    <value>Menu Item One - vn Culture</value>
   </data>
   <data name="MenuItemTwo" xml:space="preserve">
-    <value>Menu Item Two - German Culture</value>
+    <value>Menu Item Two - vn Culture</value>
   </data>
   <data name="RequiredValidationMessage" xml:space="preserve">
-    <value>Error Message - German Culture</value>
+    <value>Error Message - vn Culture</value>
   </data>
 </root>

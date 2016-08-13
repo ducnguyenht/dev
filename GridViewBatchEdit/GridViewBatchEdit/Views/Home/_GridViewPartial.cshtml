@@ -1,0 +1,34 @@
+@{
+    var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "GridView";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+        settings.SettingsEditing.BatchUpdateRouteValues = new { Controller = "Home", Action = "BatchUpdatePartial" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow; //GridViewEditingMode.Batch;
+        
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+
+        settings.KeyFieldName = "ID";
+
+        settings.Columns.Add("C1");
+        settings.Columns.Add(column => {
+            column.FieldName = "C2";
+            //column.Caption = GridViewBatchEdit.Views.Shared.SharedStrings.String1;
+            column.ColumnType = MVCxGridViewColumnType.SpinEdit;
+        });
+        settings.Columns.Add("C3");
+        settings.Columns.Add(column => {
+            column.FieldName = "C4";
+            column.ColumnType = MVCxGridViewColumnType.CheckBox;
+        });
+        //settings.Columns.Add(column => {
+        //    column.FieldName = "C5";
+        //    column.ColumnType = MVCxGridViewColumnType.DateEdit;
+        //});
+    });
+    if(ViewData["EditError"] != null) {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

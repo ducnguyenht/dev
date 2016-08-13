@@ -1,0 +1,13 @@
+@model Models.GridDataItem
+@Html.DevExpress().FormLayout(settings =>
+{
+    settings.Name = "flOverview";
+    settings.Items.AddGroupItem(groupSettings =>
+    {
+        groupSettings.GroupBoxDecoration = GroupBoxDecoration.None;
+        groupSettings.ShowCaption = DefaultBoolean.True;
+        groupSettings.Items.Add(m => m.C3);
+    });
+}).GetHtml()
+@Html.Action("GridViewPartial")
+

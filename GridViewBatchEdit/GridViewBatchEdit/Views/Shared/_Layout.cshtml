@@ -15,6 +15,17 @@
 </head>
 <body>
 <div>
+    @Html.DevExpress().ComboBox(settings =>
+{
+    settings.Name = "ComboBox";
+    settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+    settings.Properties.Items.Add("Item 0");
+    settings.Properties.Items.Add("Item 1");
+    settings.Properties.Items.Add("Item 2");
+}).GetHtml()
+
+
 @*@if (Session["Culture"] != null && Session["Culture"].ToString() != "de-DE") {*@
     @Html.ActionLink("VN", "ChangeCulture", "Home", new { lang = "vi-VN", returnUrl = this.Request.RawUrl }, null);
 

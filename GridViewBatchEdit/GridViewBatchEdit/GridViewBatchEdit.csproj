@@ -130,6 +130,16 @@
   <ItemGroup>
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="PopupControl\Images\Charts\BarAndLine.jpg" />
+    <Content Include="PopupControl\Images\Charts\BarAndLine.png" />
+    <Content Include="PopupControl\Images\Charts\BarStacked.jpg" />
+    <Content Include="PopupControl\Images\Charts\BarStacked.png" />
+    <Content Include="PopupControl\Images\Charts\Gantt.jpg" />
+    <Content Include="PopupControl\Images\Charts\Gantt.png" />
+    <Content Include="PopupControl\Images\Charts\ManhattanBar.jpg" />
+    <Content Include="PopupControl\Images\Charts\ManhattanBar.png" />
+    <Content Include="PopupControl\Images\Charts\Pie.jpg" />
+    <Content Include="PopupControl\Images\Charts\Pie.png" />
     <Content Include="Scripts\AjaxLogin.js" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />

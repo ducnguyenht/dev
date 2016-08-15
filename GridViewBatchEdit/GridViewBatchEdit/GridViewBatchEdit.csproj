@@ -128,6 +128,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Chart.xml" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="PopupControl\Images\Charts\BarAndLine.jpg" />

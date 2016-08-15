@@ -14,26 +14,35 @@
     ) 
 </head>
 <body>
-<div>
-    @Html.DevExpress().ComboBox(settings =>
-{
-    settings.Name = "ComboBox";
-    settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
-    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
-    settings.Properties.Items.Add("Item 0");
-    settings.Properties.Items.Add("Item 1");
-    settings.Properties.Items.Add("Item 2");
-}).GetHtml()
+    <div>
+     @{System.Xml.Linq.XDocument obj = System.Xml.Linq.XDocument.Load(Server.MapPath("~/Themes.xml"));}
+
+    @Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "Test";
+        settings.Enabled = true;
+        settings.Properties.ValueField = "code";
+        settings.Properties.TextField = "name";
+        settings.Properties.ImageUrlField = "imageurl";
+        settings.Properties.ItemImage.Width = 24;
+        settings.Properties.ShowImageInEditBox = true;
+    }).BindList(obj.Descendants("theme").Select(x => new
+    {
+        name = x.Attribute("name").Value,
+        code = x.Attribute("code").Value,
+        imageurl = x.Attribute("imageurl").Value
+    }).ToList()).GetHtml()
 
 
-@*@if (Session["Culture"] != null && Session["Culture"].ToString() != "de-DE") {*@
-    @Html.ActionLink("VN", "ChangeCulture", "Home", new { lang = "vi-VN", returnUrl = this.Request.RawUrl }, null);
+        @*@if (Session["Culture"] != null && Session["Culture"].ToString() != "de-DE") {*@
+        @Html.ActionLink("VN", "ChangeCulture", "Home", new { lang = "vi-VN", returnUrl = this.Request.RawUrl }, null);
 
-	@Html.ActionLink("DE", "ChangeCulture", "Home", new {lang = "de-DE", returnUrl = this.Request.RawUrl}, null);
-@*} else {*@
-    @Html.ActionLink("EN", "ChangeCulture", "Home", new { lang = "en", returnUrl = this.Request.RawUrl }, null);
-@*}*@
-</div>
+        @Html.ActionLink("DE", "ChangeCulture", "Home", new { lang = "de-DE", returnUrl = this.Request.RawUrl }, null);
+        @*} else {*@
+        @Html.ActionLink("EN", "ChangeCulture", "Home", new { lang = "en", returnUrl = this.Request.RawUrl }, null);
+        @*}*@
+    </div>
     @RenderBody()
 </body>
 </html>

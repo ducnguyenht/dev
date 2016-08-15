@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Themes>
+  <theme name="ALBANIE" code="AL" imageurl="~/PopupControl/Images/Charts/Aqua.png" />/>
+  <theme name="ALLEMAGNE" code="DE" imageurl="~/PopupControl/Images/Charts/BarAndLine.png"/>
+  <theme name="ANDORRE" code="AD" imageurl="~/PopupControl/Images/Charts/BarStacked.png"/>
+</Themes>

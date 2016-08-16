@@ -149,7 +149,9 @@
     <Content Include="Images\Themes\RedWine.PNG" />
     <Content Include="Images\Themes\SoftOrange.PNG" />
     <Content Include="Images\Themes\Youthful.PNG" />
-    <Content Include="Themes.xml" />
+    <Content Include="Themes.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="PopupControl\Images\Charts\BarAndLine.jpg" />
     <Content Include="PopupControl\Images\Charts\BarAndLine.png" />
     <Content Include="PopupControl\Images\Charts\BarStacked.jpg" />
@@ -259,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\duc.nguyen.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Languages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

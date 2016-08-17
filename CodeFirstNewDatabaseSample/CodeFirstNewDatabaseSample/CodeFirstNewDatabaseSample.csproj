@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB.Model\BloggingContext.cs" />
+    <Compile Include="DB.Model\DBModel.cs" />
     <Compile Include="Migrations\201607131014512_InitialCreate.cs" />
     <Compile Include="Migrations\201607131014512_InitialCreate.Designer.cs">
       <DependentUpon>201607131014512_InitialCreate.cs</DependentUpon>
@@ -86,9 +88,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DB.Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607131014512_InitialCreate.resx">
       <DependentUpon>201607131014512_InitialCreate.cs</DependentUpon>

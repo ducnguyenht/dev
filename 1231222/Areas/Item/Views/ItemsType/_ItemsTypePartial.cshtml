@@ -1,0 +1,47 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "ItemsType";
+        settings.CallbackRouteValues = new { Controller = "ItemsType", Action = "ItemsTypePartial" };
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "ItemsType", Action = "ItemsTypePartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "ItemsType", Action = "ItemsTypePartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "ItemsType", Action = "ItemsTypePartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        settings.CommandColumn.Visible = true;
+        //settings.CommandColumn.ShowNewButtonInHeader = true;
+        //settings.CommandColumn.ShowDeleteButton = true;
+        //settings.CommandColumn.ShowEditButton = true;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 10;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/glyphicons-halflings-98-plus.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+
+		settings.KeyFieldName = "Code";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("Code");
+				settings.Columns.Add("Name");
+				settings.Columns.Add("Description");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

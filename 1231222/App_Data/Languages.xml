@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <language name="Tiếng Việt" code="vi-VN" imageurl="~/Images/Languages/vietnam.png" />
+  <language name="English" code="en-US" imageurl="~/Images/Languages/enus.png" />
+</Languages>

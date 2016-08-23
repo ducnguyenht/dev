@@ -1,0 +1,52 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "DetailPanel";
+        settings.CallbackRouteValues = new { Controller = "Purchasing", Action = "DetailPanelPartial" };
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Purchasing", Action = "DetailPanelPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Purchasing", Action = "DetailPanelPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Purchasing", Action = "DetailPanelPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        //settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
+        //settings.SettingsDetail.ShowDetailRow = true;
+
+        settings.CommandColumn.Visible = true;
+        //button New, Delete, Update on grid
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 15;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/glyphicons-halflings-98-plus.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/glyphicons-halflings-61-pencil.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/glyphicons-halflings-172-floppy-disk.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+
+        settings.KeyFieldName = "ID";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+                settings.Columns.Add("Items", MVCxGridViewColumnType.ComboBox);
+                settings.Columns.Add("Unit", MVCxGridViewColumnType.ComboBox);
+                settings.Columns.Add("Quantity", MVCxGridViewColumnType.SpinEdit);
+                settings.Columns.Add("UnitPrice");
+				settings.Columns.Add("Total");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

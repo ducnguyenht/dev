@@ -1,0 +1,74 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "MTOrder";
+        settings.CallbackRouteValues = new { Controller = "MTOrder", Action = "MTOrderPartial" };
+
+		settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "MTOrder", Action = "MTOrderPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "MTOrder", Action = "MTOrderPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "MTOrder", Action = "MTOrderPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+		settings.CommandColumn.Visible = true;
+        //settings.CommandColumn.ShowNewButton = true;
+        //settings.CommandColumn.ShowDeleteButton = true;
+        //settings.CommandColumn.ShowEditButton = true;
+
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 15;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+        settings.Columns.Add(column =>
+        {
+            column.Caption = "#";
+
+            column.SetDataItemTemplateContent(c =>
+            {
+                ViewContext.Writer.Write(
+                    //Html.ActionLink("New", "MTOrderNew", new { Code = (int)DateTime.Now.Ticks }) + "&nbsp;" +
+                    Html.ActionLink(" ", "MTOrderEdit", new { Code = DataBinder.Eval(c.DataItem, "Code") }, new { @class = "glyphicons glyphicons-pencil " }) + "&nbsp;" +
+                    Html.ActionLink(" ", "MTOrderDelete", new { Code = DataBinder.Eval(c.DataItem, "Code") },
+                        new { @class = "glyphicons glyphicons-bin", onclick = "return confirm('Do you want to delete ?')" })
+                );
+
+            });
+
+            column.SetHeaderTemplateContent(c =>
+            {
+                ViewContext.Writer.Write("&nbsp;" + " " + "&nbsp;" + " " +
+                    Html.ActionLink(" ", "MTOrderNew", new { Code = (int)DateTime.Now.Ticks }, new { @class = "glyphicons glyphicons-plus " }));
+                //Html.ActionLink("Edit", "IndexGridViewEdit", new { ID = DataBinder.Eval(c.DataItem, "ID") }) + "&nbsp;" +
+                //Html.ActionLink("Delete", "IndexGridViewDelete", new { ID = DataBinder.Eval(c.DataItem, "ID") },
+                //    new { onclick = "return confirm('Do you want to delete ?')" })
+
+
+            });
+
+            column.Settings.AllowDragDrop = DefaultBoolean.False;
+            column.Settings.AllowSort = DefaultBoolean.False;
+            column.Width = 80;
+        });
+
+        
+		settings.KeyFieldName = "Code";
+        //settings.InitNewRow = (s, e) => { e.NewValues["Code"] = String.Format("MT-{0:yyyyMMddHHmmssfff}", DateTime.Now); };
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("Code");
+				settings.Columns.Add("SuperMarket");
+				settings.Columns.Add("CustomerPhone");
+				settings.Columns.Add("SupportPhone");
+				settings.Columns.Add("OrderDate");
+				settings.Columns.Add("Status");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

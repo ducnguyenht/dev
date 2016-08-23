@@ -1,0 +1,199 @@
+﻿
+@{
+    //ViewBag.Title = "GTViewNew";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+@model MVC.Areas.Sell.Models.APIGTOrder
+<h1>New GT Order</h1>
+
+@using (Html.BeginForm("GTViewNew", "GTOrder", FormMethod.Post))
+{
+    
+    <div class="col-md-12">
+        <div class="col-md-4">
+            @Html.DevExpress().Label(settings =>
+          {
+              //settings.ControlStyle.CssClass = "label";
+              settings.Text = "Code:";
+              settings.AssociatedControlName = "Code";
+          }
+          ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Code";
+                settings.ControlStyle.CssClass = "editor";
+            }
+        ).Bind(Model.Code).GetHtml()
+            @Html.ValidationMessageFor(model => model.Code, null, new { @class = "validator" })
+
+        </div>
+
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "OrderDate:";
+                settings.AssociatedControlName = "OrderDate";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "OrderDate";
+                settings.ControlStyle.CssClass = "editor";
+            }
+      ).Bind(Model.OrderDate).GetHtml()
+            @Html.ValidationMessageFor(model => model.OrderDate, null, new { @class = "validator" })
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Retailer:";
+                settings.AssociatedControlName = "Retailer";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Retailer";
+                settings.ControlStyle.CssClass = "editor";
+            }
+          ).Bind(Model.Retailer).GetHtml()
+            @Html.ValidationMessageFor(model => model.Retailer, null, new { @class = "validator" })
+        </div>
+    </div>
+    
+    <div class="col-md-12" style="height: 20px;"></div>
+    
+    <div class="col-md-12">
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "RetailerPhone:";
+                settings.AssociatedControlName = "RetailerPhone";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "RetailerPhone";
+                settings.ControlStyle.CssClass = "editor";
+            }
+           ).Bind(Model.RetailerPhone).GetHtml()
+            @Html.ValidationMessageFor(model => model.RetailerPhone, null, new { @class = "validator" })
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "SalesPhone:";
+                settings.AssociatedControlName = "SalesPhone";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "SalesPhone";
+                settings.ControlStyle.CssClass = "editor";
+            }
+            ).Bind(Model.SalesPhone).GetHtml()
+            @Html.ValidationMessageFor(model => model.SalesPhone, null, new { @class = "validator" })
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Status:";
+                settings.AssociatedControlName = "Status";
+            }
+        ).GetHtml()
+            @Html.DevExpress().ComboBox(
+                settings =>
+                {
+                    settings.Name = "Status";
+                    // settings.Width = 180;
+                    settings.SelectedIndex = 0;
+                    settings.Properties.DisplayFormatString = " ";
+                    settings.Properties.ValueType = typeof(string);
+                    settings.Properties.Items.Add("Approving");
+                    settings.Properties.Items.Add("Completed");
+                    settings.Properties.Items.Add("Inprogress");
+                    settings.Properties.Items.Add("Pending");
+                    settings.Properties.Items.Add("Shipping");
+                    settings.Properties.Items.Add("Submitted");
+                }
+            ).GetHtml()
+        </div>
+    </div>
+    
+    <div class="col-md-12" style="height: 20px;"></div>
+    <div class="col-md-12">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#gtorderitem">GT Order Item</button>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#gtorderpromotion">GT Order Promotion</button>
+        </div>
+        <div class="col-md-8">
+           
+        </div>
+
+        <div class="col-md-12" style="height: 20px;"></div>
+
+        <div id="gtorderitem"  hidden="hidden">
+            
+            @Html.Action("GTOrderItemPartial")
+        </div>
+        <div class="col-md-12" style="height: 20px;"></div>
+        <div id="gtorderpromotion" hidden="hidden">
+          
+            @Html.Action("GTOrderPromotionPartial")
+        </div>
+    </div>
+
+    <div class="col-md-12" style="height: 20px;"></div>
+    
+    <div class="col-md-12">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            @*@Html.DevExpress().Label(
+            settings =>
+            {
+                settings.ControlStyle.CssClass = "label";
+            }
+        ).GetHtml()*@
+            @Html.DevExpress().Button(
+            settings =>
+            {
+                settings.Name = "btnAdd";
+                settings.ControlStyle.CssClass = "button";
+                settings.Text = "Add";
+                settings.UseSubmitBehavior = true;
+            }
+        ).GetHtml()
+            @Html.DevExpress().Button(
+            settings =>
+            {
+                settings.Name = "btnCancel";
+                settings.ControlStyle.CssClass = "button";
+                settings.Text = "Cancel";
+                settings.ClientSideEvents.Click = "function(s, e){ document.location='" + DevExpressHelper.GetUrl(new { Controller = "GTOrder", Action = "SalesGTOrder" }) + "'; }";
+            }
+        ).GetHtml()
+        </div>
+    </div>
+
+
+
+
+}

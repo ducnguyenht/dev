@@ -1,0 +1,112 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridView_FSOrder";
+        settings.CallbackRouteValues = new { Controller = "FSOrder", Action = "GridView_FSOrderPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "FSOrder", Action = "GridView_FSOrderPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "FSOrder", Action = "GridView_FSOrderPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "FSOrder", Action = "GridView_FSOrderPartialDelete" };
+        //settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        //settings.CommandColumn.Visible = true;
+        //settings.CommandColumn.ShowNewButtonInHeader = true;
+        //settings.CommandColumn.ShowDeleteButton = true;
+        //settings.CommandColumn.ShowEditButton = true;
+        
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 10;
+        //settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        //settings.CommandColumn.ShowNewButtonInHeader = true;
+        //settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/glyphicons-halflings-98-plus.png";
+        //settings.CommandColumn.DeleteButton.Visible = true;
+        //settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+        //settings.CommandColumn.EditButton.Visible = true;
+        //settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+        //settings.CommandColumn.UpdateButton.Visible = true;
+        //settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+        //settings.CommandColumn.CancelButton.Visible = true;
+        //settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+
+
+
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+        //settings.Styles.CommandColumn.Spacing = 15;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+
+       
+
+        settings.Columns.Add(c =>
+        {
+            //c.Caption = "#";
+            c.Width = System.Web.UI.WebControls.Unit.Pixel(100);
+            c.Settings.AllowDragDrop = DefaultBoolean.False;
+            c.Settings.AllowSort = DefaultBoolean.False;
+            c.SetHeaderTemplateContent(t =>
+            {
+                ViewContext.Writer.Write(
+                      Html.ActionLink(" ", "FSOrderNew", new { Code = DateTime.Now.Ticks.ToString() }, new { @class = "glyphicons glyphicons-plus col-sm-12", @style  = "text-align: center;" })
+                );
+            });
+            c.SetDataItemTemplateContent(t =>
+            {
+                ViewContext.Writer.Write(
+                    Html.ActionLink(" ", "FSOrderEdit", new { Code = DataBinder.Eval(t.DataItem, "Code") }, new { @class = "halflings halflings-pencil col-sm-6" }) + "" +
+
+                    Html.ActionLink(" ", "FSOrderDelete", new { Code = DataBinder.Eval(t.DataItem, "Code") },
+                        new { @class = "halflings halflings-trash col-sm-6", onclick = "return confirm('Do you want to delete ?')" })
+                    );
+            });
+        });
+
+
+
+        settings.KeyFieldName = "Code";
+        settings.CellEditorInitialize = (s, e) =>
+        {
+            if (e.Column.FieldName == "Code")
+            {
+                e.Editor.Enabled = false;
+            }
+        };
+        
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "OrderDate";
+            c.ColumnType = MVCxGridViewColumnType.DateEdit;
+        });
+        settings.Columns.Add("Code");
+        settings.Columns.Add("FoodService");
+        settings.Columns.Add("CustomerPhone");
+        settings.Columns.Add("SupportPhone");
+        settings.Columns.Add(c =>
+            {
+                c.FieldName = "Status";
+                c.ColumnType = MVCxGridViewColumnType.ComboBox;
+                List<string> dataList = new List<string>();
+                dataList.Add(MVC.Areas.Sell.Models.FSOrderStatus.Approving.ToString());
+                dataList.Add(MVC.Areas.Sell.Models.FSOrderStatus.Completed.ToString());
+                dataList.Add(MVC.Areas.Sell.Models.FSOrderStatus.InProgress.ToString());
+                dataList.Add(MVC.Areas.Sell.Models.FSOrderStatus.Pending.ToString());
+                dataList.Add(MVC.Areas.Sell.Models.FSOrderStatus.Shipping.ToString());
+                dataList.Add(MVC.Areas.Sell.Models.FSOrderStatus.Submitted.ToString());
+                var comboBoxProperties = c.PropertiesEdit as ComboBoxProperties;
+                comboBoxProperties.DataSource = dataList;
+            }
+         );
+        
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

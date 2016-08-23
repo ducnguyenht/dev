@@ -1,0 +1,62 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "SalesOnlineItemsPromotionGridView";
+        settings.CallbackRouteValues = new { Controller = "OnlineOrder", Action = "SalesOnlineItemsPromotionGridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "OnlineOrder", Action = "SalesOnlineItemsPromotionGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "OnlineOrder", Action = "SalesOnlineItemsPromotionGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "OnlineOrder", Action = "SalesOnlineItemsPromotionGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 20;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/Action/New.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/Action/Delete.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+        settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+        settings.SettingsPager.PageSize = 15;
+
+        settings.Settings.ShowFilterRow = true;
+        settings.Settings.ShowFilterRowMenu = true;
+        settings.CommandColumn.ShowClearFilterButton = true;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+        
+        settings.CellEditorInitialize = (s, e) =>
+        {
+            e.Editor.BackColor = System.Drawing.Color.LightGreen;
+        };
+        
+        settings.KeyFieldName = "NumberOrder";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add("NumberOrder");
+        settings.Columns.Add("Code");
+        settings.Columns.Add("Name");
+        settings.Columns.Add("Specification");
+        settings.Columns.Add("Weight");
+        settings.Columns.Add("Unit");
+        settings.Columns.Add("Quantity");
+        settings.Columns.Add("Note");
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

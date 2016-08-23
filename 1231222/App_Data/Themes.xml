@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Themes>
+  <theme name="Aqua" code="Aqua" imageurl="~/Images/Themes/Aqua.png" />
+  <theme name="Black Glass" code="BlackGlass" imageurl="~/Images/Themes/BlackGlass.png" />
+  <theme name="Dev Ex" code="DevEx" imageurl="~/Images/Themes/DevEx.png" />
+  <theme name="Glass" code="Glass" imageurl="~/Images/Themes/Glass.png" />
+  <theme name="iOS" code="iOS" imageurl="~/Images/Themes/iOS.png" />
+  <theme name="Metropolis" code="Metropolis" imageurl="~/Images/Themes/Metropolis.png" />
+  <theme name="Metropolis Blue" code="MetropolisBlue" imageurl="~/Images/Themes/MetropolisBlue.png" />
+  <theme name="Moderno" code="Moderno" imageurl="~/Images/Themes/Moderno.png" />
+  <theme name="Office 2003 Blue" code="Office2003Blue" imageurl="~/Images/Themes/Office2003Blue.png" />
+  <theme name="Office 2003 Olive" code="Office2003Olive" imageurl="~/Images/Themes/Office2003Olive.png" />
+  <theme name="Office 2003 Silver" code="Office2003Silver" imageurl="~/Images/Themes/Office2003Silver.png" />
+  <theme name="Office 2010 Black" code="Office2010Black" imageurl="~/Images/Themes/Office2010Black.png" />
+  <theme name="Office 2010 Blue" code="Office2010Blue" imageurl="~/Images/Themes/Office2010Blue.png" />
+  <theme name="Office 2010 Silver" code="Office2010Silver" imageurl="~/Images/Themes/Office2010Silver.png" />
+  <theme name="Plastic Blue" code="PlasticBlue" imageurl="~/Images/Themes/PlasticBlue.png" />
+  <theme name="Red Wine" code="RedWine" imageurl="~/Images/Themes/RedWine.png" />
+  <theme name="Soft Orange" code="SoftOrange" imageurl="~/Images/Themes/SoftOrange.png" />
+  <theme name="Youthful" code="Youthful" imageurl="~/Images/Themes/Youthful.png" />
+</Themes>

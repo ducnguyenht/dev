@@ -1,0 +1,137 @@
+﻿
+@{
+        var grid = Html.DevExpress().GridView(settings => {
+            settings.Name = "Purchasing";
+            settings.CallbackRouteValues = new { Controller = "Purchasing", Action = "PurchasingPartial" };
+
+            settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Purchasing", Action = "PurchasingPartialAddNew" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Purchasing", Action = "PurchasingPartialUpdate" };
+            settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Purchasing", Action = "PurchasingPartialDelete" };          
+            settings.SettingsBehavior.ConfirmDelete = true;
+            
+            //settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+            //settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+            //settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+            //settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
+            //settings.SettingsDetail.ShowDetailRow = true;
+
+            ////button New, Delete, Update on grid
+            //settings.CommandColumn.Visible = true;
+            //settings.CommandColumn.Width = 65;
+            //settings.Styles.CommandColumn.Spacing = 20;
+            //settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+            //settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+            //settings.CommandColumn.ShowNewButtonInHeader = true;
+      
+            //settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/Action/New.png";
+            //settings.CommandColumn.DeleteButton.Visible = true;
+            //settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/Action/Delete.png";
+            //settings.CommandColumn.EditButton.Visible = true;
+            //settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+            //settings.CommandColumn.UpdateButton.Visible = true;
+            //settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+            //settings.CommandColumn.CancelButton.Visible = true;
+            //settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+
+            //settings.SetDetailRowTemplateContent(c =>
+            //{
+            //    Html.RenderAction("PurchasingDetailPartial", new { ID = DataBinder.Eval(c.DataItem, "ID") });
+            //});
+
+            settings.CommandColumn.Width = 65;
+            settings.Styles.CommandColumn.Spacing = 15;
+            settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+
+            settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+            settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+            settings.Columns.Add(column =>
+            {
+                column.Caption = "#";
+
+                column.SetDataItemTemplateContent(c =>
+                {
+                    ViewContext.Writer.Write(
+                        //Html.ActionLink("New", "PurchasingViewNew", new { ID = (int)DateTime.Now.Ticks }) + "&nbsp;" +
+                        Html.ActionLink(" ", "PurchasingViewEdit", new { ID = DataBinder.Eval(c.DataItem, "ID") }, new { @class = "glyphicons glyphicons-pencil " }) + "&nbsp;" +
+                        Html.ActionLink(" ", "PurchasingViewDelete", new { ID = DataBinder.Eval(c.DataItem, "ID") },
+                            new { @class = "glyphicons glyphicons-bin", onclick = "return confirm('Do you want to delete ?')" })
+                    );
+
+                });
+
+                column.SetHeaderTemplateContent(c =>
+                {
+                    ViewContext.Writer.Write("&nbsp;" + " " + "&nbsp;" + " " +
+                        Html.ActionLink(" ", "PurchasingViewNew", new { ID = (int)DateTime.Now.Ticks }, new { @class = "glyphicons glyphicons-plus " }));
+                    //Html.ActionLink("Edit", "IndexGridViewEdit", new { ID = DataBinder.Eval(c.DataItem, "ID") }) + "&nbsp;" +
+                    //Html.ActionLink("Delete", "IndexGridViewDelete", new { ID = DataBinder.Eval(c.DataItem, "ID") },
+                    //    new { onclick = "return confirm('Do you want to delete ?')" })
+
+
+                });
+
+                column.Settings.AllowDragDrop = DefaultBoolean.False;
+                column.Settings.AllowSort = DefaultBoolean.False;
+                column.Width = 80;
+            });
+            settings.KeyFieldName = "ID";
+           
+            settings.SettingsPager.Visible = true;
+            settings.Settings.ShowGroupPanel = true;
+            settings.Settings.ShowFilterRow = true;
+            //settings.SettingsBehavior.AllowSelectByRowClick = true;
+            //settings.CellEditorInitialize = (s, e) =>
+            //{
+            //    e.Editor.BackColor = System.Drawing.Color.RoyalBlue;
+            //};
+            
+            //settings.Columns.Add("ID");
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "ID";
+                //c.EditFormSettings.Visible = DefaultBoolean.False;
+            });
+
+            // //Tự sinh mã
+            settings.InitNewRow = (s, e) => { e.NewValues["ID"] = String.Format("ID-{0:yyyyMMddHHmmssfff}", DateTime.Now); };
+            
+            
+            settings.CellEditorInitialize = (s, e) =>
+            {             
+                if (e.Column.FieldName == "ID")
+                    e.Editor.Enabled = false;
+            };
+            settings.Columns.Add("IssueDate", MVCxGridViewColumnType.DateEdit);
+           
+            settings.Columns.Add("Supplier", MVCxGridViewColumnType.ComboBox);
+            settings.Columns.Add("PostingDate", MVCxGridViewColumnType.DateEdit);
+             
+            settings.Columns.Add(c =>
+                {
+                    c.FieldName = "Status";                   
+                    c.ColumnType = MVCxGridViewColumnType.ComboBox;
+                    c.UnboundType = DevExpress.Data.UnboundColumnType.String;
+                    List<string> dataList = new List<string>();
+                    
+                    dataList.Add(MVC.Areas.Purchasing.Models.APIPurchasing.PurchasingStatus.Approving.ToString());
+                    dataList.Add(MVC.Areas.Purchasing.Models.APIPurchasing.PurchasingStatus.Completed.ToString());
+                    dataList.Add(MVC.Areas.Purchasing.Models.APIPurchasing.PurchasingStatus.InProgress.ToString());
+                    dataList.Add(MVC.Areas.Purchasing.Models.APIPurchasing.PurchasingStatus.Pending.ToString());
+                    dataList.Add(MVC.Areas.Purchasing.Models.APIPurchasing.PurchasingStatus.Shipping.ToString());
+                    dataList.Add(MVC.Areas.Purchasing.Models.APIPurchasing.PurchasingStatus.Submitted.ToString());
+
+                    ComboBoxProperties comb = c.PropertiesEdit as ComboBoxProperties;
+                    comb.DataSource = dataList;
+                }); 
+              
+           
+            settings.Columns.Add("Description");
+            settings.Columns.Add("VATInvoiceSerialNumber", MVCxGridViewColumnType.CheckBox);
+            settings.Columns.Add("IsPurchaseCost", MVCxGridViewColumnType.CheckBox);
+                });
+            if (ViewData["EditError"] != null){
+            grid.SetEditErrorText((string)ViewData["EditError"]);
+        }
+    }
+    @grid.Bind(Model).GetHtml()

@@ -1,0 +1,96 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "GTOrder";
+        settings.CallbackRouteValues = new { Controller = "GTOrder", Action = "GTOrderPartial" };
+
+        
+		settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "GTOrder", Action = "GTOrderPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "GTOrder", Action = "GTOrderPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "GTOrder", Action = "GTOrderPartialDelete" };
+        
+        //settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+        //settings.CommandColumn.ShowNewButtonInHeader = true;
+            
+        //settings.CommandColumn.Visible = true;
+        //settings.CommandColumn.ShowNewButton = true;
+        //settings.CommandColumn.ShowDeleteButton = true;
+        //settings.CommandColumn.ShowEditButton = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 15;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+       
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+        settings.Columns.Add(column =>
+        {
+            column.Caption = "#";
+
+            column.SetDataItemTemplateContent(c =>
+            {
+                ViewContext.Writer.Write(
+                    //Html.ActionLink("New", "GTViewNew", new { Code = (int)DateTime.Now.Ticks }) + "&nbsp;" +
+                    Html.ActionLink(" ", "GTViewEdit", new { Code = DataBinder.Eval(c.DataItem, "Code") }, new { @class = "glyphicons glyphicons-pencil " }) + "&nbsp;" +
+                    Html.ActionLink(" ", "GTViewDelete", new { Code = DataBinder.Eval(c.DataItem, "Code") },
+                        new { @class = "glyphicons glyphicons-bin", onclick = "return confirm('Do you want to delete ?')" })
+                );
+
+            });
+
+            column.SetHeaderTemplateContent(c =>
+            {
+                ViewContext.Writer.Write("&nbsp;" +" " +"&nbsp;" +   " " +              
+                    Html.ActionLink(" ", "GTViewNew", new { Code = (int)DateTime.Now.Ticks }, new { @class = "glyphicons glyphicons-plus " }));
+                //Html.ActionLink("Edit", "IndexGridViewEdit", new { ID = DataBinder.Eval(c.DataItem, "ID") }) + "&nbsp;" +
+                //Html.ActionLink("Delete", "IndexGridViewDelete", new { ID = DataBinder.Eval(c.DataItem, "ID") },
+                //    new { onclick = "return confirm('Do you want to delete ?')" })
+
+
+            });
+
+            column.Settings.AllowDragDrop = DefaultBoolean.False;
+            column.Settings.AllowSort = DefaultBoolean.False;
+            column.Width = 80;
+        });
+
+		settings.KeyFieldName = "Code";
+
+        settings.InitNewRow = (s, e) => { e.NewValues["Code"] = String.Format("GT-{0:yyyyMMddHHmmssfff}", DateTime.Now); };
+
+
+        settings.CellEditorInitialize = (s, e) =>
+        {
+            //e.Editor.BackColor = System.Drawing.Color.RoyalBlue;
+            if (e.Column.FieldName == "Code")
+                e.Editor.Enabled = false;
+        };
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+                settings.Columns.Add("OrderDate", MVCxGridViewColumnType.DateEdit);
+				settings.Columns.Add("Code");
+				settings.Columns.Add("Retailer",MVCxGridViewColumnType.ComboBox);
+				settings.Columns.Add("RetailerPhone");
+               
+				settings.Columns.Add("SalesPhone");
+				//settings.Columns.Add("Status",MVCxGridViewColumnType.ComboBox);
+                settings.Columns.Add(column =>
+                {
+                    column.FieldName = "Status";
+                    column.ColumnType = MVCxGridViewColumnType.ComboBox;
+
+                    var comboBoxProperties = column.PropertiesEdit as ComboBoxProperties;
+                    comboBoxProperties.DataSource = ViewData["APIGTOrderStatus"];
+                    comboBoxProperties.ValueType = typeof(MVC.Areas.Sell.Models.APIGTOrderStatus);
+
+                });
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()
+

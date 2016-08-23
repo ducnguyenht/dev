@@ -1,0 +1,44 @@
+﻿
+<div class="headerTop">
+    <div class="logo col-md-3 col-sm-3 col-xs-3">
+        <a href="./Home">
+            <img src="~/Images/Logos/Logo.png" />
+        </a>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-9">
+        <div class="loginControl">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                System.Xml.Linq.XDocument objLang = System.Xml.Linq.XDocument.Load(Server.MapPath("~/App_Data/Languages.xml"));
+
+                @Html.DevExpress().Label(settings =>
+               {
+                   settings.Name = "lbChooseLanguage";
+                   settings.Text = MVC.App_Resources.Translate.PageLogin_ChooseLanguage;
+                   //settings.AssociatedControlName = "UserName";
+               }).GetHtml()
+
+                @Html.DevExpress().ComboBox(settings =>
+                    {
+                        //settings.ControlStyle.CssClass=
+                        settings.Name = "ComboBox";
+                        settings.Width = 150;
+                        settings.Enabled = true;
+                        settings.Properties.ValueField = "code";
+                        settings.Properties.TextField = "name";
+                        settings.Properties.ImageUrlField = "imageurl";
+                        settings.Properties.ItemImage.Width = 24;
+                        settings.Properties.ShowImageInEditBox = true;
+                        settings.Properties.ClientSideEvents.SelectedIndexChanged = "SelectedIndexChanged";
+                        settings.Properties.ClientSideEvents.Init = "Init";
+                    }).BindList(objLang.Descendants("language").Select(x => new
+                        {
+                            name = x.Attribute("name").Value,
+                            code = x.Attribute("code").Value,
+                            imageurl = x.Attribute("imageurl").Value
+                        }).ToList()).GetHtml()
+            }
+        </div>
+    </div>
+</div>

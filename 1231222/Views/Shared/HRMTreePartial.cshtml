@@ -1,0 +1,25 @@
+﻿@Html.DevExpress().TreeView(rc =>
+{
+    rc.Name = Model;
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Internal Organization";
+        node.Image.Url = "~/Content/Images/15_Organization.png";
+        node.Expanded = true;
+        node.Nodes.Add("Sub");
+        //node.Image.Url = "~/Content/Images/1470834039_lock.png";
+    });
+    rc.Nodes.Add(node => {
+        node.Text = "Department";
+        node.Image.Url = "~/Content/Images/14_Department.png";
+        node.Expanded = true;
+        node.Nodes.Add("Sub");
+    });
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Employee";
+        node.Image.Url = "~/Content/Images/17_Employee.png";
+        node.Expanded = true;
+        node.Nodes.Add("Sub");
+    });
+}).GetHtml()

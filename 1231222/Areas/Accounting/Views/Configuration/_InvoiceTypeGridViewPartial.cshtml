@@ -1,0 +1,86 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "InvoiceTypeGridView";
+        settings.CallbackRouteValues = new { Controller = "Configuration", Action = "InvoiceTypeGridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Configuration", Action = "InvoiceTypeGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Configuration", Action = "InvoiceTypeGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Configuration", Action = "InvoiceTypeGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 20;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/Action/New.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/Action/Delete.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+        settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+        settings.SettingsPager.PageSize = 15;
+
+        settings.Settings.ShowFilterRow = true;
+        settings.Settings.ShowFilterRowMenu = true;
+        settings.CommandColumn.ShowClearFilterButton = true;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+
+        settings.CellEditorInitialize = (s, e) =>
+        {
+            e.Editor.BackColor = System.Drawing.Color.LightGreen;
+        };
+        
+        settings.KeyFieldName = "Code";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Code";
+            //c.EditFormSettings.Visible = DefaultBoolean.False;
+        });
+
+        // Tự sinh mã
+        settings.InitNewRow = (s, e) => { e.NewValues["Code"] = String.Format("IT-{0:yyyyMMddHHmmssfff}", DateTime.Now); };
+        // không chỉnh sửa
+        settings.CellEditorInitialize = (s, e) =>
+        {
+            if (e.Column.FieldName == "Code")
+                e.Editor.Enabled = false;
+        };
+
+        settings.Columns.Add("Name");
+        settings.Columns.Add("Description");
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Type";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            c.UnboundType = DevExpress.Data.UnboundColumnType.String;
+
+            List<string> dataList = new List<string>();
+            dataList.Add(MVC.Areas.Accounting.Models.Configuration.InvoiceTypeEnum.In.ToString());
+            dataList.Add(MVC.Areas.Accounting.Models.Configuration.InvoiceTypeEnum.Out.ToString());
+
+            ComboBoxProperties comb = c.PropertiesEdit as ComboBoxProperties;
+            comb.DataSource = dataList;
+        });
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

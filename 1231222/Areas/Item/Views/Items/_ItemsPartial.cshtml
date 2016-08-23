@@ -1,0 +1,132 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "Items";
+        settings.CallbackRouteValues = new { Controller = "Items", Action = "ItemsPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Items", Action = "ItemsPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Items", Action = "ItemsPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Items", Action = "ItemsPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        settings.CommandColumn.Visible = true;
+        //settings.CommandColumn.ShowNewButtonInHeader = true;
+        //settings.CommandColumn.ShowDeleteButton = true;
+        //settings.CommandColumn.ShowEditButton = true;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 10;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/glyphicons-halflings-98-plus.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+
+
+
+        settings.KeyFieldName = "Code";
+
+        
+        settings.Columns.Add(c => { c.FieldName = "Code"; });
+        settings.Columns.Add(c => { c.FieldName = "Name"; });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Price";
+            c.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            c.PropertiesEdit.DisplayFormatString = "###.###.###,###" + " đ";
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+
+            var spinEdit = c.PropertiesEdit as SpinEditProperties;
+            spinEdit.NullText = "PleaseSelect";
+            spinEdit.MinValue = 0;
+            spinEdit.MaxValue = decimal.MaxValue;
+            spinEdit.NumberType = SpinEditNumberType.Integer;
+            spinEdit.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.Text;
+
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "ReferenceCost";
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+            var spinEdit = c.PropertiesEdit as SpinEditProperties;
+            spinEdit.NullText = "PleaseSelect";
+            spinEdit.MinValue = 0;
+            spinEdit.MaxValue = decimal.MaxValue;
+            spinEdit.NumberType = SpinEditNumberType.Integer;
+
+
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "ServiceChangeInPercentage";
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+            var spinEdit = c.PropertiesEdit as SpinEditProperties;
+            spinEdit.NullText = "PleaseSelect";
+            spinEdit.MinValue = 0;
+            //spinEdit.MaxValue = decimal.MaxValue;
+            spinEdit.NumberType = SpinEditNumberType.Integer;
+        });
+        settings.Columns.Add(c => { c.FieldName = "IncludedVATInPrice"; c.Caption = "Included VAT In Price"; c.ColumnType = MVCxGridViewColumnType.CheckBox; });
+        settings.Columns.Add(c => { c.FieldName = "IsStorable"; c.ColumnType = MVCxGridViewColumnType.CheckBox; });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "ItemType";
+            c.Caption = "Item Type";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            c.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            var comboBoxProperties = c.PropertiesEdit as ComboBoxProperties;
+
+
+            List<string> datalist = new List<string>();
+            foreach (var data in MVC.Areas.Item.Models.ItemTypeList.GetData())
+            {
+                datalist.Add(data.Name);
+            }
+            comboBoxProperties.DataSource = datalist;
+
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Category";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            c.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            var comboBoxProperties = c.PropertiesEdit as ComboBoxProperties;
+
+
+            List<string> datalist = new List<string>();
+            foreach (var data in MVC.Areas.Item.Models.ItemCategoryList.GetData())
+            {
+                datalist.Add(data.Name);
+            }
+            comboBoxProperties.DataSource = datalist;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Unit";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            c.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            var comboBoxProperties = c.PropertiesEdit as ComboBoxProperties;
+
+
+            List<string> datalist = new List<string>();
+            foreach (var data in MVC.Areas.Item.Models.ItemUnitList.GetData())
+            {
+                datalist.Add(data.Name);
+            }
+            comboBoxProperties.DataSource = datalist;
+        });
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

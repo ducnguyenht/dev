@@ -1,0 +1,12 @@
+﻿@Html.DevExpress().TreeView(rc =>
+{
+    rc.Name = Model;
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Sercurity";
+        node.Image.Url = "~/Content/Images/08_Lock.png";
+        node.Expanded = true;
+        node.Nodes.Add("Sub");
+        //node.Image.Url = "~/Content/Images/1470834039_lock.png";
+    });
+}).GetHtml()

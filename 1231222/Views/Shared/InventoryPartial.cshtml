@@ -1,0 +1,33 @@
+﻿@Html.DevExpress().TreeView(rc =>
+{
+    rc.Name = Model;
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Stock";
+        node.Image.Url = "~/Content/Images/4_Stock.png";
+        node.Expanded = true;
+        node.Nodes.Add("Sub");
+        //node.Image.Url = "~/Content/Images/1470834039_lock.png";
+    });
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Operational Inventory";
+        node.Image.Url = "~/Content/Images/5_Operational Inventory.png";
+        node.Expanded = true;
+        node.Nodes.Add("Sub");
+    });
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Operational Order";
+        node.Image.Url = "~/Content/Images/16_box.png";
+        node.Expanded = true;
+        node.Nodes.Add("Sub");
+    });
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Inventory Report";
+        node.Image.Url = "~/Content/Images/7_Report.png";
+        node.Expanded = true;
+        node.Nodes.Add("Sub");
+    });
+}).GetHtml()

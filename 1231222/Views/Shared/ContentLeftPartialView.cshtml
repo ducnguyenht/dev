@@ -1,0 +1,92 @@
+@using MVC.App_Resources
+<div class="leftPanel">
+    @Html.DevExpress().NavBar(settings =>
+{
+    settings.Name = "NavBar";
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+
+    //settings.Styles.Item.Wrap = DefaultBoolean.True;
+    settings.AllowExpanding = true;
+    settings.AllowSelectItem = true;
+    settings.AutoCollapse = true;
+    settings.EnableHotTrack = true;
+    settings.EnableAnimation = true;
+    settings.SaveStateToCookies = true;
+
+    settings.Groups.Add(group =>
+    {
+        group.Text = "My Account";
+        group.SetContentTemplateContent(c =>
+        {
+            Html.RenderPartial("MyAccountPartial", "tree1");
+        });
+
+    });
+    if (Roles.IsUserInRole(WebSecurity.CurrentUserName, "Admin") || Roles.IsUserInRole(WebSecurity.CurrentUserName, "User"))
+    {
+        settings.Groups.Add(group =>
+        {
+            group.Text = Translate.Nomenclature;
+            group.SetContentTemplateContent(c =>
+            {
+                Html.RenderPartial("NomenclaturePartial", "tree2");
+            });
+        });
+        settings.Groups.Add(group =>
+        {
+            group.Text = "Inventory";
+            group.SetContentTemplateContent(c =>
+            {
+                Html.RenderPartial("InventoryPartial", "tree3");
+            });
+        });
+        settings.Groups.Add(group =>
+        {
+            group.Text = "Purchasing";
+            group.SetContentTemplateContent(c =>
+            {
+                Html.RenderPartial("PurchasingPartial", "tree4");
+            });
+
+
+        });
+        settings.Groups.Add(group =>
+        {
+            group.Text = "Sales Orders";
+            group.SetContentTemplateContent(c =>
+            {
+                Html.RenderPartial("SellPartial", "tree5");
+            });
+
+        });
+        settings.Groups.Add(group =>
+        {
+            group.Text = "Finance";
+
+            group.SetContentTemplateContent(c =>
+            {
+                Html.RenderPartial("FinanceTreePartial", "tree6");
+            });
+
+        });
+        settings.Groups.Add(group =>
+        {
+            group.Text = "HRM";
+            group.SetContentTemplateContent(c =>
+            {
+                Html.RenderPartial("HRMTreePartial", "tree7");
+            });
+        });
+        settings.Groups.Add(group =>
+        {
+
+            group.Text = "System";
+            group.SetContentTemplateContent(c =>
+            {
+                Html.RenderPartial("SystemTreePartial", "tree8");
+            });
+
+        });
+    }
+}).GetHtml()
+</div>

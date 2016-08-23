@@ -1,0 +1,147 @@
+﻿@using MVC.App_Resources
+@{
+    ViewBag.Title = "Bank";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@{
+    ViewBag.Title = Translate.SettingIndex_Title;
+}
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <h2>Settings</h2>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form" }))
+    {
+        System.Xml.Linq.XDocument objLang = System.Xml.Linq.XDocument.Load(Server.MapPath("~/App_Data/Languages.xml"));
+
+        //chon to chuc
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            @Html.DevExpress().Label(settings =>
+            {
+                settings.Name = "Label";
+                settings.Text = Translate.SettingIndex_ChooseOrganization;
+            }).GetHtml()
+
+            @Html.DevExpress().ComboBox(settings =>
+            {
+                //settings.ControlStyle.CssClass=
+                settings.Name = "dnCboOrganization";
+                settings.Width = 150;
+                settings.Enabled = true;
+                settings.Properties.ValueField = "code";
+                settings.Properties.TextField = "name";
+                settings.Properties.ImageUrlField = "imageurl";
+                settings.Properties.ItemImage.Width = 24;
+                settings.Properties.ShowImageInEditBox = true;
+                settings.Properties.Items.Add("Organization 1", "org1", "~/Images/Organizations/tc1.png");
+                settings.Properties.Items.Add("Organization 2", "org2", "~/Images/Organizations/tc2.png");
+                //settings.Properties.ClientSideEvents.SelectedIndexChanged = "dnCboOrganizationSelectedIndexChanged";
+                //settings.Properties.ClientSideEvents.Init = "dnCboOrganizationInit";
+            }).GetHtml()
+        </div>
+
+        //chon ngon ngu
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            @Html.DevExpress().Label(settings =>
+            {
+                settings.Name = "Label_Language";
+                settings.Text = Translate.SettingIndex_ChooseLanguage;
+            }).GetHtml()
+
+
+            @Html.DevExpress().ComboBox(settings =>
+               {
+                   //settings.ControlStyle.CssClass=
+                   settings.Name = "ComboBox";
+                   settings.Width = 150;
+                   settings.Enabled = true;
+                   settings.Properties.ValueField = "code";
+                   settings.Properties.TextField = "name";
+                   settings.Properties.ImageUrlField = "imageurl";
+                   settings.Properties.ItemImage.Width = 24;
+                   settings.Properties.ShowImageInEditBox = true;
+                   settings.Properties.ClientSideEvents.SelectedIndexChanged = "SelectedIndexChanged";
+                   settings.Properties.ClientSideEvents.Init = "Init";
+               }).BindList(objLang.Descendants("language").Select(x => new
+                    {
+                        name = x.Attribute("name").Value,
+                        code = x.Attribute("code").Value,
+                        imageurl = x.Attribute("imageurl").Value
+                    }).ToList()).GetHtml()
+        </div>
+        System.Xml.Linq.XDocument obj = System.Xml.Linq.XDocument.Load(Server.MapPath("~/App_Data/Themes.xml"));
+
+        //chon theme
+        <div class="col-md-12 col-sm-12 col-xs-12">
+
+            @Html.DevExpress().Label(settings =>
+            {
+                settings.Name = "Label_Theme";
+                settings.Text = Translate.SettingIndex_ChooseTheme;
+            }).GetHtml()
+
+            @Html.DevExpress().ComboBox(settings =>
+               {
+                   settings.Name = "dnCboChooseTheme";
+                   settings.Width = 150;
+                   settings.Enabled = true;
+                   settings.Properties.ValueField = "code";
+                   settings.Properties.TextField = "name";
+                   settings.Properties.ImageUrlField = "imageurl";
+                   settings.Properties.ItemImage.Width = 24;
+                   settings.Properties.ShowImageInEditBox = true;
+                   settings.Properties.ClientSideEvents.SelectedIndexChanged = "dnCboChooseThemeChanged";
+                   settings.Properties.ClientSideEvents.Init = "dnCboChooseThemeInit";
+               }).BindList(obj.Descendants("theme").Select(x => new
+                {
+                    name = x.Attribute("name").Value,
+                    code = x.Attribute("code").Value,
+                    imageurl = x.Attribute("imageurl").Value
+                }).ToList()).GetHtml()
+        </div>
+    }
+
+</div>
+
+@*@Html.DevExpress().Menu(
+    settings =>
+    {
+        settings.Name = "Menu";
+        settings.Items.Add(item =>
+        {
+            item.Text = Translate.UserName;
+        });
+    }).GetHtml()
+
+    @using (Html.BeginForm("Post", "Settings", FormMethod.Post))
+    {
+        @Html.DevExpress().TextBox(
+        settings =>
+        {
+            settings.Name = "Name";
+            settings.Width = 200;
+            settings.ShowModelErrors = true;
+            settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+        }).Bind(Model.Name).GetHtml()
+
+        @Html.DevExpress().Button(
+        settings =>
+        {
+            settings.Name = "Submit";
+            settings.Text = "Submit";
+            settings.UseSubmitBehavior = true;
+        }).GetHtml()
+    }*@
+@*
+    //settings.Width = 180;
+    //settings.SelectedIndex = 0;
+    //settings.Properties.ValueType = typeof(string);
+    //settings.Properties.Items.Add("VietNamese", "vi-VN");
+    //settings.Properties.Items.Add("English", "en-US");
+
+    //settings.SelectedIndex = 0;
+    //settings.Properties.ShowImageInEditBox = true;
+    //settings.Properties.ValueType = typeof(string);
+    //settings.Properties.Items.Add("Aqua", "Aqua");
+    //settings.Properties.Items.Add("Dev Express", "DevEx");
+*@

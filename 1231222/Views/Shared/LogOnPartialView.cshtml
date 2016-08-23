@@ -1,0 +1,11 @@
+@if(!Request.IsAuthenticated) {
+    @Html.ActionLink("Register", "Register", "Account") 
+    @: | 
+    @Html.ActionLink("Login", "Login", "Account")
+}
+else {
+    @: @MVC.App_Resources.Translate.LogOnPartialView_Welcome <b>@User.Identity.Name</b>!
+    
+    @*@: |
+    @Html.ActionLink(MVC.App_Resources.Translate.LogOnPartialView_Logout, "LogOff", "Account")*@
+}

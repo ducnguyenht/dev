@@ -1,0 +1,16 @@
+@{
+	var treeList = Html.DevExpress().TreeList(settings => {
+        settings.Name = "TreeList";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "TreeListPartial" };
+
+
+		settings.AutoGenerateColumns = false;
+
+				settings.KeyFieldName = "UserId";
+		settings.ParentFieldName = "UserId";
+
+		settings.SettingsPager.Visible = true;
+		settings.SettingsSelection.Enabled = true;
+	});
+}
+@treeList.Bind(Model).GetHtml()

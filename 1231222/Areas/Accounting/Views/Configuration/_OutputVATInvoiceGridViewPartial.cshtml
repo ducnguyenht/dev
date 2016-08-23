@@ -1,0 +1,120 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "OutputVATInvoiceGridView";
+        settings.CallbackRouteValues = new { Controller = "Configuration", Action = "OutputVATInvoiceGridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Configuration", Action = "OutputVATInvoiceGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Configuration", Action = "OutputVATInvoiceGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Configuration", Action = "OutputVATInvoiceGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 20;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/Action/New.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/Action/Delete.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+        settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+        settings.SettingsPager.PageSize = 15;
+
+        settings.Settings.ShowFilterRow = true;
+        settings.Settings.ShowFilterRowMenu = true;
+        settings.CommandColumn.ShowClearFilterButton = true;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+
+        settings.CellEditorInitialize = (s, e) =>
+        {
+            e.Editor.BackColor = System.Drawing.Color.LightGreen;
+        };
+
+        settings.KeyFieldName = "Id";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "InvoiceType";
+            c.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+
+            List<string> datalist = new List<string>();
+            datalist.Add(MVC.Areas.Accounting.Models.Configuration.InvoiceType.TYPE_OUT_NOT_VAT);
+            datalist.Add(MVC.Areas.Accounting.Models.Configuration.InvoiceType.TYPE_OUT_VAT_0_PERCENTAGE);
+            datalist.Add(MVC.Areas.Accounting.Models.Configuration.InvoiceType.TYPE_OUT_VAT_10_PERCENTAGE);
+            datalist.Add(MVC.Areas.Accounting.Models.Configuration.InvoiceType.TYPE_OUT_VAT_5_PERCENTAGE);
+
+            ComboBoxProperties comb = c.PropertiesEdit as ComboBoxProperties;
+            comb.DataSource = datalist;
+        });
+
+        settings.Columns.Add("InvoiceForm");
+        settings.Columns.Add("InvoiceCode");
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "InvoiceNumber";
+            c.HeaderStyle.Wrap = DefaultBoolean.True;
+        });
+        settings.Columns.Add("InvoiceDate", MVCxGridViewColumnType.DateEdit);
+        settings.Columns.Add(c =>
+        {
+            c.Caption = "External Organization";
+            c.FieldName = "ExternalOrganization";
+            c.HeaderStyle.Wrap = DefaultBoolean.True;
+        });
+        settings.Columns.Add("Buyer");
+        settings.Columns.Add("TaxCode");
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "AmountBeforeVAT";
+            c.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+            c.PropertiesEdit.DisplayFormatString = "#,#";
+
+            var spinSettings = (SpinEditProperties)c.PropertiesEdit;
+            spinSettings.MinValue = 0;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.Caption = "VAT (%)";
+            c.FieldName = "VAT";
+            c.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+            c.PropertiesEdit.DisplayFormatString = "#,#.#";
+
+            var spinSettings = (SpinEditProperties)c.PropertiesEdit;
+            spinSettings.MinValue = 0;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "VATAmount";
+            c.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+            c.PropertiesEdit.DisplayFormatString = "#,#";
+
+            var spinSettings = (SpinEditProperties)c.PropertiesEdit;
+            spinSettings.MinValue = 0;
+        });
+        settings.Columns.Add("Description");
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

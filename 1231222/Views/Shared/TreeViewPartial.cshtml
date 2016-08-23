@@ -1,0 +1,15 @@
+﻿@Html.DevExpress().TreeView(settings =>
+{
+    settings.Name = Model;
+    //settings.AllowSelectNode = true;
+    settings.Nodes.Add(node =>
+    {
+        node.Text = "Cash";
+        
+        node.Expanded = true;
+        node.Nodes.Add("Phieu thu");
+        node.Nodes.Add("Phieu chi");
+    });
+   //settings.Nodes.Add("Item 1");
+}).GetHtml()
+

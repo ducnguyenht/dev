@@ -1,0 +1,76 @@
+﻿@Html.DevExpress().GridView(
+    settings =>
+    {
+        settings.Name = "detailGridView_" + ViewData["AccountOrderID"];
+        settings.CallbackRouteValues = new { Controller = "Configuration", Action = "AccountDetailGridViewPartial", AccountOrderID = ViewData["AccountOrderID"] };
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Configuration", Action = "GridViewDetailAddNewPartial", AccountOrderID = ViewData["AccountOrderID"] };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Configuration", Action = "GridViewDetailUpdatePartial", AccountOrderID = ViewData["AccountOrderID"] };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Configuration", Action = "GridViewDetailDeletePartial", AccountOrderID = ViewData["AccountOrderID"] };
+
+        settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+
+        settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+        settings.SettingsPager.PageSize = 15;
+
+        settings.Settings.ShowFilterRow = true;
+        settings.Settings.ShowFilterRowMenu = true;
+        settings.CommandColumn.ShowClearFilterButton = true;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 20;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/Action/New.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/Action/Delete.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+
+        settings.CellEditorInitialize = (s, e) =>
+        {
+            e.Editor.BackColor = System.Drawing.Color.LightGreen;
+        };
+        
+        settings.KeyFieldName = "IDAccount";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add("Name");
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Level";
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+            c.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+        });
+        settings.Columns.Add("PreDefinitionName");
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "AccountType";
+            c.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+
+            List<string> datalist = new List<string>();
+            datalist.Add("Bold");
+            datalist.Add("Debit");
+            datalist.Add("Credit");
+
+            ComboBoxProperties comb = c.PropertiesEdit as ComboBoxProperties;
+            comb.DataSource = datalist;
+        });
+
+        settings.DataBinding = (sender, e) =>
+        {
+            ((MVCxGridView)sender).ForceDataRowType(typeof(MVC.Models.Accounting.Configuration.APIAccount));
+        };
+    }).Bind(Model).GetHtml()

@@ -1,0 +1,39 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "FSOrderPromotion";
+        settings.CallbackRouteValues = new { Controller = "FSOrder", Action = "FSOrderPromotionPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "FSOrder", Action = "FSOrderPromotionPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "FSOrder", Action = "FSOrderPromotionPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "FSOrder", Action = "FSOrderPromotionPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+        settings.KeyFieldName = "Code";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add("NO");
+        settings.Columns.Add("Code");
+        settings.Columns.Add("Name");
+        settings.Columns.Add("Specification");
+        settings.Columns.Add("UoM");
+        settings.Columns.Add("QuantityInUoM");
+        settings.Columns.Add("Quantity");
+        settings.Columns.Add("Note");
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

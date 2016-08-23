@@ -1,0 +1,115 @@
+﻿<div class="headerTop">
+    <div class="logo col-md-3 col-sm-3 col-xs-3">
+        <a href="./Home">
+            <img src="~/Images/Logos/Logo.png" />
+        </a>
+    </div>
+   
+    <div class="col-md-9 col-sm-9 col-xs-9">
+        <!-- #region Login control-->
+        <div class="welcome colmd-12 col-sm-12 col-xs-12">
+            @Html.Partial("LogOnPartialView")
+        </div>
+        <!-- #endregion -->
+        <div class="loginControl">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                @using (Html.BeginForm("", "Settings", FormMethod.Post))
+            {
+                    @Html.DevExpress().Button(settings =>
+                {
+                    settings.Name = "btn_Notification";
+                    settings.UseSubmitBehavior = true;
+                    settings.Images.Image.Url = "~/Content/Images/bell.png";
+                    settings.Images.Image.Width = 16;
+                    settings.Text = "";
+                    settings.Height = 30;
+                    //settings.RouteValues = new { Controller = "Home", Action = "_GridViewPartial" };
+                    //settings.ControlStyle.CssClass = "glyphicons glyphicons-user";
+                }).GetHtml()
+            }
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                @using (Html.BeginForm("", "Home", FormMethod.Post))
+            {
+                    @Html.DevExpress().Button(settings =>
+                {
+                    settings.Name = "btn_Message";
+                    settings.UseSubmitBehavior = true;
+                    settings.Images.Image.Url = "~/Content/Images/email.png";
+                    settings.Images.Image.Width = 16;
+                    settings.Text = "";
+                    settings.Height = 30;
+                }).GetHtml()
+            }
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                @Html.DevExpress().Button(settings =>
+                {
+                    settings.Name = "btn_Profile";
+                    settings.UseSubmitBehavior = true;
+                    settings.Images.Image.Url = "~/Content/Images/user.png";
+                    settings.Images.Image.Width = 16;
+                    settings.Text = "";
+                    settings.Height = 30;
+                }).GetHtml()
+
+                @Html.DevExpress().PopupMenu(
+                    settings =>
+                    {
+                        settings.Name = "popup_Profile";
+                        settings.PopupElementID = "btn_Profile";
+                        settings.ShowPopOutImages = DefaultBoolean.True;
+                        settings.PopupAction = PopupAction.LeftMouseClick;
+                        settings.PopupHorizontalAlign = PopupHorizontalAlign.RightSides;
+                        settings.PopupVerticalAlign = PopupVerticalAlign.Below;
+                        settings.Items.Add(item =>
+                        {
+                            item.Text = "My Profile";
+                            item.Name = "MyProfile";
+                            item.GroupName = "Sort";
+                            item.Image.Url = "~/Content/Images/user.png";
+                            item.Image.Width = 12;
+                            item.NavigateUrl = "";
+                        });
+                        settings.Items.Add(item =>
+                        {
+                            item.Text = "My Settings";
+                            item.Name = "MySettings";
+                            item.GroupName = "Sort";
+                            item.Image.Url = "~/Content/Images/setting_12x12.png";
+                            item.Image.Width = 12;
+                            item.NavigateUrl = "~/Setting/Settings";
+                        });
+                        settings.Items.Add(item =>
+                        {
+                            item.Text = "Log Out";
+                            item.Name = MVC.App_Resources.Translate.LogOnPartialView_Logout;
+                            item.GroupName = "Sort";
+                            item.Image.Url = "~/Content/Images/Logout.png";
+                            item.Image.Width = 12;
+                            item.NavigateUrl = "~/Account/LogOff";
+                        });
+
+                    }
+                ).GetHtml()
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+@* DXCOMMENT: Configure the header menu *@
+@*<div class="headerMenu">
+
+        @Html.DevExpress().Menu(settings => {
+            settings.Name = "HeaderMenu";
+            settings.ItemAutoWidth = false;
+            settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+            settings.Styles.Style.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+            settings.Styles.Style.BorderTop.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(1);
+        }).BindToXML(HttpContext.Current.Server.MapPath("~/App_Data/TopMenu.xml"), "/items/*").GetHtml()
+
+    </div>*@

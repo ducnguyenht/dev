@@ -1,0 +1,344 @@
+﻿@model MVC.Areas.Sell.Models.APISalesOnline
+
+@{
+    ViewBag.Title = "Sales Online Edit";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<h2>Sales Online Edit</h2>
+
+@using (Html.BeginForm("SalesOnlineEdit", "OnlineOrder", FormMethod.Post))
+{
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Code:";
+                settings.AssociatedControlName = "Code";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Code";
+                settings.ControlStyle.CssClass = "editor";
+                settings.ReadOnly = true;
+            }
+        ).Bind(Model.Code).GetHtml()
+        @Html.ValidationMessageFor(model => model.Code, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Customer:";
+                settings.AssociatedControlName = "Customer";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Customer";
+                settings.ControlStyle.CssClass = "editor";
+            }
+        ).Bind(Model.Customer).GetHtml()
+        @Html.ValidationMessageFor(model => model.Customer, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Order Date:";
+                settings.AssociatedControlName = "OrderDate";
+            }
+        ).GetHtml()
+        @Html.DevExpress().DateEdit(
+            settings =>
+            {
+                settings.Name = "OrderDate";
+                settings.ControlStyle.CssClass = "editor";
+
+            }
+         ).Bind(Model.OrderDate).GetHtml()
+        @Html.ValidationMessageFor(model => model.OrderDate, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Posting Date:";
+                settings.AssociatedControlName = "PostingDate";
+            }
+        ).GetHtml()
+        @Html.DevExpress().DateEdit(
+            settings =>
+            {
+                settings.Name = "PostingDate";
+                settings.ControlStyle.CssClass = "editor";
+            }
+          ).Bind(Model.PostingDate).GetHtml()
+        @Html.ValidationMessageFor(model => model.PostingDate, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Customer Tax Code:";
+                settings.AssociatedControlName = "CustomerTaxCode";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "CustomerTaxCode";
+                settings.ControlStyle.CssClass = "editor";
+            }
+           ).Bind(Model.CustomerTaxCode).GetHtml()
+        @Html.ValidationMessageFor(model => model.CustomerTaxCode, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "VAT Invoice Serial Number:";
+                settings.AssociatedControlName = "VATInvoiceSerialNumber";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "VATInvoiceSerialNumber";
+                settings.ControlStyle.CssClass = "editor";
+            }
+            ).Bind(Model.VATInvoiceSerialNumber).GetHtml()
+        @Html.ValidationMessageFor(model => model.VATInvoiceSerialNumber, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Phone:";
+                settings.AssociatedControlName = "Phone";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Phone";
+                settings.ControlStyle.CssClass = "editor";
+            }
+             ).Bind(Model.Phone).GetHtml()
+        @Html.ValidationMessageFor(model => model.Phone, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Email:";
+                settings.AssociatedControlName = "Email";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Email";
+                settings.ControlStyle.CssClass = "editor";
+            }
+              ).Bind(Model.Email).GetHtml()
+        @Html.ValidationMessageFor(model => model.Email, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Total:";
+                settings.AssociatedControlName = "Total";
+            }
+        ).GetHtml()
+        @Html.DevExpress().SpinEdit(
+            settings =>
+            {
+                settings.Name = "Total";
+                settings.ControlStyle.CssClass = "editor";
+                settings.Properties.DisplayFormatString = "#,#";
+                settings.Properties.DisplayFormatInEditMode = true;
+            }
+               ).Bind(Model.Total).GetHtml()
+        @Html.ValidationMessageFor(model => model.Total, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Customer Address:";
+                settings.AssociatedControlName = "CustomerAddress";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "CustomerAddress";
+                settings.ControlStyle.CssClass = "editor";
+            }
+                ).Bind(Model.CustomerAddress).GetHtml()
+        @Html.ValidationMessageFor(model => model.CustomerAddress, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Discription:";
+                settings.AssociatedControlName = "Discription";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Discription";
+                settings.ControlStyle.CssClass = "editor";
+            }
+                 ).Bind(Model.Discription).GetHtml()
+        @Html.ValidationMessageFor(model => model.Discription, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Created By:";
+                settings.AssociatedControlName = "CreatedBy";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "CreatedBy";
+                settings.ControlStyle.CssClass = "editor";
+            }
+                  ).Bind(Model.CreatedBy).GetHtml()
+        @Html.ValidationMessageFor(model => model.CreatedBy, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Status:";
+                settings.AssociatedControlName = "Status";
+            }
+        ).GetHtml()
+        @Html.DevExpress().ComboBox(
+            settings =>
+            {
+                settings.Name = "Status";
+                settings.SelectedIndex = 0;
+                settings.ControlStyle.CssClass = "editor";
+                settings.Properties.Items.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Approving.ToString());
+                settings.Properties.Items.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Completed.ToString());
+                settings.Properties.Items.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.InProgress.ToString());
+                settings.Properties.Items.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Pending.ToString());
+                settings.Properties.Items.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Shipping.ToString());
+                settings.Properties.Items.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Submitted.ToString());
+                settings.Properties.ValueType = typeof(string);
+            }
+                   ).Bind(Model.Status).GetHtml()
+        @Html.ValidationMessageFor(model => model.Status, null, new { @class = "" })
+    </div>
+    <div class="col-md-4">
+        @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Included VAT Voice:";
+                settings.AssociatedControlName = "IncludedVATVoice";
+            }
+        ).GetHtml()
+        @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "IncludedVATVoice";
+                settings.ControlStyle.CssClass = "editor";
+            }
+                    ).Bind(Model.IncludedVATVoice).GetHtml()
+        @Html.ValidationMessageFor(model => model.IncludedVATVoice, null, new { @class = "" })
+    </div>
+
+    <div class="col-md-12" style="height: 20px;"></div>
+
+
+
+
+
+    // lưới Items Order
+    <div class="col-md-12">
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#saleOnlineItemsOrderEdit">Items Order</button>
+    </div>
+    <div class="col-md-12" style="height: 10px;"></div>
+    <div class="col-md-12">
+        <div id="saleOnlineItemsOrderEdit" class="collapse">
+            @Html.Action("SalesOnlineItemsGridViewPartial")
+        </div>
+    </div>
+    <div class="col-md-12" style="height: 20px;"></div>
+
+
+
+
+
+    // lưới Items Promotion
+    <div class="col-md-12">
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#saleOnlineItemsPromotionEdit">Items Promotion</button>
+    </div>
+    <div class="col-md-12" style="height: 10px;"></div>
+    <div class="col-md-12">
+        <div id="saleOnlineItemsPromotionEdit" class="collapse">
+            @Html.Action("SalesOnlineItemsPromotionGridViewPartial")
+        </div>
+    </div>
+    <div class="col-md-12" style="height: 20px;"></div>
+
+
+
+    // button update, cancel
+    <div class="col-md-12">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+            }
+        ).GetHtml()
+            @Html.DevExpress().Button(
+            settings =>
+            {
+                settings.Name = "btnUpdate";
+                settings.ControlStyle.CssClass = "button";
+                settings.Text = "Update";
+                settings.UseSubmitBehavior = true;
+            }
+        ).GetHtml()
+            @Html.DevExpress().Button(
+            settings =>
+            {
+                settings.Name = "btnCancel";
+                settings.ControlStyle.CssClass = "button";
+                settings.Text = "Cancel";
+                settings.ClientSideEvents.Click = "function(s, e){ document.location='" + DevExpressHelper.GetUrl(new { Controller = "OnlineOrder", Action = "SalesOnline" }) + "'; }";
+            }
+        ).GetHtml()
+        </div>
+    </div>
+}

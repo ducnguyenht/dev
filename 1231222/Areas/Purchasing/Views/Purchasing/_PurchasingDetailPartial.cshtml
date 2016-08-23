@@ -1,0 +1,85 @@
+﻿
+
+@{
+        var grid = Html.DevExpress().GridView(settings => {
+            settings.Name = "PurchasingDetail" +ViewData["ID"];
+            settings.SettingsDetail.MasterGridName = "Purchasing";
+            settings.CallbackRouteValues = new { Controller = "Purchasing", Action = "PurchasingDetailPartial", ID = ViewData["ID"] };
+
+                    settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Purchasing", Action = "PurchasingDetailPartialAddNew" };
+            settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Purchasing", Action = "PurchasingDetailPartialUpdate" };
+            settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Purchasing", Action = "PurchasingDetailPartialDelete" };
+            settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+            //settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+            settings.SettingsBehavior.ConfirmDelete = true;
+            
+            
+            //enable commandColumn
+            //settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
+            //settings.SettingsDetail.ShowDetailRow = true;
+
+            settings.CommandColumn.Visible = true;
+            settings.CommandColumn.Width = 65;
+            settings.Styles.CommandColumn.Spacing = 20;
+            settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+            settings.CommandColumn.ShowNewButtonInHeader = true;
+            settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/Action/New.png";
+            settings.CommandColumn.DeleteButton.Visible = true;
+            settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/Action/Delete.png";
+            settings.CommandColumn.EditButton.Visible = true;
+            settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+            settings.CommandColumn.UpdateButton.Visible = true;
+            settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+            settings.CommandColumn.CancelButton.Visible = true;
+            settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+            
+
+
+
+            settings.KeyFieldName = "ID";
+
+            settings.SettingsPager.Visible = true;
+            settings.Settings.ShowGroupPanel = true;
+            settings.Settings.ShowFilterRow = true;
+            settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+                    //settings.Columns.Add("MaPhieu"); //ket 2 gridview voi MaPhieu
+                    settings.Columns.Add("VATInvoiceSerialNumber");
+                    settings.Columns.Add("InvoicedType");
+                    settings.Columns.Add("IssueDate", MVCxGridViewColumnType.DateEdit);
+                    settings.Columns.Add("CreatedBy", MVCxGridViewColumnType.ComboBox);
+                    settings.Columns.Add("TaxCode");
+                    settings.Columns.Add("AmountBeforeTax");
+                    settings.Columns.Add("Tax");
+                    settings.Columns.Add(column => {
+                        column.FieldName = "Amount";
+                        column.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+                        column.PropertiesEdit.DisplayFormatString = "c";
+                    });
+
+                });
+            if (ViewData["EditError"] != null){
+            grid.SetEditErrorText((string)ViewData["EditError"]);
+        }
+    }
+    @grid.Bind(Model).GetHtml()
+@Html.DevExpress().PageControl(settings =>
+{
+    settings.Name = "PageControl1";
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+    
+    
+    //settings.CallbackRouteValues = new { Controller = "Purchasing", Action = "DetailPanelPartial" };
+ 
+    settings.TabPages.Add("Chi tiết").SetContent(() =>
+    {
+        //ViewContext.Writer.Write("Page content 0");     
+        Html.RenderAction("DetailPanelPartial");
+    });
+    settings.TabPages.Add("Định khoản").SetContent(() =>
+    {
+
+        Html.RenderAction("PrinciplePanelPartial");
+
+    });
+}).GetHtml()

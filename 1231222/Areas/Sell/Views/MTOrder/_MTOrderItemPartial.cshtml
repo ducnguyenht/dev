@@ -1,0 +1,52 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "MTOrderItem";
+        settings.CallbackRouteValues = new { Controller = "MTOrder", Action = "MTOrderItemPartial" };
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "MTOrder", Action = "MTOrderItemPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "MTOrder", Action = "MTOrderItemPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "MTOrder", Action = "MTOrderItemPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        //button New, Delete, Update on grid
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 15;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/glyphicons-halflings-98-plus.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/glyphicons-halflings-61-pencil.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/glyphicons-halflings-172-floppy-disk.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+
+		settings.KeyFieldName = "Code";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("NO");
+				settings.Columns.Add("Code");
+				settings.Columns.Add("Name");
+				settings.Columns.Add("Specification");
+				settings.Columns.Add("UoM");
+				settings.Columns.Add("QuantityInUoM");
+				settings.Columns.Add("Quantity");
+				settings.Columns.Add("Price");
+				settings.Columns.Add("Percentage");
+				settings.Columns.Add("Amount");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

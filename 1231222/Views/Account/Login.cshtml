@@ -1,0 +1,68 @@
+@{ Layout = "~/Views/Shared/_lightLayoutLogin.cshtml"; }
+@model MVC.Models.LoginModel
+@using MVC.App_Resources
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="form-Regist">
+        <div class="accountHeader">
+            <h1>@Translate.PageLogin_Login</h1>
+
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            if (ViewData.ModelState.Count > 0 && ViewData.ModelState["ValidateLogin"] != null)
+            {
+                @ViewData.ModelState["ValidateLogin"].Errors[0].ErrorMessage<br />
+            }
+            <div>
+                @Html.DevExpress().Label(settings =>
+                {
+                    settings.Name = "UserNameLabel";
+                    settings.Text = Translate.PageLogin_UserName;
+                    settings.AssociatedControlName = "UserName";
+                    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+                }).GetHtml()
+            </div>
+            <div class="form-field">
+                @Html.EditorFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div>
+                @Html.DevExpress().Label(settings =>
+                {
+                    settings.Name = "PasswordLabel";
+                    settings.Text = Translate.PageLogin_Password;
+                    settings.AssociatedControlName = "Password";
+                    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+                }).GetHtml()
+            </div>
+            <div class="form-field">
+                @Html.EditorFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+
+            <div class="form-field">
+                @Html.DevExpress().CheckBox(settings =>
+                {
+                    settings.Name = "RememberMe";
+                    settings.Text = Translate.PageLogin_RememberMe;
+                }).GetHtml()
+            </div>
+            <div style="text-align:center; padding:10px 0px">
+                @Html.DevExpress().Button(settings =>
+                {
+                    settings.Name = "Button";
+                    settings.Text = Translate.PageLogin_LogOn;
+                    settings.UseSubmitBehavior = true;
+                }).GetHtml()
+            </div>
+            <div style="padding-top:10px; font-style:italic;"  >
+                <p>
+                    @Translate.PageLogin_Message1 @Html.ActionLink(Translate.PageLogin_Message2, "Register")
+                    @Translate.PageLogin_Message3
+                </p>
+            </div>
+        }
+    </div>
+</div>

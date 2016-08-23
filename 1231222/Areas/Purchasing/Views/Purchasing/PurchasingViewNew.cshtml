@@ -1,0 +1,219 @@
+﻿
+@{
+   // ViewBag.Title = "PurchasingViewNew";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+@model MVC.Areas.Purchasing.Models.APIPurchasing
+<h2>Purchasing View New</h2>
+
+@using (Html.BeginForm("PurchasingViewNew", "Purchasing", FormMethod.Post))
+{
+    <div class="col-md-12">
+        <div class="col-md-4">
+            @Html.DevExpress().Label(settings =>
+          {
+              //settings.ControlStyle.CssClass = "label";
+              settings.Text = "ID:";
+              settings.AssociatedControlName = "ID";
+          }
+          ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "ID";
+                settings.ControlStyle.CssClass = "editor";
+            }
+     ).Bind(Model.ID).GetHtml()
+            @Html.ValidationMessageFor(model => model.ID, null, new { @class = "validator" })
+
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "IssueDate:";
+                settings.AssociatedControlName = "IssueDate";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "IssueDate";
+                settings.ControlStyle.CssClass = "editor";
+            }
+   ).Bind(Model.IssueDate).GetHtml()
+            @Html.ValidationMessageFor(model => model.IssueDate, null, new { @class = "validator" })
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "PostingDate:";
+                settings.AssociatedControlName = "PostingDate";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "PostingDate";
+                settings.ControlStyle.CssClass = "editor";
+            }
+       ).Bind(Model.PostingDate).GetHtml()
+            @Html.ValidationMessageFor(model => model.PostingDate, null, new { @class = "validator" })
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                // settings.ControlStyle.CssClass = "label";
+                settings.Text = "Supplier:";
+                settings.AssociatedControlName = "Supplier";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Supplier";
+                settings.ControlStyle.CssClass = "editor";
+            }
+        ).Bind(Model.Supplier).GetHtml()
+            @Html.ValidationMessageFor(model => model.Supplier, null, new { @class = "validator" })
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Status:";
+                settings.AssociatedControlName = "Status";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Status";
+                settings.ControlStyle.CssClass = "editor";
+            }
+         ).Bind(Model.Status).GetHtml()
+            @Html.ValidationMessageFor(model => model.Status, null, new { @class = "validator" })
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "Description:";
+                settings.AssociatedControlName = "Description";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Description";
+                settings.ControlStyle.CssClass = "editor";
+            }
+      ).Bind(Model.Description).GetHtml()
+            @Html.ValidationMessageFor(model => model.Description, null, new { @class = "validator" })
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "VATInvoiceSerialNumber:";
+                settings.AssociatedControlName = "VATInvoiceSerialNumber";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "VATInvoiceSerialNumber";
+                settings.ControlStyle.CssClass = "editor";
+            }
+      ).Bind(Model.VATInvoiceSerialNumber).GetHtml()
+            @Html.ValidationMessageFor(model => model.VATInvoiceSerialNumber, null, new { @class = "validator" })
+        </div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+                settings.Text = "IsPurchaseCost:";
+                settings.AssociatedControlName = "IsPurchaseCost";
+            }
+        ).GetHtml()
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "IsPurchaseCost";
+                settings.ControlStyle.CssClass = "editor";
+            }
+      ).Bind(Model.IsPurchaseCost).GetHtml()
+            @Html.ValidationMessageFor(model => model.IsPurchaseCost, null, new { @class = "validator" })
+        </div>
+    </div>
+    <div class="col-md-12" style="height: 20px;"></div>
+    <div class="col-md-12">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#gtorderitem">GT Order Item</button>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#gtorderpromotion">GT Order Promotion</button>
+        </div>
+        <div class="col-md-8">
+
+        </div>
+
+        <div class="col-md-12" style="height: 20px;"></div>
+
+        <div id="gtorderitem" hidden="hidden">
+            @Html.Action("DetailPanelPartial")
+            @*@Html.Action("GTOrderItemPartial")*@
+        </div>
+        <div class="col-md-12" style="height: 20px;"></div>
+        <div id="gtorderpromotion" hidden="hidden">
+            @Html.Action("PrinciplePanelPartial")
+            @*@Html.Action("GTOrderPromotionPartial")*@
+        </div>
+    </div>
+    <div class="col-md-12" style="height: 20px;"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            @*@Html.DevExpress().Label(
+                    settings =>
+                    {
+                        settings.ControlStyle.CssClass = "label";
+                    }
+                ).GetHtml()*@
+            @Html.DevExpress().Button(
+            settings =>
+            {
+                settings.Name = "btnAdd";
+                settings.ControlStyle.CssClass = "button";
+                settings.Text = "Add";
+                settings.UseSubmitBehavior = true;
+            }
+        ).GetHtml()
+            @Html.DevExpress().Button(
+            settings =>
+            {
+                settings.Name = "btnCancel";
+                settings.ControlStyle.CssClass = "button";
+                settings.Text = "Cancel";
+                settings.ClientSideEvents.Click = "function(s, e){ document.location='" + DevExpressHelper.GetUrl(new { Controller = "Purchasing", Action = "Index" }) + "'; }";
+            }
+        ).GetHtml()
+        </div>
+    </div>
+
+
+}
+
+

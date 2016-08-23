@@ -1,0 +1,36 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "PostPanel" + ViewData["ID"];
+        settings.SettingsDetail.MasterGridName = "Sales"; ;
+        settings.CallbackRouteValues = new { Controller = "Sales", Action = "PostPanelPartial", ID = ViewData["ID"] };
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Sales", Action = "PostPanelPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Sales", Action = "PostPanelPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Sales", Action = "PostPanelPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+		settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+		settings.KeyFieldName = "ID";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("DebitAccount");
+				settings.Columns.Add("DebitPostingActor");
+				settings.Columns.Add("CreditAccount");
+				settings.Columns.Add("CreditPostingActor");
+				settings.Columns.Add("Amount");
+				settings.Columns.Add("Description");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

@@ -1,0 +1,83 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "OutputVATInvoiceConfigGridView";
+        settings.CallbackRouteValues = new { Controller = "Configuration", Action = "OutputVATInvoiceConfigGridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Configuration", Action = "OutputVATInvoiceConfigGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Configuration", Action = "OutputVATInvoiceConfigGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Configuration", Action = "OutputVATInvoiceConfigGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 20;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/Action/New.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/Action/Delete.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/Action/Edit.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/Action/Save.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/Action/Cancel.png";
+        settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+        settings.SettingsPager.PageSize = 15;
+
+        settings.Settings.ShowFilterRow = true;
+        settings.Settings.ShowFilterRowMenu = true;
+        settings.CommandColumn.ShowClearFilterButton = true;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+
+        settings.CellEditorInitialize = (s, e) =>
+        {
+            e.Editor.BackColor = System.Drawing.Color.LightGreen;
+        };
+        
+        settings.KeyFieldName = "ID";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add("EffectiveDate", MVCxGridViewColumnType.DateEdit);
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Type";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+
+            List<string> dataList = new List<string>();
+
+            dataList.Add("Hàng hóa, dịch vụ bán ra không chịu thuế GTGT");
+            dataList.Add("Hàng hoá, dịch vụ bán ra chịu thuế suất 0%");
+            dataList.Add("Hàng hoá, dịch vụ bán ra chịu thuế suất 5%");
+            dataList.Add("Hàng hoá, dịch vụ bán ra chịu thuế suất 10%");
+
+            var comboBoxProperties = c.PropertiesEdit as ComboBoxProperties;
+            comboBoxProperties.DataSource = dataList;
+
+
+
+            //comboBoxProperties.DataSource = MVC.Areas.Accounting.Models.Configuration.InvoiceTypeList.GetData();
+            //comboBoxProperties.TextField = "Name";
+            //comboBoxProperties.ValueField = "Code";
+            //comboBoxProperties.ValueType = typeof(string);
+            //comboBoxProperties.EnableSynchronization = DefaultBoolean.False;
+            //comboBoxProperties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+        });
+
+        settings.Columns.Add("InvoiceForm");
+        settings.Columns.Add("InvoiceCode");
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

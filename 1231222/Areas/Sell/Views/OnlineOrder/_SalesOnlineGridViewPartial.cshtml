@@ -1,0 +1,105 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "SalesOnlineGridView";
+        settings.CallbackRouteValues = new { Controller = "OnlineOrder", Action = "SalesOnlineGridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "OnlineOrder", Action = "SalesOnlineGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "OnlineOrder", Action = "SalesOnlineGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "OnlineOrder", Action = "SalesOnlineGridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+        settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+        settings.SettingsPager.PageSize = 15;
+
+        settings.Settings.ShowFilterRow = true;
+        settings.Settings.ShowFilterRowMenu = true;
+        settings.CommandColumn.ShowClearFilterButton = true;
+        settings.CommandColumn.ClearFilterButton.Image.Url = "~/Content/Images/Action/ClearFilter.png";
+
+        //settings.CommandColumn.Visible = true;
+        //settings.CommandColumn.ShowNewButton = true;
+        //settings.CommandColumn.ShowDeleteButton = true;
+        //settings.CommandColumn.ShowEditButton = true;
+
+        settings.Columns.Add(column =>
+        {
+            column.Caption = "#";
+            column.SetDataItemTemplateContent(c =>
+            {
+                ViewContext.Writer.Write(
+                    //Html.ActionLink("New", "SalesOnlineNew", new { Code = DateTime.Now.Ticks.ToString() }) + "&nbsp;" +
+                    "&nbsp;" +
+                    "&nbsp;" +
+                    Html.ActionLink(" ", "SalesOnlineEdit", new { Code = DataBinder.Eval(c.DataItem, "Code") }, new { @class = "halflings halflings-pencil" }) + "&nbsp;" +
+                    "&nbsp;" +
+                    "&nbsp;" +
+                    "&nbsp;" +
+                    Html.ActionLink(" ", "SalesOnlineDelete", new { Code = DataBinder.Eval(c.DataItem, "Code") },
+                        new { @class = "halflings halflings-trash", onclick = "return confirm('Do you want to delete ?')" })
+                );
+            });
+
+
+            column.SetHeaderTemplateContent(c =>
+            {
+                ViewContext.Writer.Write(
+                    "&nbsp;" +
+                    "&nbsp;" +
+                    "&nbsp;" +
+                    Html.ActionLink(" ", "SalesOnlineNew", new { Code = DateTime.Now.Ticks.ToString() }, new { @class = "glyphicons glyphicons-plus" }));
+
+                //ViewContext.Writer.Write(
+                //          Ajax.ActionLink("New", "IndexGridViewEdit", new { Usuario1 = "AlguienQueNoVaExistir" },
+                //    new AjaxOptions
+                // {
+                //     UpdateTargetId = "FormularioEdicion", // <-- DOM element ID to update
+                //     InsertionMode = InsertionMode.Replace, // <-- Replace the content of DOM element
+                //     HttpMethod = "Post" // <-- HTTP method
+                // })
+                //);
+            });
+
+            column.Settings.AllowDragDrop = DefaultBoolean.False;
+            column.Settings.AllowSort = DefaultBoolean.False;
+            column.Width = 70;
+        });
+
+
+        settings.KeyFieldName = "Code";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = true;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add("Code");
+        settings.Columns.Add("OrderDate");
+        settings.Columns.Add("Customer");
+        settings.Columns.Add("Phone");
+        settings.Columns.Add("Email");
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Status";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            c.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            List<string> dataList = new List<string>();
+
+            dataList.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Approving.ToString());
+            dataList.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Completed.ToString());
+            dataList.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.InProgress.ToString());
+            dataList.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Pending.ToString());
+            dataList.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Shipping.ToString());
+            dataList.Add(MVC.Areas.Sell.Models.APISalesOnline.SalesOnlineStatus.Submitted.ToString());
+
+            ComboBoxProperties comb = c.PropertiesEdit as ComboBoxProperties;
+            comb.DataSource = dataList;
+        });
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

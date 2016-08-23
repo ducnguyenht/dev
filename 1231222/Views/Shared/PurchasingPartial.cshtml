@@ -1,0 +1,27 @@
+﻿@Html.DevExpress().TreeView(rc =>
+{
+    rc.Name = Model;
+
+    rc.Nodes.Add(node =>
+        {
+            node.Text = "Purchase Order";
+            //node.ImageStyle.CssClass = "glyphicons glyphicons-user";
+            node.Image.Url = "~/Content/Images/9_Sell.png";
+            node.NavigateUrl = "~/Purchasing/Purchasing";
+
+            //node.Expanded = false;
+            //node.Nodes.Add("Service Purchase Order Booking Entry Configuration");
+            ////node.Image.Url = "~/Content/Images/1470834039_lock.png";
+            //node.Nodes.Add("Operational Service Purchase Order Classification");
+        });
+
+    //rc.Nodes.Add(node =>
+    //{
+    //    node.Text = "Item Sales Order";
+    //    node.Image.Url = "~/Content/Images/10_Sold.png";
+    //    node.NavigateUrl = "";
+    //    node.Expanded = true;
+    //    node.Nodes.Add("Sub");
+    //});
+
+}).GetHtml()

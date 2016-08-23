@@ -1,0 +1,38 @@
+﻿@Html.DevExpress().TreeView(rc =>
+{
+    rc.Name = Model;
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Item";
+        node.Image.Url = "~/Content/Images/2_Item.png";
+        node.Expanded = true;
+        node.NavigateUrl = "~/Item";
+        //node.Nodes.Add("Sub");
+        //node.Image.Url = "~/Content/Images/1470834039_lock.png";
+    });
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Item Category";
+        node.Image.Url = "~/Content/Images/2_Item.png";
+        node.Expanded = true;
+        node.NavigateUrl = "~/items-category";
+        //node.Nodes.Add("Sub");
+        //node.Image.Url = "~/Content/Images/1470834039_lock.png";
+    });
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Item Unit";
+        node.Image.Url = "~/Content/Images/2_Item.png";
+        node.NavigateUrl = "~/items-unit";
+        //node.Expanded = true;
+        //node.Nodes.Add("Sub");
+    });
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Item Type";
+        node.Image.Url = "~/Content/Images/2_Item.png";
+        node.NavigateUrl = "~/items-type";
+        //node.Expanded = true;
+        //node.Nodes.Add("Sub");
+    });
+}).GetHtml()

@@ -1,0 +1,40 @@
+﻿@Html.DevExpress().TreeView(rc =>
+{
+    rc.Name = Model;
+    rc.Nodes.Add(node =>
+    {
+        node.Text = "Configuration";
+        node.Image.Url = "~/Content/Images/12_Accounting Period.png";
+        node.Expanded = true;
+        node.Nodes.Add("Accounting Period", "", "~/Content/Images/12_Accounting Period.png", "~/Accounting/Configuration/AccountingPeriod");
+        node.Nodes.Add("Bank", "", "~/Content/Images/12_Accounting Period.png", "~/Accounting/Configuration/Bank");
+        node.Nodes.Add("Internal Bank Account", "", "~/Content/Images/12_Accounting Period.png", "~/Accounting/Configuration/InternalBankAccount");
+        node.Nodes.Add("Account", "", "~/Content/Images/12_Accounting Period.png", "~/Accounting/Configuration/AccountOrder");
+        node.Nodes.Add("Invoice Type", "", "~/Content/Images/12_Accounting Period.png", "~/Accounting/Configuration/InvoiceType");
+        node.Nodes.Add("Input VAT Invoice", "", "~/Content/Images/12_Accounting Period.png", "~/Accounting/Configuration/InputVATInvoice");
+        node.Nodes.Add("Output VAT Invoice", "", "~/Content/Images/12_Accounting Period.png", "~/Accounting/Configuration/OutputVATInvoice");
+        node.Nodes.Add("Output VAT Invoice Configuration", "", "~/Content/Images/12_Accounting Period.png", "~/Accounting/Configuration/OutputVATInvoiceConfig");
+        //node.Image.Url = "~/Content/Images/1470834039_lock.png";
+    });
+    //rc.Nodes.Add(node =>
+    //{
+    //    node.Text = "Bank";
+    //    node.Image.Url = "~/Content/Images/13_Bank.png";
+    //    node.Expanded = true;
+    //    node.Nodes.Add("Sub");
+    //});
+    //rc.Nodes.Add(node =>
+    //{
+    //    node.Text = "Account Order";
+    //    node.Image.Url = "~/Content/Images/18_Account.png";
+    //    node.Expanded = true;
+    //    node.Nodes.Add("Sub");
+    //});
+    //rc.Nodes.Add(node =>
+    //{
+    //    node.Text = "Internal Bank Account";
+    //    node.Image.Url = "~/Content/Images/7_Report.png";
+    //    node.Expanded = true;
+    //    node.Nodes.Add("Sub");
+    //});
+}).GetHtml()

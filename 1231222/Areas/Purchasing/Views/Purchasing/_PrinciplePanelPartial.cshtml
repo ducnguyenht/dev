@@ -1,0 +1,55 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "PrinciplePanel";
+        settings.CallbackRouteValues = new { Controller = "Purchasing", Action = "PrinciplePanelPartial" };
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+
+				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Purchasing", Action = "PrinciplePanelPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Purchasing", Action = "PrinciplePanelPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Purchasing", Action = "PrinciplePanelPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        //settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
+        //settings.SettingsDetail.ShowDetailRow = true;
+
+        //button New, Delete, Update on grid
+        settings.CommandColumn.Visible = true;
+        //button New, Delete, Update on grid
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Width = 65;
+        settings.Styles.CommandColumn.Spacing = 15;
+        settings.CommandColumn.ButtonType = GridViewCommandButtonType.Image;
+        settings.CommandColumn.CellStyle.Wrap = DefaultBoolean.False;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+
+        settings.CommandColumn.NewButton.Image.Url = "~/Content/Images/glyphicons-halflings-98-plus.png";
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.CommandColumn.EditButton.Image.Url = "~/Content/Images/glyphicons-halflings-61-pencil.png";
+        settings.CommandColumn.UpdateButton.Visible = true;
+        settings.CommandColumn.UpdateButton.Image.Url = "~/Content/Images/glyphicons-halflings-172-floppy-disk.png";
+        settings.CommandColumn.CancelButton.Visible = true;
+        settings.CommandColumn.CancelButton.Image.Url = "~/Content/Images/glyphicons-halflings-14-remove.png";
+
+
+		settings.KeyFieldName = "ID";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = true;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("DebitAccount");
+				settings.Columns.Add("DebitPostingActor");
+				settings.Columns.Add("CreditAccount");
+				settings.Columns.Add("CreditPostingActor");
+				settings.Columns.Add("Amount");
+                settings.Columns.Add("Description");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

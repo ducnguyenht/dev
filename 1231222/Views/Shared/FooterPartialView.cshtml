@@ -1,0 +1,10 @@
+@*<div class="footerMenu">
+
+    </div>*@
+<div class="copyright">
+    @Html.DevExpress().Label(settings =>
+{
+    settings.EncodeHtml = false;
+    settings.Text = "FMCG Office Management System, @NAANSolution 2011-" + DateTime.Now.Year + ", All Rights Reserved.";
+}).GetHtml()
+</div>

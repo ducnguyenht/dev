@@ -1,0 +1,191 @@
+﻿@model MVC.Areas.Sell.Models.APIFSOrder
+@{
+    ViewBag.Title = "FS Order Edit";
+    Layout = "~/Views/Shared/_mainLayout.cshtml";
+}
+
+<h2>FS Order Edit</h2>
+
+@using (Html.BeginForm("FSOrderEdit", "FSOrder", FormMethod.Post))
+{
+    <div class="col-md-12">
+        @*Code*@
+        <div class="col-md-4">
+            @Html.DevExpress().Label(settings =>
+            {
+                settings.Name = "lbl_Code";
+                settings.Text = "Code";
+                settings.AssociatedControlName = "Code";
+            }).GetHtml()
+
+
+            @Html.DevExpress().TextBox(settings =>
+            {
+                settings.Name = "Code";
+                settings.ReadOnly = true;
+            }).Bind(Model.Code).GetHtml()
+            @Html.ValidationMessageFor(model => model.Code, null, new { @class = "" })
+        </div>
+
+        @*OrderDate*@
+        <div class="col-md-4">
+            @Html.DevExpress().Label(settings =>
+        {
+            settings.Name = "lbl_OrderDate";
+            settings.Text = "Order Date";
+            settings.AssociatedControlName = "OrderDate";
+        }).GetHtml()
+
+            @Html.DevExpress().DateEdit(settings =>
+        {
+            settings.Name = "OrderDate";
+        }).Bind(Model.OrderDate).GetHtml()
+
+            @Html.ValidationMessageFor(model => model.OrderDate, null, new { @class = "" })
+        </div>
+
+        @*FoodService*@
+        <div class="col-md-4">
+            @Html.DevExpress().Label(settings =>
+        {
+            settings.Text = "Food Service";
+            settings.AssociatedControlName = "FoodService";
+        }).GetHtml()
+
+            @Html.DevExpress().TextBox(settings =>
+        {
+            settings.Name = "FoodService";
+        }).Bind(Model.FoodService).GetHtml()
+            @Html.ValidationMessageFor(model => model.FoodService, null, new { @class = "" })
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        @*CustomerPhone*@
+        <div class="col-md-4">
+            @Html.DevExpress().Label(settings =>
+        {
+            settings.Text = "Customer Phone";
+            settings.AssociatedControlName = "CustomerPhone";
+        }).GetHtml()
+
+            @Html.DevExpress().TextBox(settings =>
+        {
+            settings.Name = "CustomerPhone";
+        }).Bind(Model.FoodService).GetHtml()
+
+            @Html.ValidationMessageFor(model => model.CustomerPhone, null, new { @class = "" })
+        </div>
+
+        @*SupportPhone*@
+        <div class="col-md-4">
+            @Html.DevExpress().Label(settings =>
+        {
+            settings.Text = "Support Phone";
+            settings.AssociatedControlName = "SupportPhone";
+        }).GetHtml()
+
+            @Html.DevExpress().TextBox(settings =>
+        {
+            settings.Name = "SupportPhone";
+        }).Bind(Model.FoodService).GetHtml()
+
+            @Html.ValidationMessageFor(model => model.SupportPhone, null, new { @class = "" })
+        </div>
+
+        @*Status*@
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+
+                settings.Text = "Status:";
+                settings.AssociatedControlName = "Status";
+            }
+            ).GetHtml()
+            @Html.DevExpress().ComboBox(
+                settings =>
+                {
+                    settings.Name = "Status";
+
+                    settings.SelectedIndex = 0;
+                    settings.Properties.DisplayFormatString = " ";
+                    settings.Properties.ValueType = typeof(string);
+                    settings.Properties.Items.Add("Approving");
+                    settings.Properties.Items.Add("Completed");
+                    settings.Properties.Items.Add("Inprogress");
+                    settings.Properties.Items.Add("Pending");
+                    settings.Properties.Items.Add("Shipping");
+                    settings.Properties.Items.Add("Submitted");
+                }
+            ).GetHtml()
+        </div>
+
+    </div>
+
+
+    // lưới Items Order
+    <div class="col-md-12">
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#saleOnlineItemsOrderNew">Items Order</button>
+    </div>
+    <div class="col-md-12" style="height: 10px;"></div>
+    <div class="col-md-12">
+        <div id="saleOnlineItemsOrderNew" class="collapse">
+            @Html.Action("FSOrderItemPartial")
+        </div>
+    </div>
+    <div class="col-md-12" style="height: 20px;"></div>
+
+
+
+
+
+    // lưới Items Promotion
+    <div class="col-md-12">
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#saleOnlineItemsPromotionNew">Items Promotion</button>
+    </div>
+    <div class="col-md-12" style="height: 10px;"></div>
+    <div class="col-md-12">
+        <div id="saleOnlineItemsPromotionNew" class="collapse">
+            @Html.Action("FSOrderPromotionPartial")
+        </div>
+    </div>
+    <div class="col-md-12" style="height: 20px;"></div>
+
+
+
+    // button update, cancel
+    <div class="col-md-12">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                //settings.ControlStyle.CssClass = "label";
+            }
+        ).GetHtml()
+            @Html.DevExpress().Button(
+            settings =>
+            {
+                settings.Name = "btn_Update";
+                settings.ControlStyle.CssClass = "button";
+                settings.Text = "Update";
+                settings.UseSubmitBehavior = true;
+            }
+        ).GetHtml()
+            @Html.DevExpress().Button(
+            settings =>
+            {
+                settings.Name = "btnCancel";
+                settings.ControlStyle.CssClass = "button";
+                settings.Text = "Cancel";
+                settings.ClientSideEvents.Click = "function(s, e){ document.location='" + DevExpressHelper.GetUrl(new { Controller = "OnlineOrder", Action = "SalesOnline" }) + "'; }";
+            }
+        ).GetHtml()
+        </div>
+    </div>
+
+
+}

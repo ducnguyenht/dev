@@ -1,0 +1,28 @@
+﻿@Html.DevExpress().TreeView(rc =>
+{
+    rc.Name = Model;
+    //rc.Nodes.Add(node =>
+    //{
+    //    node.Text = "GT Order";
+    //    node.Image.Url = "~/Content/Images/9_Sell.png";
+    //    node.NavigateUrl = "~/Sell/Sales";
+        
+    //    //node.Expanded = true;
+    //    //node.Nodes.Add("Sub");
+    //    //node.Image.Url = "~/Content/Images/1470834039_lock.png";
+    //});
+    rc.Nodes.Add("GT Order", "", "~/Content/Images/9_Sell.png", "~/Sell/GTOrder/SalesGTOrder");
+    rc.Nodes.Add("MT Order", "", "~/Content/Images/9_Sell.png", "~/Sell/MTOrder/SalesMTOrder");
+    rc.Nodes.Add("FS Order", "", "~/Content/Images/9_Sell.png", "~/Sell/FSOrder/FSOrder");
+    rc.Nodes.Add("Online Order", "", "~/Content/Images/9_Sell.png", "~/Sell/OnlineOrder/SalesOnline");
+    
+    //rc.Nodes.Add(node =>
+    //{
+    //    node.Text = "Item Sales Order";
+    //    node.Image.Url = "~/Content/Images/11_Buy.png";
+    //    node.Expanded = true;
+    //    node.Nodes.Add("Sub");
+    //});
+   
+}).GetHtml()
+

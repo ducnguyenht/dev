@@ -487,6 +487,8 @@
     <Content Include="Areas\Item\Views\ItemsType\ItemsTypeIndex.cshtml" />
     <Content Include="Areas\Item\Views\ItemsType\_ItemsTypePartial.cshtml" />
     <Content Include="packages.config" />
+    <Content Include="Areas\UserAccount\Views\web.config" />
+    <Content Include="Areas\UserAccount\Views\UserAccount\UserAccount.cshtml" />
     <None Include="Properties\PublishProfiles\Duc.Nguyen.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -594,6 +596,8 @@
     <Compile Include="Areas\Setting\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Setting\Models\Data.cs" />
     <Compile Include="Areas\Setting\SettingAreaRegistration.cs" />
+    <Compile Include="Areas\UserAccount\Controllers\UserAccountController.cs" />
+    <Compile Include="Areas\UserAccount\UserAccountAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -624,6 +628,8 @@
     <Folder Include="Areas\Purchasing\Views\Shared\" />
     <Folder Include="Areas\Sell\Views\Shared\" />
     <Folder Include="Areas\Setting\Views\Shared\" />
+    <Folder Include="Areas\UserAccount\Models\" />
+    <Folder Include="Areas\UserAccount\Views\Shared\" />
     <Folder Include="vi-VN\" />
   </ItemGroup>
   <PropertyGroup>

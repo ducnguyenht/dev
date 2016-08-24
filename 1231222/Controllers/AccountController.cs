@@ -69,7 +69,7 @@ namespace MVC.Controllers
         //
         // POST: /Account/Register
 
-        [HttpPost]
+        [HttpPost]//new1
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
@@ -79,7 +79,7 @@ namespace MVC.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { }, true);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Status=LoginStatus.Requested }, true);
                     string queryConfirmationToken = "select ConfirmationToken from webpages_Membership where UserId = (SELECT UserId FROM  UserProfile where UserName='" + model.UserName + "'  )";
                     SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
                     SqlDataReader rdr = null;
@@ -102,20 +102,20 @@ namespace MVC.Controllers
                         }
                         conn.Close();
                     }
-                    var fromAddress = new MailAddress("noreply@vifuture.com", "Vifuture Account Team");
-                    var toAddress = new MailAddress("lukezeng@live.com", model.UserName);
-                    var toAddressRc = new MailAddress(model.UserName, model.UserName);
-                    const string fromPassword = "head/16/fan";
-                    const string subject = "Welcome to Luke's Future";
-                    string body = "http://www.Vifuture.com/account/confirmaccount?username=" + model.UserName + "&confirmToken=" + confirmationToken;
+                    var fromAddress = new MailAddress("redstopped4@gmail.com", "Admin System");//noreply@vifuture.com
+                    var toAddress = new MailAddress(model.Email, model.UserName);//lukezeng@live.com
+                    //var toAddressRc = new MailAddress(model.UserName, model.UserName);
+                    const string fromPassword = "84152422";
+                    const string subject = "Email Confirm";
+                    string body = "/account/confirmaccount?username=" + model.UserName + "&confirmToken=" + confirmationToken;
 
 
                     //Sending Email to greet the new registered user 
                     var smtp = new SmtpClient
                     {
-                        Host = "mail.foxglove.arvixe.com",
-                        Port = 587,
-                        EnableSsl = false,
+                        Host = "smtp.gmail.com",//mail.foxglove.arvixe.com smtp.gmail.com
+                        Port = 587,//587
+                        EnableSsl = true,
                         DeliveryMethod = SmtpDeliveryMethod.Network,
                         UseDefaultCredentials = false,
                         Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
@@ -125,17 +125,12 @@ namespace MVC.Controllers
                         Subject = subject,
                         Body = body
                     })
-                    using (var messageRc = new MailMessage(fromAddress, toAddressRc)
-                    {
-                        Subject = subject,
-                        Body = body
-                    })
                     {
                         smtp.Send(message);
-                        smtp.Send(messageRc);
-                    }
+                    }                   
+                    return RedirectToAction("Registered", "Account", new { model.UserName });
                     //WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    //return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -146,7 +141,60 @@ namespace MVC.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+        //Account/Registered
+        [AllowAnonymous]//new1
+        public ActionResult Registered(string userName)
+        {
+            ViewBag.UserName = userName;
+            return View();
 
+        }
+        //Get: /Account/ComfirmAccount
+        [HttpGet]//new1
+        [AllowAnonymous]
+        public ActionResult ConfirmAccount(string username, string confirmToken)
+        {
+            string commandText = "UPDATE  [dbo].[UserProfile] Set [Status] =@Status FROM [dbo].[UserProfile] INNER JOIN dbo.webpages_Membership ON dbo.UserProfile.UserId = dbo.webpages_Membership.UserId" +
+                " WHERE (dbo.UserProfile.UserName = @UserName) AND (dbo.webpages_Membership.ConfirmationToken = @ConfirmationToken)";
+        //    string commandText = "UPDATE Sales.Store SET Demographics = @demographics "
+        //+ "WHERE CustomerID = @ID;";
+
+            using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString))
+            {
+                SqlCommand command = new SqlCommand(commandText, connection);
+                command.Parameters.Add("@UserName", System.Data.SqlDbType.NVarChar);
+                command.Parameters["@UserName"].Value = username;
+                command.Parameters.Add("@ConfirmationToken", System.Data.SqlDbType.NVarChar);
+                command.Parameters["@ConfirmationToken"].Value = confirmToken;
+                command.Parameters.Add("@Status", System.Data.SqlDbType.Int);
+                command.Parameters["@Status"].Value = LoginStatus.EmailConfirmed;
+                // Use AddWithValue to assign Demographics.
+                // SQL Server will implicitly convert strings into XML.
+                //command.Parameters.AddWithValue("@demographics", demoXml);
+
+                try
+                {
+                    connection.Open();
+                    Int32 rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine("RowsAffected: {0}", rowsAffected);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            
+            return View();
+            //if (WebSecurity.ConfirmAccount(username, confirmToken))
+            //{
+            //    return RedirectToAction("Login", "Account");
+            //}
+            //else
+            //{
+            //    return RedirectPermanent("http://www.google.com");
+            //}
+            //return RedirectToAction("Login", "Account");
+        }
         //
         // GET: /Account/ChangePassword
 
@@ -236,4 +284,5 @@ namespace MVC.Controllers
         }
         #endregion
     }
+   
 }

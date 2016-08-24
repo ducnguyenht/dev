@@ -38,12 +38,12 @@ namespace MVC.Filters {
                             Roles.CreateRole("User");
                         }
                         if (!WebSecurity.UserExists("naansupport"))
-                        {
-                            WebSecurity.CreateUserAndAccount("naansupport", "a@123456");
+                        {//new1
+                            WebSecurity.CreateUserAndAccount("naansupport", "a@123456", new { Status = LoginStatus.Active });
                         }
                         if (!WebSecurity.UserExists("usertest"))
                         {
-                            WebSecurity.CreateUserAndAccount("usertest", "a@123456");
+                            WebSecurity.CreateUserAndAccount("usertest", "a@123456", new { Status = LoginStatus.Active });
                         }
                        // context.SaveChanges();
                         if (!Roles.IsUserInRole("naansupport", "Admin"))

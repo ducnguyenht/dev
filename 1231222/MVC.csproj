@@ -49,6 +49,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
@@ -167,6 +171,10 @@
       <HintPath>packages\Microsoft.AspNet.WebPages.OAuth.3.2.3\lib\net45\Microsoft.Web.WebPages.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MimeKit, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>packages\MimeKit.1.4.2\lib\net45\MimeKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -190,6 +198,7 @@
       <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData">
       <Private>True</Private>
     </Reference>
@@ -477,6 +486,7 @@
     <Content Include="Areas\Item\Views\ItemsUnit\_ItemsUnitPartial.cshtml" />
     <Content Include="Areas\Item\Views\ItemsType\ItemsTypeIndex.cshtml" />
     <Content Include="Areas\Item\Views\ItemsType\_ItemsTypePartial.cshtml" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Duc.Nguyen.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -533,6 +543,8 @@
     <Content Include="Views\Shared\_TreeListPartial.cshtml" />
     <Content Include="Views\Shared\_rootLayoutLogin.cshtml" />
     <Content Include="Views\Shared\_lightLayoutLogin.cshtml" />
+    <Content Include="Views\Account\Registered.cshtml" />
+    <Content Include="Views\Account\ConfirmAccount.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -589,6 +601,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BindRex.cs" />
+    <Compile Include="Helpers\ConstEnum.cs" />
     <Compile Include="Helpers\CultureHelper.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -22,7 +22,7 @@ namespace MVC.LinQ
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="MVC_Orgv03")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="MVC_Orgv04")]
 	public partial class DBAuthorizationDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -48,7 +48,7 @@ namespace MVC.LinQ
     #endregion
 		
 		public DBAuthorizationDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["MVC_Orgv03ConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["MVC_Orgv04ConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -203,11 +203,11 @@ namespace MVC.LinQ
 			}
 			set
 			{
-                if ((this._Status != (int)value))
+				if ((this._Status != value))
 				{
-                    this.OnStatusChanging((int)value);
+					this.OnStatusChanging(value);
 					this.SendPropertyChanging();
-                    this._Status = (int)value;
+					this._Status = value;
 					this.SendPropertyChanged("Status");
 					this.OnStatusChanged();
 				}
@@ -290,6 +290,8 @@ namespace MVC.LinQ
 		
 		private int _RoleId;
 		
+		private System.Nullable<int> _OrganizationId;
+		
 		private EntityRef<UserProfile> _UserProfile;
 		
 		private EntityRef<webpages_Role> _webpages_Role;
@@ -302,6 +304,8 @@ namespace MVC.LinQ
     partial void OnUserIdChanged();
     partial void OnRoleIdChanging(int value);
     partial void OnRoleIdChanged();
+    partial void OnOrganizationIdChanging(System.Nullable<int> value);
+    partial void OnOrganizationIdChanged();
     #endregion
 		
 		public webpages_UsersInRole()
@@ -355,6 +359,26 @@ namespace MVC.LinQ
 					this._RoleId = value;
 					this.SendPropertyChanged("RoleId");
 					this.OnRoleIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrganizationId", DbType="Int")]
+		public System.Nullable<int> OrganizationId
+		{
+			get
+			{
+				return this._OrganizationId;
+			}
+			set
+			{
+				if ((this._OrganizationId != value))
+				{
+					this.OnOrganizationIdChanging(value);
+					this.SendPropertyChanging();
+					this._OrganizationId = value;
+					this.SendPropertyChanged("OrganizationId");
+					this.OnOrganizationIdChanged();
 				}
 			}
 		}

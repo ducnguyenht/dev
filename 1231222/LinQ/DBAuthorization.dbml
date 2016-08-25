@@ -13,6 +13,7 @@
     <Type Name="webpages_UsersInRole">
       <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrganizationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="UserProfile_webpages_UsersInRole" Member="UserProfile" ThisKey="UserId" OtherKey="UserId" Type="UserProfile" IsForeignKey="true" />
       <Association Name="webpages_Role_webpages_UsersInRole" Member="webpages_Role" ThisKey="RoleId" OtherKey="RoleId" Type="webpages_Role" IsForeignKey="true" />
     </Type>

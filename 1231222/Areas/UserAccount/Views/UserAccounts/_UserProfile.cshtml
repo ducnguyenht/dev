@@ -13,28 +13,33 @@
         settings.CommandColumn.ShowDeleteButton = true;
         settings.CommandColumn.ShowEditButton = true;
 
-		settings.KeyFieldName = "UserId";
+        settings.KeyFieldName = "UserId";
 
 		settings.SettingsPager.Visible = true;
 		settings.Settings.ShowGroupPanel = true;
 		settings.Settings.ShowFilterRow = true;
 		settings.SettingsBehavior.AllowSelectByRowClick = true;
 
-				settings.Columns.Add("UserName");
-				settings.Columns.Add("Email");
-                settings.Columns.Add(column =>
-                {
-                    column.FieldName = "Status";
-                    //column.Settings.AutoFilterCondition = AutoFilterCondition.Equals;
-                    column.ColumnType = MVCxGridViewColumnType.ComboBox;
-                    ComboBoxProperties cp = column.PropertiesEdit as ComboBoxProperties;
-                    cp.DropDownStyle = DropDownStyle.DropDown;
-                    cp.DataSource = typeof(LoginStatus).GetDisplayValues();
-                    cp.ValueField = "Key";
-                    cp.TextField = "Value";
-                });
-              
-		});
+		settings.Columns.Add("UserName");
+		settings.Columns.Add("Email");
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "Status";
+            //column.Settings.AutoFilterCondition = AutoFilterCondition.Equals;
+            column.ColumnType = MVCxGridViewColumnType.ComboBox;
+            ComboBoxProperties cp = column.PropertiesEdit as ComboBoxProperties;
+            cp.DropDownStyle = DropDownStyle.DropDown;
+            cp.DataSource = typeof(LoginStatus).GetDisplayValues();
+            cp.ValueField = "Key";
+            cp.TextField = "Value";
+        });
+        //settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
+        //settings.SettingsDetail.ShowDetailRow = true;
+        //settings.SetDetailRowTemplateContent(c =>
+        //{
+        //    Html.RenderAction("PartialGridViewUserInRole", new { UserId = DataBinder.Eval(c.DataItem, "UserId") });
+        //});
+    });
 		if (ViewData["EditError"] != null){
         grid.SetEditErrorText((string)ViewData["EditError"]);
     }

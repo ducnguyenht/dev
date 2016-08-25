@@ -22,8 +22,11 @@ namespace MVC.Models {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
+        [StringLength(128)]
         public string UserName { get; set; }
-        public int Status { get; set; }//new1
+        public int Status { get; set; }//dn1
+        [StringLength(128)]
+        public string Email { get; set; }
     }
 	
 

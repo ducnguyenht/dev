@@ -232,6 +232,42 @@ namespace MVC.App_Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string LoginStatus_Active {
+            get {
+                return ResourceManager.GetString("LoginStatus_Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EmailConfirmed.
+        /// </summary>
+        public static string LoginStatus_EmailConfirmed {
+            get {
+                return ResourceManager.GetString("LoginStatus_EmailConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InActive.
+        /// </summary>
+        public static string LoginStatus_InActive {
+            get {
+                return ResourceManager.GetString("LoginStatus_InActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requested.
+        /// </summary>
+        public static string LoginStatus_Requested {
+            get {
+                return ResourceManager.GetString("LoginStatus_Requested", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logout.
         /// </summary>
         public static string LogOnPartialView_Logout {

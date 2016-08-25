@@ -69,7 +69,7 @@ namespace MVC.Controllers
         //
         // POST: /Account/Register
 
-        [HttpPost]//new1
+        [HttpPost]//dn1
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
@@ -79,7 +79,7 @@ namespace MVC.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Status=LoginStatus.Requested }, true);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Status=LoginStatus.Requested,Email=model.Email }, true);
                     string queryConfirmationToken = "select ConfirmationToken from webpages_Membership where UserId = (SELECT UserId FROM  UserProfile where UserName='" + model.UserName + "'  )";
                     SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
                     SqlDataReader rdr = null;
@@ -142,7 +142,7 @@ namespace MVC.Controllers
             return View(model);
         }
         //Account/Registered
-        [AllowAnonymous]//new1
+        [AllowAnonymous]//dn1
         public ActionResult Registered(string userName)
         {
             ViewBag.UserName = userName;
@@ -150,7 +150,7 @@ namespace MVC.Controllers
 
         }
         //Get: /Account/ComfirmAccount
-        [HttpGet]//new1
+        [HttpGet]//dn1
         [AllowAnonymous]
         public ActionResult ConfirmAccount(string username, string confirmToken)
         {

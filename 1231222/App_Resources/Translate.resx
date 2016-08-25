@@ -309,4 +309,16 @@
   <data name="UserName" xml:space="preserve">
     <value>User Nameeee</value>
   </data>
+  <data name="LoginStatus_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="LoginStatus_EmailConfirmed" xml:space="preserve">
+    <value>EmailConfirmed</value>
+  </data>
+  <data name="LoginStatus_InActive" xml:space="preserve">
+    <value>InActive</value>
+  </data>
+  <data name="LoginStatus_Requested" xml:space="preserve">
+    <value>Requested</value>
+  </data>
 </root>

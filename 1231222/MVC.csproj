@@ -488,7 +488,13 @@
     <Content Include="Areas\Item\Views\ItemsType\_ItemsTypePartial.cshtml" />
     <Content Include="packages.config" />
     <Content Include="Areas\UserAccount\Views\web.config" />
-    <Content Include="Areas\UserAccount\Views\UserAccount\UserAccount.cshtml" />
+    <Content Include="Areas\UserAccount\Views\UserAccounts\Index.cshtml" />
+    <Content Include="LinQ\DBAuthorization.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DBAuthorization.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\UserAccount\Views\UserAccounts\_UserProfile.cshtml" />
     <None Include="Properties\PublishProfiles\Duc.Nguyen.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -523,6 +529,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Translate.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="LinQ\DBAuthorization.dbml.layout">
+      <DependentUpon>DBAuthorization.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Views\Shared\HeaderPartialView.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -596,7 +605,7 @@
     <Compile Include="Areas\Setting\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Setting\Models\Data.cs" />
     <Compile Include="Areas\Setting\SettingAreaRegistration.cs" />
-    <Compile Include="Areas\UserAccount\Controllers\UserAccountController.cs" />
+    <Compile Include="Areas\UserAccount\Controllers\UserAccountsController.cs" />
     <Compile Include="Areas\UserAccount\UserAccountAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -614,7 +623,13 @@
     <Compile Include="Areas\Accounting\Models\Configuration\APIInputVATInvoice.cs" />
     <Compile Include="Areas\Accounting\Models\Configuration\APIInternalBankAccount.cs" />
     <Compile Include="Areas\Accounting\Models\Configuration\APIOutputVATInvoice.cs" />
+    <Compile Include="LinQ\DBAuthorization.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBAuthorization.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Models\SampleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -652,11 +667,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>6055</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:6055/</IISUrl>
+          <IISUrl>http://localhost:6155/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -117,4 +117,208 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountController_LoginError" xml:space="preserve">
+    <value>Tên đăng nhập hoặc mật khẩu không đúng.</value>
+  </data>
+  <data name="APISalesOnline_Code" xml:space="preserve">
+    <value>Mã</value>
+  </data>
+  <data name="APISalesOnline_CreatedBy" xml:space="preserve">
+    <value>Tạo bởi</value>
+  </data>
+  <data name="APISalesOnline_Customer" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="APISalesOnline_CustomerAddress" xml:space="preserve">
+    <value>Địa chỉ (khách hàng)</value>
+  </data>
+  <data name="APISalesOnline_CustomerTaxCode" xml:space="preserve">
+    <value>Mã số thuế (khách hàng)</value>
+  </data>
+  <data name="APISalesOnline_Discription" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="APISalesOnline_Email" xml:space="preserve">
+    <value>Thư điện tử</value>
+  </data>
+  <data name="APISalesOnline_IncludedVATVoice" xml:space="preserve">
+    <value>Xuất hóa đơn VAT</value>
+  </data>
+  <data name="APISalesOnline_OrderDate" xml:space="preserve">
+    <value>Ngày đặt hàng</value>
+  </data>
+  <data name="APISalesOnline_Phone" xml:space="preserve">
+    <value>Điện thoại</value>
+  </data>
+  <data name="APISalesOnline_PostingDate" xml:space="preserve">
+    <value>Ngày ghi sổ</value>
+  </data>
+  <data name="APISalesOnline_Status" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="APISalesOnline_Total" xml:space="preserve">
+    <value>Tổng tiền</value>
+  </data>
+  <data name="APISalesOnline_VATInvoiceSerialNumber" xml:space="preserve">
+    <value>Số hóa đơn</value>
+  </data>
+  <data name="GridTable_Group" xml:space="preserve">
+    <value>Kéo thả tiêu đề cột để nhóm theo cột đó.</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>Mã</value>
+  </data>
+  <data name="LoginModel_Password_Required" xml:space="preserve">
+    <value>Mật Khẩu không được để trống</value>
+  </data>
+  <data name="LoginModel_UserName_Required" xml:space="preserve">
+    <value>Tên đăng nhập không được để trống</value>
+  </data>
+  <data name="LogOnPartialView_Logout" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="LogOnPartialView_Welcome" xml:space="preserve">
+    <value>Chào</value>
+  </data>
+  <data name="Nomenclature" xml:space="preserve">
+    <value>Danh mục</value>
+  </data>
+  <data name="PageLogin_ChooseLanguage" xml:space="preserve">
+    <value>Chọn ngôn ngữ</value>
+  </data>
+  <data name="PageLogin_Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="PageLogin_LogOn" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="PageLogin_Message1" xml:space="preserve">
+    <value>Vui lòng điền tên đăng nhập và mật khẩu.</value>
+  </data>
+  <data name="PageLogin_Message2" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="PageLogin_Message3" xml:space="preserve">
+    <value>nếu bạn chưa có tài khoản.</value>
+  </data>
+  <data name="PageLogin_Password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="PageLogin_RememberMe" xml:space="preserve">
+    <value>Ghi nhớ đăng nhập?</value>
+  </data>
+  <data name="PageLogin_UserName" xml:space="preserve">
+    <value>Tên đăng nhập</value>
+  </data>
+  <data name="PurchasingDetailPanel_Items" xml:space="preserve">
+    <value>Mặt Hàng</value>
+  </data>
+  <data name="PurchasingDetailPanel_Quantity" xml:space="preserve">
+    <value>Số Lượng</value>
+  </data>
+  <data name="PurchasingDetailPanel_Total" xml:space="preserve">
+    <value>Thành Tiền</value>
+  </data>
+  <data name="PurchasingDetailPanel_Unit" xml:space="preserve">
+    <value>Đơn Vị Tính</value>
+  </data>
+  <data name="PurchasingDetailPanel_UnitPrice" xml:space="preserve">
+    <value>Đơn Giá</value>
+  </data>
+  <data name="PurchasingDetail_Amount" xml:space="preserve">
+    <value>Tiền Thuế</value>
+  </data>
+  <data name="PurchasingDetail_AmountBeforeTax" xml:space="preserve">
+    <value>Số Tiền Trước Thuế</value>
+  </data>
+  <data name="PurchasingDetail_CreatedBy" xml:space="preserve">
+    <value>Người Bán</value>
+  </data>
+  <data name="PurchasingDetail_InvoicedDate" xml:space="preserve">
+    <value>Ngày Lập Hoá Đơn</value>
+  </data>
+  <data name="PurchasingDetail_InvoicedType" xml:space="preserve">
+    <value>Loại Hoá Đơn</value>
+  </data>
+  <data name="PurchasingDetail_Tax" xml:space="preserve">
+    <value>Thuế</value>
+  </data>
+  <data name="PurchasingDetail_TaxCode" xml:space="preserve">
+    <value>Mã Số Thuế</value>
+  </data>
+  <data name="PurchasingDetail_VATInvoiceSerialNumber" xml:space="preserve">
+    <value>Hoá Đơn GTGT</value>
+  </data>
+  <data name="PurchasingPrinciplelPanel_Amount" xml:space="preserve">
+    <value>Số Tiền</value>
+  </data>
+  <data name="PurchasingPrinciplelPanel_CreditAccount" xml:space="preserve">
+    <value>Tài Khoảng Có</value>
+  </data>
+  <data name="PurchasingPrinciplelPanel_CreditPostingActor" xml:space="preserve">
+    <value>Đối Tượng Có</value>
+  </data>
+  <data name="PurchasingPrinciplelPanel_DebitAccount" xml:space="preserve">
+    <value>Tài Khoảng Nợ</value>
+  </data>
+  <data name="PurchasingPrinciplelPanel_DebitPostingActor" xml:space="preserve">
+    <value>Đối Tượng Nợ</value>
+  </data>
+  <data name="Purchasing_Description" xml:space="preserve">
+    <value>Diễn Giải</value>
+  </data>
+  <data name="Purchasing_IsPurchaseCost" xml:space="preserve">
+    <value>Là Chi Phí Mua Hàng</value>
+  </data>
+  <data name="Purchasing_IssueDate" xml:space="preserve">
+    <value>Ngày Chứng Từ</value>
+  </data>
+  <data name="Purchasing_PostingDate" xml:space="preserve">
+    <value>Ngày Ghi Sổ</value>
+  </data>
+  <data name="Purchasing_Status" xml:space="preserve">
+    <value>Trạng Thái</value>
+  </data>
+  <data name="Purchasing_Supplier" xml:space="preserve">
+    <value>NCC</value>
+  </data>
+  <data name="Purchasing_VATInvoiceSerialNumber" xml:space="preserve">
+    <value>Xuất HĐ</value>
+  </data>
+  <data name="RequiredValidationMessage" xml:space="preserve">
+    <value>RequiredValidationMessage vn</value>
+  </data>
+  <data name="SampleModel_ID" xml:space="preserve">
+    <value>Mã</value>
+  </data>
+  <data name="SampleModel_SampleString" xml:space="preserve">
+    <value>vd string</value>
+  </data>
+  <data name="SettingIndex_ChooseLanguage" xml:space="preserve">
+    <value>Chọn ngôn ngữ</value>
+  </data>
+  <data name="SettingIndex_ChooseOrganization" xml:space="preserve">
+    <value>Chọn tổ chức</value>
+  </data>
+  <data name="SettingIndex_ChooseTheme" xml:space="preserve">
+    <value>Chọn màu giao diện</value>
+  </data>
+  <data name="SettingIndex_Title" xml:space="preserve">
+    <value>Cấu hình</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Tên người dùng</value>
+  </data>
+  <data name="LoginStatus_Active" xml:space="preserve">
+    <value>Kích hoạt</value>
+  </data>
+  <data name="LoginStatus_EmailConfirmed" xml:space="preserve">
+    <value>Đã xác thực qua email</value>
+  </data>
+  <data name="LoginStatus_InActive" xml:space="preserve">
+    <value>Ngưng kích hoạt</value>
+  </data>
+  <data name="LoginStatus_Requested" xml:space="preserve">
+    <value>Đã yêu cầu</value>
+  </data>
 </root>

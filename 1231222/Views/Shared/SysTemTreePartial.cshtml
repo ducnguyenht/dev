@@ -6,7 +6,14 @@
         node.Text = "Sercurity";
         node.Image.Url = "~/Content/Images/08_Lock.png";
         node.Expanded = true;
-        node.Nodes.Add("Sub");
-        //node.Image.Url = "~/Content/Images/1470834039_lock.png";
+        node.Nodes.Add(
+            node1 =>
+            {//dn2
+                node1.Text = "User";
+                node1.Image.Url = "~/Content/Images/08_Lock.png";
+                node1.Expanded = true;
+                node1.NavigateUrl = "~/user-accounts";
+            }
+        );
     });
 }).GetHtml()

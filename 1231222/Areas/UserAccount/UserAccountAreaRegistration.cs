@@ -19,6 +19,11 @@ namespace MVC.Areas.UserAccount
                 "UserAccount/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
+            context.MapRoute(//dn3
+                name: "UserAccounts",
+                url: "user-accounts",
+                defaults: new { controller = "UserAccounts", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }

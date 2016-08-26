@@ -43,7 +43,7 @@ namespace dnmvcschedule.Controllers {
                 settings.EditAppointmentRouteValues = new { Controller = "Calendar", Action = "EditingPartialEditAppointment" };
 
                 settings.ActiveViewType = DevExpress.XtraScheduler.SchedulerViewType.WorkWeek;
-                settings.Start = new DateTime(2011, 4, 6);
+                settings.Start = DateTime.Now;//new DateTime(2011, 4, 6);
                 settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
                 settings.Views.DayView.VisibleTime.Start = new TimeSpan(8, 0, 0);
                 settings.Views.DayView.VisibleTime.End = new TimeSpan(20, 0, 0);

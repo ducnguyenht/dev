@@ -1,0 +1,68 @@
+@model System.Collections.IEnumerable
+
+@section Left {
+	@* DXCOMMENT: Configure TreeView that allows filtering the displayed mail messages *@
+    @Html.DevExpress().TreeView(settings => {
+    settings.Name = "MailFilter";
+    settings.Styles.NodeImage.Paddings.PaddingTop = System.Web.UI.WebControls.Unit.Pixel(3);
+    settings.ClientSideEvents.NodeClick = "OutlookController.MailFilterNodeClick";
+
+    settings.Nodes.Add(root => {
+        root.Text = "Mr. Brooks";
+        root.Image.Url = "/Content/Images/person.png";
+        root.Expanded = true;
+        root.Nodes.Add(node => {
+            node.Text = "Inbox";
+            node.Image.Url = "/Content/Images/inbox.png";
+            node.Expanded = true;
+            node.Nodes.AddRange(new MVCxTreeViewNode[] {
+                new MVCxTreeViewNode("ASP", "ASP", "/Content/Images/asp.png"),
+                new MVCxTreeViewNode("Announcements", "Announcements", "/Content/Images/announce.png"),
+                new MVCxTreeViewNode("IDE Tools", "IDE Tools", "/Content/Images/ide.png"),
+                new MVCxTreeViewNode("Frameworks", "Frameworks", "/Content/Images/frame.png")
+            });
+        });
+
+        root.Nodes.Add(node => {
+            node.Text = "Sent Items";
+            node.Enabled = false;
+            node.Image.Url = "/Content/Images/sent.png";
+        });
+
+        root.Nodes.Add(node => {
+            node.Text = "Drafts";
+            node.Enabled = false;
+            node.Image.Url = "/Content/Images/drafts.png";
+        });
+    });
+}).GetHtml()
+}
+
+@Html.DevExpress().Splitter(settings => {
+    settings.Name = "ContentSplitter";
+    settings.Orientation = System.Web.UI.WebControls.Orientation.Vertical;
+    settings.Height = System.Web.UI.WebControls.Unit.Percentage(100);
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+    settings.ClientSideEvents.PaneResized = "OutlookController.ContentSplitterPaneResized";
+    settings.Styles.Pane.Paddings.Padding = System.Web.UI.WebControls.Unit.Pixel(0);
+    settings.Styles.Pane.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+
+    settings.Panes.Add(subpane => {
+        subpane.Name = "MessageList";
+		subpane.PaneStyle.CssClass = "mlist";
+        subpane.SetContent(() => {
+            Html.RenderPartial("GridViewPartialView", Model);
+        });
+    });
+
+    settings.Panes.Add(subpane => {
+        subpane.Name = "MessageBody";
+		subpane.PaneStyle.CssClass = "mbody";
+        subpane.ScrollBars = System.Web.UI.WebControls.ScrollBars.Auto;
+        subpane.Separator.SeparatorStyle.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(1);
+        subpane.Separator.SeparatorStyle.BorderLeft.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+        subpane.Separator.SeparatorStyle.BorderRight.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+        subpane.SetContent("<div id=\"messageBody\" class=\"message\"></div>");
+    });
+
+}).GetHtml()

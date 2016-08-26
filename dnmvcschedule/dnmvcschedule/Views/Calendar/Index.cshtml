@@ -1,0 +1,10 @@
+@{ Layout = "~/Views/Shared/_MainLayout.cshtml"; }
+@model dnmvcschedule.Models.OutlookScheduler
+
+@section Left {
+    <div class="navcontainer">
+        @Html.DevExpress().DateNavigator(dnmvcschedule.Controllers.SchedulerHelper.Settings).Bind(Model.Appointments, Model.Resources).GetHtml()
+    </div>
+}
+
+@Html.Partial("SchedulerPartial", Model)

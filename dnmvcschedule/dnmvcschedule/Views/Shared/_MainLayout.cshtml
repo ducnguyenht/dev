@@ -1,0 +1,45 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.DevExpress().Splitter(settings => {
+    settings.Name = "ASPxSplitter1";
+    settings.Height = System.Web.UI.WebControls.Unit.Percentage(100);
+    settings.Styles.Pane.Paddings.Padding = System.Web.UI.WebControls.Unit.Pixel(0);
+    settings.Styles.Pane.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+
+    settings.Panes.Add(pane => {
+        pane.Name = "LeftPane";
+        pane.ShowCollapseBackwardButton = DefaultBoolean.True;
+        pane.Size = System.Web.UI.WebControls.Unit.Pixel(300);
+        pane.MaxSize = System.Web.UI.WebControls.Unit.Pixel(450);
+
+        pane.Panes.Add(subpane => {
+            subpane.Name = "FilterPane";
+            subpane.SetContent(() => {
+                RenderSection("Left").ToHtmlString();
+            });
+        });
+
+        pane.Panes.Add(subpane => {
+            subpane.Name = "MenuPane";
+            subpane.Separator.Visible = DefaultBoolean.True;
+            subpane.ShowSeparatorImage = DefaultBoolean.False;
+            subpane.AllowResize = DefaultBoolean.False;
+            subpane.Size = System.Web.UI.WebControls.Unit.Pixel(90);
+            subpane.Separator.SeparatorStyle.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(1);
+            subpane.Separator.SeparatorStyle.BorderRight.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+            subpane.Separator.SeparatorStyle.BorderLeft.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+            subpane.SetContent(() => {
+                Html.RenderPartial("MenuCornerPartialView");
+            });
+        });
+    });
+    settings.Panes.Add(pane => {
+        pane.Name = "ContentPane";
+        pane.Separator.Visible = DefaultBoolean.True;
+        pane.Separator.SeparatorStyle.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(1);
+        pane.Separator.SeparatorStyle.BorderTop.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+        pane.SetContent(RenderBody().ToHtmlString());
+    });
+
+}).GetHtml()

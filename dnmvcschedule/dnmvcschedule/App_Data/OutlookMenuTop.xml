@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <item Text="File" NavigateUrl="#" />
+  <item Text="Edit" NavigateUrl="#" />
+  <item Text="View" NavigateUrl="#" />
+  <item Text="Go" NavigateUrl="#" />
+  <item Text="Tools" NavigateUrl="#" />
+  <item Text="Actions" NavigateUrl="#" />
+  <item Text="Help" NavigateUrl="#" />
+</items>

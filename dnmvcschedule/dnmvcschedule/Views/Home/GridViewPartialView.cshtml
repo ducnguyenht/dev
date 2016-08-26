@@ -1,0 +1,56 @@
+@* DXCOMMENT: Configure GridView that displays mail messages *@
+@Html.DevExpress().GridView(grid => {
+    grid.Name = "MessagesGrid";
+    grid.KeyFieldName = "ID";
+    grid.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+    grid.SettingsPager.Mode = GridViewPagerMode.ShowAllRecords;
+    grid.Settings.ShowGroupPanel = true;
+    grid.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+    grid.Settings.VerticalScrollableHeight = 0;
+    grid.Settings.ShowGroupedColumns = true;
+    grid.Settings.GridLines = System.Web.UI.WebControls.GridLines.Vertical;
+    grid.SettingsBehavior.AllowFocusedRow = true;
+    grid.SettingsBehavior.AllowClientEventsOnLoad = false;
+    grid.SettingsBehavior.AutoExpandAllGroups = true;
+    grid.SettingsBehavior.EnableRowHotTrack = true;
+    grid.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.NextColumn;
+    grid.ControlStyle.Paddings.Padding = System.Web.UI.WebControls.Unit.Pixel(0);
+    grid.ControlStyle.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+    grid.Styles.Row.Cursor = "pointer";
+    grid.ClientSideEvents.FocusedRowChanged = "OutlookController.MessagesGridRowChanged";
+    grid.ClientSideEvents.EndCallback = "OutlookController.MessagesGridEndCallback";
+    grid.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartialView" };
+	
+	// DXCOMMENT: Configure the grid's columns
+    grid.Columns.Add(column => {
+        column.FieldName = "HasAttachment";
+        column.Settings.AllowGroup = DefaultBoolean.False;
+        column.Width = System.Web.UI.WebControls.Unit.Pixel(40);
+        column.HeaderStyle.HorizontalAlign = System.Web.UI.WebControls.HorizontalAlign.Center;
+        column.HeaderStyle.SortingImageSpacing = System.Web.UI.WebControls.Unit.Pixel(5);
+        column.SetHeaderCaptionTemplateContent("<div class=\"attachcap\"></div>");
+        column.SetDataItemTemplateContent(c => {
+            if((bool)DataBinder.Eval(c.DataItem, "HasAttachment")) {
+                Html.DevExpress().Image(img => {
+                    img.ImageUrl = "Content/Images/attach.png";
+                }).GetHtml();
+            }
+        });
+    });
+
+    grid.Columns.Add(column => {
+        column.FieldName = "From";
+        column.Width = System.Web.UI.WebControls.Unit.Pixel(200);
+    });
+
+    grid.Columns.Add("Subject");
+
+    grid.Columns.Add(column => {
+        column.ColumnType = MVCxGridViewColumnType.DateEdit;
+        column.FieldName = "Date";
+        column.Width = System.Web.UI.WebControls.Unit.Pixel(200);
+        column.SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+        column.PropertiesEdit.DisplayFormatString = "g";
+        column.GroupIndex = 0;
+    });
+}).Bind(Model).GetHtml()

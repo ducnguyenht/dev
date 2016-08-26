@@ -1,0 +1,639 @@
+﻿html, body
+{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma;
+}
+
+.header
+{
+    height: 86px;
+    background-position: left top;
+    background-repeat: no-repeat;   
+}
+.title
+{
+    float: left;
+    padding-top: 12px;
+    padding-left: 15px;
+    height: 30px;
+}
+.title a
+{
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+}
+.menutop
+{
+    width: 100%;
+    clear: both;
+}
+.menuitem
+{
+    height: 44px;
+}
+.menuitem div
+{
+    display: inline;
+    line-height: 44px;
+}
+.menuitem img
+{
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+}
+.message
+{
+    padding: 8px;
+    font-size: 12px;
+}
+.navcontainer
+{
+    padding: 25px 0;
+}
+.datenavigator
+{
+    margin: 0 auto;
+}
+.attachcap
+{
+    background: url(Images/attach.png) center center no-repeat;
+    width: 100%;
+    height: 16px;
+}
+.content
+{
+    padding: 5px 5px 5px 15px;
+}
+.accountHeader h2 
+{
+    margin: 10px 0 7px 0;
+    font-size: 16px;
+}
+.accountHeader p 
+{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.accountHeader 
+{
+    margin-bottom: 20px;
+}
+.form-field
+{
+    margin-bottom: 8px;
+}
+.login
+{
+    float: right;
+    margin-top: 19px;
+    margin-right: 25px;
+    font-size: 12px;
+}
+.login a 
+{
+    color: white;
+    text-decoration: none;
+    border-bottom: dashed 1px white;
+    display: inline-block;
+}
+.field-validation-error {
+	color: Red;
+	font-size: 11px;
+}
+
+
+/* Default */
+.dxsplControl .header
+{
+    background-color: #EDEDED;
+}
+.dxsplControl .title a
+{
+    color: #4B4B57;
+}
+.dxsplControl .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl .menutop
+{
+    padding-top: 16px;
+}
+.dxsplControl .menuitem
+{
+    height: 40px;
+}
+.dxsplControl .menuitem div
+{
+    line-height: 40px;
+}
+
+
+/* iOS */
+.dxsplControl_iOS .title a
+{
+    color: #303030;
+    font-size: 32px;
+    line-height: 1em;
+}
+.dxsplControl_iOS .title
+{
+    height: auto;
+    padding-top: 3px;
+    padding-bottom: 1px;
+}
+.dxsplControl_iOS .login a
+{
+    color: #0160E7;
+    text-decoration: underline;
+    border-bottom-width: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.dxsplControl_iOS .login
+{
+    margin-top: 7px;   
+}
+.dxsplControl_iOS .header,
+.dxsplControl_iOS .message,
+.dxsplControl_iOS .content
+{
+    font-family: HelveticaNeue,Helvetica,Verdana,sans-serif;
+}
+.dxsplControl_iOS .message
+{
+    font-size: 20px;
+}
+.dxsplVSeparator_iOS,
+.dxsplHSeparator_iOS
+{
+    border-width: 0px !important;
+}
+.dxsplPane_iOS
+{
+    border-width: 1px !important;
+}
+.dxsplPane_iOS.noborder
+{
+    border-width: 0px !important;
+    box-shadow: initial;
+    -webkit-box-shadow: initial;
+	-moz-box-shadow: initial;
+}
+.dxsplPane_iOS.mlist
+{
+	border-width: 0 1px 1px 0 !important;
+}
+.dxsplPane_iOS.mbody
+{
+    border-width: 1px 1px 0 0 !important;
+}
+.dxsplPane_iOS.mlist .dxsplLCC
+{
+    padding-left: 5px !important;
+}
+.dxsplControl_iOS .accountHeader p
+{
+    color: #303030;
+    font-size: 18px;
+}
+.dxsplControl_iOS .accountHeader h2
+{
+    color: #303030;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+
+/* DevEx */
+.dxsplControl_DevEx .header
+{
+    background-color: #F2F3F4;
+}
+.dxsplControl_DevEx .title a
+{
+    color: #4B4B57;
+}
+.dxsplControl_DevEx .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_DevEx .menutop
+{
+    padding-top: 21px;
+}
+.dxsplControl_DevEx .header,
+.dxsplControl_DevEx #messageBody,
+.dxsplControl_DevEx .content
+{
+    font-family: Verdana;
+}
+
+
+/* Aqua */
+.dxsplControl_Aqua .header
+{
+    background-color: #BFDBFF;
+    background-image: url(Images/AquaHeader.jpg);
+}
+.dxsplControl_Aqua .menutop
+{
+    padding-top: 20px;
+}
+
+
+/* BlackGlass */
+.dxsplControl_BlackGlass .header
+{
+    background-color: #2A2A2A;
+    background-image: url(Images/BlackGlassHeader.jpg);
+}
+.dxsplControl_BlackGlass .menutop
+{
+    padding-top: 20px;
+}
+.dxsplControl_BlackGlass .menuitem
+{
+    height: 45px;
+}
+.dxsplControl_BlackGlass .menuitem div
+{
+    line-height: 45px;
+}
+.dxsplControl_BlackGlass .attachcap
+{
+    background-image: url(Images/attach_white.png);
+}
+
+
+/* Glass */
+.dxsplControl_Glass .header
+{
+    background-color: #CFE0E7;
+    background-image: url(Images/GlassHeader.jpg);
+}
+.dxsplControl_Glass .title a
+{
+    color: #4B4B57;
+}
+.dxsplControl_Glass .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_Glass .menutop
+{
+    padding-top: 20px;
+}
+
+
+/* Office2003Blue */
+.dxsplControl_Office2003Blue .header
+{
+    background-color: #BCD4F6;
+}
+.dxsplControl_Office2003Blue .title a
+{
+    color: #4B4B57;
+}
+.dxsplControl_Office2003Blue .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_Office2003Blue .menuitem
+{
+    height: 40px;
+}
+.dxsplControl_Office2003Blue .menuitem div
+{
+    line-height: 40px;
+}
+.dxsplControl_Office2003Blue .menutop
+{
+    padding-top: 14px;
+}
+
+
+/* Office2003Olive */
+.dxsplControl_Office2003Olive .header
+{
+    background-color: #D6DCBB;
+}
+.dxsplControl_Office2003Olive .title a
+{
+    color: #4B4B57;
+}
+.dxsplControl_Office2003Olive .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_Office2003Olive .menuitem
+{
+    height: 40px;
+}
+.dxsplControl_Office2003Olive .menuitem div
+{
+    line-height: 40px;
+}
+.dxsplControl_Office2003Olive .menutop
+{
+    padding-top: 14px;
+}
+
+
+/* Office2003Silver */
+.dxsplControl_Office2003Silver .header
+{
+    background-color: #D0D0DE;
+}
+.dxsplControl_Office2003Silver .title a
+{
+    color: #4B4B57;
+}
+.dxsplControl_Office2003Silver .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_Office2003Silver .menuitem
+{
+    height: 40px;
+}
+.dxsplControl_Office2003Silver .menuitem div
+{
+    line-height: 40px;
+}
+.dxsplControl_Office2003Silver .menutop
+{
+    padding-top: 14px;
+}
+
+
+/* Office2010Black */
+.dxsplControl_Office2010Black .header
+{
+    background-color: #393939;
+}
+.dxsplControl_Office2010Black .menutop
+{
+    padding-top: 22px;
+}
+.dxsplControl_Office2010Black .menuitem
+{
+    height: 45px;
+}
+.dxsplControl_Office2010Black .menuitem div
+{
+    line-height: 45px;
+}
+.dxsplControl_Office2010Black .attachcap
+{
+    background-image: url(Images/attach_white.png);
+}
+.dxsplControl_Office2010Black .header,
+.dxsplControl_Office2010Black #messageBody,
+.dxsplControl_Office2010Black .content
+{
+    font-family: Verdana;
+}
+
+
+/* Office2010Blue */
+.dxsplControl_Office2010Blue .header
+{
+    background-color: #D3E4F6;
+}
+.dxsplControl_Office2010Blue .title a
+{
+    color: #35393E;
+}
+.dxsplControl_Office2010Blue .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_Office2010Blue .menutop
+{
+    padding-top: 22px;
+}
+.dxsplControl_Office2010Blue .header,
+.dxsplControl_Office2010Blue #messageBody,
+.dxsplControl_Office2010Blue .content
+{
+    font-family: Verdana;
+}
+
+
+/* Office2010Silver */
+.dxsplControl_Office2010Silver .header
+{
+    background-color: #A9ACB4;
+}
+.dxsplControl_Office2010Silver .menutop
+{
+    padding-top: 22px;
+}
+.dxsplControl_Office2010Silver .header,
+.dxsplControl_Office2010Silver #messageBody,
+.dxsplControl_Office2010Silver .content
+{
+    font-family: Verdana;
+}
+
+
+/* PlasticBlue */
+.dxsplControl_PlasticBlue .header
+{
+    background-color: #3C4F8F;
+}
+.dxsplControl_PlasticBlue .menutop
+{
+    padding-top: 21px;
+}
+.dxsplControl_PlasticBlue .menuitem
+{
+    height: 42px;
+}
+.dxsplControl_PlasticBlue .menuitem div
+{
+    line-height: 42px;
+}
+.dxsplControl_PlasticBlue .attachcap
+{
+    background-image: url(Images/attach_white.png);
+}
+
+
+/* RedWine */
+.dxsplControl_RedWine .header
+{
+    background-color: #78002B;
+}
+.dxsplControl_RedWine .menuitem
+{
+    height: 39px;
+}
+.dxsplControl_RedWine .menuitem div
+{
+    line-height: 39px;
+}
+.dxsplControl_RedWine .attachcap
+{
+    background-image: url(Images/attach_white.png);
+}
+.dxsplControl_RedWine .menutop
+{
+    padding-top: 18px;
+}
+
+
+/* SoftOrange */
+.dxsplControl_SoftOrange .header
+{
+    background-color: #F9F9F9;
+}
+.dxsplControl_SoftOrange .title a
+{
+    color: #35393E;
+}
+.dxsplControl_SoftOrange .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_SoftOrange .menutop
+{
+    padding-top: 17px;
+}
+.dxsplControl_SoftOrange .menuitem
+{
+    height: 39px;
+}
+.dxsplControl_SoftOrange .menuitem div
+{
+    line-height: 39px;
+}
+
+
+/* Youthful */
+.dxsplControl_Youthful .header
+{
+    background-color: #8AA150;
+}
+.dxsplControl_Youthful .menutop
+{
+    padding-top: 10px;
+}
+.dxsplControl_Youthful .menuitem
+{
+    height: 42px;
+}
+.dxsplControl_Youthful .menuitem div
+{
+    line-height: 42px;
+}
+
+/* Metropolis */
+.dxsplControl_Metropolis .header
+{
+    background-color: White;
+}
+.dxsplControl_Metropolis .title a
+{
+    color: #35393E;
+    font-size: 28px;
+}
+.dxsplControl_Metropolis .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_Metropolis .menutop
+{
+    padding-top: 22px;
+}
+.dxsplControl_Metropolis .header,
+.dxsplControl_Metropolis #messageBody,
+.dxsplControl_Metropolis .content
+{
+    font-family: Segoe UI;
+}
+.dxsplControl_Metropolis .dxsplVSeparator_Metropolis 
+{
+	border-bottom: 0!important;
+}
+
+/* MetropolisBlue */
+.dxsplControl_MetropolisBlue .header
+{
+    background-color: White;
+}
+.dxsplControl_MetropolisBlue .title a
+{
+    color: #35393E;
+    font-size: 28px;
+}
+.dxsplControl_MetropolisBlue .login a
+{
+    color: black;
+    border-bottom-color: black;
+}
+.dxsplControl_MetropolisBlue .menutop
+{
+    padding-top: 22px;
+}
+.dxsplControl_MetropolisBlue .header,
+.dxsplControl_MetropolisBlue #messageBody,
+.dxsplControl_MetropolisBlue .content
+{
+    font-family: Segoe UI;
+}
+.dxsplControl_MetropolisBlue .dxsplVSeparator_Metropolis 
+{
+	border-bottom: 0!important;
+}
+
+/* Moderno */
+.dxsplControl_Moderno .header
+{
+    background-color: White;
+}
+.dxsplControl_Moderno .title a
+{
+    color: #0072c6;
+    font-size: 28px;
+}
+.dxsplControl_Moderno .login a
+{
+    color: #2B2B2B;
+    font-size: 16px;
+    border-bottom-color: #2B2B2B;
+}
+.dxsplControl_Moderno .menutop
+{
+    padding-top: 22px;
+}
+.dxsplControl_Moderno .header,
+.dxsplControl_Moderno #messageBody,
+.dxsplControl_Moderno .content
+{
+    font-family: Segoe UI;
+}
+.dxsplControl_Moderno .dxsplVSeparator_Moderno 
+{
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+	border-bottom: 0!important;
+}
+.dxsplControl_Moderno .dxgvGroupPanel_Moderno,
+.dxsplControl_Moderno .dxscControl_Moderno {
+    border-top: 0;
+}

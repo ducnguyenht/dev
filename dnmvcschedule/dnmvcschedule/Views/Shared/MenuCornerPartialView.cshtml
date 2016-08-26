@@ -1,0 +1,12 @@
+@* DXCOMMENT: Configure a menu that allows switching between mail and scheduler modes *@
+@Html.DevExpress().Menu(settings => {
+   settings.Name = "MenuCorner";
+   settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+   settings.Orientation = System.Web.UI.WebControls.Orientation.Vertical;
+   settings.Styles.Style.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+   settings.Styles.Item.Paddings.PaddingTop = System.Web.UI.WebControls.Unit.Pixel(0);
+   settings.Styles.Item.Paddings.PaddingBottom = System.Web.UI.WebControls.Unit.Pixel(0);
+   settings.Styles.Item.CssClass = "menuitem";
+   settings.Items.Add(new MVCxMenuItem("Mail", "mail", "/Content/Images/mail.png", "/"));
+   settings.Items.Add(new MVCxMenuItem("Calendar", "calendar", "/Content/Images/calendar.png", "Calendar"));
+}).GetHtml()

@@ -22,7 +22,7 @@ namespace MVC.LinQ
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="MVC_Orgv04")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="MVC_Orgv03")]
 	public partial class DBAuthorizationDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -48,7 +48,7 @@ namespace MVC.LinQ
     #endregion
 		
 		public DBAuthorizationDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["MVC_Orgv04ConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["MVC_Orgv03ConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

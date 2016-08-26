@@ -67,7 +67,6 @@ namespace dnmvcschedule.Controllers {
                 settings.Storage.Appointments.Mappings.Label = "Label";
                 settings.Storage.Appointments.Mappings.ResourceId = "ResourceID";
                 settings.Storage.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
-				
 				// DXCOMMENT: Configure resource mappings
                 settings.Storage.Resources.Mappings.ResourceId = "ID";
                 settings.Storage.Resources.Mappings.Caption = "Name";

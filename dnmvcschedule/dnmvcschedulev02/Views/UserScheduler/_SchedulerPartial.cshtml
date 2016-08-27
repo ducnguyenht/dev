@@ -1,0 +1,17 @@
+@using dnmvcschedulev02.Controllers;
+
+@{
+    var scheduler = Html.DevExpress().Scheduler(settings => {
+        settings.Name = "Scheduler";
+        settings.CallbackRouteValues = new { Controller = "UserScheduler", Action = "SchedulerPartial" };
+        settings.EditAppointmentRouteValues = new { Controller = "UserScheduler", Action = "SchedulerPartialEditAppointment" };
+
+        settings.Storage.EnableReminders = false;
+		settings.Storage.Appointments.Assign(UserSchedulerControllerSchedulerSettings.AppointmentStorage);
+        settings.Storage.Resources.Assign(UserSchedulerControllerSchedulerSettings.ResourceStorage);
+    });
+    if (ViewData["SchedulerErrorText"] != null) {
+        scheduler.SetErrorText((string)ViewData["SchedulerErrorText"]);
+    }
+}
+@scheduler.Bind(ViewData["Appointments"], ViewData["Resources"]).GetHtml() @**@

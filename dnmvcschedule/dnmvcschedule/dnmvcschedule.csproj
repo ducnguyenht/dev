@@ -267,9 +267,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\Car.cs" />
-    <Compile Include="DAL\CarScheduling.cs" />
-    <Compile Include="DAL\CarsDBContext.cs" />
+    <Compile Include="Controllers\UserScheduleController.cs" />
+    <Compile Include="ADOEFCFFDB\Car.cs" />
+    <Compile Include="ADOEFCFFDB\CarScheduling.cs" />
+    <Compile Include="ADOEFCFFDB\CarsDBContext.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +292,10 @@
     <None Include="Models\Outlook.dbml.layout">
       <DependentUpon>Outlook.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="Views\UserSchedule\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

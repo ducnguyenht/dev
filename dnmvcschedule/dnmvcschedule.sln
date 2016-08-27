@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnmvcschedule", "dnmvcsched
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnCodeFirstExistingDatabaseSamplev1", "dnmvcschedule\dnCodeFirstExistingDatabaseSamplev1\dnCodeFirstExistingDatabaseSamplev1.csproj", "{691ED9C5-5171-45F4-BCFB-A2AB51FDC74A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnCodeFirstCarsDB", "dnCodeFirstCarsDB\dnCodeFirstCarsDB.csproj", "{9948BAB2-B52B-4D7E-B118-34C6D7E9F11A}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -25,6 +27,10 @@ Global
 		{691ED9C5-5171-45F4-BCFB-A2AB51FDC74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{691ED9C5-5171-45F4-BCFB-A2AB51FDC74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{691ED9C5-5171-45F4-BCFB-A2AB51FDC74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9948BAB2-B52B-4D7E-B118-34C6D7E9F11A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9948BAB2-B52B-4D7E-B118-34C6D7E9F11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9948BAB2-B52B-4D7E-B118-34C6D7E9F11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9948BAB2-B52B-4D7E-B118-34C6D7E9F11A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

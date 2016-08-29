@@ -1,0 +1,79 @@
+﻿@functions{
+    AppointmentRecurrenceFormSettings CreateAppointmentRecurrenceFormSettings(CustomAppointmentTemplateContainer container) {
+        var settings = new AppointmentRecurrenceFormSettings();
+        settings.Name = "appointmentRecurrenceForm";
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        settings.IsRecurring = container.Appointment.IsRecurring;
+        settings.DayNumber = container.RecurrenceDayNumber;
+        settings.End = container.RecurrenceEnd;
+        settings.Month = container.RecurrenceMonth;
+        settings.OccurrenceCount = container.RecurrenceOccurrenceCount;
+        settings.Periodicity = container.RecurrencePeriodicity;
+        settings.RecurrenceRange = container.RecurrenceRange;
+        settings.Start = container.Start;
+        settings.WeekDays = container.RecurrenceWeekDays;
+        settings.WeekOfMonth = container.RecurrenceWeekOfMonth;
+        settings.RecurrenceType = container.RecurrenceType;
+        settings.IsFormRecreated = container.IsFormRecreated;
+        return settings;
+    }
+}
+
+@Html.DevExpress().Scheduler(
+settings => {
+    settings.Name = "scheduler";
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "SchedulerPartial" };
+    settings.EditAppointmentRouteValues = new { Controller = "Home", Action = "EditAppointment" };
+
+    settings.Storage.Appointments.Assign(SchedulerDataHelper.DefaultAppointmentStorage);
+    settings.Storage.Resources.Assign(SchedulerDataHelper.DefaultResourceStorage);
+
+    settings.Storage.EnableReminders = true;
+
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+    settings.Views.DayView.Styles.ScrollAreaHeight = 600;
+    settings.Start = new DateTime(2010, 7, 1);
+
+    settings.OptionsForms.RecurrenceFormName = "appointmentRecurrenceForm";
+
+    settings.AppointmentFormShowing = (sender, e) => {
+        var scheduler = sender as MVCxScheduler;
+        if (scheduler != null)
+            e.Container = new CustomAppointmentTemplateContainer(scheduler);
+    };
+
+    settings.OptionsForms.SetAppointmentFormTemplateContent(c => {
+        var container = (CustomAppointmentTemplateContainer)c;
+        var schedule = ViewData["EditableSchedule"] != null
+            ? (Schedule)ViewData["EditableSchedule"]
+            : new Schedule() {
+                ID = container.Appointment.Id == null ? -1 : (int)container.Appointment.Id,
+                Subject = container.Appointment.Subject,
+                Location = container.Appointment.Location,
+                StartTime = container.Appointment.Start,
+                EndTime = container.Appointment.End,
+                AllDay = container.Appointment.AllDay,
+                Description = container.Appointment.Description,
+                EventType = (int?)container.Appointment.Type,
+                Status = container.Appointment.StatusId,
+                Label = container.Appointment.LabelId,
+                CarId = container.CarId,
+                Price = container.Price,
+                ContactInfo = container.ContactInfo,
+                HasReminder = container.Appointment.HasReminder,
+                Reminder = container.Appointment.Reminder
+            };
+        
+        ViewBag.DeleteButtonEnabled = container.CanDeleteAppointment;
+        ViewBag.IsRecurring = container.Appointment.IsRecurring;
+        ViewBag.AppointmentRecurrenceFormSettings = CreateAppointmentRecurrenceFormSettings(container);
+
+        ViewBag.ResourceDataSource = container.ResourceDataSource;
+        ViewBag.StatusDataSource = container.StatusDataSource;
+        ViewBag.LabelDataSource = container.LabelDataSource;
+        ViewBag.ReminderDataSource = container.ReminderDataSource;
+
+        Html.RenderPartial("CustomAppointmentFormPartial", schedule);
+    });
+
+}).Bind(Model.Appointments, Model.Resources).GetHtml()

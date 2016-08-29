@@ -1,0 +1,20 @@
+@model SchedulerDataObject
+<script type="text/javascript">
+    function OnAppointmentFormSave(s, e) {
+        if (IsValidAppointment())
+            scheduler.AppointmentFormSave();
+    }
+    function IsValidAppointment() {
+        $.validator.unobtrusive.parse('form');
+        return $("form").valid();
+    }
+    function OnTimeBeforeStartComboBoxInit(s, e) {
+        s.SetEnabled(HasReminder.GetChecked());
+    }
+    function OnHasReminderCheckedChanged(s, e) {
+        var reminderCB = ASPxClientComboBox.Cast("Reminder.TimeBeforeStart");
+        reminderCB.SetEnabled(HasReminder.GetChecked());
+    }
+</script>
+
+@Html.Partial("SchedulerPartial", Model)

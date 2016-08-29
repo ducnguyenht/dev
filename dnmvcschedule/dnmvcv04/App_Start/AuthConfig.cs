@@ -1,4 +1,4 @@
-using Microsoft.Web.WebPages.OAuth;
+//using Microsoft.Web.WebPages.OAuth;
 
 namespace dnmvcv04 {
 	public static class AuthConfig {

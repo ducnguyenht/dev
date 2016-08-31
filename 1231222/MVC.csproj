@@ -361,6 +361,7 @@
     <Content Include="Content\Images\PlasticBlueHeader.jpg" />
     <Content Include="Content\Images\RedWineHeader.jpg" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\Languages\enus.png" />
     <Content Include="Images\Languages\vietnam.png" />

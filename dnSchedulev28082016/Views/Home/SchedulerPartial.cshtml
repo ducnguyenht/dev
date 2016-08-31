@@ -22,6 +22,12 @@
 @Html.DevExpress().Scheduler(
 settings => {
     settings.Name = "scheduler";
+    settings.PrepareAppointmentFormPopupContainer += (s, e) =>
+    {        
+        //e.Popup.HeaderText = "You can edit the details about a meeting here";
+        e.Popup.Width = System.Web.UI.WebControls.Unit.Pixel(1000);//System.Web.UI.WebControls.Unit.Pixel(800);
+        //e.Popup.Width = System.Web.UI.WebControls.Unit.Percentage(80);//new System.Web.UI.WebControls.Unit(800);        
+    };
     settings.CallbackRouteValues = new { Controller = "Home", Action = "SchedulerPartial" };
     settings.EditAppointmentRouteValues = new { Controller = "Home", Action = "EditAppointment" };
 
@@ -32,7 +38,7 @@ settings => {
 
     settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
     settings.Views.DayView.Styles.ScrollAreaHeight = 600;
-    settings.Start = new DateTime(2010, 7, 1);
+    settings.Start = DateTime.Now;//new DateTime(2010, 7, 1);
 
     settings.OptionsForms.RecurrenceFormName = "appointmentRecurrenceForm";
 
@@ -41,7 +47,7 @@ settings => {
         if (scheduler != null)
             e.Container = new CustomAppointmentTemplateContainer(scheduler);
     };
-
+    
     settings.OptionsForms.SetAppointmentFormTemplateContent(c => {
         var container = (CustomAppointmentTemplateContainer)c;
         var schedule = ViewData["EditableSchedule"] != null
@@ -72,7 +78,7 @@ settings => {
         ViewBag.StatusDataSource = container.StatusDataSource;
         ViewBag.LabelDataSource = container.LabelDataSource;
         ViewBag.ReminderDataSource = container.ReminderDataSource;
-
+      
         Html.RenderPartial("CustomAppointmentFormPartial", schedule);
     });
 

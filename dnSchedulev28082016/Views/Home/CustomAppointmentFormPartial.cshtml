@@ -8,175 +8,22 @@
 
 @using (Html.BeginForm())
 {
-    <table cellpadding="0" cellspacing="0" style="width: 100%; height: 285px;">
-        <tr>
-            <td style="padding-right: 15px;">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "Subject";
-                        settings.Text = "Subject:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-            </td>
-            <td colspan="3" style="width: 100%">
-                @Html.DevExpress().TextBox(
-                    settings =>
-                    {
-                        settings.Name = "Subject";
-                        settings.ShowModelErrors = true;
-                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                        settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.Subject).GetHtml()
-            </td>
-        </tr>
-        <tr>
-            <td style="padding-right: 15px;">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "Location";
-                        settings.Text = "Location:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-            </td>
-            <td style="width: 50%">
-                @Html.DevExpress().TextBox(
-                    settings =>
-                    {
-                        settings.Name = "Location";
-                        settings.ShowModelErrors = true;
-                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                        settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.Location).GetHtml()
-            </td>
-            <td colspan="2">
-                <table cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td style="padding-left: 10px;">
-                            @Html.DevExpress().CheckBox(
-                                settings =>
-                                {
-                                    settings.Name = "AllDay";
-                                    settings.Width = Unit.Percentage(100);
-                                }).Bind(Model.AllDay).GetHtml()
-                        </td>
-                        <td>
-                            @Html.DevExpress().Label(
-                                settings =>
-                                {
-                                    settings.AssociatedControlName = "AllDay";
-                                    settings.Text = "All Day Event";
-                                    settings.Width = Unit.Percentage(100);
-                                }).GetHtml()
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td style="white-space: nowrap; padding-right: 15px;">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "StartTime";
-                        settings.Text = "Start time:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-            </td>
-            <td colspan="3">
-                @Html.DevExpress().DateEdit(
-                    settings =>
-                    {
-                        settings.Name = "StartTime";
-                        settings.Properties.EditFormat = EditFormat.DateTime;
-                        settings.ShowModelErrors = true;
-                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                        settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.StartTime).GetHtml()
-            </td>
-        </tr>
-        <tr>
-            <td style="white-space: nowrap; padding-right: 15px;">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "EndTime";
-                        settings.Text = "End time:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-            </td>
-            <td colspan="3">
-                @Html.DevExpress().DateEdit(
-                    settings =>
-                    {
-                        settings.Name = "EndTime";
-                        settings.Properties.EditFormat = EditFormat.DateTime;
-                        settings.ShowModelErrors = true;
-                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                        settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.EndTime).GetHtml()
-            </td>
-        </tr>
-        <tr>
-            <td style="padding-right: 15px; white-space: nowrap;">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "Status";
-                        settings.Text = "Show Time As:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-            </td>
-            <td style="width: 50%">
-                @Html.DevExpress().ComboBox(
-                   settings =>
-                   {
-                       settings.Name = "Status";
-                       settings.Properties.ValueType = typeof(Int32);
-                       settings.Properties.ValueField = "Value";
-                       settings.Properties.TextField = "Text";
-                       settings.Width = Unit.Percentage(100);
-                   }).BindList(ViewBag.StatusDataSource).Bind(Model.Status).GetHtml()
-            </td>
-            <td style="padding-left: 10px; padding-right: 15px;">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "Label";
-                        settings.Text = "Label:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-            </td>
-            <td style="width: 50%">
-                @Html.DevExpress().ComboBox(
-                   settings =>
-                   {
-                       settings.Name = "Label";
-                       settings.Properties.ValueType = typeof(Int32);
-                       settings.Properties.ValueField = "Value";
-                       settings.Properties.TextField = "Text";
-                       settings.Width = Unit.Percentage(100);
-                   }).BindList(ViewBag.LabelDataSource).Bind(Model.Label).GetHtml()
-            </td>
-        </tr>
-
-
-        @if (Model.EventType == 0 || Model.EventType == 1)
-        {
-            <tr>
-                <td style="padding-right: 15px;">
-                    @Html.DevExpress().Label(
+    <div class="row">
+        <div class="col-md-8">
+            @if (Model.EventType == 0 || Model.EventType == 1)
+            {
+                <div class="row">
+                    <div class="col-md-2">
+                        @Html.DevExpress().Label(
                         settings =>
                         {
                             settings.AssociatedControlName = "CarId";
-                            settings.Text = "Resource:";
+                            settings.Text = "Opportunity:";
                             settings.Width = Unit.Percentage(100);
                         }).GetHtml()
-
-                </td>
-                <td style="width: 50%">
-                    @Html.DevExpress().ComboBox(
+                    </div>
+                    <div class="col-md-4">
+                        @Html.DevExpress().ComboBox(
                         settings =>
                         {
                             settings.Name = "CarId";
@@ -185,19 +32,19 @@
                             settings.Properties.TextField = "Model";
                             settings.Width = Unit.Percentage(100);
                         }).BindList(ViewBag.ResourceDataSource).Bind(Model.CarId).GetHtml()
-                </td>
-                <td style="padding-left: 10px; padding-right: 15px;">
-                    @Html.DevExpress().CheckBox(
+                    </div>
+                    <div class="col-md-2">
+                        @Html.DevExpress().CheckBox(
                         settings =>
                         {
                             settings.Name = "HasReminder";
                             settings.Text = "Reminder";
                             settings.Properties.ClientSideEvents.CheckedChanged = "OnHasReminderCheckedChanged";
                         }).Bind(Model.HasReminder).GetHtml()
-                </td>
-                <td style="width: 50%">
-                    @{ TimeSpan timeBeforeStart = Model.Reminder != null ? Model.Reminder.TimeBeforeStart : TimeSpan.FromMinutes(15); }
-                    @Html.DevExpress().ComboBox(
+                    </div>
+                    <div class="col-md-4">
+                        @{ TimeSpan timeBeforeStart = Model.Reminder != null ? Model.Reminder.TimeBeforeStart : TimeSpan.FromMinutes(15); }
+                        @Html.DevExpress().ComboBox(
                         settings =>
                         {
                             settings.Name = "Reminder.TimeBeforeStart";
@@ -207,14 +54,14 @@
                             settings.Properties.TextField = "Text";
                             settings.Properties.ClientSideEvents.Init = "OnTimeBeforeStartComboBoxInit";
                         }).BindList(ViewBag.ReminderDataSource).Bind(timeBeforeStart).GetHtml()
-                </td>
-            </tr>
-        }
-        else
-        {
-            <tr>
-                <td style="padding-right: 15px;">
-                    @Html.DevExpress().CheckBox(
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-4">
+                        @Html.DevExpress().CheckBox(
                         settings =>
                         {
                             settings.Name = "HasReminder";
@@ -222,11 +69,10 @@
                             settings.Width = Unit.Percentage(100);
                             settings.Properties.ClientSideEvents.CheckedChanged = "OnHasReminderCheckedChanged";
                         }).Bind(Model.HasReminder).GetHtml()
-
-                </td>
-                <td colspan="3" style="width: 100%">
-                    @{ TimeSpan timeBeforeStart = Model.Reminder != null ? Model.Reminder.TimeBeforeStart : TimeSpan.FromMinutes(15); }
-                    @Html.DevExpress().ComboBox(
+                    </div>
+                    <div class="col-md-8">
+                        @{ TimeSpan timeBeforeStart = Model.Reminder != null ? Model.Reminder.TimeBeforeStart : TimeSpan.FromMinutes(15); }
+                        @Html.DevExpress().ComboBox(
                         settings =>
                         {
                             settings.Name = "Reminder.TimeBeforeStart";
@@ -236,82 +82,166 @@
                             settings.Properties.TextField = "Text";
                             settings.Properties.ClientSideEvents.Init = "OnTimeBeforeStartComboBoxInit";
                         }).BindList(ViewBag.ReminderDataSource).Bind(timeBeforeStart).GetHtml()
-                </td>
-            </tr>
-        }
-        <tr>
-            <td style="padding-right: 15px;">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "Price";
-                        settings.Text = "Price:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-
-            </td>
-            <td colspan="3" style="width: 100%">
-                @Html.DevExpress().TextBox(
-                    settings =>
-                    {
-                        settings.Name = "Price";
-                        settings.ShowModelErrors = true;
-                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                        settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.Price).GetHtml()
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "Description";
-                        settings.Text = "Description:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                @Html.DevExpress().Memo(
-                    settings =>
-                    {
-                        settings.Name = "Description";
-                        settings.Properties.Rows = 2;
-                        settings.ShowModelErrors = true;
-                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                        settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.Description).GetHtml()
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "ContactInfo";
-                        settings.Text = "Contact information:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                @Html.DevExpress().Memo(
+                    </div>
+                </div>
+            }
+            @*<div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8"></div>
+        </div>*@
+            <div class="row">
+                <div class="col-md-2">
+                    @Html.DevExpress().Label(
                 settings =>
                 {
-                    settings.Name = "ContactInfo";
-                    settings.Properties.Rows = 3;
+                    settings.AssociatedControlName = "Subject";
+                    settings.Text = "Title:";
+                    settings.Width = Unit.Percentage(100);
+                }).GetHtml()
+                </div>
+                <div class="col-md-10">
+                    @Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Subject";
+                        settings.ShowModelErrors = true;
+                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                        settings.Width = Unit.Percentage(100);
+                    }).Bind(Model.Subject).GetHtml()
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    @Html.DevExpress().Label(
+                settings =>
+                {
+                    settings.AssociatedControlName = "Description";
+                    settings.Text = "Description:";
+                    settings.Width = Unit.Percentage(100);
+                }).GetHtml()
+                </div>
+                <div class="col-md-10">
+                    @Html.DevExpress().Memo(
+                settings =>
+                {
+                    settings.Name = "Description";
+                    settings.Properties.Rows = 5;
                     settings.ShowModelErrors = true;
                     settings.Properties.ValidationSettings.Display = Display.Dynamic;
                     settings.Width = Unit.Percentage(100);
-                }).Bind(Model.ContactInfo).GetHtml()
-        </tr>
-    </table>
-
-    @Html.DevExpress().AppointmentRecurrenceForm(ViewBag.AppointmentRecurrenceFormSettings).GetHtml()
-
+                }).Bind(Model.Description).GetHtml()
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1">
+                    @Html.DevExpress().CheckBox(
+                settings =>
+                {
+                    settings.Name = "AllDay";
+                    settings.Width = Unit.Percentage(100);
+                }).Bind(Model.AllDay).GetHtml()
+                </div>
+                <div class="col-md-11">
+                    @Html.DevExpress().Label(
+                settings =>
+                {
+                    settings.AssociatedControlName = "AllDay";
+                    settings.Text = "All Day Event";
+                    settings.Width = Unit.Percentage(100);
+                }).GetHtml()
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!--#region Priority  -->
+            <div class="row">
+                <div class="col-md-5">
+                    @Html.DevExpress().Label(
+                    settings =>
+                    {
+                        settings.AssociatedControlName = "Label";
+                        settings.Text = "Priority:";
+                        settings.Width = Unit.Percentage(100);
+                    }).GetHtml()
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().ComboBox(
+                   settings =>
+                   {
+                       settings.Name = "Label";
+                       settings.Properties.ValueType = typeof(Int32);
+                       settings.Properties.ValueField = "Value";
+                       settings.Properties.TextField = "Text";
+                       settings.Width = Unit.Percentage(100);
+                   }).BindList(ViewBag.LabelDataSource).Bind(Model.Label).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->
+            <!--#region Status  -->
+            <div class="row">
+                <div class="col-md-5">                    
+                    @Html.DevExpress().Label(
+                    settings =>
+                    {
+                        settings.AssociatedControlName = "Status";
+                        settings.Text = "Status:";
+                        settings.Width = Unit.Percentage(100);
+                    }).GetHtml()
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().ComboBox(
+                settings =>
+                {
+                    settings.Name = "Status";
+                    settings.Properties.ValueType = typeof(Int32);
+                    settings.Properties.ValueField = "Value";
+                    settings.Properties.TextField = "Text";
+                    settings.Width = Unit.Percentage(100);
+                }).BindList(ViewBag.StatusDataSource).Bind(Model.Status).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->
+            <!--#region StartTime  -->
+            <div class="row">
+                <div class="col-md-5">
+                    Start time:
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().DateEdit(
+                settings =>
+                {
+                    settings.Name = "StartTime";
+                    settings.Properties.EditFormat = EditFormat.DateTime;
+                    settings.ShowModelErrors = true;
+                    settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                    settings.Width = Unit.Percentage(100);
+                }).Bind(Model.StartTime).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->
+            <!--#region EndTime  -->
+            <div class="row">
+                <div class="col-md-5">
+                    End time:
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().DateEdit(
+                settings =>
+                {
+                    settings.Name = "EndTime";
+                    settings.Properties.EditFormat = EditFormat.DateTime;
+                    settings.ShowModelErrors = true;
+                    settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                    settings.Width = Unit.Percentage(100);
+                }).Bind(Model.EndTime).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->          
+        </div>
+        <div class="col-md-12">
+            @Html.DevExpress().AppointmentRecurrenceForm(ViewBag.AppointmentRecurrenceFormSettings).GetHtml()
+        </div>
+    </div>
     <table cellpadding="0" cellspacing="0" style="width: 100%; height: 35px;">
         <tr>
             <td style="width: 100%; height: 100%;" align="center">
@@ -319,34 +249,34 @@
                     <tr>
                         <td>
                             @Html.DevExpress().Button(
-                                settings =>
-                                {
-                                    settings.Name = "Apply";
-                                    settings.Text = "Ok";
-                                    settings.Width = Unit.Pixel(91);
-                                    settings.ClientSideEvents.Click = "OnAppointmentFormSave";
-                                }).GetHtml()
+                        settings =>
+                        {
+                            settings.Name = "Apply";
+                            settings.Text = "Ok";
+                            settings.Width = Unit.Pixel(91);
+                            settings.ClientSideEvents.Click = "OnAppointmentFormSave";
+                        }).GetHtml()
                         </td>
                         <td>
                             @Html.DevExpress().Button(
-                                settings =>
-                                {
-                                    settings.Name = "Cancel";
-                                    settings.Text = "Cancel";
-                                    settings.ClientSideEvents.Click = "function(s, e){ scheduler.AppointmentFormCancel(); }";
-                                    settings.Width = Unit.Pixel(91);
-                                }).GetHtml()
+                        settings =>
+                        {
+                            settings.Name = "Cancel";
+                            settings.Text = "Cancel";
+                            settings.ClientSideEvents.Click = "function(s, e){ scheduler.AppointmentFormCancel(); }";
+                            settings.Width = Unit.Pixel(91);
+                        }).GetHtml()
                         </td>
                         <td>
                             @Html.DevExpress().Button(
-                                settings =>
-                                {
-                                    settings.Name = "Delete";
-                                    settings.Text = "Delete";
-                                    settings.Width = Unit.Pixel(91);
-                                    settings.Enabled = ViewBag.DeleteButtonEnabled;
-                                    settings.ClientSideEvents.Click = "function(s, e){ scheduler.AppointmentFormDelete(); }";
-                                }).GetHtml()
+                        settings =>
+                        {
+                            settings.Name = "Delete";
+                            settings.Text = "Delete";
+                            settings.Width = Unit.Pixel(91);
+                            settings.Enabled = ViewBag.DeleteButtonEnabled;
+                            settings.ClientSideEvents.Click = "function(s, e){ scheduler.AppointmentFormDelete(); }";
+                        }).GetHtml()
                         </td>
                     </tr>
                 </table>
@@ -357,13 +287,14 @@
         <tr>
             <td style="width: 100%;" align="left">
                 @Html.DevExpress().SchedulerStatusInfo(
-                    settings =>
-                    {
-                        settings.Name = "schedulerStatusInfo";
-                        settings.Priority = 1;
-                        settings.SchedulerName = "scheduler";
-                    }).GetHtml()
+            settings =>
+            {
+                settings.Name = "schedulerStatusInfo";
+                settings.Priority = 1;
+                settings.SchedulerName = "scheduler";
+            }).GetHtml()
             </td>
         </tr>
+
     </table>
 }

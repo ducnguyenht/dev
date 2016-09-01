@@ -181,6 +181,7 @@
   <ItemGroup>
     <Content Include="App_Start\cars.sql" />
     <Content Include="Content\Site.css" />
+    <Content Include="Css\bootstrap.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -262,6 +263,7 @@
       <DependentUpon>Cars.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

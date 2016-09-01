@@ -1,5 +1,6 @@
 ﻿@functions{
-    AppointmentRecurrenceFormSettings CreateAppointmentRecurrenceFormSettings(CustomAppointmentTemplateContainer container) {
+    AppointmentRecurrenceFormSettings CreateAppointmentRecurrenceFormSettings(CustomAppointmentTemplateContainer container)
+    {
         var settings = new AppointmentRecurrenceFormSettings();
         settings.Name = "appointmentRecurrenceForm";
         settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
@@ -20,39 +21,87 @@
 }
 
 @Html.DevExpress().Scheduler(
-settings => {
+settings =>
+{
     settings.Name = "scheduler";
     settings.PrepareAppointmentFormPopupContainer += (s, e) =>
-    {        
+    {
         //e.Popup.HeaderText = "You can edit the details about a meeting here";
         e.Popup.Width = System.Web.UI.WebControls.Unit.Pixel(1000);//System.Web.UI.WebControls.Unit.Pixel(800);
-        //e.Popup.Width = System.Web.UI.WebControls.Unit.Percentage(80);//new System.Web.UI.WebControls.Unit(800);        
+        //e.Popup.Width = System.Web.UI.WebControls.Unit.Percentage(80);//new System.Web.UI.WebControls.Unit(800);
     };
     settings.CallbackRouteValues = new { Controller = "Home", Action = "SchedulerPartial" };
     settings.EditAppointmentRouteValues = new { Controller = "Home", Action = "EditAppointment" };
 
     settings.Storage.Appointments.Assign(SchedulerDataHelper.DefaultAppointmentStorage);
     settings.Storage.Resources.Assign(SchedulerDataHelper.DefaultResourceStorage);
-    
+
     settings.Storage.EnableReminders = true;
 
+    settings.Storage.Appointments.Labels.Clear();
+    settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.FromArgb(242, 87, 87), "Very High"));
+    settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.FromArgb(255, 198, 0), "High"));
+    settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.FromArgb(190, 246, 36), "Normal"));
+    settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.FromArgb(49, 128, 206), "Low"));
+    settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.White, "Very Low"));
+
+    settings.Storage.Appointments.Statuses.Clear();
+    settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(242, 87, 87), "In Progress");
+    settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(255, 198, 0), "Fixed");
+    settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(190, 246, 36), "Open");
+    settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(49, 128, 206), "Verify");
+    settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.White, "Won't fix");
+
+    settings.PopupMenuShowing = (sender, e) =>
+    {
+        if (e.Menu.Id.Equals(SchedulerMenuItemId.AppointmentMenu))
+        {
+            e.Menu.Items[0].Text = "Open";
+            e.Menu.Items[1].Text = "Edit Series";
+            e.Menu.Items[2].Text = "Restore Default State";
+            e.Menu.Items[3].Text = "Status";//Show Time As
+            e.Menu.Items[4].Text = "Priority";//Label As
+            e.Menu.Items[5].Text = "Delete";
+
+            //e.Menu.Items.Remove(e.Menu.Items.FindByName(SchedulerMenuItemId.LabelSubMenu.ToString()));
+            //e.Menu.Items.Remove(e.Menu.Items.FindByName(SchedulerMenuItemId.StatusSubMenu.ToString()));
+        }
+    };
+    //var lstLB = settings.Storage.Appointments.Labels;
+    //for (int i = 0; i < lstLB.Count; i++)
+    //{
+    //    DevExpress.Web.ASPxScheduler.AppointmentLabel standardLabel = lstLB[i];
+    //    if (standardLabel.DisplayName == DevExpress.XtraScheduler.Localization.SchedulerLocalizer.GetString(DevExpress.XtraScheduler.Localization.SchedulerStringId.AppointmentLabel_Important))
+    //    {
+    //        standardLabel.DisplayName = "Very Important";
+    //        standardLabel.MenuCaption = "Very Important";
+    //    }
+    //    if (standardLabel.DisplayName == DevExpress.XtraScheduler.Localization.SchedulerLocalizer.GetString(DevExpress.XtraScheduler.Localization.SchedulerStringId.AppointmentLabel_Vacation))
+    //    {
+    //        standardLabel.DisplayName = "Indefinite Leave";
+    //        standardLabel.MenuCaption = "Indefinite Leave";
+    //    }
+    //}
     settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
     settings.Views.DayView.Styles.ScrollAreaHeight = 600;
     settings.Start = DateTime.Now;//new DateTime(2010, 7, 1);
 
     settings.OptionsForms.RecurrenceFormName = "appointmentRecurrenceForm";
 
-    settings.AppointmentFormShowing = (sender, e) => {
+    settings.AppointmentFormShowing = (sender, e) =>
+    {
         var scheduler = sender as MVCxScheduler;
         if (scheduler != null)
             e.Container = new CustomAppointmentTemplateContainer(scheduler);
     };
-    
-    settings.OptionsForms.SetAppointmentFormTemplateContent(c => {
+
+    settings.OptionsForms.SetAppointmentFormTemplateContent(c =>
+    {
         var container = (CustomAppointmentTemplateContainer)c;
         var schedule = ViewData["EditableSchedule"] != null
             ? (Schedule)ViewData["EditableSchedule"]
-            : new Schedule() {
+            : new Schedule()
+            {
                 ID = container.Appointment.Id == null ? -1 : (int)container.Appointment.Id,
                 Subject = container.Appointment.Subject,
                 Location = container.Appointment.Location,
@@ -69,7 +118,7 @@ settings => {
                 HasReminder = container.Appointment.HasReminder,
                 Reminder = container.Appointment.Reminder
             };
-        
+
         ViewBag.DeleteButtonEnabled = container.CanDeleteAppointment;
         ViewBag.IsRecurring = container.Appointment.IsRecurring;
         ViewBag.AppointmentRecurrenceFormSettings = CreateAppointmentRecurrenceFormSettings(container);
@@ -78,7 +127,7 @@ settings => {
         ViewBag.StatusDataSource = container.StatusDataSource;
         ViewBag.LabelDataSource = container.LabelDataSource;
         ViewBag.ReminderDataSource = container.ReminderDataSource;
-      
+
         Html.RenderPartial("CustomAppointmentFormPartial", schedule);
     });
 

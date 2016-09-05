@@ -52,6 +52,15 @@ settings =>
     settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(49, 128, 206), "Verify");
     settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.White, "Won't fix");
 
+
+    settings.QueryWorkTime += (s, e) =>
+    {
+        //e.WorkTimes.Clear();
+        e.WorkTimes.Add(new TimeOfDayInterval(TimeSpan.FromHours(8), TimeSpan.FromHours(12)));
+        e.WorkTimes.Add(new TimeOfDayInterval(TimeSpan.FromHours(14), TimeSpan.FromHours(22)));
+    };
+    settings.Views.DayView.ShowWorkTimeOnly = true;
+
     settings.PopupMenuShowing = (sender, e) =>
     {
         if (e.Menu.Id.Equals(SchedulerMenuItemId.AppointmentMenu))

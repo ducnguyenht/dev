@@ -32,6 +32,7 @@ using DevExpress.Web.ASPxEditors;
 using DevExpress.Web.ASPxScheduler;
 using DevExpress.XtraScheduler;
 using dnSchedulev01.Models;
+using dnSchedulev01.EFCFFDB;
 
 public class SchedulerDataObject {
     public IEnumerable Appointments { get; set; }
@@ -40,13 +41,15 @@ public class SchedulerDataObject {
 
 public class SchedulerDataHelper {
     public static IEnumerable GetResources() {
-        CarsDataContext db = new CarsDataContext();
-        return from res in db.Cars select res;
+        DBScheduleMVCV001 db = new DBScheduleMVCV001();
+        var t = db.Cars.ToList();
+        var ttt = (from res in db.Cars select res).ToList();
+        return (from res in db.Cars select res).ToList();//db.Cars.Local;//from res in db.Cars select res;
     }
     public static IEnumerable GetAppointments() {
-        CarsDataContext db = new CarsDataContext();
-        var aptt =from obj in db.CarSchedulings.Where(t => t.UserId == 1) select obj;
-        return from apt in db.CarSchedulings  select apt;
+        DBScheduleMVCV001 db = new DBScheduleMVCV001();
+        //var aptt =from obj in db.CarSchedulings.Where(t => t.UserId == 1) select obj;
+        return (from apt in db.CarSchedulings select apt).ToList();// db.CarSchedulings.Local;//from apt in db.CarSchedulings  select apt;
     }
     public static IEnumerable GetReminders(IEnumerable rawDataSource) {
         foreach (ListEditItem item in rawDataSource) {
@@ -106,15 +109,17 @@ public class SchedulerDataHelper {
     public static void InsertAppointment(CarScheduling appt) {
         if (appt == null)
             return;
-        CarsDataContext db = new CarsDataContext();
+        DBScheduleMVCV001 db = new DBScheduleMVCV001();
         appt.ID = appt.GetHashCode();
-        db.CarSchedulings.InsertOnSubmit(appt);
-        db.SubmitChanges();
+        db.CarSchedulings.Local.Add(appt);
+        db.SaveChanges();
+        //db.CarSchedulings.InsertOnSubmit(appt);
+        //db.SubmitChanges();
     }
     public static void UpdateAppointment(CarScheduling appt) {
         if (appt == null)
             return;
-        CarsDataContext db = new CarsDataContext();
+        DBScheduleMVCV001 db = new DBScheduleMVCV001();
         CarScheduling query = (CarScheduling)(from carSchedule in db.CarSchedulings where carSchedule.ID == appt.ID select carSchedule).SingleOrDefault();
 
         query.ID = appt.ID;
@@ -132,13 +137,16 @@ public class SchedulerDataHelper {
         query.CarId = appt.CarId;
         query.ContactInfo = appt.ContactInfo;
         query.Price = appt.Price;
-        db.SubmitChanges();
+        db.SaveChanges();
+        //db.SubmitChanges();
     }
     public static void RemoveAppointment(CarScheduling appt) {
-        CarsDataContext db = new CarsDataContext();
+        DBScheduleMVCV001 db = new DBScheduleMVCV001();
         CarScheduling query = (CarScheduling)(from carSchedule in db.CarSchedulings where carSchedule.ID == appt.ID select carSchedule).SingleOrDefault();
-        db.CarSchedulings.DeleteOnSubmit(query);
-        db.SubmitChanges();
+        db.CarSchedulings.Remove(query);
+        db.SaveChanges();
+        //db.CarSchedulings.DeleteOnSubmit(query);
+        //db.SubmitChanges();
     }
 }
 

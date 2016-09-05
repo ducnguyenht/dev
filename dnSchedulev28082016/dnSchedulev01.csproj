@@ -242,7 +242,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="EFCFFDB\Opportunity.cs" />
-    <Compile Include="EFCFFDB\CarScheduling.cs" />
+    <Compile Include="EFCFFDB\ScheduleCalendar.cs" />
     <Compile Include="EFCFFDB\DBScheduleMVCV001.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">

@@ -42,14 +42,14 @@ public class SchedulerDataObject {
 public class SchedulerDataHelper {
     public static IEnumerable GetResources() {
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
-        var t = db.Cars.ToList();
-        var ttt = (from res in db.Cars select res).ToList();
-        return (from res in db.Cars select res).ToList();//db.Cars.Local;//from res in db.Cars select res;
+        //var t = db.Cars.ToList();
+        //var ttt = (from res in db.Cars select res).ToList();
+        return db.Opportunitys.ToList();// (from res in db.Cars select res).ToList();//db.Cars.Local;//from res in db.Cars select res;
     }
     public static IEnumerable GetAppointments() {
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
-        //var aptt =from obj in db.CarSchedulings.Where(t => t.UserId == 1) select obj;
-        return (from apt in db.CarSchedulings select apt).ToList();// db.CarSchedulings.Local;//from apt in db.CarSchedulings  select apt;
+        //var aptt =from obj in db.ScheduleCalendars.Where(t => t.UserId == 1) select obj;
+        return db.ScheduleCalendars.ToList();//(from apt in db.ScheduleCalendars select apt).ToList();// db.ScheduleCalendars.Local;//from apt in db.ScheduleCalendars  select apt;
     }
     public static IEnumerable GetReminders(IEnumerable rawDataSource) {
         foreach (ListEditItem item in rawDataSource) {
@@ -106,21 +106,21 @@ public class SchedulerDataHelper {
         resourceStorage.Mappings.Caption = "Model";
         return resourceStorage;
     }
-    public static void InsertAppointment(CarScheduling appt) {
+    public static void InsertAppointment(ScheduleCalendar appt) {
         if (appt == null)
             return;
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
         appt.ID = appt.GetHashCode();
-        db.CarSchedulings.Local.Add(appt);
+        db.ScheduleCalendars.Local.Add(appt);
         db.SaveChanges();
-        //db.CarSchedulings.InsertOnSubmit(appt);
+        //db.ScheduleCalendars.InsertOnSubmit(appt);
         //db.SubmitChanges();
     }
-    public static void UpdateAppointment(CarScheduling appt) {
+    public static void UpdateAppointment(ScheduleCalendar appt) {
         if (appt == null)
             return;
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
-        CarScheduling query = (CarScheduling)(from carSchedule in db.CarSchedulings where carSchedule.ID == appt.ID select carSchedule).SingleOrDefault();
+        ScheduleCalendar query = (ScheduleCalendar)(from carSchedule in db.ScheduleCalendars where carSchedule.ID == appt.ID select carSchedule).SingleOrDefault();
 
         query.ID = appt.ID;
         query.StartTime = appt.StartTime;
@@ -140,12 +140,12 @@ public class SchedulerDataHelper {
         db.SaveChanges();
         //db.SubmitChanges();
     }
-    public static void RemoveAppointment(CarScheduling appt) {
+    public static void RemoveAppointment(ScheduleCalendar appt) {
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
-        CarScheduling query = (CarScheduling)(from carSchedule in db.CarSchedulings where carSchedule.ID == appt.ID select carSchedule).SingleOrDefault();
-        db.CarSchedulings.Remove(query);
+        ScheduleCalendar query = (ScheduleCalendar)(from carSchedule in db.ScheduleCalendars where carSchedule.ID == appt.ID select carSchedule).SingleOrDefault();
+        db.ScheduleCalendars.Remove(query);
         db.SaveChanges();
-        //db.CarSchedulings.DeleteOnSubmit(query);
+        //db.ScheduleCalendars.DeleteOnSubmit(query);
         //db.SubmitChanges();
     }
 }
@@ -181,23 +181,23 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
 public class Schedule {
     public Schedule() {
     }
-    public Schedule(CarScheduling carScheduling) {
-        if (carScheduling != null) {
-            ID = carScheduling.ID;
-            EventType = carScheduling.EventType;
-            Label = carScheduling.Label;
-            AllDay = carScheduling.AllDay;
-            Location = carScheduling.Location;
-            CarId = carScheduling.CarId;
-            Status = carScheduling.Status;
-            RecurrenceInfo = carScheduling.RecurrenceInfo;
-            ReminderInfo = carScheduling.ReminderInfo;
-            Subject = carScheduling.Subject;
-            Price = carScheduling.Price;
-            StartTime = carScheduling.StartTime.Value;
-            EndTime = carScheduling.EndTime.Value;
-            Description = carScheduling.Description;
-            ContactInfo = carScheduling.ContactInfo;
+    public Schedule(ScheduleCalendar ScheduleCalendar) {
+        if (ScheduleCalendar != null) {
+            ID = ScheduleCalendar.ID;
+            EventType = ScheduleCalendar.EventType;
+            Label = ScheduleCalendar.Label;
+            AllDay = ScheduleCalendar.AllDay;
+            Location = ScheduleCalendar.Location;
+            CarId = ScheduleCalendar.CarId;
+            Status = ScheduleCalendar.Status;
+            RecurrenceInfo = ScheduleCalendar.RecurrenceInfo;
+            ReminderInfo = ScheduleCalendar.ReminderInfo;
+            Subject = ScheduleCalendar.Subject;
+            Price = ScheduleCalendar.Price;
+            StartTime = ScheduleCalendar.StartTime.Value;
+            EndTime = ScheduleCalendar.EndTime.Value;
+            Description = ScheduleCalendar.Description;
+            ContactInfo = ScheduleCalendar.ContactInfo;
         }
     }
 

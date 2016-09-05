@@ -12,16 +12,16 @@ namespace dnSchedulev01.EFCFFDB
         {
         }
 
-        public virtual DbSet<Car> Cars { get; set; }
-        public virtual DbSet<CarScheduling> CarSchedulings { get; set; }
+        public virtual DbSet<Opportunity> Opportunitys { get; set; }
+        public virtual DbSet<ScheduleCalendar> ScheduleCalendars { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Car>()
+            modelBuilder.Entity<Opportunity>()
                 .Property(e => e.Price)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<CarScheduling>()
+            modelBuilder.Entity<ScheduleCalendar>()
                 .Property(e => e.Price)
                 .HasPrecision(10, 4);
         }

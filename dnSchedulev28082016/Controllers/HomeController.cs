@@ -35,20 +35,20 @@ namespace dnSchedulev01.Controllers
 
         void UpdateAppointment()
         {
-            CarScheduling insertedAppt = SchedulerExtension.GetAppointmentToInsert<CarScheduling>("scheduler", SchedulerDataHelper.GetAppointments(),
+            ScheduleCalendar insertedAppt = SchedulerExtension.GetAppointmentToInsert<ScheduleCalendar>("scheduler", SchedulerDataHelper.GetAppointments(),
                 SchedulerDataHelper.GetResources(), SchedulerDataHelper.DefaultAppointmentStorage, SchedulerDataHelper.DefaultResourceStorage);
             SchedulerDataHelper.InsertAppointment(insertedAppt);
 
             ViewData["EditableSchedule"] = insertedAppt;
 
-            CarScheduling[] updatedAppt = SchedulerExtension.GetAppointmentsToUpdate<CarScheduling>("scheduler", SchedulerDataHelper.GetAppointments(),
+            ScheduleCalendar[] updatedAppt = SchedulerExtension.GetAppointmentsToUpdate<ScheduleCalendar>("scheduler", SchedulerDataHelper.GetAppointments(),
                 SchedulerDataHelper.GetResources(), SchedulerDataHelper.DefaultAppointmentStorage, SchedulerDataHelper.DefaultResourceStorage);
             foreach (var appt in updatedAppt)
             {
                 SchedulerDataHelper.UpdateAppointment(appt);
             }
 
-            CarScheduling[] removedAppt = SchedulerExtension.GetAppointmentsToRemove<CarScheduling>("scheduler", SchedulerDataHelper.GetAppointments(),
+            ScheduleCalendar[] removedAppt = SchedulerExtension.GetAppointmentsToRemove<ScheduleCalendar>("scheduler", SchedulerDataHelper.GetAppointments(),
                 SchedulerDataHelper.GetResources(), SchedulerDataHelper.DefaultAppointmentStorage, SchedulerDataHelper.DefaultResourceStorage);
             foreach (var appt in removedAppt)
             {

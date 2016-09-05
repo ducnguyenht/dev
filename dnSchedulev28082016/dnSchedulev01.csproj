@@ -241,7 +241,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="EFCFFDB\Car.cs" />
+    <Compile Include="EFCFFDB\Opportunity.cs" />
     <Compile Include="EFCFFDB\CarScheduling.cs" />
     <Compile Include="EFCFFDB\DBScheduleMVCV001.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />

@@ -6,8 +6,8 @@ namespace dnSchedulev01.EFCFFDB
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("CarScheduling")]
-    public partial class CarScheduling
+    [Table("ScheduleCalendar")]
+    public partial class ScheduleCalendar
     {
         public int ID { get; set; }
 

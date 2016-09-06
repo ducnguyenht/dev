@@ -17,9 +17,9 @@ namespace dnSchedulev01.EFCFFDB
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Opportunity>()
-                .Property(e => e.Price)
-                .HasPrecision(19, 4);
+            //modelBuilder.Entity<Opportunity>()
+            //    .Property(e => e.Price)
+            //    .HasPrecision(19, 4);
 
             modelBuilder.Entity<ScheduleCalendar>()
                 .Property(e => e.Price)

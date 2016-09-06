@@ -17,7 +17,7 @@
                         @Html.DevExpress().Label(
                         settings =>
                         {
-                            settings.AssociatedControlName = "CarId";
+                            settings.AssociatedControlName = "OpportunityId";
                             settings.Text = "Opportunity:";
                             settings.Width = Unit.Percentage(100);
                         }).GetHtml()
@@ -26,12 +26,12 @@
                         @Html.DevExpress().ComboBox(
                         settings =>
                         {
-                            settings.Name = "CarId";
+                            settings.Name = "OpportunityId";
                             settings.Properties.ValueType = typeof(Int32);
                             settings.Properties.ValueField = "ID";
-                            settings.Properties.TextField = "Model";
+                            settings.Properties.TextField = "Name";
                             settings.Width = Unit.Percentage(100);
-                        }).BindList(ViewBag.ResourceDataSource).Bind(Model.CarId).GetHtml()
+                        }).BindList(ViewBag.ResourceDataSource).Bind(Model.OpportunityId).GetHtml()
                     </div>
                     <div class="col-md-2">
                         @Html.DevExpress().CheckBox(

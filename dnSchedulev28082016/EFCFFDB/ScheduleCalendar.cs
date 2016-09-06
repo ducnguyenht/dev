@@ -11,7 +11,7 @@ namespace dnSchedulev01.EFCFFDB
     {
         public int ID { get; set; }
 
-        public int? CarId { get; set; }
+        public int? OpportunityId { get; set; }
 
         public int? UserId { get; set; }
 

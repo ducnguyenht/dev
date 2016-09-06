@@ -86,10 +86,10 @@ public class SchedulerDataHelper {
         appointmentStorage.Mappings.ReminderInfo = "ReminderInfo";
         appointmentStorage.Mappings.Label = "Label";
         appointmentStorage.Mappings.Status = "Status";
-        appointmentStorage.Mappings.ResourceId = "CarId";
+        appointmentStorage.Mappings.ResourceId = "OpportunityId";
         appointmentStorage.CustomFieldMappings.Add("Price", "Price");
         appointmentStorage.CustomFieldMappings.Add("ContactInfo", "ContactInfo");
-        appointmentStorage.CustomFieldMappings.Add("CarId", "CarId");
+        appointmentStorage.CustomFieldMappings.Add("OpportunityId", "OpportunityId");
         return appointmentStorage;
     }
     static MVCxResourceStorage defaultResourceStorage;
@@ -103,7 +103,8 @@ public class SchedulerDataHelper {
     static MVCxResourceStorage CreateDefaultResourceStorage() {
         MVCxResourceStorage resourceStorage = new MVCxResourceStorage();
         resourceStorage.Mappings.ResourceId = "ID";
-        resourceStorage.Mappings.Caption = "Model";
+        resourceStorage.Mappings.Caption = "Name";
+        //resourceStorage.Mappings.Color = "";
         return resourceStorage;
     }
     public static void InsertAppointment(ScheduleCalendar appt) {
@@ -134,7 +135,7 @@ public class SchedulerDataHelper {
         query.Status = appt.Status;
         query.EventType = appt.EventType;
         query.Label = appt.Label;
-        query.CarId = appt.CarId;
+        query.OpportunityId = appt.OpportunityId;
         query.ContactInfo = appt.ContactInfo;
         query.Price = appt.Price;
         db.SaveChanges();
@@ -170,10 +171,10 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
             return priceRawValue == DBNull.Value ? 0 : (decimal?)priceRawValue;
         }
     }
-    public int? CarId {
+    public int? OpportunityId {
         get {
-            object carId = Appointment.ResourceId;
-            return carId == Resource.Empty ? 1 : (int?)carId; // select first resource if empty
+            object OpportunityId = Appointment.ResourceId;
+            return OpportunityId == Resource.Empty ? 1 : (int?)OpportunityId; // select first resource if empty
         }
     }
 }
@@ -188,7 +189,7 @@ public class Schedule {
             Label = ScheduleCalendar.Label;
             AllDay = ScheduleCalendar.AllDay;
             Location = ScheduleCalendar.Location;
-            CarId = ScheduleCalendar.CarId;
+            OpportunityId = ScheduleCalendar.OpportunityId;
             Status = ScheduleCalendar.Status;
             RecurrenceInfo = ScheduleCalendar.RecurrenceInfo;
             ReminderInfo = ScheduleCalendar.ReminderInfo;
@@ -206,7 +207,7 @@ public class Schedule {
     public int? Label { get; set; }
     public bool AllDay { get; set; }
     public string Location { get; set; }
-    public object CarId { get; set; }
+    public object OpportunityId { get; set; }
     public int? Status { get; set; }
     public string RecurrenceInfo { get; set; }
     public string ReminderInfo { get; set; }
@@ -229,7 +230,7 @@ public class Schedule {
             Label = source.Label;
             AllDay = source.AllDay;
             Location = source.Location;
-            CarId = source.CarId;
+            OpportunityId = source.OpportunityId;
             Status = source.Status;
             RecurrenceInfo = source.RecurrenceInfo;
             ReminderInfo = source.ReminderInfo;

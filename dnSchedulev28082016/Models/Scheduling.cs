@@ -140,21 +140,28 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
     public new IEnumerable ReminderDataSource {
         get { return SchedulerDataHelper.GetReminders(base.ReminderDataSource); }
     }
-    public string ContactInfo {
+    #region dn Custom Field
+    public string ContactInfo
+    {
         get { return Convert.ToString(Appointment.CustomFields["ContactInfo"]); }
     }
-    public decimal? Price {
-        get {
+    public decimal? Price
+    {
+        get
+        {
             object priceRawValue = Appointment.CustomFields["Price"];
             return priceRawValue == DBNull.Value ? 0 : (decimal?)priceRawValue;
         }
     }
-    public int? OpportunityId {
-        get {
+    public int? OpportunityId
+    {
+        get
+        {
             object OpportunityId = Appointment.ResourceId;
             return OpportunityId == Resource.Empty ? 1 : (int?)OpportunityId; // select first resource if empty
         }
     }
+    #endregion   
 }
 
 public class Schedule {
@@ -166,17 +173,21 @@ public class Schedule {
             EventType = ScheduleCalendar.EventType;
             Label = ScheduleCalendar.Label;
             AllDay = ScheduleCalendar.AllDay;
-            Location = ScheduleCalendar.Location;
-            OpportunityId = ScheduleCalendar.OpportunityId;
+            Location = ScheduleCalendar.Location;            
             Status = ScheduleCalendar.Status;
             RecurrenceInfo = ScheduleCalendar.RecurrenceInfo;
             ReminderInfo = ScheduleCalendar.ReminderInfo;
-            Subject = ScheduleCalendar.Subject;
-            Price = ScheduleCalendar.Price;
+            Subject = ScheduleCalendar.Subject;           
             StartTime = ScheduleCalendar.StartTime.Value;
             EndTime = ScheduleCalendar.EndTime.Value;
             Description = ScheduleCalendar.Description;
+            
+            #region dn Custome Field
+            OpportunityId = ScheduleCalendar.OpportunityId;
+            Price = ScheduleCalendar.Price;
             ContactInfo = ScheduleCalendar.ContactInfo;
+            #endregion
+            
         }
     }
 
@@ -184,22 +195,25 @@ public class Schedule {
     public int? EventType { get; set; }
     public int? Label { get; set; }
     public bool AllDay { get; set; }
-    public string Location { get; set; }
-    public object OpportunityId { get; set; }
+    public string Location { get; set; }    
     public int? Status { get; set; }
     public string RecurrenceInfo { get; set; }
     public string ReminderInfo { get; set; }
     [Required(ErrorMessage = "The Subject must contain at least one character.")]
-    public string Subject { get; set; }
-    public decimal? Price { get; set; }
+    public string Subject { get; set; }    
     [Required]
     public DateTime StartTime { get; set; }
     [Required]
     public DateTime EndTime { get; set; }
-    public string Description { get; set; }
-    public string ContactInfo { get; set; }
+    public string Description { get; set; }   
     public bool HasReminder { get; set; }
     public Reminder Reminder { get; set; }
+    
+    #region dn Custom Field
+    public object OpportunityId { get; set; }
+    public decimal? Price { get; set; }
+    public string ContactInfo { get; set; }
+    #endregion   
 
     public virtual void Assign(Schedule source) {
         if (source != null) {
@@ -207,17 +221,20 @@ public class Schedule {
             EventType = source.EventType;
             Label = source.Label;
             AllDay = source.AllDay;
-            Location = source.Location;
-            OpportunityId = source.OpportunityId;
+            Location = source.Location;            
             Status = source.Status;
             RecurrenceInfo = source.RecurrenceInfo;
             ReminderInfo = source.ReminderInfo;
-            Subject = source.Subject;
-            Price = source.Price;
+            Subject = source.Subject;           
             StartTime = source.StartTime;
             EndTime = source.EndTime;
             Description = source.Description;
+
+            #region dn Custom Field
+            OpportunityId = source.OpportunityId;
             ContactInfo = source.ContactInfo;
+            Price = source.Price;
+            #endregion            
         }
     }
 }

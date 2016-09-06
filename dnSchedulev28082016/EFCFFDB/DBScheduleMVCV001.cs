@@ -10,11 +10,12 @@ namespace dnSchedulev01.EFCFFDB
         public DBScheduleMVCV001()
             : base("name=DBScheduleMVCV001")
         {
+            Database.SetInitializer(new DBInitializer());
         }
 
         public virtual DbSet<Opportunity> Opportunitys { get; set; }
         public virtual DbSet<ScheduleCalendar> ScheduleCalendars { get; set; }
-
+        public virtual DbSet<Customer> Customers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Opportunity>()

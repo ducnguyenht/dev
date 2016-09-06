@@ -10,7 +10,8 @@ namespace dnSchedulev01.EFCFFDB
         public DBScheduleMVCV001()
             : base("name=DBScheduleMVCV001")
         {
-            Database.SetInitializer(new DBInitializer());
+            //Database.SetInitializer(new DBInitializer());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBScheduleMVCV001, dnSchedulev01.Migrations.Configuration>("DBScheduleMVCV001"));
         }
 
         public virtual DbSet<Opportunity> Opportunitys { get; set; }

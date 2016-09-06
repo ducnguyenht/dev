@@ -120,12 +120,15 @@ settings =>
                 Description = container.Appointment.Description,
                 EventType = (int?)container.Appointment.Type,
                 Status = container.Appointment.StatusId,
-                Label = container.Appointment.LabelId,
+                Label = container.Appointment.LabelId,                
+                HasReminder = container.Appointment.HasReminder,
+                Reminder = container.Appointment.Reminder,
+                
+                #region Custom field
                 OpportunityId = container.OpportunityId,
                 Price = container.Price,
                 ContactInfo = container.ContactInfo,
-                HasReminder = container.Appointment.HasReminder,
-                Reminder = container.Appointment.Reminder
+                #endregion Custom field
             };
         #region Binding Resources
         ViewBag.DeleteButtonEnabled = container.CanDeleteAppointment;

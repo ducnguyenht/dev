@@ -29,20 +29,20 @@ namespace dnSchedulev01.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            var lstOpp = new List<Opportunity>();
-            lstOpp.Add(new Opportunity() { Name = "Opp 1" });
-            lstOpp.Add(new Opportunity() { Name = "Opp 2" });
-            lstOpp.Add(new Opportunity() { Name = "Opp 3" });
-            foreach (var obj in lstOpp) 
-                context.Opportunitys.AddOrUpdate(obj);
+            context.Opportunitys.AddOrUpdate(
+              p => p.Name,
+              new Opportunity { Name = "Opp 1" },
+              new Opportunity { Name = "Opp 2" },
+              new Opportunity { Name = "Opp 3" }
+            );
 
-            var lstCus = new List<Customer>();
-            lstCus.Add(new Customer() { Name = "cus 1" });
-            lstCus.Add(new Customer() { Name = "cus 2" });
-            lstCus.Add(new Customer() { Name = "cus 3" });
-            foreach (var obj in lstCus)
-                context.Customers.AddOrUpdate(obj);
-            base.Seed(context);
+            context.Customers.AddOrUpdate(
+             c => c.Name,
+             new Customer { Name = "cus 1" },
+             new Customer { Name = "cus 2" },
+             new Customer { Name = "cus 3" }
+           );
+           base.Seed(context);
         }
     }
 }

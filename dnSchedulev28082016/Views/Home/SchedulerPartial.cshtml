@@ -126,6 +126,7 @@ settings =>
                 
                 #region Custom field
                 OpportunityId = container.OpportunityId,
+                CustomerId=container.CustomerId,
                 Price = container.Price,
                 ContactInfo = container.ContactInfo,
                 #endregion Custom field
@@ -139,6 +140,8 @@ settings =>
         ViewBag.StatusDataSource = container.StatusDataSource;
         ViewBag.LabelDataSource = container.LabelDataSource;
         ViewBag.ReminderDataSource = container.ReminderDataSource;
+
+        ViewBag.CustomerDataSource = container.CustomerDataSource;
         #endregion
 
         Html.RenderPartial("CustomAppointmentFormPartial", schedule);

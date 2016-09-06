@@ -177,6 +177,7 @@
                 </div>
             </div>
             <!--#endregion -->
+        
             <!--#region Status  -->
             <div class="row">
                 <div class="col-md-5">                    
@@ -198,6 +199,31 @@
                     settings.Properties.TextField = "Text";
                     settings.Width = Unit.Percentage(100);
                 }).BindList(ViewBag.StatusDataSource).Bind(Model.Status).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->
+
+            <!--#region Customer  -->
+            <div class="row">
+                <div class="col-md-5">
+                    @Html.DevExpress().Label(
+                    settings =>
+                    {
+                        settings.AssociatedControlName = "Customer";
+                        settings.Text = "Customer:";
+                        settings.Width = Unit.Percentage(100);
+                    }).GetHtml()
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().ComboBox(
+                settings =>
+                {
+                    settings.Name = "Customer";
+                    settings.Properties.ValueType = typeof(Int32);
+                    settings.Properties.ValueField = "Id";
+                    settings.Properties.TextField = "Name";
+                    settings.Width = Unit.Percentage(100);
+                }).BindList(ViewBag.CustomerDataSource).Bind(Model.CustomerId).GetHtml()
                 </div>
             </div>
             <!--#endregion -->

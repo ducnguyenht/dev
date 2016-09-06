@@ -15,6 +15,14 @@ public class SchedulerDataObject {
 }
 
 public class SchedulerDataHelper {
+    #region Custom Field Customer DataSource
+     public static IEnumerable GetCustomerResources() {
+        DBScheduleMVCV001 db = new DBScheduleMVCV001();
+        //var t = db.Cars.ToList();
+        //var ttt = (from res in db.Cars select res).ToList();
+        return db.Customers.ToList();// (from res in db.Cars select res).ToList();//db.Cars.Local;//from res in db.Cars select res;
+    }
+    #endregion
     public static IEnumerable GetResources() {
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
         //var t = db.Cars.ToList();
@@ -67,6 +75,7 @@ public class SchedulerDataHelper {
         appointmentStorage.CustomFieldMappings.Add("Price", "Price");
         appointmentStorage.CustomFieldMappings.Add("ContactInfo", "ContactInfo");
         appointmentStorage.CustomFieldMappings.Add("OpportunityId", "OpportunityId");
+        appointmentStorage.CustomFieldMappings.Add("CustomerId", "CustomerId");
         #endregion
         return appointmentStorage;
     }
@@ -113,9 +122,13 @@ public class SchedulerDataHelper {
         query.Status = appt.Status;
         query.EventType = appt.EventType;
         query.Label = appt.Label;
+        #region dn Custom Field
         query.OpportunityId = appt.OpportunityId;
+        query.CustomerId = appt.CustomerId;
         query.ContactInfo = appt.ContactInfo;
         query.Price = appt.Price;
+        #endregion
+      
         db.SaveChanges();
         //db.SubmitChanges();
     }
@@ -140,6 +153,11 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
     public new IEnumerable ReminderDataSource {
         get { return SchedulerDataHelper.GetReminders(base.ReminderDataSource); }
     }
+
+    public new IEnumerable CustomerDataSource
+    {
+        get { return SchedulerDataHelper.GetCustomerResources(); }
+    }
     #region dn Custom Field
     public string ContactInfo
     {
@@ -159,6 +177,17 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
         {
             object OpportunityId = Appointment.ResourceId;
             return OpportunityId == Resource.Empty ? 1 : (int?)OpportunityId; // select first resource if empty
+        }
+    }
+
+    public int? CustomerId
+    {
+        get
+        {
+            //object CustomerId =Convert.ToInt32(Appointment.CustomFields["CustomerId"]);
+            //return CustomerId == Resource.Empty ? 1 : (int?)CustomerId; // select first resource if empty
+            object CustomerId = Appointment.CustomFields["CustomerId"];
+            return CustomerId == DBNull.Value ? 0 : (int?)CustomerId;
         }
     }
     #endregion   
@@ -184,6 +213,8 @@ public class Schedule {
             
             #region dn Custome Field
             OpportunityId = ScheduleCalendar.OpportunityId;
+            CustomerId = ScheduleCalendar.CustomerId;
+            RequestDate = ScheduleCalendar.RequestedDate;
             Price = ScheduleCalendar.Price;
             ContactInfo = ScheduleCalendar.ContactInfo;
             #endregion
@@ -211,6 +242,8 @@ public class Schedule {
     
     #region dn Custom Field
     public object OpportunityId { get; set; }
+    public int? CustomerId { get; set; }
+    public DateTime? RequestDate { get; set; }
     public decimal? Price { get; set; }
     public string ContactInfo { get; set; }
     #endregion   
@@ -232,6 +265,7 @@ public class Schedule {
 
             #region dn Custom Field
             OpportunityId = source.OpportunityId;
+            CustomerId = source.CustomerId;
             ContactInfo = source.ContactInfo;
             Price = source.Price;
             #endregion            

@@ -154,7 +154,7 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
         get { return SchedulerDataHelper.GetReminders(base.ReminderDataSource); }
     }
 
-    public new IEnumerable CustomerDataSource
+    public IEnumerable CustomerDataSource
     {
         get { return SchedulerDataHelper.GetCustomerResources(); }
     }

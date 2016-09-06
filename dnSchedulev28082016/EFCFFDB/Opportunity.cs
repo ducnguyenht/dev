@@ -5,7 +5,6 @@ namespace dnSchedulev01.EFCFFDB
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
     public partial class Opportunity
     {
         public int ID { get; set; }

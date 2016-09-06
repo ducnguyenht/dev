@@ -24,43 +24,38 @@
 settings =>
 {
     settings.Name = "scheduler";
-    settings.PrepareAppointmentFormPopupContainer += (s, e) =>
-    {
-        //e.Popup.HeaderText = "You can edit the details about a meeting here";
-        e.Popup.Width = System.Web.UI.WebControls.Unit.Pixel(1000);//System.Web.UI.WebControls.Unit.Pixel(800);
-        //e.Popup.Width = System.Web.UI.WebControls.Unit.Percentage(80);//new System.Web.UI.WebControls.Unit(800);
-    };
+    settings.Start = DateTime.Now;//new DateTime(2010, 7, 1);
+    
+    #region Setting Routing
     settings.CallbackRouteValues = new { Controller = "Home", Action = "SchedulerPartial" };
     settings.EditAppointmentRouteValues = new { Controller = "Home", Action = "EditAppointment" };
-
+    #endregion  
+    
+    #region Setting Appointment + Resource + Reminder
     settings.Storage.Appointments.Assign(SchedulerDataHelper.DefaultAppointmentStorage);
     settings.Storage.Resources.Assign(SchedulerDataHelper.DefaultResourceStorage);
-
     settings.Storage.EnableReminders = true;
-
+    #endregion
+    
+    #region Setting Labels
     settings.Storage.Appointments.Labels.Clear();
     settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.FromArgb(242, 87, 87), "Very High"));
     settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.FromArgb(255, 198, 0), "High"));
     settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.FromArgb(190, 246, 36), "Normal"));
     settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.FromArgb(49, 128, 206), "Low"));
     settings.Storage.Appointments.Labels.Add(new DevExpress.Web.ASPxScheduler.AppointmentLabel(System.Drawing.Color.White, "Very Low"));
-
+    #endregion
+        
+    #region Setting Status
     settings.Storage.Appointments.Statuses.Clear();
     settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(242, 87, 87), "In Progress");
     settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(255, 198, 0), "Fixed");
     settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(190, 246, 36), "Open");
     settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.FromArgb(49, 128, 206), "Verify");
     settings.Storage.Appointments.Statuses.Add(System.Drawing.Color.White, "Won't fix");
-
-
-    settings.QueryWorkTime += (s, e) =>
-    {
-        //e.WorkTimes.Clear();
-        e.WorkTimes.Add(new TimeOfDayInterval(TimeSpan.FromHours(8), TimeSpan.FromHours(12)));
-        e.WorkTimes.Add(new TimeOfDayInterval(TimeSpan.FromHours(14), TimeSpan.FromHours(22)));
-    };
-    settings.Views.DayView.ShowWorkTimeOnly = true;
-
+    #endregion
+   
+    #region Seting Popup Menu
     settings.PopupMenuShowing = (sender, e) =>
     {
         if (e.Menu.Id.Equals(SchedulerMenuItemId.AppointmentMenu))
@@ -71,32 +66,37 @@ settings =>
             e.Menu.Items[3].Text = "Status";//Show Time As
             e.Menu.Items[4].Text = "Priority";//Label As
             e.Menu.Items[5].Text = "Delete";
-
-            //e.Menu.Items.Remove(e.Menu.Items.FindByName(SchedulerMenuItemId.LabelSubMenu.ToString()));
-            //e.Menu.Items.Remove(e.Menu.Items.FindByName(SchedulerMenuItemId.StatusSubMenu.ToString()));
         }
     };
-    //var lstLB = settings.Storage.Appointments.Labels;
-    //for (int i = 0; i < lstLB.Count; i++)
-    //{
-    //    DevExpress.Web.ASPxScheduler.AppointmentLabel standardLabel = lstLB[i];
-    //    if (standardLabel.DisplayName == DevExpress.XtraScheduler.Localization.SchedulerLocalizer.GetString(DevExpress.XtraScheduler.Localization.SchedulerStringId.AppointmentLabel_Important))
-    //    {
-    //        standardLabel.DisplayName = "Very Important";
-    //        standardLabel.MenuCaption = "Very Important";
-    //    }
-    //    if (standardLabel.DisplayName == DevExpress.XtraScheduler.Localization.SchedulerLocalizer.GetString(DevExpress.XtraScheduler.Localization.SchedulerStringId.AppointmentLabel_Vacation))
-    //    {
-    //        standardLabel.DisplayName = "Indefinite Leave";
-    //        standardLabel.MenuCaption = "Indefinite Leave";
-    //    }
-    //}
-    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
-    settings.Views.DayView.Styles.ScrollAreaHeight = 600;
-    settings.Start = DateTime.Now;//new DateTime(2010, 7, 1);
-
+    #endregion
+    
+    #region Setting Scroll + ResourcesPerPage
+    settings.Views.DayView.ResourcesPerPage = 2;
+    settings.Views.DayView.Styles.ScrollAreaHeight = System.Web.UI.WebControls.Unit.Pixel(400);
+    settings.Views.WorkWeekView.ResourcesPerPage = 2;
+    settings.Views.WorkWeekView.Styles.ScrollAreaHeight = System.Web.UI.WebControls.Unit.Pixel(400);
+    settings.Views.TimelineView.ResourcesPerPage = 4;
+    settings.Views.TimelineView.IntervalCount = 12;
+    settings.Views.TimelineView.Styles.TimelineCellBody.Height = System.Web.UI.WebControls.Unit.Pixel(120);
+    #endregion
+    
+    #region Setting Work time   
+    settings.Views.DayView.ShowWorkTimeOnly = true;
+    settings.Views.WorkWeekView.ShowWorkTimeOnly = true;
+    DevExpress.XtraScheduler.TimeOfDayInterval visibleInterval = new DevExpress.XtraScheduler.TimeOfDayInterval(TimeSpan.FromHours(7), TimeSpan.FromHours(19));
+    settings.Views.DayView.WorkTime = visibleInterval;
+    settings.Views.WorkWeekView.WorkTime = visibleInterval;
+    #endregion
+    
+    #region Setting Custom Edit form Template
     settings.OptionsForms.RecurrenceFormName = "appointmentRecurrenceForm";
-
+    
+    settings.PrepareAppointmentFormPopupContainer += (s, e) =>
+    {
+        //e.Popup.HeaderText = "You can edit the details about a meeting here";
+        e.Popup.Width = System.Web.UI.WebControls.Unit.Pixel(1000);//System.Web.UI.WebControls.Unit.Pixel(800);
+    };
+    
     settings.AppointmentFormShowing = (sender, e) =>
     {
         var scheduler = sender as MVCxScheduler;
@@ -127,7 +127,7 @@ settings =>
                 HasReminder = container.Appointment.HasReminder,
                 Reminder = container.Appointment.Reminder
             };
-
+        #region Binding Resources
         ViewBag.DeleteButtonEnabled = container.CanDeleteAppointment;
         ViewBag.IsRecurring = container.Appointment.IsRecurring;
         ViewBag.AppointmentRecurrenceFormSettings = CreateAppointmentRecurrenceFormSettings(container);
@@ -136,8 +136,48 @@ settings =>
         ViewBag.StatusDataSource = container.StatusDataSource;
         ViewBag.LabelDataSource = container.LabelDataSource;
         ViewBag.ReminderDataSource = container.ReminderDataSource;
+        #endregion
 
         Html.RenderPartial("CustomAppointmentFormPartial", schedule);
     });
+    #endregion
+   
 
 }).Bind(Model.Appointments, Model.Resources).GetHtml()
+
+@*//var lstLB = settings.Storage.Appointments.Labels;
+       //for (int i = 0; i < lstLB.Count; i++)
+       //{
+       //    DevExpress.Web.ASPxScheduler.AppointmentLabel standardLabel = lstLB[i];
+       //    if (standardLabel.DisplayName == DevExpress.XtraScheduler.Localization.SchedulerLocalizer.GetString(DevExpress.XtraScheduler.Localization.SchedulerStringId.AppointmentLabel_Important))
+       //    {
+       //        standardLabel.DisplayName = "Very Important";
+       //        standardLabel.MenuCaption = "Very Important";
+       //    }
+       //    if (standardLabel.DisplayName == DevExpress.XtraScheduler.Localization.SchedulerLocalizer.GetString(DevExpress.XtraScheduler.Localization.SchedulerStringId.AppointmentLabel_Vacation))
+       //    {
+       //        standardLabel.DisplayName = "Indefinite Leave";
+       //        standardLabel.MenuCaption = "Indefinite Leave";
+       //    }
+       //}
+
+              //settings.Width = 800;//System.Web.UI.WebControls.Unit.Percentage(100);
+           //settings.Height = 1000;
+
+       //e.Menu.Items.Remove(e.Menu.Items.FindByName(SchedulerMenuItemId.LabelSubMenu.ToString()));
+               //e.Menu.Items.Remove(e.Menu.Items.FindByName(SchedulerMenuItemId.StatusSubMenu.ToString()));
+
+    //ffsettings.VerticalScrollBarMode = ScrollBarMode.Visible;
+       //settings.Views.DayView.Styles.ScrollAreaHeight = 1000;
+
+     //settings.Views.DayView.ShowWorkTimeOnly = true;
+    //settings.QueryWorkTime += (s, e) =>
+    //{
+    //    //e.WorkTimes.Clear();
+    //    //e.WorkTimes.Add(new TimeOfDayInterval(TimeSpan.FromHours(8), TimeSpan.FromHours(12)));
+    //    //e.WorkTimes.Add(new TimeOfDayInterval(TimeSpan.FromHours(14), TimeSpan.FromHours(22)));
+    //    //ffsettings.VerticalScrollBarMode = ScrollBarMode.Visible;
+    //    //settings.Views.DayView.Styles.ScrollAreaHeight = 1000;
+    //    e.WorkTime = new TimeOfDayInterval(TimeSpan.FromHours(8), TimeSpan.FromHours(22));
+    //};
+*@

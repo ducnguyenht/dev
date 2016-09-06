@@ -19,13 +19,13 @@
         return settings;
     }
 }
-
+    
 @Html.DevExpress().Scheduler(
 settings =>
 {
     settings.Name = "scheduler";
     settings.Start = DateTime.Now;//new DateTime(2010, 7, 1);
-    
+  
     #region Setting Routing
     settings.CallbackRouteValues = new { Controller = "Home", Action = "SchedulerPartial" };
     settings.EditAppointmentRouteValues = new { Controller = "Home", Action = "EditAppointment" };
@@ -79,14 +79,17 @@ settings =>
     settings.Views.TimelineView.IntervalCount = 12;
     settings.Views.TimelineView.Styles.TimelineCellBody.Height = System.Web.UI.WebControls.Unit.Pixel(120);
     #endregion
-    
-    #region Setting Work time   
+
+
+
+    #region Setting Work time 
     settings.Views.DayView.ShowWorkTimeOnly = true;
     settings.Views.WorkWeekView.ShowWorkTimeOnly = true;
     DevExpress.XtraScheduler.TimeOfDayInterval visibleInterval = new DevExpress.XtraScheduler.TimeOfDayInterval(TimeSpan.FromHours(7), TimeSpan.FromHours(19));
     settings.Views.DayView.WorkTime = visibleInterval;
     settings.Views.WorkWeekView.WorkTime = visibleInterval;
     #endregion
+    
     
     #region Setting Custom Edit form Template
     settings.OptionsForms.RecurrenceFormName = "appointmentRecurrenceForm";
@@ -181,3 +184,6 @@ settings =>
     //    e.WorkTime = new TimeOfDayInterval(TimeSpan.FromHours(8), TimeSpan.FromHours(22));
     //};
 *@
+<!-- #region Test -->
+
+<!-- #endregion -->

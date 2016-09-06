@@ -133,6 +133,26 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-2">
+                    @Html.DevExpress().Label(
+                    settings => {
+                        settings.AssociatedControlName = "Price";
+                        settings.Text = "Price:";
+                        settings.Width = Unit.Percentage(100);
+                    }).GetHtml()
+                </div>
+                <div class="col-md-10">
+                   @Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Price";
+                        settings.ShowModelErrors = true;
+                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                        settings.Width = Unit.Percentage(100);
+                    }).Bind(Model.Price).GetHtml()
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-1">
                     @Html.DevExpress().CheckBox(
                 settings =>

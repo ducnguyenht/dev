@@ -75,6 +75,7 @@ public class SchedulerDataHelper {
         appointmentStorage.CustomFieldMappings.Add("Price", "Price");
         appointmentStorage.CustomFieldMappings.Add("ContactInfo", "ContactInfo");
         appointmentStorage.CustomFieldMappings.Add("OpportunityId", "OpportunityId");
+        //appointmentStorage.CustomFieldMappings.Add(new DevExpress.Web.ASPxScheduler.ASPxAppointmentCustomFieldMapping("CustomerId", "CustomerId"));
         appointmentStorage.CustomFieldMappings.Add("CustomerId", "CustomerId");
         #endregion
         return appointmentStorage;

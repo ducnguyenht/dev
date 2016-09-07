@@ -183,7 +183,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Start\cars.sql" />
     <Content Include="Content\Site.css" />
     <Content Include="Css\bootstrap.min.css" />
     <Content Include="Global.asax" />

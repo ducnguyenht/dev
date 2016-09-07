@@ -94,6 +94,8 @@ public class SchedulerDataHelper {
         appointmentStorage.CustomFieldMappings.Add("UserId", "UserId");
         appointmentStorage.CustomFieldMappings.Add("Estimation", "Estimation");
         appointmentStorage.CustomFieldMappings.Add("SpentTime", "SpentTime");
+        appointmentStorage.CustomFieldMappings.Add("Comment", "Comment");
+        
         #endregion
         return appointmentStorage;
     }
@@ -149,6 +151,7 @@ public class SchedulerDataHelper {
         query.UserId = appt.UserId;
         query.Estimation = appt.Estimation;
         query.SpentTime = appt.SpentTime;
+        query.Comment = appt.Comment;
         query.ContactInfo = appt.ContactInfo;
         query.Price = appt.Price;
         #endregion
@@ -261,6 +264,10 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
     {
         get { return Convert.ToString(Appointment.CustomFields["SpentTime"]); }
     }
+    public string Comment
+    {
+        get { return Convert.ToString(Appointment.CustomFields["Comment"]); }
+    }
     #endregion   
 }
 
@@ -291,6 +298,7 @@ public class Schedule {
             UserId = ScheduleCalendar.UserId;
             Estimation = ScheduleCalendar.Estimation;
             SpentTime = ScheduleCalendar.SpentTime;
+            Comment = ScheduleCalendar.Comment;
             Price = ScheduleCalendar.Price;
             ContactInfo = ScheduleCalendar.ContactInfo;
             #endregion
@@ -325,7 +333,8 @@ public class Schedule {
     public DateTime? RequestDate { get; set; }
     public int? UserId { get; set; }
     public string Estimation { get; set; }
-    public string SpentTime { get; set; }   
+    public string SpentTime { get; set; }
+    public string Comment { get; set; }
     public decimal? Price { get; set; }
     public string ContactInfo { get; set; }
     #endregion   
@@ -354,6 +363,7 @@ public class Schedule {
             UserId = source.UserId;
             Estimation = source.Estimation;
             SpentTime = source.SpentTime;
+            Comment = source.Comment;
             ContactInfo = source.ContactInfo;
             Price = source.Price;
             #endregion            

@@ -33,6 +33,8 @@ namespace dnSchedulev01.EFCFFDB
         public DateTime? RequestDate { get; set; }
         public string Estimation { get; set; }
         public string SpentTime { get; set; }
+        public string Comment { get; set; }
+
         
         [Column(TypeName = "smallmoney")]
         public decimal? Price { get; set; }

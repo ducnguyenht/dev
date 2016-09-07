@@ -13,6 +13,7 @@
             @if (Model.EventType == 0 || Model.EventType == 1)
             {
                 <div class="row">
+                    <!--#region Opportunity  -->                    
                     <div class="col-md-2">
                         @Html.DevExpress().Label(
                         settings =>
@@ -28,11 +29,13 @@
                         {
                             settings.Name = "OpportunityId";
                             settings.Properties.ValueType = typeof(Int32);
-                            settings.Properties.ValueField = "ID";
-                            settings.Properties.TextField = "Name";
+                            settings.Properties.ValueField = "ID";//key
+                            settings.Properties.TextField = "Name";//value
                             settings.Width = Unit.Percentage(100);
                         }).BindList(ViewBag.ResourceDataSource).Bind(Model.OpportunityId).GetHtml()
                     </div>
+                    <!--#endregion -->
+                    <!--#region Reminder  -->                    
                     <div class="col-md-2">
                         @Html.DevExpress().CheckBox(
                         settings =>
@@ -55,10 +58,12 @@
                             settings.Properties.ClientSideEvents.Init = "OnTimeBeforeStartComboBoxInit";
                         }).BindList(ViewBag.ReminderDataSource).Bind(timeBeforeStart).GetHtml()
                     </div>
+                    <!--#endregion -->
                 </div>
             }
             else
             {
+                <!--#region HasReminder  -->            
                 <div class="row">
                     <div class="col-md-4">
                         @Html.DevExpress().CheckBox(
@@ -84,11 +89,10 @@
                         }).BindList(ViewBag.ReminderDataSource).Bind(timeBeforeStart).GetHtml()
                     </div>
                 </div>
-            }
-            @*<div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-8"></div>
-                </div>*@
+                <!--#endregion -->
+            }   
+            
+            <!--#region Title  -->            
             <div class="row">
                 <div class="col-md-2">
                     @Html.DevExpress().Label(
@@ -110,6 +114,8 @@
                     }).Bind(Model.Subject).GetHtml()
                 </div>
             </div>
+            <!--#endregion -->
+            <!--#region Description  -->            
             <div class="row">
                 <div class="col-md-2">
                     @Html.DevExpress().Label(
@@ -132,27 +138,8 @@
                 }).Bind(Model.Description).GetHtml()
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-2">
-                    @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "Price";
-                        settings.Text = "Price:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-                </div>
-                <div class="col-md-10">
-                    @Html.DevExpress().TextBox(
-                    settings =>
-                    {
-                        settings.Name = "Price";
-                        settings.ShowModelErrors = true;
-                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                        settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.Price).GetHtml()
-                </div>
-            </div>
+            <!--#endregion -->
+            <!--#region All Day Event  -->            
             <div class="row">
                 <div class="col-md-1">
                     @Html.DevExpress().CheckBox(
@@ -170,6 +157,48 @@
                     settings.Text = "All Day Event";
                     settings.Width = Unit.Percentage(100);
                 }).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#comment" aria-controls="home" role="tab" data-toggle="tab">Comment</a></li>
+                    <li role="presentation"><a href="#timeTracking" aria-controls="profile" role="tab" data-toggle="tab">Time Tracking</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="comment">
+                        <!--#region Comment  -->
+                        @Html.DevExpress().Memo(
+                settings =>
+                {
+                    settings.Name = "Comment";
+                    settings.Properties.Rows = 5;
+                    settings.ShowModelErrors = true;
+                    settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                    settings.Width = Unit.Percentage(100);
+                }).Bind(Model.Comment).GetHtml()
+
+                        @*@Html.DevExpress().Memo(
+                    settings =>
+                    {
+                        settings.Name = "Comment";
+                        settings.Properties.Rows = 5;
+                        settings.ShowModelErrors = true;
+                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                        settings.Width = Unit.Percentage(100);
+                    }).Bind(Model.Comment).GetHtml()*@
+                        <!--#endregion -->
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="timeTracking">
+
+
+                        42526426236
+
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -325,14 +354,7 @@
                             settings.Properties.ValidationSettings.Display = Display.Dynamic;
                             settings.Width = Unit.Percentage(100);
                         }).Bind(Model.RequestDate).GetHtml()
-                    @*@Html.DevExpress().TextBox(
-                        settings =>
-                        {
-                            settings.Name = "RequestDate";
-                            settings.ShowModelErrors = true;
-                            settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                            settings.Width = Unit.Percentage(100);
-                        }).Bind(Model.RequestDate).GetHtml()*@
+                    
                 </div>
             </div>
             <!--#endregion -->
@@ -454,7 +476,9 @@
                 </div>
             </div>
             <!--#endregion -->
+
         </div>
+       
         <div class="col-md-12">
             @Html.DevExpress().AppointmentRecurrenceForm(ViewBag.AppointmentRecurrenceFormSettings).GetHtml()
         </div>
@@ -512,6 +536,35 @@
             }).GetHtml()
             </td>
         </tr>
-
     </table>
 }
+
+@*@Html.DevExpress().TextBox(
+    settings =>
+    {
+        settings.Name = "RequestDate";
+        settings.ShowModelErrors = true;
+        settings.Properties.ValidationSettings.Display = Display.Dynamic;
+        settings.Width = Unit.Percentage(100);
+    }).Bind(Model.RequestDate).GetHtml()*@
+@*<div class="row">
+        <div class="col-md-2">
+            @Html.DevExpress().Label(
+            settings =>
+            {
+                settings.AssociatedControlName = "Price";
+                settings.Text = "Price:";
+                settings.Width = Unit.Percentage(100);
+            }).GetHtml()
+        </div>
+        <div class="col-md-10">
+            @Html.DevExpress().TextBox(
+            settings =>
+            {
+                settings.Name = "Price";
+                settings.ShowModelErrors = true;
+                settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                settings.Width = Unit.Percentage(100);
+            }).Bind(Model.Price).GetHtml()
+        </div>
+    </div>*@

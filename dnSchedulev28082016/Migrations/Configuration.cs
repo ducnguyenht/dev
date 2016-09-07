@@ -12,9 +12,9 @@ namespace dnSchedulev01.Migrations
         {
             AutomaticMigrationsEnabled = true;
         }
+
         protected override void Seed(dnSchedulev01.EFCFFDB.DBScheduleMVCV001 context)
         {
-
             context.Opportunitys.AddOrUpdate(
               p => p.Name,
               new Opportunity { Name = "Opp 1" },

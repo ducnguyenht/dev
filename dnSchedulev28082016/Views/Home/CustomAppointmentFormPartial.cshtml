@@ -86,9 +86,9 @@
                 </div>
             }
             @*<div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-8"></div>
-        </div>*@
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8"></div>
+                </div>*@
             <div class="row">
                 <div class="col-md-2">
                     @Html.DevExpress().Label(
@@ -135,21 +135,22 @@
             <div class="row">
                 <div class="col-md-2">
                     @Html.DevExpress().Label(
-                    settings => {
+                    settings =>
+                    {
                         settings.AssociatedControlName = "Price";
                         settings.Text = "Price:";
                         settings.Width = Unit.Percentage(100);
                     }).GetHtml()
                 </div>
                 <div class="col-md-10">
-                   @Html.DevExpress().TextBox(
+                    @Html.DevExpress().TextBox(
                     settings =>
                     {
                         settings.Name = "Price";
                         settings.ShowModelErrors = true;
                         settings.Properties.ValidationSettings.Display = Display.Dynamic;
                         settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.Price).GetHtml()                  
+                    }).Bind(Model.Price).GetHtml()
                 </div>
             </div>
             <div class="row">
@@ -197,31 +198,6 @@
                 </div>
             </div>
             <!--#endregion -->
-        
-            <!--#region Status  -->
-            <div class="row">
-                <div class="col-md-5">                    
-                    @Html.DevExpress().Label(
-                    settings =>
-                    {
-                        settings.AssociatedControlName = "Status";
-                        settings.Text = "Status:";
-                        settings.Width = Unit.Percentage(100);
-                    }).GetHtml()
-                </div>
-                <div class="col-md-7">
-                    @Html.DevExpress().ComboBox(
-                settings =>
-                {
-                    settings.Name = "Status";
-                    settings.Properties.ValueType = typeof(Int32);
-                    settings.Properties.ValueField = "Value";
-                    settings.Properties.TextField = "Text";
-                    settings.Width = Unit.Percentage(100);
-                }).BindList(ViewBag.StatusDataSource).Bind(Model.Status).GetHtml()
-                </div>
-            </div>
-            <!--#endregion -->
             <!--#region Type  -->
             <div class="row">
                 <div class="col-md-5">
@@ -259,7 +235,7 @@
                         settings.Width = Unit.Percentage(100);
                     }).GetHtml()
                 </div>
-                <div class="col-md-7">    
+                <div class="col-md-7">
                     @Html.DevExpress().ComboBox(
                     settings =>
                     {
@@ -268,17 +244,64 @@
                         settings.Properties.ValueField = "ID";
                         settings.Properties.TextField = "Name";
                         settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
-                        settings.Properties.DropDownStyle = DropDownStyle.DropDown; 
+                        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
                         settings.Width = Unit.Percentage(100);
                     }).BindList(ViewBag.CustomerDataSource).Bind(Model.CustomerId).GetHtml()
                     @*@Html.DevExpress().TextBox(
+                settings =>
+                {
+                    settings.Name = "CustomerId";
+                    settings.ShowModelErrors = true;
+                    settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                    settings.Width = Unit.Percentage(100);
+                }).Bind(Model.CustomerId).GetHtml()*@
+                </div>
+            </div>
+            <!--#endregion -->
+            <!--#region Status  -->
+            <div class="row">
+                <div class="col-md-5">
+                    @Html.DevExpress().Label(
+                    settings =>
+                    {
+                        settings.AssociatedControlName = "Status";
+                        settings.Text = "Status:";
+                        settings.Width = Unit.Percentage(100);
+                    }).GetHtml()
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().ComboBox(
+                settings =>
+                {
+                    settings.Name = "Status";
+                    settings.Properties.ValueType = typeof(Int32);
+                    settings.Properties.ValueField = "Value";
+                    settings.Properties.TextField = "Text";
+                    settings.Width = Unit.Percentage(100);
+                }).BindList(ViewBag.StatusDataSource).Bind(Model.Status).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->          
+            <!--#region RequestBy  -->
+            <div class="row">
+                <div class="col-md-5">
+                    @Html.DevExpress().Label(
+                    settings =>
+                    {
+                        settings.AssociatedControlName = "RequestBy";
+                        settings.Text = "RequestBy:";
+                        settings.Width = Unit.Percentage(100);
+                    }).GetHtml()
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().TextBox(
                         settings =>
                         {
-                            settings.Name = "CustomerId";
+                            settings.Name = "RequestBy";
                             settings.ShowModelErrors = true;
                             settings.Properties.ValidationSettings.Display = Display.Dynamic;
                             settings.Width = Unit.Percentage(100);
-                        }).Bind(Model.CustomerId).GetHtml()*@
+                        }).Bind(Model.RequestBy).GetHtml()
                 </div>
             </div>
             <!--#endregion -->
@@ -317,7 +340,7 @@
                 }).Bind(Model.EndTime).GetHtml()
                 </div>
             </div>
-            <!--#endregion -->          
+            <!--#endregion -->
         </div>
         <div class="col-md-12">
             @Html.DevExpress().AppointmentRecurrenceForm(ViewBag.AppointmentRecurrenceFormSettings).GetHtml()

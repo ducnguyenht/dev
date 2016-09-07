@@ -81,6 +81,8 @@ public class SchedulerDataHelper {
         //appointmentStorage.CustomFieldMappings.Add(new DevExpress.Web.ASPxScheduler.ASPxAppointmentCustomFieldMapping("CustomerId", "CustomerId"));
         appointmentStorage.CustomFieldMappings.Add("ScheduleTypeId", "ScheduleTypeId");
         appointmentStorage.CustomFieldMappings.Add("CustomerId", "CustomerId");
+        appointmentStorage.CustomFieldMappings.Add("RequestBy", "RequestBy");
+        
         #endregion
         return appointmentStorage;
     }
@@ -131,6 +133,7 @@ public class SchedulerDataHelper {
         query.OpportunityId = appt.OpportunityId;
         query.CustomerId = appt.CustomerId;
         query.ScheduleTypeId = appt.ScheduleTypeId;
+        query.RequestBy = appt.RequestBy;
         query.ContactInfo = appt.ContactInfo;
         query.Price = appt.Price;
         #endregion
@@ -208,6 +211,10 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
             return ScheduleTypeId == DBNull.Value ? null : (int?)ScheduleTypeId;
         }
     }
+    public string RequestBy
+    {
+        get { return Convert.ToString(Appointment.CustomFields["RequestBy"]); }
+    }
     #endregion   
 }
 
@@ -233,6 +240,7 @@ public class Schedule {
             OpportunityId = ScheduleCalendar.OpportunityId;
             CustomerId = ScheduleCalendar.CustomerId;
             ScheduleTypeId = ScheduleCalendar.ScheduleTypeId;
+            RequestBy = ScheduleCalendar.RequestBy;
             RequestDate = ScheduleCalendar.RequestedDate;
             Price = ScheduleCalendar.Price;
             ContactInfo = ScheduleCalendar.ContactInfo;
@@ -263,6 +271,8 @@ public class Schedule {
     public object OpportunityId { get; set; }
     public int? CustomerId { get; set; }
     public int? ScheduleTypeId { get; set; }
+    public string RequestBy { get; set; }
+    
     public DateTime? RequestDate { get; set; }
     public decimal? Price { get; set; }
     public string ContactInfo { get; set; }
@@ -287,6 +297,7 @@ public class Schedule {
             OpportunityId = source.OpportunityId;
             CustomerId = source.CustomerId;
             ScheduleTypeId = source.ScheduleTypeId;
+            RequestBy = source.RequestBy;
             ContactInfo = source.ContactInfo;
             Price = source.Price;
             #endregion            

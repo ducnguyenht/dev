@@ -29,8 +29,9 @@ namespace dnSchedulev01.EFCFFDB
         public int? OpportunityId { get; set; }
         public int? CustomerId { get; set; }
         public int? ScheduleTypeId { get; set; }
-        public DateTime? RequestedDate { get; set; }
         public string RequestBy { get; set; }
+        public DateTime? RequestedDate { get; set; }
+        
         [Column(TypeName = "smallmoney")]
         public decimal? Price { get; set; }
         public string ContactInfo { get; set; }

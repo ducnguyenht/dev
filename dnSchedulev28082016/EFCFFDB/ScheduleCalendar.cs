@@ -24,13 +24,15 @@ namespace dnSchedulev01.EFCFFDB
         public int? EventType { get; set; }
         public string RecurrenceInfo { get; set; }
         public string ReminderInfo { get; set; }
-
+        
         #region dn Custom Field
         public int? OpportunityId { get; set; }
         public int? CustomerId { get; set; }
         public int? ScheduleTypeId { get; set; }
-        public string RequestBy { get; set; }
+        public string RequestBy { get; set; }       
         public DateTime? RequestedDate { get; set; }
+        public string Estimation { get; set; }
+        public string SpentTime { get; set; }
         
         [Column(TypeName = "smallmoney")]
         public decimal? Price { get; set; }

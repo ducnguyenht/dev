@@ -28,6 +28,7 @@ namespace dnSchedulev01.EFCFFDB
         #region dn Custom Field
         public int? OpportunityId { get; set; }
         public int? CustomerId { get; set; }
+        public int? ScheduleTypeId { get; set; }
         public DateTime? RequestedDate { get; set; }
         public string RequestBy { get; set; }
         [Column(TypeName = "smallmoney")]

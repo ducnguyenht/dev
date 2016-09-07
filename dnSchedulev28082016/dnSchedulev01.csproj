@@ -240,8 +240,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="EFCFFDB\ScheduleType.cs" />
     <Compile Include="EFCFFDB\Customer.cs" />
-    <Compile Include="EFCFFDB\DBInitializer.cs" />
     <Compile Include="EFCFFDB\Opportunity.cs" />
     <Compile Include="EFCFFDB\ScheduleCalendar.cs" />
     <Compile Include="EFCFFDB\DBScheduleMVCV001.cs" />

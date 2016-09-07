@@ -42,6 +42,13 @@ namespace dnSchedulev01.Migrations
              new Customer { Name = "cus 2" },
              new Customer { Name = "cus 3" }
            );
+
+            context.ScheduleTypes.AddOrUpdate(
+           c => c.Name,
+           new ScheduleType { Name = "Task" },
+           new ScheduleType { Name = "Support" },
+           new ScheduleType { Name = "Feature" }
+         );
            base.Seed(context);
         }
     }

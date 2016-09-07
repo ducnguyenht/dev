@@ -222,7 +222,32 @@
                 </div>
             </div>
             <!--#endregion -->
-
+            <!--#region Type  -->
+            <div class="row">
+                <div class="col-md-5">
+                    @Html.DevExpress().Label(
+                    settings =>
+                    {
+                        settings.AssociatedControlName = "ScheduleTypeId";
+                        settings.Text = "Type:";
+                        settings.Width = Unit.Percentage(100);
+                    }).GetHtml()
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().ComboBox(
+                    settings =>
+                    {
+                        settings.Name = "ScheduleTypeId";//dn must same name field in model
+                        settings.Properties.ValueType = typeof(Int32);
+                        settings.Properties.ValueField = "ID";
+                        settings.Properties.TextField = "Name";
+                        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+                        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                        settings.Width = Unit.Percentage(100);
+                    }).BindList(ViewBag.ScheduleTypeDataSource).Bind(Model.ScheduleTypeId).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->
             <!--#region Customer  -->
             <div class="row">
                 <div class="col-md-5">

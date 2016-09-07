@@ -17,6 +17,7 @@ namespace dnSchedulev01.EFCFFDB
         public virtual DbSet<Opportunity> Opportunitys { get; set; }
         public virtual DbSet<ScheduleCalendar> ScheduleCalendars { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<ScheduleType> ScheduleTypes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Opportunity>()

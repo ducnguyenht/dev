@@ -22,12 +22,15 @@ public class SchedulerDataHelper {
         //var ttt = (from res in db.Cars select res).ToList();
         return db.Customers.ToList();// (from res in db.Cars select res).ToList();//db.Cars.Local;//from res in db.Cars select res;
     }
+     public static IEnumerable GetScheduleTypeResources()
+     {
+         DBScheduleMVCV001 db = new DBScheduleMVCV001();
+         return db.ScheduleTypes.ToList();
+     }
     #endregion
     public static IEnumerable GetResources() {
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
-        //var t = db.Cars.ToList();
-        //var ttt = (from res in db.Cars select res).ToList();
-        return db.Opportunitys.ToList();// (from res in db.Cars select res).ToList();//db.Cars.Local;//from res in db.Cars select res;
+        return db.Opportunitys.ToList();
     }
     public static IEnumerable GetAppointments() {
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
@@ -76,6 +79,7 @@ public class SchedulerDataHelper {
         appointmentStorage.CustomFieldMappings.Add("ContactInfo", "ContactInfo");
         appointmentStorage.CustomFieldMappings.Add("OpportunityId", "OpportunityId");
         //appointmentStorage.CustomFieldMappings.Add(new DevExpress.Web.ASPxScheduler.ASPxAppointmentCustomFieldMapping("CustomerId", "CustomerId"));
+        appointmentStorage.CustomFieldMappings.Add("ScheduleTypeId", "ScheduleTypeId");
         appointmentStorage.CustomFieldMappings.Add("CustomerId", "CustomerId");
         #endregion
         return appointmentStorage;
@@ -126,6 +130,7 @@ public class SchedulerDataHelper {
         #region dn Custom Field
         query.OpportunityId = appt.OpportunityId;
         query.CustomerId = appt.CustomerId;
+        query.ScheduleTypeId = appt.ScheduleTypeId;
         query.ContactInfo = appt.ContactInfo;
         query.Price = appt.Price;
         #endregion
@@ -159,6 +164,10 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
     {
         get { return SchedulerDataHelper.GetCustomerResources(); }
     }
+    public IEnumerable ScheduleTypeDataSource
+    {
+        get { return SchedulerDataHelper.GetScheduleTypeResources(); }
+    }
     #region dn Custom Field
     public string ContactInfo
     {
@@ -191,6 +200,14 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
             return CustomerId == DBNull.Value ? 0 : (int?)CustomerId;
         }
     }
+    public int? ScheduleTypeId
+    {
+        get
+        {
+            object ScheduleTypeId = Appointment.CustomFields["ScheduleTypeId"];
+            return ScheduleTypeId == DBNull.Value ? null : (int?)ScheduleTypeId;
+        }
+    }
     #endregion   
 }
 
@@ -215,6 +232,7 @@ public class Schedule {
             #region dn Custome Field
             OpportunityId = ScheduleCalendar.OpportunityId;
             CustomerId = ScheduleCalendar.CustomerId;
+            ScheduleTypeId = ScheduleCalendar.ScheduleTypeId;
             RequestDate = ScheduleCalendar.RequestedDate;
             Price = ScheduleCalendar.Price;
             ContactInfo = ScheduleCalendar.ContactInfo;
@@ -244,6 +262,7 @@ public class Schedule {
     #region dn Custom Field
     public object OpportunityId { get; set; }
     public int? CustomerId { get; set; }
+    public int? ScheduleTypeId { get; set; }
     public DateTime? RequestDate { get; set; }
     public decimal? Price { get; set; }
     public string ContactInfo { get; set; }
@@ -267,6 +286,7 @@ public class Schedule {
             #region dn Custom Field
             OpportunityId = source.OpportunityId;
             CustomerId = source.CustomerId;
+            ScheduleTypeId = source.ScheduleTypeId;
             ContactInfo = source.ContactInfo;
             Price = source.Price;
             #endregion            

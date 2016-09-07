@@ -380,10 +380,12 @@
                         settings =>
                         {
                             settings.Name = "SpentTime";
+                            settings.ReadOnly = true;
+                            settings.Enabled = false;
                             settings.ShowModelErrors = true;
                             settings.Properties.ValidationSettings.Display = Display.Dynamic;
                             settings.Width = Unit.Percentage(100);
-                        }).Bind(Model.Estimation).GetHtml()
+                        }).Bind(Model.SpentTime).GetHtml()
                 </div>
             </div>
             <!--#endregion -->

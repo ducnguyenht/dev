@@ -305,7 +305,7 @@
                 </div>
             </div>
             <!--#endregion -->
-            <!--#region RequestBy  -->
+            <!--#region Request Date  -->
             <div class="row">
                 <div class="col-md-5">
                     @Html.DevExpress().Label(
@@ -361,6 +361,40 @@
                     settings.Properties.ValidationSettings.Display = Display.Dynamic;
                     settings.Width = Unit.Percentage(100);
                 }).Bind(Model.EndTime).GetHtml()
+                </div>
+            </div>
+            <!--#endregion -->
+            <!--#region Assignee  -->
+            <div class="row">
+                <div class="col-md-5">
+                    @Html.DevExpress().Label(
+                    settings =>
+                    {
+                        settings.AssociatedControlName = "UserId";
+                        settings.Text = "Assignee:";
+                        settings.Width = Unit.Percentage(100);
+                    }).GetHtml()
+                </div>
+                <div class="col-md-7">
+                    @Html.DevExpress().ComboBox(
+                    settings =>
+                    {
+                        settings.Name = "UserId";//dn must same name field in model
+                        settings.Properties.ValueType = typeof(Int32);
+                        settings.Properties.ValueField = "UserId";
+                        settings.Properties.TextField = "UserName";
+                        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+                        settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+                        settings.Width = Unit.Percentage(100);
+                    }).BindList(ViewBag.UserDataSource).Bind(Model.UserId).GetHtml()
+                    @*@Html.DevExpress().TextBox(
+                settings =>
+                {
+                    settings.Name = "CustomerId";
+                    settings.ShowModelErrors = true;
+                    settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                    settings.Width = Unit.Percentage(100);
+                }).Bind(Model.CustomerId).GetHtml()*@
                 </div>
             </div>
             <!--#endregion -->

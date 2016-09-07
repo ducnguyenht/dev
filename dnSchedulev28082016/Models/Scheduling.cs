@@ -16,6 +16,14 @@ public class SchedulerDataObject {
 
 public class SchedulerDataHelper {
     #region Custom Field Customer DataSource
+
+    public static IEnumerable GetUserResources()
+    {
+        UsersContext db = new UsersContext();
+        //var t = db.Cars.ToList();
+        //var ttt = (from res in db.Cars select res).ToList();
+        return db.UserProfiles.ToList();// (from res in db.Cars select res).ToList();//db.Cars.Local;//from res in db.Cars select res;
+    }
      public static IEnumerable GetCustomerResources() {
         DBScheduleMVCV001 db = new DBScheduleMVCV001();
         //var t = db.Cars.ToList();
@@ -83,6 +91,7 @@ public class SchedulerDataHelper {
         appointmentStorage.CustomFieldMappings.Add("CustomerId", "CustomerId");
         appointmentStorage.CustomFieldMappings.Add("RequestBy", "RequestBy");
         appointmentStorage.CustomFieldMappings.Add("RequestDate", "RequestDate");
+        appointmentStorage.CustomFieldMappings.Add("UserId", "UserId");
         appointmentStorage.CustomFieldMappings.Add("Estimation", "Estimation");
         appointmentStorage.CustomFieldMappings.Add("SpentTime", "SpentTime");
         #endregion
@@ -133,10 +142,11 @@ public class SchedulerDataHelper {
         query.Label = appt.Label;
         #region dn Custom Field
         query.OpportunityId = appt.OpportunityId;
-        query.CustomerId = appt.CustomerId;
+        query.CustomerId = appt.CustomerId;        
         query.ScheduleTypeId = appt.ScheduleTypeId;
         query.RequestBy = appt.RequestBy;
         query.RequestDate = appt.RequestDate;
+        query.UserId = appt.UserId;
         query.Estimation = appt.Estimation;
         query.SpentTime = appt.SpentTime;
         query.ContactInfo = appt.ContactInfo;
@@ -160,7 +170,14 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
     public CustomAppointmentTemplateContainer(MVCxScheduler scheduler)
         : base(scheduler) {
     }
-
+    public IEnumerable UserDataSource
+    {
+        get { return SchedulerDataHelper.GetUserResources(); }
+    }
+    public IEnumerable CustomerDataSource
+    {
+        get { return SchedulerDataHelper.GetCustomerResources(); }
+    }
     public new IEnumerable ResourceDataSource {
         get { return SchedulerDataHelper.GetResources(); }
     }
@@ -168,10 +185,7 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
         get { return SchedulerDataHelper.GetReminders(base.ReminderDataSource); }
     }
 
-    public IEnumerable CustomerDataSource
-    {
-        get { return SchedulerDataHelper.GetCustomerResources(); }
-    }
+    
     public IEnumerable ScheduleTypeDataSource
     {
         get { return SchedulerDataHelper.GetScheduleTypeResources(); }
@@ -206,6 +220,14 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
             //return CustomerId == Resource.Empty ? 1 : (int?)CustomerId; // select first resource if empty
             object CustomerId = Appointment.CustomFields["CustomerId"];
             return CustomerId == DBNull.Value ? 0 : (int?)CustomerId;
+        }
+    }
+    public int? UserId
+    {
+        get
+        {
+            object UserId = Appointment.CustomFields["UserId"];
+            return UserId == DBNull.Value ? null : (int?)UserId;
         }
     }
     public int? ScheduleTypeId
@@ -259,6 +281,7 @@ public class Schedule {
             ScheduleTypeId = ScheduleCalendar.ScheduleTypeId;
             RequestBy = ScheduleCalendar.RequestBy;
             RequestDate = ScheduleCalendar.RequestDate;
+            UserId = ScheduleCalendar.UserId;
             Estimation = ScheduleCalendar.Estimation;
             SpentTime = ScheduleCalendar.SpentTime;
             Price = ScheduleCalendar.Price;
@@ -292,6 +315,7 @@ public class Schedule {
     public int? ScheduleTypeId { get; set; }
     public string RequestBy { get; set; }
     public string RequestDate { get; set; }
+    public int? UserId { get; set; }
     public string Estimation { get; set; }
     public string SpentTime { get; set; }   
     public decimal? Price { get; set; }
@@ -319,6 +343,7 @@ public class Schedule {
             ScheduleTypeId = source.ScheduleTypeId;
             RequestBy = source.RequestBy;
             RequestDate = source.RequestDate;
+            UserId = source.UserId;
             Estimation = source.Estimation;
             SpentTime = source.SpentTime;
             ContactInfo = source.ContactInfo;

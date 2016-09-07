@@ -130,6 +130,7 @@ settings =>
                 ScheduleTypeId=container.ScheduleTypeId,
                 RequestBy=container.RequestBy,
                 RequestDate=container.RequestDate,
+                UserId=container.UserId,
                 Estimation=container.Estimation,
                 SpentTime=container.SpentTime,
                 Price = container.Price,
@@ -145,7 +146,7 @@ settings =>
         ViewBag.StatusDataSource = container.StatusDataSource;
         ViewBag.LabelDataSource = container.LabelDataSource;
         ViewBag.ReminderDataSource = container.ReminderDataSource;
-
+        ViewBag.UserDataSource = container.UserDataSource;
         ViewBag.CustomerDataSource = container.CustomerDataSource;
         ViewBag.ScheduleTypeDataSource = container.ScheduleTypeDataSource;
         #endregion

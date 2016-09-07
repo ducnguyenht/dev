@@ -31,6 +31,8 @@
                             settings.Properties.ValueType = typeof(Int32);
                             settings.Properties.ValueField = "ID";//key
                             settings.Properties.TextField = "Name";//value
+                            settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+                            settings.Properties.DropDownStyle = DropDownStyle.DropDown;
                             settings.Width = Unit.Percentage(100);
                         }).BindList(ViewBag.ResourceDataSource).Bind(Model.OpportunityId).GetHtml()
                     </div>
@@ -160,6 +162,7 @@
                 </div>
             </div>
             <!--#endregion -->
+            <!--#region Tab Comment + TimeTracking  -->            
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
@@ -201,6 +204,7 @@
                     </div>
                 </div>
             </div>
+            <!--#endregion -->
         </div>
         <div class="col-md-4">
             <!--#region Priority  -->

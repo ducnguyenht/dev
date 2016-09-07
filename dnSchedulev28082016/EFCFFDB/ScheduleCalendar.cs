@@ -30,7 +30,7 @@ namespace dnSchedulev01.EFCFFDB
         public int? CustomerId { get; set; }
         public int? ScheduleTypeId { get; set; }
         public string RequestBy { get; set; }
-        public string RequestDate { get; set; }
+        public DateTime? RequestDate { get; set; }
         public string Estimation { get; set; }
         public string SpentTime { get; set; }
         

@@ -242,9 +242,16 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
     {
         get { return Convert.ToString(Appointment.CustomFields["RequestBy"]); }
     }
-    public string RequestDate
+    //public string RequestDate
+    //{
+    //    get { return Convert.ToString(Appointment.CustomFields["RequestDate"]); }
+    //}
+    public DateTime? RequestDate
     {
-        get { return Convert.ToString(Appointment.CustomFields["RequestDate"]); }
+        get {
+            var bneRequestDate = Appointment.CustomFields["RequestDate"];//dn must check null for special Type 
+            return bneRequestDate==DBNull.Value? DateTime.Now :(DateTime?)Appointment.CustomFields["RequestDate"];
+        }
     }
     public string Estimation
     {
@@ -314,7 +321,8 @@ public class Schedule {
     public int? CustomerId { get; set; }
     public int? ScheduleTypeId { get; set; }
     public string RequestBy { get; set; }
-    public string RequestDate { get; set; }
+    //public string RequestDate { get; set; }
+    public DateTime? RequestDate { get; set; }
     public int? UserId { get; set; }
     public string Estimation { get; set; }
     public string SpentTime { get; set; }   

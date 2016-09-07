@@ -234,16 +234,7 @@
                         settings.Width = Unit.Percentage(100);
                     }).GetHtml()
                 </div>
-                <div class="col-md-7">
-                    @*@Html.DevExpress().TextBox(
-                    settings =>
-                    {
-                        settings.Name = "CustomerId";
-                        settings.ShowModelErrors = true;
-                        settings.Properties.ValidationSettings.Display = Display.Dynamic;
-                        settings.Width = Unit.Percentage(100);
-                    }).Bind(Model.CustomerId).GetHtml()*@
-                    
+                <div class="col-md-7">    
                     @Html.DevExpress().ComboBox(
                     settings =>
                     {
@@ -251,15 +242,25 @@
                         settings.Properties.ValueType = typeof(Int32);
                         settings.Properties.ValueField = "ID";
                         settings.Properties.TextField = "Name";
+                        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+                        settings.Properties.DropDownStyle = DropDownStyle.DropDown; 
                         settings.Width = Unit.Percentage(100);
                     }).BindList(ViewBag.CustomerDataSource).Bind(Model.CustomerId).GetHtml()
+                    @*@Html.DevExpress().TextBox(
+                        settings =>
+                        {
+                            settings.Name = "CustomerId";
+                            settings.ShowModelErrors = true;
+                            settings.Properties.ValidationSettings.Display = Display.Dynamic;
+                            settings.Width = Unit.Percentage(100);
+                        }).Bind(Model.CustomerId).GetHtml()*@
                 </div>
             </div>
             <!--#endregion -->
             <!--#region StartTime  -->
             <div class="row">
                 <div class="col-md-5">
-                    Start time:
+                    @*Start time:*@ From Date:
                 </div>
                 <div class="col-md-7">
                     @Html.DevExpress().DateEdit(
@@ -277,7 +278,7 @@
             <!--#region EndTime  -->
             <div class="row">
                 <div class="col-md-5">
-                    End time:
+                    @*End time:*@ Due Date:
                 </div>
                 <div class="col-md-7">
                     @Html.DevExpress().DateEdit(

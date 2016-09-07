@@ -82,6 +82,7 @@ public class SchedulerDataHelper {
         appointmentStorage.CustomFieldMappings.Add("ScheduleTypeId", "ScheduleTypeId");
         appointmentStorage.CustomFieldMappings.Add("CustomerId", "CustomerId");
         appointmentStorage.CustomFieldMappings.Add("RequestBy", "RequestBy");
+        appointmentStorage.CustomFieldMappings.Add("RequestDate", "RequestDate");
         appointmentStorage.CustomFieldMappings.Add("Estimation", "Estimation");
         appointmentStorage.CustomFieldMappings.Add("SpentTime", "SpentTime");
         #endregion
@@ -135,6 +136,7 @@ public class SchedulerDataHelper {
         query.CustomerId = appt.CustomerId;
         query.ScheduleTypeId = appt.ScheduleTypeId;
         query.RequestBy = appt.RequestBy;
+        query.RequestDate = appt.RequestDate;
         query.Estimation = appt.Estimation;
         query.SpentTime = appt.SpentTime;
         query.ContactInfo = appt.ContactInfo;
@@ -218,6 +220,10 @@ public class CustomAppointmentTemplateContainer : AppointmentFormTemplateContain
     {
         get { return Convert.ToString(Appointment.CustomFields["RequestBy"]); }
     }
+    public string RequestDate
+    {
+        get { return Convert.ToString(Appointment.CustomFields["RequestDate"]); }
+    }
     public string Estimation
     {
         get { return Convert.ToString(Appointment.CustomFields["Estimation"]); }
@@ -252,7 +258,7 @@ public class Schedule {
             CustomerId = ScheduleCalendar.CustomerId;
             ScheduleTypeId = ScheduleCalendar.ScheduleTypeId;
             RequestBy = ScheduleCalendar.RequestBy;
-            RequestDate = ScheduleCalendar.RequestedDate;
+            RequestDate = ScheduleCalendar.RequestDate;
             Estimation = ScheduleCalendar.Estimation;
             SpentTime = ScheduleCalendar.SpentTime;
             Price = ScheduleCalendar.Price;
@@ -284,8 +290,8 @@ public class Schedule {
     public object OpportunityId { get; set; }
     public int? CustomerId { get; set; }
     public int? ScheduleTypeId { get; set; }
-    public string RequestBy { get; set; }    
-    public DateTime? RequestDate { get; set; }
+    public string RequestBy { get; set; }
+    public string RequestDate { get; set; }
     public string Estimation { get; set; }
     public string SpentTime { get; set; }   
     public decimal? Price { get; set; }
@@ -312,6 +318,7 @@ public class Schedule {
             CustomerId = source.CustomerId;
             ScheduleTypeId = source.ScheduleTypeId;
             RequestBy = source.RequestBy;
+            RequestDate = source.RequestDate;
             Estimation = source.Estimation;
             SpentTime = source.SpentTime;
             ContactInfo = source.ContactInfo;

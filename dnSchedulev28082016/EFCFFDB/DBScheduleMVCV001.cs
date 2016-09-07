@@ -9,9 +9,9 @@ namespace dnSchedulev01.EFCFFDB
     {
         public DBScheduleMVCV001()
             : base("name=DBScheduleMVCV001")
-        {
+        {  
             //Database.SetInitializer(new DBInitializer());
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBScheduleMVCV001, dnSchedulev01.Migrations.Configuration>("DBScheduleMVCV001"));
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBScheduleMVCV001, dnSchedulev01.Migrations.Configuration>("DBScheduleMVCV001"));
         }
 
         public virtual DbSet<Opportunity> Opportunitys { get; set; }
@@ -24,9 +24,9 @@ namespace dnSchedulev01.EFCFFDB
             //    .Property(e => e.Price)
             //    .HasPrecision(19, 4);
 
-            modelBuilder.Entity<ScheduleCalendar>()
-                .Property(e => e.Price)
-                .HasPrecision(10, 4);
+            //modelBuilder.Entity<ScheduleCalendar>()
+            //    .Property(e => e.Price)
+            //    .HasPrecision(10, 4);
         }
     }
 }

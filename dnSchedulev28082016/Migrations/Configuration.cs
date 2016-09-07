@@ -2,7 +2,6 @@ namespace dnSchedulev01.Migrations
 {
     using dnSchedulev01.EFCFFDB;
     using System;
-    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -12,23 +11,10 @@ namespace dnSchedulev01.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "dnSchedulev01.EFCFFDB.DBScheduleMVCV001";
         }
-
         protected override void Seed(dnSchedulev01.EFCFFDB.DBScheduleMVCV001 context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
             context.Opportunitys.AddOrUpdate(
               p => p.Name,
               new Opportunity { Name = "Opp 1" },
@@ -49,7 +35,7 @@ namespace dnSchedulev01.Migrations
            new ScheduleType { Name = "Support" },
            new ScheduleType { Name = "Feature" }
          );
-           base.Seed(context);
+            base.Seed(context);
         }
     }
 }

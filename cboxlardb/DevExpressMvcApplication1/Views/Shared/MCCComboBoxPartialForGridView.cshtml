@@ -1,0 +1,24 @@
+﻿@model int
+@{int localvar;
+
+  if (Model == null)
+  {localvar = 0;}
+  else
+  {localvar = Model;}           
+@Html.DevExpress().ComboBox( cmbsettings => {
+    cmbsettings.Name = "CountryID";
+        cmbsettings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        cmbsettings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+        cmbsettings.Properties.EnableCallbackMode = true;
+        cmbsettings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+        cmbsettings.Properties.TextFormatString = "{0}";
+        cmbsettings.CallbackRouteValues = new { Controller = "Home", Action = "MCCComboBoxPartialForGridView", id = localvar };
+        cmbsettings.Properties.ValueField = "CountryID";
+        cmbsettings.Properties.ValueType = typeof(int);
+        cmbsettings.Properties.Columns.Add("Code", "Code", 100);
+        cmbsettings.Properties.Columns.Add("Description", "Country", 200);
+        //cmbsettings.Properties.ClientSideEvents.SelectedIndexChanged = "function(s,e) {alert(s.GetValue());}";
+        //cmbsettings.Properties.ClientSideEvents.Init = "function(s,e) {alert(s.GetValue());}";
+        cmbsettings.Properties.FilterMinLength = 2;
+}).BindList(ViewBag.CountryID).Bind(localvar).GetHtml()    
+    }

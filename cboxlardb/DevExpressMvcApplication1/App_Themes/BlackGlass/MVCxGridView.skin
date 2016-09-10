@@ -1,0 +1,27 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwgv" Namespace="DevExpress.Web.ASPxGridView" Assembly="DevExpress.Web.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dxmvc:MVCxGridView runat="server" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass">
+    <Images SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css">
+        <LoadingPanel Url="~/App_Themes/BlackGlass/GridView/Loading.gif"></LoadingPanel>
+        <LoadingPanelOnStatusBar Url="~/App_Themes/BlackGlass/GridView/gvLoadingOnStatusBar.gif"></LoadingPanelOnStatusBar>
+    </Images>
+    <ImagesFilterControl>
+        <LoadingPanel Url="~/App_Themes/BlackGlass/Editors/Loading.gif"></LoadingPanel>
+    </ImagesFilterControl>
+    <Styles CssPostfix="BlackGlass" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css">
+        <Header SortingImageSpacing="5px" ImageSpacing="5px"></Header>
+    </Styles>
+    <SettingsPager CurrentPageNumberFormat="{0}">
+        <FirstPageButton Visible="True"></FirstPageButton>
+        <LastPageButton Visible="True"></LastPageButton>
+    </SettingsPager>
+    <StylesEditors>
+        <ProgressBar Height="25px">
+        </ProgressBar>
+        <CalendarHeader Spacing="1px">
+        </CalendarHeader>
+    </StylesEditors>    
+</dxmvc:MVCxGridView>
+

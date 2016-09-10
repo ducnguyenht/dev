@@ -1,0 +1,34 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwpg" Namespace="DevExpress.Web.ASPxPivotGrid" Assembly="DevExpress.Web.ASPxPivotGrid.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.PivotGrid.v13.2.Core, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraPivotGrid" TagPrefix="temp" %>
+<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dxmvc:MVCxPivotGrid runat="server">
+    <Images SpriteCssFilePath="~/App_Themes/BlackGlass/{0}/sprite.css">
+        <CustomizationFieldsBackground Url="~/App_Themes/BlackGlass/PivotGrid/pgCustomizationFormBackground.gif" />
+        <LoadingPanel Url="~/App_Themes/BlackGlass/PivotGrid/Loading.gif" />
+    </Images>
+    <Styles CssPostfix="BlackGlass" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css">
+        <FilterAreaStyle>
+            <Paddings PaddingTop="3px" PaddingBottom="3px"></Paddings>
+            <BackgroundImage Repeat="RepeatX" ImageUrl="~/App_Themes/BlackGlass/PivotGrid/pgFilterAreaBack.gif"></BackgroundImage>
+        </FilterAreaStyle>
+        <FieldValueStyle>
+            <Paddings PaddingTop="3px" PaddingBottom="3px"></Paddings>
+        </FieldValueStyle>
+        <MenuStyle GutterWidth="0px"></MenuStyle>
+        <FilterButtonPanelStyle>
+            <BackgroundImage Repeat="RepeatX" ImageUrl="~/App_Themes/BlackGlass/PivotGrid/pgFilterPanelBack.gif"></BackgroundImage>
+        </FilterButtonPanelStyle>
+        <HeaderStyle>
+            <Paddings PaddingTop="4px" PaddingRight="5px" PaddingBottom="4px" PaddingLeft="5px"></Paddings>
+                <HoverStyle>
+                    <BackgroundImage Repeat="RepeatX" ImageUrl="~/App_Themes/BlackGlass/PivotGrid/pgHeaderBackHot.gif"></BackgroundImage>
+                </HoverStyle>
+            <BackgroundImage Repeat="RepeatX" ImageUrl="~/App_Themes/BlackGlass/PivotGrid/pgHeaderBack.gif"></BackgroundImage>
+        </HeaderStyle>
+        <CustomizationFieldsHeaderStyle ForeColor="#5A5A5A">
+        </CustomizationFieldsHeaderStyle>
+    </Styles>
+</dxmvc:MVCxPivotGrid>
+

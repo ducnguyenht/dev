@@ -1,0 +1,34 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxPivotGrid.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxPivotGrid" TagPrefix="dxwpg" %>
+<%@ Register Assembly="DevExpress.PivotGrid.v13.2.Core, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraPivotGrid" TagPrefix="temp" %>
+<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<dxmvc:MVCxPivotGrid runat="server">
+	<Styles CssFilePath="~/App_Themes/Aqua/{0}/styles.css" CssPostfix="Aqua">
+        <MenuStyle GutterWidth="0px" />   
+    </Styles>
+    <OptionsLoadingPanel ImagePosition="Top" />
+    <OptionsPager CurrentPageNumberFormat="{0}">
+    </OptionsPager>
+    <Images SpriteCssFilePath="~/App_Themes/Aqua/{0}/sprite.css">        
+        <CustomizationFieldsBackground Url="~/App_Themes/Aqua/PivotGrid/pcHeaderBack.gif" />
+        <LoadingPanel Url="~/App_Themes/Aqua/PivotGrid/Loading.gif" />
+    </Images>
+	<ImagesEditors>
+		<LoadingPanel Url="~/App_Themes/Aqua/Editors/Loading.gif" />
+        <DropDownEditDropDown>
+            <SpriteProperties HottrackedCssClass="dxEditors_edtDropDownHover_Aqua" PressedCssClass="dxEditors_edtDropDownPressed_Aqua" />
+        </DropDownEditDropDown>
+        <SpinEditIncrement>
+            <SpriteProperties HottrackedCssClass="dxEditors_edtSpinEditIncrementImageHover_Aqua" PressedCssClass="dxEditors_edtSpinEditIncrementImagePressed_Aqua" />
+        </SpinEditIncrement>        
+        <SpinEditDecrement>
+            <SpriteProperties HottrackedCssClass="dxEditors_edtSpinEditDecrementImageHover_Aqua" PressedCssClass="dxEditors_edtSpinEditDecrementImagePressed_Aqua" />
+        </SpinEditDecrement>
+        <SpinEditLargeIncrement>
+            <SpriteProperties HottrackedCssClass="dxEditors_edtSpinEditLargeIncImageHover_Aqua" PressedCssClass="dxEditors_edtSpinEditLargeIncImagePressed_Aqua" />
+        </SpinEditLargeIncrement>        
+        <SpinEditLargeDecrement>
+            <SpriteProperties HottrackedCssClass="dxEditors_edtSpinEditLargeDecImageHover_Aqua" PressedCssClass="dxEditors_edtSpinEditLargeDecImagePressed_Aqua" />
+        </SpinEditLargeDecrement>
+	</ImagesEditors>
+</dxmvc:MVCxPivotGrid>

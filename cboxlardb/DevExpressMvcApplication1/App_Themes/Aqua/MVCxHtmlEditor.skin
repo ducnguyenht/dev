@@ -1,0 +1,17 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dxhe" %>
+<%@ Register TagPrefix="dxmvc" Namespace="DevExpress.Web.Mvc" Assembly="DevExpress.Web.Mvc.v13.2, Version=13.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dxmvc:MVCxHtmlEditor runat="server" Width="700px">
+    <Styles CssPostfix="Aqua" CssFilePath="~/App_Themes/Aqua/{0}/styles.css">
+        <ViewArea Border-BorderColor="#A3C0E8" />
+    </Styles>
+    <Images SpriteCssFilePath="~/App_Themes/Aqua/{0}/sprite.css">
+        <LoadingPanel Url="~/App_Themes/Aqua/HtmlEditor/Loading.gif"></LoadingPanel>
+    </Images>
+    <ImagesFileManager>
+        <LoadingPanel Url="~/App_Themes/Aqua/Web/Loading.gif"></LoadingPanel>
+        <FolderContainerNodeLoadingPanel Url="~/App_Themes/Aqua/Web/tvNodeLoading.gif"></FolderContainerNodeLoadingPanel>
+    </ImagesFileManager>
+</dxmvc:MVCxHtmlEditor>
+

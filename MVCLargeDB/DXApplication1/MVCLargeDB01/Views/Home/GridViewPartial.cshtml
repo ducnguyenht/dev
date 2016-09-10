@@ -1,0 +1,180 @@
+﻿@model  IEnumerable<MVCLargeDB01.Models.Premise>
+@{ var grid = Html.DevExpress().GridView(
+       settings =>
+       {
+           settings.Name = "PremiseMVCGrid";
+           settings.ClientSideEvents.BeginCallback = "function(s, e) { if(s.cpSystem_Code) e.customArgs['System_Code'] = s.cpSystem_Code;}";
+           settings.CustomJSProperties = (sender, e) =>
+           {
+               MVCxGridView gridView = (MVCxGridView)sender;
+               if (gridView.EditingRowVisibleIndex > -1)
+               {
+                   e.Properties["cpSystem_Code"] = gridView.GetRowValues(gridView.EditingRowVisibleIndex,
+                        "System_Code");
+               }
+           };
+
+           settings.CellEditorInitialize = (sender, e) =>
+               {
+                   if (e.Column.FieldName == "Code")
+                   {
+                       MVCxGridView g = sender as MVCxGridView;
+                       if (g.IsNewRowEditing)
+                           e.Editor.ReadOnly = false;
+                       else
+                           e.Editor.ReadOnly = true;
+                   }
+               };
+           //settings.AutoFilterCellEditorCreate = (sender, e) =>
+           //{
+           //    if (e.Column.FieldName == "CountryID")
+           //        e.EditorProperties = new ComboBoxProperties();
+           //};
+
+           //settings.AutoFilterCellEditorInitialize = (sender, e) =>
+           //{
+           //    if (e.Column.FieldName != "CountryID")
+           //        return;
+           //    ASPxComboBox combobox = e.Editor as ASPxComboBox;
+           //};                                     
+           
+           
+               
+           settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+           settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "InlineEditingUpdatePartial" };
+           settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Home", Action = "InlineEditingDeletePartial" };
+           settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "InlineEditingNewPartial" };
+           settings.SettingsEditing.Mode = GridViewEditingMode.Inline;
+           settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+           settings.Settings.ShowFilterRow = true;
+           settings.Settings.ShowFilterRowMenu = true;
+           settings.CommandColumn.Visible = true;
+           settings.CommandColumn.ClearFilterButton.Visible = true;
+           settings.CommandColumn.ClearFilterButton.Text = "Remove Filter";
+           settings.CommandColumn.EditButton.Visible = true;
+           settings.CommandColumn.EditButton.Text = "Inline Edit";
+           settings.CommandColumn.DeleteButton.Visible = true;
+           settings.CommandColumn.NewButton.Visible = true;           
+           settings.SettingsBehavior.ConfirmDelete = true;
+           settings.CommandColumn.HeaderStyle.HorizontalAlign = System.Web.UI.WebControls.HorizontalAlign.Left;
+           settings.CommandColumn.CellStyle.HorizontalAlign = System.Web.UI.WebControls.HorizontalAlign.Left;
+                      
+               
+           //settings.CommandColumn.SetHeaderTemplateContent(c =>
+           //{
+           //    ViewContext.Writer.Write(
+           //            Html.ActionLink("New", "Create").ToHtmlString()
+           //        );
+           //});
+
+           settings.KeyFieldName = "PremiseID";
+           settings.Columns.Add(column =>
+           {
+               column.FieldName = "PremiseID";
+               column.Visible = false;
+           });
+
+           settings.Columns.Add(column =>
+           {
+               column.Caption = "#";
+               column.SetDataItemTemplateContent(c =>
+               {
+                   ViewContext.Writer.Write(
+                           Html.ActionLink("Full Edit", "Edit", new { premiseID = DataBinder.Eval(c.DataItem, "PremiseID") })
+                           );
+               });
+           });
+
+
+           settings.Columns.Add(column =>
+           {
+               column.FieldName = "Code";
+               column.ReadOnly = true;
+
+           });
+           settings.Columns.Add(column =>
+           {
+               column.FieldName = "Address";
+               column.Visible = true;
+           });
+           settings.Columns.Add(column =>
+           {
+               column.FieldName = "City";
+               column.Visible = true;
+           });
+
+           settings.Columns.Add("Whse_No", "Warehouse No");
+           settings.Columns.Add("Whse_Type", "Warehouse Type");
+
+           settings.Columns.Add("Post_Code", "Post Code");
+                                                             
+           settings.Columns.Add(column =>
+           {
+               column.FieldName = "CountryID";
+               column.Caption = "Country";
+               column.CellStyle.HorizontalAlign = System.Web.UI.WebControls.HorizontalAlign.Left;
+               
+               column.SetEditItemTemplateContent(c =>
+               {
+                   object passedvalue = DataBinder.Eval(c.DataItem, c.Column.FieldName);
+                   if (passedvalue == null)
+                   {
+                       passedvalue = 1;
+                   }
+                   Html.RenderPartial("MCCComboBoxPartialForGridView", (int)passedvalue);                       
+               }
+               );
+               column.SetDataItemTemplateContent(c =>
+               {
+
+                   string country_Code;
+                   int id = (int)DataBinder.Eval(c.DataItem, c.Column.FieldName);
+                   using (MVCLargeDB01.DAL.MyDbContext myDbContext = new MVCLargeDB01.DAL.MyDbContext())
+                   {
+                       country_Code = myDbContext.Countries.Find(id).Code;
+                   }
+
+                   Html.DevExpress().Label(l =>
+                   {
+                       l.Name = c.KeyValue.ToString() + "label";
+                       l.Text = country_Code;
+                   }).GetHtml();
+
+               }
+               );
+
+               column.ColumnType = MVCxGridViewColumnType.Default;                                      
+               //column.ColumnType = MVCxGridViewColumnType.ComboBox;
+               //var comboBoxProperties = column.PropertiesEdit as ComboBoxProperties;
+
+               //comboBoxProperties.DataSource = ViewBag.CountryID;
+               //comboBoxProperties.TextField = "Code";
+               //comboBoxProperties.ValueField = "CountryID";
+               //comboBoxProperties.ValueType = typeof(int);
+               //comboBoxProperties.EnableCallbackMode = true;
+               //comboBoxProperties.DropDownStyle = DropDownStyle.DropDownList;
+               //comboBoxProperties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+               //comboBoxProperties.TextFormatString = "{0}";
+
+               //comboBoxProperties.Columns.Add("Code", "Code", 100);
+               //comboBoxProperties.Columns.Add("Description", "Country", 200);
+
+           });
+           settings.Columns.Add(column =>
+           {
+               column.FieldName = "System_Code";
+               column.Visible = false;
+           }
+           );
+
+
+       });
+   if (ViewData["EditError"] != null)
+   {
+       grid.SetEditErrorText((string)ViewData["EditError"]);
+   }
+    }
+
+@grid.Bind(Model).GetHtml()
+
+

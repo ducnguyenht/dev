@@ -1,0 +1,71 @@
+﻿@model MVCLargeDB01.Models.Premise
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Premise</legend>
+
+         <table>
+            <tr>
+               <td>@Html.LabelFor(model => model.Code)</td>
+               <td>@Html.TextBoxFor(model => model.Code, new { @class = "normalinputtext" })</td>
+            </tr>
+            <tr>
+               <td>@Html.LabelFor(model => model.Whse_No)</td>
+               <td>@Html.TextBoxFor(model => model.Whse_No, new { @class = "normalinputtext" })</td>
+               @*<td>@Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Whse_No";
+                        settings.ShowModelErrors = true;
+                        settings.ControlStyle.CssClass = "normalinputtext";
+                        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                    }
+                    ).Bind(Model.Whse_No).GetHtml()</td>*@
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Whse_Type)</td>
+                <td>@Html.TextBoxFor(model => model.Whse_Type, new { @class = "normalinputtext" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Description)</td>
+                <td>@Html.TextBoxFor(model => model.Description, new { @class = "normalinputtext" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Address)</td>
+                <td>@Html.TextBoxFor(model => model.Address, new { @class = "normalinputtext" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.City)</td>
+                <td>@Html.TextBoxFor(model => model.City, new { @class = "normalinputtext" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Post_Code)</td>
+                <td>@Html.TextBoxFor(model => model.Post_Code, new { @class = "normalinputtext" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.CountryID)</td>
+                @*<td>@Html.DropDownList("Country_Code",String.Empty)</td>*@
+                <td>@Html.Partial("MultiColumnCountryComboBoxPartial",1)</td>
+            </tr>
+        </table>
+        @Html.HiddenFor(model => model.System_Code)
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

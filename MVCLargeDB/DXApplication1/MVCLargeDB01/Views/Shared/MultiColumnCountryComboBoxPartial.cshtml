@@ -1,0 +1,20 @@
+﻿@Html.DevExpress().ComboBox(
+settings => {
+    settings.Name = "Country_Code";
+    settings.Width = 100;
+    settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+    settings.Properties.EnableCallbackMode = true;
+    settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+    settings.Properties.TextFormatString = "{0}";
+    settings.CallbackRouteValues = new { Controller = "Country", Action = "MultiColumnCountryComboBoxPartial" };
+    settings.Properties.ValueField = "CountryID";
+    settings.Properties.ValueType = typeof(int);
+    settings.Properties.TextField = "Code";
+
+    settings.Properties.Columns.Add("Code", "Code", 100);
+    settings.Properties.Columns.Add("Description", "Country", 200);
+    settings.Properties.ClientSideEvents.SelectedIndexChanged = "OnSelectedIndexChanged";
+    settings.Properties.ClientSideEvents.Init = "OnInit";
+    settings.Properties.FilterMinLength = 2;
+}).BindList(MVCLargeDB01.DAL.LargeDataBaseDataProvider.GetAllCountries()).Bind(Model).GetHtml()
+@*).BindList(DevExpressMvcApplication1.DAL.LargeDataBaseDataProvider.GetCountriesRange, DevExpressMvcApplication1.DAL.LargeDataBaseDataProvider.GetCountriesByID).Bind(Model).GetHtml()*@

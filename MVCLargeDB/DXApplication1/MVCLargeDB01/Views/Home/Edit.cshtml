@@ -1,0 +1,185 @@
+﻿@model MVCLargeDB01.Models.Premise
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script language="javascript" type="text/javascript">
+    function SetSelectedValue(s) {
+        document.getElementById("CountryID").value = s.GetValue();
+    }
+    function OnSelectedIndexChanged(s, e) {
+        SetSelectedValue(s);
+    }
+    function OnInit(s, e) {
+        SetSelectedValue(s);
+    }
+</script>
+
+
+
+@{
+    Html.EnableClientValidation();
+}
+
+@using (Html.BeginForm()) {
+    @*@Html.ValidationSummary(true)*@
+    <fieldset>
+        <legend>Premise</legend>
+
+         <table>
+            <tr>
+               @*<td>@Html.LabelFor(model => model.Code)</td>*@
+               <td>@Html.DevExpress().Label(
+                settings => 
+                {
+                    settings.Text = "Premise Code";
+                    settings.AssociatedControlName = "Code";
+                }).GetHtml()</td>
+               @*<td>@Html.TextBoxFor(model => model.Code, new { @class = "normalinputtext" })</td>*@
+               <td>
+               @Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Code";
+                        settings.ShowModelErrors = true;
+                        settings.ControlStyle.CssClass = "normalinputtext";
+                        settings.ReadOnly = true;
+                        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                    }).Bind(Model.Code).GetHtml()
+               </td>
+            </tr>
+            <tr>
+               @*<td>@Html.LabelFor(model => model.Whse_No)</td>*@
+               <td>@Html.DevExpress().Label(
+                settings => 
+                {
+                    settings.Text = "Warehouse No";
+                    settings.AssociatedControlName = "Whse_No";  
+                }).GetHtml()</td>
+               @*<td>@Html.TextBoxFor(model => model.Whse_No, new { @class = "normalinputtext" })</td>*@
+               <td>@Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Whse_No";
+                        settings.ShowModelErrors = true;
+                        settings.ControlStyle.CssClass = "normalinputtext";
+                        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                    }).Bind(Model.Whse_No).GetHtml()</td>
+            </tr>
+            <tr>
+                @*<td>@Html.LabelFor(model => model.Whse_Type)</td>*@
+                <td>@Html.DevExpress().Label(
+                settings => 
+                {
+                    settings.Text = "Warehouse Type";
+                    settings.AssociatedControlName = "Whse_Type";  
+                }).GetHtml()</td>
+                @*<td>@Html.TextBoxFor(model => model.Whse_Type, new { @class = "normalinputtext" })</td>*@
+                <td>@Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Whse_Type";
+                        settings.ShowModelErrors = true;
+                        settings.ControlStyle.CssClass = "normalinputtext";
+                        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                    }).Bind(Model.Whse_Type).GetHtml()</td>
+            </tr>
+            <tr>
+                @*<td>@Html.LabelFor(model => model.Description)</td>*@
+                <td>@Html.DevExpress().Label(
+                settings => 
+                {
+                    settings.Text = "Description";
+                    settings.AssociatedControlName = "Description";  
+                }).GetHtml()</td>
+                @*<td>@Html.TextBoxFor(model => model.Description, new { @class = "normalinputtext" })</td>*@
+                <td>@Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Description";
+                        settings.ShowModelErrors = true;
+                        settings.ControlStyle.CssClass = "normalinputtext";
+                        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                    }).Bind(Model.Description).GetHtml()</td>
+            </tr>
+            <tr>
+                @*<td>@Html.LabelFor(model => model.Address)</td>*@
+                <td>@Html.DevExpress().Label(
+                settings => 
+                {
+                    settings.Text = "Address";
+                    settings.AssociatedControlName = "Address";  
+                }).GetHtml()</td>
+                @*<td>@Html.TextBoxFor(model => model.Address, new { @class = "normalinputtext" })</td>*@
+                <td>@Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Address";
+                        settings.ShowModelErrors = true;
+                        settings.ControlStyle.CssClass = "normalinputtext";
+                        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                    }).Bind(Model.Address).GetHtml()</td>
+            </tr>
+            <tr>
+                @*<td>@Html.LabelFor(model => model.City)</td>*@
+                <td>@Html.DevExpress().Label(
+                settings => 
+                {
+                    settings.Text = "City";
+                    settings.AssociatedControlName = "City";  
+                }).GetHtml()</td>
+                @*<td>@Html.TextBoxFor(model => model.City, new { @class = "normalinputtext" })</td>*@
+                <td>@Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "City";
+                        settings.ShowModelErrors = true;
+                        settings.ControlStyle.CssClass = "normalinputtext";
+                        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                    }).Bind(Model.City).GetHtml()</td>
+            </tr>
+            <tr>
+                @*<td>@Html.LabelFor(model => model.Post_Code)</td>*@
+                <td>@Html.DevExpress().Label(
+                settings => 
+                {
+                    settings.Text = "Post Code";
+                    settings.AssociatedControlName = "Post Code";  
+                }).GetHtml()</td>
+                @*<td>@Html.TextBoxFor(model => model.Post_Code, new { @class = "normalinputtext" })</td>*@
+                <td>@Html.DevExpress().TextBox(
+                    settings =>
+                    {
+                        settings.Name = "Post_Code";
+                        settings.ShowModelErrors = true;
+                        settings.ControlStyle.CssClass = "normalinputtext";
+                        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
+                    }).Bind(Model.Post_Code).GetHtml()</td>
+            </tr>
+            <tr>
+                @*<td>@Html.LabelFor(model => model.Country_Code)</td>*@
+                <td>@Html.DevExpress().Label(
+                settings => 
+                {
+                    settings.Text = "Country";
+                    settings.AssociatedControlName = "Country_Code";  
+                }).GetHtml()</td>
+                @*<td>@Html.DropDownList("Country_Code",String.Empty)</td>*@
+                <td>@Html.Partial("MultiColumnCountryComboBoxPartial",Model.CountryID)</td>
+            </tr>
+        </table>
+        @*@Html.HiddenFor(Model =>Model.System_Code)*@
+        @Html.HiddenFor(model => model.System_Code)
+        <input type="hidden" id="CountryID" name="CountryID" />
+        <p>
+            <input type="submit" value="Update" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

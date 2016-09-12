@@ -8,12 +8,12 @@
     settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "GridViewAddNewPartial" };
     settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "GridViewUpdatePartial" };
     settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Home", Action = "GridViewDeletePartial" };
-
+   
     settings.CommandColumn.Visible = true;
     settings.CommandColumn.ShowEditButton = true;
     settings.CommandColumn.ShowNewButton = true;
     settings.CommandColumn.ShowDeleteButton = true;
-
+    settings.Width = settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
 	settings.SettingsEditing.Mode = GridViewEditingMode.PopupEditForm; // POPUP EDIT FORM
 	
     settings.Columns.Add(column => {
@@ -21,12 +21,19 @@
         column.ReadOnly = true;
         column.EditFormSettings.Visible = DefaultBoolean.False;
     });
-
+    
     settings.Columns.Add("ProductName");
     settings.Columns.Add("UnitPrice");
     settings.Columns.Add("UnitsOnOrder");
+    //settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.Middle;//not working
+    //settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.Center;//not working
+    settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.SettingsPopup.EditForm.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+    
 
 	settings.SetEditFormTemplateContent(c => {
+        
 		Html.RenderPartial("EditFormPartial",
 			!c.Grid.IsNewRowEditing ?
 				Model.FirstOrDefault(m => m.ProductID == Convert.ToInt32(DataBinder.Eval(c.DataItem, "ProductID"))) :

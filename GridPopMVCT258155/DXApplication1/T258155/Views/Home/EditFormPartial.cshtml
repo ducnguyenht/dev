@@ -82,6 +82,13 @@
                s.Properties.Text = "Cancel";
                s.NavigateUrl = "javascript:grid.CancelEdit();"; //"javascript:grid.CancelEdit();";
            }).GetHtml()
+                @Html.DevExpress().Button(
+                btnSettings => {
+                btnSettings.Name = "btnCancel";
+                btnSettings.ControlStyle.CssClass = "button";
+                btnSettings.Text = "Cancel";
+                btnSettings.ClientSideEvents.Click = "function(s, e){ somejavascript(); gvEditingWithTemplate.CancelEdit(); }";
+                }).GetHtml()
             </td>
         </tr>
     </table>

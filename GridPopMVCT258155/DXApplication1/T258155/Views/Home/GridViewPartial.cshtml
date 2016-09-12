@@ -1,0 +1,39 @@
+
+@model IList<Product>
+
+@Html.DevExpress().GridView(settings => {
+    settings.Name = "GridView";
+    settings.KeyFieldName = "ProductID";
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+    settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "GridViewAddNewPartial" };
+    settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "GridViewUpdatePartial" };
+    settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Home", Action = "GridViewDeletePartial" };
+
+    settings.CommandColumn.Visible = true;
+    settings.CommandColumn.ShowEditButton = true;
+    settings.CommandColumn.ShowNewButton = true;
+    settings.CommandColumn.ShowDeleteButton = true;
+
+	settings.SettingsEditing.Mode = GridViewEditingMode.PopupEditForm; // POPUP EDIT FORM
+	
+    settings.Columns.Add(column => {
+        column.FieldName = "ProductID";
+        column.ReadOnly = true;
+        column.EditFormSettings.Visible = DefaultBoolean.False;
+    });
+
+    settings.Columns.Add("ProductName");
+    settings.Columns.Add("UnitPrice");
+    settings.Columns.Add("UnitsOnOrder");
+
+	settings.SetEditFormTemplateContent(c => {
+		Html.RenderPartial("EditFormPartial",
+			!c.Grid.IsNewRowEditing ?
+				Model.FirstOrDefault(m => m.ProductID == Convert.ToInt32(DataBinder.Eval(c.DataItem, "ProductID"))) :
+				new Product() {
+					ProductID = Model.OrderByDescending(p => p.ProductID)
+					   .First()
+					   .ProductID + 1
+				});
+	});
+}).SetEditErrorText((string)ViewData["EditError"]).Bind(Model).GetHtml()

@@ -1,0 +1,77 @@
+﻿@model Product
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "frmProduct" })) {
+	<table>
+		<tr>
+			<td>
+				@Html.DevExpress().Label(s => {
+			   s.AssociatedControlName = "ProductID";
+			   s.Text = "ProductID";
+		   }).GetHtml()
+			</td>
+			<td>
+				@Html.DevExpress().TextBox(s => {
+			   s.Name = "ProductID";
+			   s.ShowModelErrors = true;
+			   s.ReadOnly = true;
+		   }).Bind(Model.ProductID).GetHtml()
+			</td>
+		</tr>
+		<tr>
+			<td>
+				@Html.DevExpress().Label(s => {
+			   s.AssociatedControlName = "ProductName";
+			   s.Text = "ProductName";
+		   }).GetHtml()
+			</td>
+			<td>
+				@Html.DevExpress().TextBox(s => {
+			   s.Name = "ProductName";
+			   s.ShowModelErrors = true;
+		   }).Bind(Model.ProductName).GetHtml()
+			</td>
+		</tr>
+		<tr>
+			<td>
+				@Html.DevExpress().Label(s => {
+			   s.AssociatedControlName = "UnitPrice";
+			   s.Text = "Unit Price";
+		   }).GetHtml()
+			</td>
+			<td>
+				@Html.DevExpress().TextBox(s => {
+			   s.Name = "UnitPrice";
+			   s.ShowModelErrors = true;
+	}).Bind(Model.UnitPrice).GetHtml()
+			</td>
+		</tr>
+		<tr>
+			<td>
+				@Html.DevExpress().Label(s => {
+			   s.AssociatedControlName = "UnitsOnOrder";
+			   s.Text = "Units On Order";
+		   }).GetHtml()
+			</td>
+			<td>
+				@Html.DevExpress().TextBox(s => {
+			   s.Name = "UnitsOnOrder";
+			   s.ShowModelErrors = true;
+	}).Bind(Model.UnitsOnOrder).GetHtml()
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				@Html.DevExpress().HyperLink(s => {
+			   s.Name = "SaveProduct";
+			   s.Properties.Text = "Save";
+			   s.NavigateUrl = "javascript:UpdateGridView();";
+		   }).GetHtml()
+				@Html.DevExpress().HyperLink(s => {
+			   s.Name = "CancelProduct";
+			   s.Properties.Text = "Cancel";
+			   s.NavigateUrl = "javascript:grid.CancelEdit();";
+		   }).GetHtml()
+			</td>
+		</tr>
+	</table>
+}

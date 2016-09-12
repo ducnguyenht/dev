@@ -87,7 +87,7 @@
                 btnSettings.Name = "btnCancel";
                 btnSettings.ControlStyle.CssClass = "button";
                 btnSettings.Text = "Cancel";
-                btnSettings.ClientSideEvents.Click = "function(s, e){ somejavascript(); gvEditingWithTemplate.CancelEdit(); }";
+                btnSettings.ClientSideEvents.Click = "function(s, e) { grid.CancelEdit(); }";
                 }).GetHtml()
             </td>
         </tr>

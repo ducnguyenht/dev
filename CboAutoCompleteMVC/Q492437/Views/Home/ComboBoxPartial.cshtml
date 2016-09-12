@@ -1,0 +1,22 @@
+﻿@Html.DevExpress().ComboBox(settings => {
+    settings.Name = "ComboBox";
+    settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "ComboBoxPartial" };
+    settings.Properties.EnableCallbackMode = true;
+    settings.Properties.FilterMinLength = 1;
+    settings.Properties.CallbackPageSize = 5;
+    settings.Properties.DropDownRows = 4;
+    settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+    settings.Properties.NullText = "Type 3 sysmbol to search name";
+    settings.Properties.TextField = "FirstName";
+    settings.Properties.TextFormatString = "{0} {1}";
+    settings.Properties.ValueField = "PersonID";
+    settings.Properties.ValueType = typeof(int);
+
+    settings.Properties.DropDownButton.Visible = false;
+    settings.Properties.Columns.Add("FirstName", "FirstName", 90);
+    settings.Properties.Columns.Add("LastName", "LastName", 90);
+        
+}).BindList(ViewData["List"]).GetHtml()

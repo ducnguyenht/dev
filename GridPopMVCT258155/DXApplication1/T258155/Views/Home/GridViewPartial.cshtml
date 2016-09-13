@@ -37,9 +37,7 @@
  
 
 	settings.SetEditFormTemplateContent(c => {
-        
-		Html.RenderPartial("EditFormPartial",
-			!c.Grid.IsNewRowEditing ?
+        Html.RenderPartial("EditFormPartial", !c.Grid.IsNewRowEditing ? 			
 				Model.FirstOrDefault(m => m.ProductID == Convert.ToInt32(DataBinder.Eval(c.DataItem, "ProductID"))) :
 				new Product() {
 					ProductID = Model.OrderByDescending(p => p.ProductID)

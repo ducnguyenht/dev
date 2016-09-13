@@ -1,0 +1,9 @@
+﻿@{
+    PivotGridSettings pivotSettings = DevExpressMvcApplication1.Controllers.PivotGridHelper.CreateGeneralSettings();
+    pivotSettings.CallbackRouteValues = new { 
+        Controller = "Home", 
+        Action = "PivotGridPartial", 
+        Filter = ViewBag.Filter 
+    };
+}
+@Html.DevExpress().PivotGrid(pivotSettings).Bind(Model).GetHtml()

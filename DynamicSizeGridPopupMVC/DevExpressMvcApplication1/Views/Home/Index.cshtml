@@ -1,0 +1,12 @@
+﻿@model System.Collections.IEnumerable
+<script type="text/javascript">
+    function OnClick(s, e) {
+        document.forms[0].submit();
+    }
+</script>
+@using (Html.BeginForm("Index", "Home")) {
+    @Html.TextBox("filter")
+    <input type="submit" value="Apply" />
+    <input type="submit" value="Export To PDF" name="Export" />
+    @Html.Partial("PivotGridPartial", Model)
+}

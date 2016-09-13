@@ -161,6 +161,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="packages.config" />
     <Content Include="Areas\PopUpGrid\Views\web.config" />
+    <Content Include="Areas\PopUpGrid\Views\Products\Index.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -189,6 +190,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\PopUpGrid\Controllers\ProductsController.cs" />
     <Compile Include="Areas\PopUpGrid\PopUpGridAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,7 +201,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\PopUpGrid\Controllers\" />
     <Folder Include="Areas\PopUpGrid\Models\" />
     <Folder Include="Areas\PopUpGrid\Views\Shared\" />
   </ItemGroup>

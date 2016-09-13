@@ -36,6 +36,8 @@
  
 
 	settings.SetEditFormTemplateContent(c => {
+        var t = Convert.ToInt32(DataBinder.Eval(c.DataItem, "ProductID"));
+        var ttt = 1;
         Html.RenderPartial("EditFormPartial", !c.Grid.IsNewRowEditing ? 			
 				Model.FirstOrDefault(m => m.ProductID == Convert.ToInt32(DataBinder.Eval(c.DataItem, "ProductID"))) :
 				new Product() {

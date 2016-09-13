@@ -9,16 +9,16 @@
     function UpdateGridView() {
             GridView.UpdateEdit();
     }
-    function CancelGridView() {
-        GridView.CancelGridView();
-    }
-    function GridView_OnEndcallback(s, e) {
-        if (document.getElementById(s.name + '_DXPEForm_HCB-1') != null) {
-            ASPxClientUtils.AttachEventToElement(document.getElementById(s.name + '_DXPEForm_HCB-1'), 'click', function (event) {
-                alert('ok');
-            });
-        }
-    }
+    //function CancelGridView() {
+    //    GridView.CancelGridView();
+    //}
+    //function GridView_OnEndcallback(s, e) {
+    //    if (document.getElementById(s.name + '_DXPEForm_HCB-1') != null) {
+    //        ASPxClientUtils.AttachEventToElement(document.getElementById(s.name + '_DXPEForm_HCB-1'), 'click', function (event) {
+    //            alert('ok');
+    //        });
+    //    }
+    //}
 </script>
 
 @Html.Action("GridViewPartial")

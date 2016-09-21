@@ -179,73 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="MasterDetailSeperate.dxsample\App_Data\nwind.mdb" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\App_Data\nwind.mdb" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Content\Site.css" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\CS.csproj" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\CS.sln" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Global.asax" />
-    <None Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery-1.4.4-vsdoc.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery-1.4.4.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery-1.4.4.min.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery-ui.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery-ui.min.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery.unobtrusive-ajax.min.js" />
-    <None Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery.validate.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery.validate.min.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\MicrosoftAjax.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\CS.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\CS.pdb" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\System.Web.Helpers.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\System.Web.Mvc.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\System.Web.Razor.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\System.Web.WebPages.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\Content\Site.css" />
-    <Content Include="MasterDetailSeperate.dxsample\CS.csproj" />
-    <Content Include="MasterDetailSeperate.dxsample\CS.csproj.user" />
-    <Content Include="MasterDetailSeperate.dxsample\CS.sln" />
-    <Content Include="MasterDetailSeperate.dxsample\Global.asax" />
-    <Content Include="MasterDetailSeperate.dxsample\obj\Debug\CS.csproj.FileListAbsolute.txt" />
-    <Content Include="MasterDetailSeperate.dxsample\obj\Debug\CS.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\obj\Debug\CS.pdb" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.Mvc.3.0.50813.1\lib\net40\System.Web.Mvc.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
-    <None Include="MasterDetailSeperate.dxsample\Scripts\jquery-1.4.4-vsdoc.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery-1.4.4.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery-1.4.4.min.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery-ui.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery-ui.min.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery.unobtrusive-ajax.min.js" />
-    <None Include="MasterDetailSeperate.dxsample\Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery.validate.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery.validate.min.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\MicrosoftAjax.debug.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\MicrosoftAjax.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\MicrosoftMvcAjax.debug.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\MicrosoftMvcAjax.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="MasterDetailSeperate.dxsample\Scripts\MicrosoftMvcValidation.js" />
-    <Content Include="MasterDetailSeperate.dxsample\UpgradeLog.htm" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -263,52 +196,6 @@
     <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\_DetailPartial.cshtml" />
     <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\_MasterGridViewPartial.cshtml" />
     <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\Indexxxx.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\CS.csproj.bak" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\packages.config" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Views\Home\GridCategories.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Views\Home\GridProducts.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Views\Home\Index.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Views\Shared\_Layout.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Views\Web.config" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Views\_ViewStart.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Web.config" />
-    <Content Include="MasterDetailSeperate.dxsample\Backup\Web.config.bak" />
-    <None Include="MasterDetailSeperate.dxsample\Backup\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="MasterDetailSeperate.dxsample\Backup\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <Content Include="MasterDetailSeperate.dxsample\bin\CS.dll.config" />
-    <Content Include="MasterDetailSeperate.dxsample\CS.csproj.bak" />
-    <Content Include="MasterDetailSeperate.dxsample\CS.tss" />
-    <Content Include="MasterDetailSeperate.dxsample\CS.v12.suo" />
-    <Content Include="MasterDetailSeperate.dxsample\obj\Debug\CS.csprojResolveAssemblyReference.cache" />
-    <Content Include="MasterDetailSeperate.dxsample\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <Content Include="MasterDetailSeperate.dxsample\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="MasterDetailSeperate.dxsample\packages.config" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.Mvc.3.0.50813.1\content\Web.config.install.xdt" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.Mvc.3.0.50813.1\content\Web.config.uninstall.xdt" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.Mvc.3.0.50813.1\Microsoft.AspNet.Mvc.3.0.50813.1.nupkg" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.Razor.1.0.20105.408\Microsoft.AspNet.Razor.1.0.20105.408.nupkg" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.AspNet.WebPages.1.0.20105.408\Microsoft.AspNet.WebPages.1.0.20105.408.nupkg" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\Microsoft.Web.Infrastructure.1.0.0.0\Microsoft.Web.Infrastructure.1.0.0.0.nupkg" />
-    <Content Include="MasterDetailSeperate.dxsample\packages\repositories.config" />
-    <Content Include="MasterDetailSeperate.dxsample\sample.config" />
-    <Content Include="MasterDetailSeperate.dxsample\Views\Home\GridCategories.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Views\Home\GridProducts.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Views\Home\Index.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Views\Shared\_Layout.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Views\Web.config" />
-    <Content Include="MasterDetailSeperate.dxsample\Views\_ViewStart.cshtml" />
-    <Content Include="MasterDetailSeperate.dxsample\Web.config" />
-    <Content Include="MasterDetailSeperate.dxsample\Web.config.bak" />
-    <None Include="MasterDetailSeperate.dxsample\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="MasterDetailSeperate.dxsample\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -341,24 +228,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="MasterDetailSeperate.dxsample\Backup\Controllers\HomeController.cs" />
-    <Compile Include="MasterDetailSeperate.dxsample\Backup\Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="MasterDetailSeperate.dxsample\Backup\Models\Model.cs" />
-    <Compile Include="MasterDetailSeperate.dxsample\Backup\Properties\AssemblyInfo.cs" />
-    <Compile Include="MasterDetailSeperate.dxsample\Controllers\HomeController.cs" />
-    <Compile Include="MasterDetailSeperate.dxsample\Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="MasterDetailSeperate.dxsample\Models\Model.cs" />
-    <Compile Include="MasterDetailSeperate.dxsample\Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\DemoClientSideShowHide\Views\Shared\" />
     <Folder Include="Controllers\" />
-    <Folder Include="MasterDetailSeperate.dxsample\obj\Debug\TempPE\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

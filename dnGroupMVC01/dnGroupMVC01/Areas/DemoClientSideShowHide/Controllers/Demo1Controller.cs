@@ -32,6 +32,7 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
                 try
                 {
                     // Insert here a code to insert the new item in your model
+                    MasterList.AddItem(item);
                 }
                 catch (Exception e)
                 {
@@ -50,6 +51,7 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
             {
                 try
                 {
+                    MasterList.UpdateItem(item);
                     // Insert here a code to update the item in your model
                 }
                 catch (Exception e)
@@ -69,6 +71,7 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
             {
                 try
                 {
+                    MasterList.DeleteItem(Id_Master);
                     // Insert here a code to delete the item from your model
                 }
                 catch (Exception e)

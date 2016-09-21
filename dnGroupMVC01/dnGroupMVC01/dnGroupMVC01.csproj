@@ -193,8 +193,9 @@
     <Content Include="packages.config" />
     <Content Include="Areas\DemoClientSideShowHide\Views\web.config" />
     <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\Index.cshtml" />
-    <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\_MasterGridViewPartial.cshtml" />
     <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\_DetailPartial.cshtml" />
+    <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\_MasterGridViewPartial.cshtml" />
+    <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\Indexxxx.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />

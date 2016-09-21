@@ -1,16 +1,25 @@
+@*<script>
+    function OnProductsBeginCallback(s, e) {
+        var index = MasterGridView.GetFocusedRowIndex();
+        var focusedRowKey = MasterGridView.GetRowKey(index);
+        if (focusedRowKey != null) {
+            e.customArgs["Id_Master"] = focusedRowKey;
+        }
+    }
+</script>*@
 @{
 	var grid = Html.DevExpress().GridView(settings => {
         settings.Name = "DetailGridView";
         settings.CallbackRouteValues = new { Controller = "Demo1", Action = "DetailPartial" };
         settings.ClientSideEvents.BeginCallback = "OnProductsBeginCallback";
-        
-	    settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Demo1", Action = "DetailPartialAddNew" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Demo1", Action = "DetailPartialAddNew" };
         settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Demo1", Action = "DetailPartialUpdate" };
         settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Demo1", Action = "DetailPartialDelete" };
         settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
         settings.SettingsBehavior.ConfirmDelete = true;
 
-		settings.CommandColumn.Visible = true;
+        settings.CommandColumn.Visible = true;
         settings.CommandColumn.ShowNewButton = true;
         settings.CommandColumn.ShowDeleteButton = true;
         settings.CommandColumn.ShowEditButton = true;

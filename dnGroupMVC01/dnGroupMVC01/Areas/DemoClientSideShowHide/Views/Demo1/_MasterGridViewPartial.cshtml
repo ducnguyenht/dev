@@ -1,14 +1,18 @@
-
+@*<script>
+    function SelectionChanged(s, e) {
+        DetailGridView.PerformCallback();
+    }
+</script>*@
 @{
 	var grid = Html.DevExpress().GridView(settings => {
         settings.Name = "MasterGridView";
         settings.CommandColumn.Visible = true;
         settings.CommandColumn.ShowSelectCheckbox = true;
-
-        settings.ClientSideEvents.SelectionChanged = "SelectionChanged";
+        settings.SettingsBehavior.AllowFocusedRow = true;
+        settings.ClientSideEvents.RowClick = "SelectionChanged";
         settings.CallbackRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartial" };
 
-	    settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartialAddNew" };
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartialAddNew" };
         settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartialUpdate" };
         settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartialDelete" };
         settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;

@@ -25,6 +25,8 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Models
             {
                 lst = new List<Master>();
                 lst.Add(new Master { Id_Master = new Guid("385EEF8E-42A7-44B4-B29A-BBDFDD58DB91"), Name = "master" });
+                lst.Add(new Master { Id_Master = new Guid("385EEF8E-42A7-44B4-B29A-BBDFDD58DB92"), Name = "master1" });
+
             }
             return lst;
         }
@@ -66,6 +68,8 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Models
             {
                 lst = new List<Detail>();
                 lst.Add(new Detail { Id_Detail = Guid.NewGuid(), Id_Master = new Guid("385EEF8E-42A7-44B4-B29A-BBDFDD58DB91"), Name = "detail" });
+                lst.Add(new Detail { Id_Detail = Guid.NewGuid(), Id_Master = new Guid("385EEF8E-42A7-44B4-B29A-BBDFDD58DB92"), Name = "detail 1" });
+
             }
             return lst;
         }

@@ -13,9 +13,15 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
         // GET: DemoClientSideShowHide/Demo1
         public ActionResult Index()
         {
+            ViewData["CategoryList"] = MasterList.GetData();
+            ViewData["ProductList"] = DetailList.GetData();
             return View();
         }
-
+        public ActionResult Indexxxx()
+        {
+            
+            return View();
+        }
         [ValidateInput(false)]
         public ActionResult MasterGridViewPartial()
         {
@@ -86,6 +92,8 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
         //public ActionResult DetailPartial()
         //{
         //    var model = DetailList.GetData();
+        //public ActionResult DetailPartial(string Id_Master)
+        //var model = DetailList.GetDataByIdRef(new Guid(Id_Master));
         public ActionResult DetailPartial(Guid Id_Master)
         {
             var model = DetailList.GetDataByIdRef(Id_Master);

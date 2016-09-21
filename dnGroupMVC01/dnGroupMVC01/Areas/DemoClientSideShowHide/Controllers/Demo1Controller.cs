@@ -81,5 +81,68 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
             }
             return PartialView("_MasterGridViewPartial", model);
         }
+
+        [ValidateInput(false)]
+        public ActionResult DetailPartial(Guid Id_Master)
+        {
+            var model = DetailList.GetDataByIdRef(Id_Master);
+            return PartialView("_DetailPartial", model);
+        }
+
+        [HttpPost, ValidateInput(false)]
+        public ActionResult DetailPartialAddNew(dnGroupMVC01.Areas.DemoClientSideShowHide.Models.Detail item)
+        {
+            var model = new object[0];
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    // Insert here a code to insert the new item in your model
+                }
+                catch (Exception e)
+                {
+                    ViewData["EditError"] = e.Message;
+                }
+            }
+            else
+                ViewData["EditError"] = "Please, correct all errors.";
+            return PartialView("_DetailPartial", model);
+        }
+        [HttpPost, ValidateInput(false)]
+        public ActionResult DetailPartialUpdate(dnGroupMVC01.Areas.DemoClientSideShowHide.Models.Detail item)
+        {
+            var model = new object[0];
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    // Insert here a code to update the item in your model
+                }
+                catch (Exception e)
+                {
+                    ViewData["EditError"] = e.Message;
+                }
+            }
+            else
+                ViewData["EditError"] = "Please, correct all errors.";
+            return PartialView("_DetailPartial", model);
+        }
+        [HttpPost, ValidateInput(false)]
+        public ActionResult DetailPartialDelete(System.Guid Id_Detail)
+        {
+            var model = new object[0];
+            if (Id_Detail != null)
+            {
+                try
+                {
+                    // Insert here a code to delete the item from your model
+                }
+                catch (Exception e)
+                {
+                    ViewData["EditError"] = e.Message;
+                }
+            }
+            return PartialView("_DetailPartial", model);
+        }
     }
 }

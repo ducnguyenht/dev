@@ -1,0 +1,17 @@
+﻿@{		 
+	var grid = Html.DevExpress().GridView(
+			settings => {
+				settings.Name = "gvCategories";
+				settings.KeyFieldName = "CategoryID";
+				settings.CallbackRouteValues = new { Controller = "Home", Action = "GridCategoriesAction" };
+				settings.SettingsBehavior.AllowFocusedRow = true;
+				settings.Columns.Add("CategoryName");
+				
+				settings.Columns.Add("Description");
+                settings.CommandColumn.Visible = true;
+                settings.CommandColumn.ShowSelectCheckbox = true;
+                settings.ClientSideEvents.RowClick="SelectionChanged";	
+                //settings.ClientSideEvents.SelectionChanged = "SelectionChanged";			
+			});
+}
+@grid.Bind(Model).GetHtml()

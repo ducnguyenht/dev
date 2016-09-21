@@ -1,0 +1,13 @@
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\CS.dll.config
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\CS.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\CS.pdb
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\Microsoft.Web.Infrastructure.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\System.Web.Helpers.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\System.Web.Mvc.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\System.Web.Razor.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\System.Web.WebPages.Deployment.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\System.Web.WebPages.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\bin\System.Web.WebPages.Razor.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\obj\Debug\CS.csprojResolveAssemblyReference.cache
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\obj\Debug\CS.dll
+D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\obj\Debug\CS.pdb

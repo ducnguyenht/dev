@@ -1,0 +1,47 @@
+﻿@{		 
+	var grid = Html.DevExpress().GridView(
+			settings => {
+				settings.Name = "gvProducts";
+				settings.KeyFieldName = "ProductID";
+				settings.CallbackRouteValues = new { Controller = "Home", Action = "GridProductsAction" };
+
+				settings.ClientSideEvents.BeginCallback = "OnProductsBeginCallback";
+				
+				settings.Columns.Add("ProductName");
+				settings.Columns.Add(column => {
+					column.FieldName = "CategoryID";
+					column.Caption = "Category";
+
+					column.ColumnType = MVCxGridViewColumnType.ComboBox;
+					var comboBoxProperties = column.PropertiesEdit as ComboBoxProperties;
+					comboBoxProperties.DataSource = CS.Model.MyModel.GetCategories();
+					comboBoxProperties.TextField = "CategoryName";
+					comboBoxProperties.ValueField = "CategoryID";
+					comboBoxProperties.ValueType = typeof(int);
+				});
+				settings.Columns.Add("QuantityPerUnit");
+				settings.Columns.Add(column => {
+					column.FieldName = "UnitPrice";
+
+					column.ColumnType = MVCxGridViewColumnType.SpinEdit;
+					var spinEditProperties = column.PropertiesEdit as SpinEditProperties;
+					spinEditProperties.DisplayFormatString = "c";
+					spinEditProperties.DisplayFormatInEditMode = true;
+					spinEditProperties.MinValue = 0;
+					spinEditProperties.MaxValue = 1000000;
+					spinEditProperties.SpinButtons.ShowLargeIncrementButtons = true;
+				});
+				settings.Columns.Add(column => {
+					column.FieldName = "UnitsInStock";
+
+					column.ColumnType = MVCxGridViewColumnType.SpinEdit;
+					var spinEditProperties = column.PropertiesEdit as SpinEditProperties;
+					spinEditProperties.NumberType = SpinEditNumberType.Integer;
+					spinEditProperties.MinValue = 0;
+					spinEditProperties.MaxValue = 10000;
+				});
+				settings.Columns.Add("Discontinued", MVCxGridViewColumnType.CheckBox);
+				
+			});
+}
+@grid.Bind(Model).GetHtml()

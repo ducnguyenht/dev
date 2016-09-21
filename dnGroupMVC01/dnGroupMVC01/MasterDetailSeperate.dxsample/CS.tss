@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\Controllers\HomeController.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\Views\Home\Index.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\Views\Home\GridCategories.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\Views\Home\GridProducts.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\Views\Shared\_Layout.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>D:\Duc.Nguyen.Soft\MasterDetailSeperate.dxsample\Models\Model.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>

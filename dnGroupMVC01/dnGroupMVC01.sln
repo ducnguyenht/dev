@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnGroupMVC01", "dnGroupMVC01\dnGroupMVC01.csproj", "{FFD2848C-F069-449F-B085-0F59EC39132E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS", "..\..\MasterDetailSeperate.dxsample\CS.csproj", "{799046AF-2A76-413E-92B2-B9B9FF76A7F5}"
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -21,10 +19,6 @@ Global
 		{FFD2848C-F069-449F-B085-0F59EC39132E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFD2848C-F069-449F-B085-0F59EC39132E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFD2848C-F069-449F-B085-0F59EC39132E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{799046AF-2A76-413E-92B2-B9B9FF76A7F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{799046AF-2A76-413E-92B2-B9B9FF76A7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{799046AF-2A76-413E-92B2-B9B9FF76A7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{799046AF-2A76-413E-92B2-B9B9FF76A7F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

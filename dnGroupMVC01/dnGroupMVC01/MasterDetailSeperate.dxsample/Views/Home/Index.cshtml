@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+
+<script type="text/javascript">
+  
+    function OnProductsBeginCallback(s, e) {
+        var index = gvCategories.GetFocusedRowIndex();
+        var focusedRowKey = gvCategories.GetRowKey(index);
+        if (focusedRowKey != null) {
+            e.customArgs["CategoryID"] = focusedRowKey;
+        }
+    }
+    function SelectionChanged(s, e) {
+        gvProducts.PerformCallback();
+    }
+</script>
+@Html.DevExpress().RoundPanel(settings =>
+{
+    settings.Name = "RoundPanel";
+    settings.HeaderText = "Header";
+    settings.ShowHeader = false;
+    settings.ControlStyle.BorderTop.BorderWidth = 0;
+    settings.ControlStyle.BorderBottom.BorderWidth = 0;
+    settings.ControlStyle.BorderLeft.BorderWidth = 0;
+    settings.ControlStyle.BorderRight.BorderWidth = 0;
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("GridCategories", ViewData["CategoryList"]);
+
+        Html.RenderPartial("GridProducts", ViewData["ProductList"]);
+    });
+}).GetHtml()
+@*@Html.DevExpress().Splitter(
+    settings =>
+    {
+        settings.Name = "spliter";
+
+        settings.Height = 1000;
+        settings.Width = 400;
+        settings.Orientation = System.Web.UI.WebControls.Orientation.Vertical;
+        settings.SeparatorVisible = false;
+        settings.ShowCollapseBackwardButton = false;
+        settings.ShowCollapseForwardButton = false;
+        settings.ShowSeparatorImage = false;
+        //settings.ClientSideEvents.Init = "OnActiveTabChanging";
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "Pane 0";
+            pane.SetContent(() =>
+            {
+                @Html.RenderPartial("GridCategories", ViewData["CategoryList"]);
+
+                @Html.RenderPartial("GridProducts", ViewData["ProductList"]);
+
+            });
+        });
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "Pane 1";
+            pane.SetContent(() =>
+            {
+
+            });
+
+        });
+    }).GetHtml()*@
+@*@Html.DevExpress().PageControl( settings => {
+	settings.Name = "PageControl";
+	settings.TabPages.Add("Categories").SetContent(() => {
+        @Html.RenderPartial("GridCategories", ViewData["CategoryList"]);
+	});
+	settings.TabPages.Add("Products").SetContent(() => {
+        @Html.RenderPartial("GridProducts", ViewData["ProductList"]);
+	});
+
+	settings.ClientSideEvents.ActiveTabChanging = "OnActiveTabChanging";	
+}).GetHtml()*@

@@ -191,6 +191,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="packages.config" />
+    <Content Include="Areas\DemoClientSideShowHide\Views\web.config" />
+    <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\Index.cshtml" />
+    <Content Include="Areas\DemoClientSideShowHide\Views\Demo1\_MasterGridViewPartial.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -217,12 +220,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\DemoClientSideShowHide\Controllers\Demo1Controller.cs" />
+    <Compile Include="Areas\DemoClientSideShowHide\DemoClientSideShowHideAreaRegistration.cs" />
+    <Compile Include="Areas\DemoClientSideShowHide\Models\DemoFull.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\DemoClientSideShowHide\Views\Shared\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>

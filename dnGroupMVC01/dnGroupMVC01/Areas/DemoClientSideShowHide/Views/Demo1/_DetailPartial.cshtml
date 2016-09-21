@@ -2,8 +2,9 @@
 	var grid = Html.DevExpress().GridView(settings => {
         settings.Name = "DetailGridView";
         settings.CallbackRouteValues = new { Controller = "Demo1", Action = "DetailPartial" };
-
-				settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Demo1", Action = "DetailPartialAddNew" };
+        settings.ClientSideEvents.BeginCallback = "OnProductsBeginCallback";
+        
+	    settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Demo1", Action = "DetailPartialAddNew" };
         settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Demo1", Action = "DetailPartialUpdate" };
         settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Demo1", Action = "DetailPartialDelete" };
         settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;

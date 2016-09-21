@@ -1,12 +1,60 @@
-﻿
+﻿@using DevExpress.Web.Mvc.UI;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script>
+   
+    function SelectionChanged(s, e) {
+        DetailGridView.PerformCallback();
+    }
+    function OnProductsBeginCallback(s, e) {
+        var index = MasterGridView.GetFocusedRowIndex();
+        alert(index);
+        var focusedRowKey = MasterGridView.GetRowKey(index);
+        if (focusedRowKey != null) {
+            e.customArgs["Id_Master"] = focusedRowKey;
+        }
+    }
+</script>
 <h2>Index</h2>
-@Html.Action("MasterGridViewPartial")
-@Html.Action("DetailPartial")
+@Html.Action("MasterGridViewPartial");
+@Html.Action("DetailPartial");
+
+
+@*@Html.DevExpress().Splitter(
+    settings =>
+    {
+        settings.Name = "spliter";
+
+        settings.Height = 200;
+        settings.Width = 400;
+        settings.Orientation = System.Web.UI.WebControls.Orientation.Vertical;
+        settings.SeparatorVisible = false;       
+        settings.ShowCollapseBackwardButton = false;
+        settings.ShowCollapseForwardButton = false;
+        settings.ShowSeparatorImage = false;
+        settings.ClientSideEvents.Init = "OnActiveTabChanging";
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "Pane 0";
+            pane.SetContent(() =>
+            {
+                
+            });
+        });
+        settings.Panes.Add(pane =>
+        {
+            pane.Name = "Pane 1";
+            pane.SetContent(() =>
+            {
+                
+            });
+
+        });
+    }).GetHtml()*@
+@*
+@*@
 
 
 

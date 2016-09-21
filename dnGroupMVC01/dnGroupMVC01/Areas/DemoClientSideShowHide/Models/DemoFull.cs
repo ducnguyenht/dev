@@ -7,13 +7,13 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Models
 {
     public class Master
     {
-        public Guid Id_Master { get; set; }
+        public Guid? Id_Master { get; set; }
         public string Name { get; set; }
     }
     public class Detail
     {
-        public Guid Id_Detail { get; set; }
-        public Guid Id_Master { get; set; }
+        public Guid? Id_Detail { get; set; }
+        public Guid? Id_Master { get; set; }
         public string Name { get; set; }
     }
     public class MasterList
@@ -24,6 +24,7 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Models
             if (lst == null)
             {
                 lst = new List<Master>();
+                lst.Add(new Master { Id_Master = new Guid("385EEF8E-42A7-44B4-B29A-BBDFDD58DB91"), Name = "master" });
             }
             return lst;
         }
@@ -64,6 +65,7 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Models
             if (lst == null)
             {
                 lst = new List<Detail>();
+                lst.Add(new Detail { Id_Detail = Guid.NewGuid(), Id_Master = new Guid("385EEF8E-42A7-44B4-B29A-BBDFDD58DB91"), Name = "detail" });
             }
             return lst;
         }

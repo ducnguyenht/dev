@@ -83,9 +83,14 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
         }
 
         [ValidateInput(false)]
+        //public ActionResult DetailPartial()
+        //{
+        //    var model = DetailList.GetData();
         public ActionResult DetailPartial(Guid Id_Master)
         {
             var model = DetailList.GetDataByIdRef(Id_Master);
+            
+            
             return PartialView("_DetailPartial", model);
         }
 
@@ -144,5 +149,7 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
             }
             return PartialView("_DetailPartial", model);
         }
+
+      
     }
 }

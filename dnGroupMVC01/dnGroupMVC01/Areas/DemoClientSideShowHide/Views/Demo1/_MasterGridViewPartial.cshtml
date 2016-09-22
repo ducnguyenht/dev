@@ -14,12 +14,15 @@
         switch (ComboBox.GetValue()) {
             case "Item 0":
                 $("#lbTest").css("visibility", "hidden");
+                $("#divShowHide").hide();
                 break;
             case "Item 1":
                 $("#lbTest").css("visibility", "visible");
+                $("#divShowHide").show();
                 break;
             default:
         }
+     
         //lbTest.SetVisible(false);
         //Text.SetVisible(false);
         //document.getElementById('lbTest').style.visibility = 'hidden';
@@ -39,6 +42,14 @@
         //    }
 
         //}
+
+        //$("#hide").click(function () {
+        //    $("p").hide();
+        //});
+
+        //$("#show").click(function () {
+        //    $("p").show();
+        //});
     }
 </script>
 @Html.DevExpress().ComboBox(settings =>
@@ -47,6 +58,7 @@
     settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
     settings.Properties.DropDownStyle = DropDownStyle.DropDown;
     settings.Properties.EnableClientSideAPI = true;
+    settings.Properties.ClientSideEvents.Init="cboInit";
     settings.Properties.ClientSideEvents.SelectedIndexChanged
         = "onComboBoxSelectedIndexChanged";
     settings.Properties.ClientSideEvents.ValueChanged
@@ -60,13 +72,15 @@
     settings.Name = "lbTest";
     settings.Text = "Text";
 }).GetHtml()
-@Html.DevExpress().Label(settings =>
+<div id="divShowHide">
+    @Html.DevExpress().Label(settings =>
 {
     settings.Name = "lbTest1";
     settings.Text = "Text";
 }).GetHtml()
+</div>
 
-
+@*# = id .= class*@
 
 
 @{

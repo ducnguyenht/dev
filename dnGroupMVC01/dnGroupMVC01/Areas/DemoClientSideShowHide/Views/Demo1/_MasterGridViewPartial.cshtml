@@ -19,7 +19,6 @@
                 $("#lbTest").css("visibility", "visible");
                 break;
             default:
-
         }
         //lbTest.SetVisible(false);
         //Text.SetVisible(false);
@@ -59,6 +58,11 @@
 @Html.DevExpress().Label(settings =>
 {
     settings.Name = "lbTest";
+    settings.Text = "Text";
+}).GetHtml()
+@Html.DevExpress().Label(settings =>
+{
+    settings.Name = "lbTest1";
     settings.Text = "Text";
 }).GetHtml()
 

@@ -9,6 +9,11 @@
         //document.getElementById("lbTest").style.display = "block";
         //panelMultiBranch.SetVisible(!checked);
     };
+    $(document).ready(function () {
+        $("#lbTest").css("visibility", "hidden");
+        $(".divShowHide").css("visibility", "hidden");
+    });
+   
     function onComboBoxValueChanged(s, e) {
         //alert(ComboBox.GetValue());
         switch (ComboBox.GetValue()) {
@@ -22,7 +27,6 @@
                 break;
             default:
         }
-     
         //lbTest.SetVisible(false);
         //Text.SetVisible(false);
         //document.getElementById('lbTest').style.visibility = 'hidden';
@@ -58,11 +62,11 @@
     settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
     settings.Properties.DropDownStyle = DropDownStyle.DropDown;
     settings.Properties.EnableClientSideAPI = true;
-    settings.Properties.ClientSideEvents.Init="cboInit";
     settings.Properties.ClientSideEvents.SelectedIndexChanged
         = "onComboBoxSelectedIndexChanged";
     settings.Properties.ClientSideEvents.ValueChanged
         = "onComboBoxValueChanged";
+    settings.SelectedIndex = 0;
     settings.Properties.Items.Add("Item 0");
     settings.Properties.Items.Add("Item 1");
     settings.Properties.Items.Add("Item 2");
@@ -72,15 +76,30 @@
     settings.Name = "lbTest";
     settings.Text = "Text";
 }).GetHtml()
-<div id="divShowHide">
+<div id="divShowHide">@*# = id .= class*@
     @Html.DevExpress().Label(settings =>
 {
     settings.Name = "lbTest1";
     settings.Text = "Text";
 }).GetHtml()
 </div>
+<div class="divShowHide1">
+    @*# = id .= class*@
+    @Html.DevExpress().Label(settings =>
+{
+    settings.Name = "asdfasd";
+    settings.Text = "lbTest1";
+}).GetHtml()
+</div>
+<div class="divShowHide">
+    @Html.DevExpress().Label(settings =>
+{
+    settings.Name = "xcvzxc";
+    settings.Text = "lbTest2";
+}).GetHtml()
+</div>
 
-@*# = id .= class*@
+
 
 
 @{

@@ -17,9 +17,8 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Controllers
             ViewData["ProductList"] = DetailList.GetData();
             return View();
         }
-        public ActionResult Indexxxx()
+        public ActionResult MasterDetailPopup()
         {
-            
             return View();
         }
         [ValidateInput(false)]

@@ -1,0 +1,43 @@
+@{
+	var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "MasterGridView";
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowSelectCheckbox = true;
+        settings.SettingsBehavior.AllowFocusedRow = true;
+        settings.ClientSideEvents.RowClick = "SelectionChanged";
+        settings.SettingsEditing.Mode = GridViewEditingMode.PopupEditForm; // POPUP EDIT FORM
+        settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.WindowCenter;
+        settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.WindowCenter;
+        settings.SettingsPopup.EditForm.Width = 1200;//new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+        settings.SettingsPopup.EditForm.Height = 600;
+        settings.SetEditFormTemplateContent(c =>
+        {
+            Html.RenderPartial("BookingNew", !c.Grid.IsNewRowEditing ?
+                BookingList.FindItem((Guid)DataBinder.Eval(c.DataItem, "ID_APIBooking")) : new APIBooking() { ID_APIBooking = Guid.NewGuid() });
+        });
+        settings.CallbackRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Demo1", Action = "MasterGridViewPartialDelete" };
+        //settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+        settings.SettingsBehavior.ConfirmDelete = true;
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowEditButton = true;
+
+		settings.KeyFieldName = "Id_Master";
+
+		settings.SettingsPager.Visible = true;
+		settings.Settings.ShowGroupPanel = false;
+		settings.Settings.ShowFilterRow = true;
+		settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+				settings.Columns.Add("Name");
+			});
+		if (ViewData["EditError"] != null){
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

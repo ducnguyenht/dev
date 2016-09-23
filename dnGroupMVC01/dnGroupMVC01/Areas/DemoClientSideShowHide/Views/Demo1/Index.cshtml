@@ -8,7 +8,17 @@
 <h2>@ViewBag.Message</h2>
 
 <script type="text/javascript">
-
+    $(document).ready(function () {
+        $("#pcOverview_PW-1").css("visibility", "hidden");
+        var el = document.getElementById('clickme');
+        el.onclick = showFoo;
+        //alert('I am foo!');
+        function showFoo() {
+            $("#pcOverview_PW-1").css("visibility", "visible");
+        }
+    });
+        
+    
     function OnProductsBeginCallback(s, e) {
         var index = MasterGridView.GetFocusedRowIndex();
         var focusedRowKey = MasterGridView.GetRowKey(index);
@@ -73,7 +83,25 @@
         //    $("p").show();
         //});
     }
+    
 </script>
+
+<div id="clickme">click me</div>
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "pcOverview";
+    settings.PopupElementID = "popupArea";
+    settings.AllowDragging = true;
+    settings.ShowOnPageLoad = true;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.HeaderText = "Area of Countries";
+    settings.SetContent(() =>
+    {
+        ViewContext.Writer.Write(
+            "<div>hello world</div>"
+        );
+    });
+}).GetHtml()
 
 
 @Html.DevExpress().RoundPanel(settings =>

@@ -1,12 +1,4 @@
-@*<script>
-    function OnProductsBeginCallback(s, e) {
-        var index = MasterGridView.GetFocusedRowIndex();
-        var focusedRowKey = MasterGridView.GetRowKey(index);
-        if (focusedRowKey != null) {
-            e.customArgs["Id_Master"] = focusedRowKey;
-        }
-    }
-</script>*@
+
 @{
 	var grid = Html.DevExpress().GridView(settings => {
         settings.Name = "DetailGridView";

@@ -9,12 +9,15 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#pcOverview_PW-1").css("visibility", "hidden");
+        $("#pcOverview_PW-1").css("display", "none");
         var el = document.getElementById('clickme');
         el.onclick = showFoo;
-        //alert('I am foo!');
+      
         function showFoo() {
+            //alert('I am foo!');
             $("#pcOverview_PW-1").css("visibility", "visible");
+            $("#pcOverview_PW-1").css("display", "table");
+
         }
     });
         
@@ -39,7 +42,8 @@
     };
     $(document).ready(function () {
         $("#lbTest").css("visibility", "hidden");
-        $(".divShowHide").css("visibility", "hidden");
+        $("#divShowHide").css("visibility", "hidden");
+        $("#pcOverview_PW-1").css("visibility", "hidden");
     });
 
     function onComboBoxValueChanged(s, e) {
@@ -47,11 +51,11 @@
         switch (ComboBox.GetValue()) {
             case "Item 0":
                 $("#lbTest").css("visibility", "hidden");
-                $("#divShowHide").hide();
+                $("#divShowHide").css("visibility", "hidden");
                 break;
             case "Item 1":
                 $("#lbTest").css("visibility", "visible");
-                $("#divShowHide").show();
+                $("#divShowHide").css("visibility", "visible");
                 break;
             default:
         }
@@ -92,7 +96,8 @@
     settings.Name = "pcOverview";
     settings.PopupElementID = "popupArea";
     settings.AllowDragging = true;
-    settings.ShowOnPageLoad = true;
+    settings.ShowOnPageLoad = false;
+  
     settings.CloseAction = CloseAction.CloseButton;
     settings.HeaderText = "Area of Countries";
     settings.SetContent(() =>
@@ -145,7 +150,7 @@
     @Html.DevExpress().Label(settings =>
 {
     settings.Name = "lbTest1";
-    settings.Text = "Text";
+    settings.Text = "Textasdfsadfsadsdfsd";
 }).GetHtml()
 </div>
 <div class="divShowHide1">

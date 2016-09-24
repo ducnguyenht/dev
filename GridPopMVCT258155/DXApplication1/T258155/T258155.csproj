@@ -162,6 +162,9 @@
     <Content Include="packages.config" />
     <Content Include="Areas\PopUpGrid\Views\web.config" />
     <Content Include="Areas\PopUpGrid\Views\Products\Index.cshtml" />
+    <Content Include="Areas\PopUpGrid\Views\Products\EditFormPartial.cshtml" />
+    <Content Include="Areas\PopUpGrid\Views\Products\GridViewPartial.cshtml" />
+    <Content Include="Areas\PopUpGrid\Views\Products\Indexxx.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />

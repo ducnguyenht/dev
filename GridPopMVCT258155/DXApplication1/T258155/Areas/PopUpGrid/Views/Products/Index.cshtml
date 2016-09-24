@@ -1,13 +1,25 @@
-﻿@*@Html.DevExpress().Label(settings => {
-    	settings.Name = "Label";
-			settings.Text = "Text";
-}).GetHtml()*@
-
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
-@*@Html.Action("GridViewPartial")*@
-@*@Html.Action("POPGridViewPartial")*@
+
+<script type="text/javascript">
+    function UpdateGridView() {
+            GridView.UpdateEdit();
+    }
+    //function CancelGridView() {
+    //    GridView.CancelGridView();
+    //}
+    //function GridView_OnEndcallback(s, e) {
+    //    if (document.getElementById(s.name + '_DXPEForm_HCB-1') != null) {
+    //        ASPxClientUtils.AttachEventToElement(document.getElementById(s.name + '_DXPEForm_HCB-1'), 'click', function (event) {
+    //            alert('ok');
+    //        });
+    //    }
+    //}
+</script>
+
+@Html.Action("GridViewPartial")

@@ -9,8 +9,11 @@ namespace T258155.Areas.PopUpGrid.Controllers
 {
     public class ProductsController : Controller
     {
-        // GET: PopUpGrid/Products
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Indexxx()
         {
             return View();
         }
@@ -69,69 +72,6 @@ namespace T258155.Areas.PopUpGrid.Controllers
             }
 
             return PartialView("GridViewPartial", NorthwindDataProvider.GetProducts());
-        }
-
-        [ValidateInput(false)]
-        public ActionResult POPGridViewPartial()
-        {
-            var model = new object[0];
-            return PartialView("_POPGridViewPartial", model);
-        }
-
-        [HttpPost, ValidateInput(false)]
-        public ActionResult POPGridViewPartialAddNew(Product item)
-        {
-            var model = new object[0];
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    // Insert here a code to insert the new item in your model
-                }
-                catch (Exception e)
-                {
-                    ViewData["EditError"] = e.Message;
-                }
-            }
-            else
-                ViewData["EditError"] = "Please, correct all errors.";
-            return PartialView("_POPGridViewPartial", model);
-        }
-        [HttpPost, ValidateInput(false)]
-        public ActionResult POPGridViewPartialUpdate(Product item)
-        {
-            var model = new object[0];
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    // Insert here a code to update the item in your model
-                }
-                catch (Exception e)
-                {
-                    ViewData["EditError"] = e.Message;
-                }
-            }
-            else
-                ViewData["EditError"] = "Please, correct all errors.";
-            return PartialView("_POPGridViewPartial", model);
-        }
-        [HttpPost, ValidateInput(false)]
-        public ActionResult POPGridViewPartialDelete(System.Int32 ProductID)
-        {
-            var model = new object[0];
-            if (ProductID >= 0)
-            {
-                try
-                {
-                    // Insert here a code to delete the item from your model
-                }
-                catch (Exception e)
-                {
-                    ViewData["EditError"] = e.Message;
-                }
-            }
-            return PartialView("_POPGridViewPartial", model);
         }
     }
 }

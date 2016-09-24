@@ -1,0 +1,49 @@
+@model IList<Product>
+
+@Html.DevExpress().GridView(settings => {
+    settings.Name = "GridView";
+    settings.KeyFieldName = "ProductID";
+    settings.CallbackRouteValues = new { Controller = "Products", Action = "GridViewPartial" };
+    settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Products", Action = "GridViewAddNewPartial" };
+    settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Products", Action = "GridViewUpdatePartial" };
+    settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Products", Action = "GridViewDeletePartial" };
+   
+    settings.CommandColumn.Visible = true;
+    settings.CommandColumn.ShowEditButton = true;
+    settings.CommandColumn.ShowNewButton = true;
+    settings.CommandColumn.ShowDeleteButton = true;
+    settings.Width = settings.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+	settings.SettingsEditing.Mode = GridViewEditingMode.PopupEditForm; // POPUP EDIT FORM
+    //settings.Images.PopupEditFormWindowClose.Url = "close.png";
+    settings.Columns.Add(column => {
+        column.FieldName = "ProductID";
+        column.ReadOnly = true;
+        column.EditFormSettings.Visible = DefaultBoolean.False;
+    });
+    
+    settings.Columns.Add("ProductName");
+    settings.Columns.Add("UnitPrice");
+    settings.Columns.Add("UnitsOnOrder");
+    //settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.Middle;//not working
+    //settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.Center;//not working
+    settings.SettingsPopup.EditForm.VerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.SettingsPopup.EditForm.Width = new System.Web.UI.WebControls.Unit(100, System.Web.UI.WebControls.UnitType.Percentage);
+    settings.StylesPopup.EditForm.CloseButton.CssClass = "myCss";
+    //.myCss {
+    // display:none;
+    //}
+ 
+
+	settings.SetEditFormTemplateContent(c => {
+        var t = Convert.ToInt32(DataBinder.Eval(c.DataItem, "ProductID"));
+        var ttt = 1;
+        Html.RenderPartial("EditFormPartial", !c.Grid.IsNewRowEditing ? 			
+				Model.FirstOrDefault(m => m.ProductID == Convert.ToInt32(DataBinder.Eval(c.DataItem, "ProductID"))) :
+				new Product() {
+					ProductID = Model.OrderByDescending(p => p.ProductID)
+					   .First()
+					   .ProductID + 1
+				});
+	});
+}).SetEditErrorText((string)ViewData["EditError"]).Bind(Model).GetHtml()

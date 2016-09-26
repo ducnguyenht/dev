@@ -1,4 +1,7 @@
 ﻿@model Product
+           <script>
+               alert("Fac u");
+           </script>
 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "frmProduct" }))
 {
     <table>
@@ -66,6 +69,32 @@
                s.Name = "UnitsOnOrder";
                s.ShowModelErrors = true;
            }).Bind(Model.UnitsOnOrder).GetHtml()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Test Enum
+            </td>
+            <td>
+                @Html.DevExpress().ComboBox(s =>
+           {
+               s.Name = "TestEnum";
+               //Dictionary<int, string> dict = new Dictionary<int, string>();
+               //foreach (int item in Enum.GetValues(typeof(TestEnum)))
+               //{
+               //    dict.Add(item, string.Format("{0} - translated", item));
+               //}
+               var dict = new Dictionary<int, string>();
+               foreach (var name in Enum.GetNames(typeof(TestEnum)))
+               {
+                   dict.Add((int)Enum.Parse(typeof(TestEnum), name), name);
+               }
+               s.Properties.DataSource = dict;
+               s.Properties.TextField = "Value";
+               s.Properties.ValueField = "Key";
+               s.Properties.ValueType = typeof(int);
+               s.ShowModelErrors = true;
+           }).Bind(Model.TestEnum).GetHtml()
             </td>
         </tr>
         <tr>

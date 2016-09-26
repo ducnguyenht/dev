@@ -7,4 +7,10 @@ public class Product {
     public string ProductName { get; set; }
     public decimal? UnitPrice { get; set; }
     public short? UnitsOnOrder { get; set; }
+    public TestEnum TestEnum { get; set; }
+}
+public enum TestEnum{
+    AAA=0,
+    BBB=1,
+    CCC=2,
 }

@@ -9,6 +9,7 @@ namespace dnGroupMVC01.Areas.DemoClientSideShowHide.Models
     {
         public Guid? Id_Master { get; set; }
         public string Name { get; set; }
+        public TestEnum EnumDisplay { get; set; }
     }
     public class Detail
     {

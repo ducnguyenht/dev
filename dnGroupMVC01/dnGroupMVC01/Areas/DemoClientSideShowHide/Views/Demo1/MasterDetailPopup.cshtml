@@ -1,8 +1,20 @@
-﻿
+﻿@using  DevExpress.Web.Mvc.UI;
 @{
     ViewBag.Title = "Indexxxx";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
-<h2>Indexxxx</h2>
+@Html.DevExpress().ComboBox(settings =>
+{
+    settings.Name = "ComboBox";
+    settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+    settings.Properties.DropDownStyle = DropDownStyle.DropDown;
+    settings.Properties.Items.Add("Item 0");
+    settings.Properties.Items.Add("Item 1");
+    settings.Properties.Items.Add("Item 2");
+}).GetHtml()
+
+
+
 

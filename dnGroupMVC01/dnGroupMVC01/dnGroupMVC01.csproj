@@ -226,6 +226,7 @@
     <Compile Include="Areas\DemoClientSideShowHide\Controllers\Demo1Controller.cs" />
     <Compile Include="Areas\DemoClientSideShowHide\DemoClientSideShowHideAreaRegistration.cs" />
     <Compile Include="Areas\DemoClientSideShowHide\Models\DemoFull.cs" />
+    <Compile Include="Areas\DemoClientSideShowHide\Models\EnumHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

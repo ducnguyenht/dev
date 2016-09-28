@@ -1,14 +1,13 @@
 ﻿@model Product
+           @{
+       ViewContext.Writer.Write("<script>alert(\"asdf\");</script>");       
+
+           }
 @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "frmProduct" }))
 {
     <table>
         <tr>
             <td>
-                @*@Html.DevExpress().Label(s =>
-           {
-               s.AssociatedControlName = "ProductID";
-               s.Text = "ProductID";
-           }).GetHtml()*@
                 ProductID
             </td>
             <td>
@@ -21,12 +20,8 @@
             </td>
         </tr>
         <tr>
-            <td>ProductName
-                @*@Html.DevExpress().Label(s =>
-           {
-               s.AssociatedControlName = "ProductName";
-               s.Text = "ProductName";
-           }).GetHtml()*@
+            <td>
+                ProductName
             </td>
             <td>
                 @Html.DevExpress().TextBox(s =>
@@ -37,12 +32,8 @@
             </td>
         </tr>
         <tr>
-            <td>Unit Price
-                @*@Html.DevExpress().Label(s =>
-           {
-               s.AssociatedControlName = "UnitPrice";
-               s.Text = "Unit Price";
-           }).GetHtml()*@
+            <td>
+                Unit Price
             </td>
             <td>
                 @Html.DevExpress().TextBox(s =>
@@ -53,13 +44,7 @@
             </td>
         </tr>
         <tr>
-            <td>Units On Order
-                @*@Html.DevExpress().Label(s =>
-           {
-               s.AssociatedControlName = "UnitsOnOrder";
-               s.Text = "Units On Order";
-           }).GetHtml()*@
-            </td>
+            <td>Units On Order</td>
             <td>
                 @Html.DevExpress().TextBox(s =>
            {
@@ -92,13 +77,34 @@
                     btnSettings.ClientSideEvents.Click = "function(s, e) { GridView.UpdateEdit(); }";
                 }).GetHtml()
                 @Html.DevExpress().Button(
-                btnSettings => {
-                btnSettings.Name = "btnCancel";
-                btnSettings.ControlStyle.CssClass = "button";
-                btnSettings.Text = "Cancel";
-                btnSettings.ClientSideEvents.Click = "function(s, e) { GridView.CancelEdit(); }";
+                btnSettings =>
+                {
+                    btnSettings.Name = "btnCancel";
+                    btnSettings.ControlStyle.CssClass = "button";
+                    btnSettings.Text = "Cancel";
+                    btnSettings.ClientSideEvents.Click = "function(s, e) { GridView.CancelEdit(); }";
                 }).GetHtml()
             </td>
         </tr>
     </table>
 }
+@*@Html.DevExpress().Label(s =>
+    {
+        s.AssociatedControlName = "ProductID";
+        s.Text = "ProductID";
+    }).GetHtml()*@
+@*@Html.DevExpress().Label(s =>
+    {
+        s.AssociatedControlName = "ProductName";
+        s.Text = "ProductName";
+    }).GetHtml()*@
+@*@Html.DevExpress().Label(s =>
+    {
+        s.AssociatedControlName = "UnitPrice";
+        s.Text = "Unit Price";
+    }).GetHtml()*@
+@*@Html.DevExpress().Label(s =>
+    {
+        s.AssociatedControlName = "UnitsOnOrder";
+        s.Text = "Units On Order";
+    }).GetHtml()*@

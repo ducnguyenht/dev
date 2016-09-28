@@ -13,7 +13,7 @@ namespace T258155.Areas.PopUpGrid.Controllers
         {
             return View();
         }
-        public ActionResult Indexxx()
+        public ActionResult EditFormPartial()
         {
             return View();
         }

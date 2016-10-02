@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="WinWebSolution" Logo="ExpressAppLogo">
+  <BOModel>
+    <Class Name="WinWebSolution.Module.Activity" ImageName="BO_Appointment" />
+  </BOModel>
+  <SchemaModules>
+    <SchemaModule Name="BusinessClassLibraryCustomizationModule" Version="10.2.2.0" IsNewNode="True" />
+    <SchemaModule Name="SecurityModule" Version="10.2.2.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="10.2.2.0" IsNewNode="True" />
+    <SchemaModule Name="WinWebSolutionModule" Version="1.0.3979.29436" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="AuthenticationStandardLogonParameters_DetailView">
+      <Items>
+        <StaticText Id="PasswordHint" Text="(To log on, leave the Password field empty and type Sam or John in the User Name field)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="RootGroup">
+            <LayoutGroup Id="EditorsGroup">
+              <LayoutGroup Id="Editors">
+                <LayoutItem Id="PasswordHint" Index="3" IsNewNode="True" ViewItem="PasswordHint" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

@@ -15,12 +15,25 @@ namespace WinExample.Module {
     public class MyUser : SecuritySystemUser, IResource
     {
         public MyUser(Session session) : base(session) { }
+        [Association("OrganizationUnit-MyUsers")]
+        public OrganizationUnit OrganizationUnit
+        {
+            get
+            {
+                return _OrganizationUnit;
+            }
+            set
+            {
+                SetPropertyValue("OrganizationUnit", ref _OrganizationUnit, value);
+            }
+        }
         #if MediumTrust
 		[Persistent("Color")]
 		[Browsable(false)]
 		public Int32 color;
 #else
-		[Persistent("Color")]
+		private OrganizationUnit _OrganizationUnit;
+        [Persistent("Color")]
 		private Int32 color;
 #endif
 		public override void AfterConstruction() {

@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="MyEvent.cs" />
     <Compile Include="MyUser.cs" />
+    <Compile Include="OrganizationUnit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Updater.cs" />
   </ItemGroup>

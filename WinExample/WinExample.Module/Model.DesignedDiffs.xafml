@@ -1,3 +1,32 @@
-<?xml version="1.0" ?>
-<Application Title="WinExample" Logo="ExpressAppLogo" />
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="WinExample" Logo="ExpressAppLogo">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="TaskPB1" Caption="TaskPB1" ViewId="MyEvent_ListView_PB1" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="13.2.7.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="MyEvent_ListView_PB1" ClassName="WinExample.Module.MyEvent" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="Description" PropertyName="Description" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="RecurrenceInfoXml" PropertyName="RecurrenceInfoXml" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Subject" PropertyName="Subject" Width="70" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="StartOn" PropertyName="StartOn" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="EndOn" PropertyName="EndOn" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="AllDay" PropertyName="AllDay" Width="50" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="Location" PropertyName="Location" Width="70" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Label" PropertyName="Label" Width="50" Index="5" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="Status" Width="50" Index="6" IsNewNode="True" />
+        <ColumnInfo Id="Type" PropertyName="Type" Width="50" Index="7" IsNewNode="True" />
+        <ColumnInfo Id="RecurrencePattern" PropertyName="RecurrencePattern" Width="70" Index="8" IsNewNode="True" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="MyEvent_ListView" ResourceClassName="WinExample.Module.MyUser" />
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Node UnusableNodeName="Group" />
+  </NavigationItems>
+</Application>

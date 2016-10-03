@@ -23,8 +23,8 @@ namespace WinExample.Win {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             }
             try {
-                DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register();
-                                winApplication.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString;
+                //DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register();
+                //                winApplication.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString;
                 winApplication.Setup();
                 winApplication.Start();
             } catch (Exception e) {

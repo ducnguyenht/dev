@@ -8,7 +8,9 @@ using DevExpress.ExpressApp.Web;
 namespace WinWebSolution.Web {
     public partial class WinWebSolutionAspNetApplication : WebApplication {
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args) {
-            args.ObjectSpaceProvider = new XPObjectSpaceProviderThreadSafe(args.ConnectionString, args.Connection);
+            args.ObjectSpaceProvider = new XPObjectSpaceProvider(args.ConnectionString, args.Connection, true);
+
+            //args.ObjectSpaceProvider = new XPObjectSpaceProviderThreadSafe(args.ConnectionString, args.Connection);
         }
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule module2;

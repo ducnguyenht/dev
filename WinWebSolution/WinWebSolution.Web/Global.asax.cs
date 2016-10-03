@@ -32,7 +32,7 @@ namespace WinWebSolution.Web {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             }
             DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.Register();
-            WebApplication.Instance.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString;
+            //WebApplication.Instance.ConnectionString = DevExpress.ExpressApp.Xpo.InMemoryDataStoreProvider.ConnectionString;
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }

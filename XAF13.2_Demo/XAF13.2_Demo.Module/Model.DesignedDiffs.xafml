@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="XAF13.2_Demo" Logo="ExpressAppLogo">
+  <NavigationItems>
+    <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="LargeBusinessObject_ListView" Index="0" />
+          <Item Id="XPView" ViewId="XPViewBusinessObjectProxy_ListView" Index="1" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options UseServerMode="True" />
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="13.2.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="XPViewBusinessObjectProxy_ListView" UseServerMode="False">
+      <Columns>
+        <ColumnInfo Id="Property" Index="1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="XPViewCalculationProxy_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="Delete" IsNewNode="True" />
+        <ActionLink ActionId="New" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+        <ActionLink ActionId="SaveAndClose" IsNewNode="True" />
+        <ActionLink ActionId="SaveAndNew" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="XPViewCalculationProxy_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="Delete" IsNewNode="True" />
+        <ActionLink ActionId="New" IsNewNode="True" />
+        <ActionLink ActionId="Refresh" IsNewNode="True" />
+        <ActionLink ActionId="Save" IsNewNode="True" />
+        <ActionLink ActionId="SaveAndClose" IsNewNode="True" />
+        <ActionLink ActionId="SaveAndNew" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+  </Views>
+</Application>

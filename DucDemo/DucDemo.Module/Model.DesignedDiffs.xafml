@@ -4,6 +4,7 @@
     <Items>
       <Item Id="Default">
         <Items>
+          <Item Id="Lop_ListView" Index="0" />
           <Item Id="@45df1880-2d52-4f35-8c92-845e87f0997d" ViewId="Order_ListView" IsNewNode="True" />
         </Items>
       </Item>

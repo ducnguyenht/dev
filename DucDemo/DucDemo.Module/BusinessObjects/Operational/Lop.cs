@@ -17,7 +17,7 @@ namespace DucDemo.Module.BusinessObjects.Operational
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
     [DefaultProperty("DisplayName")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
+    [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
     //[Persistent("DatabaseTableName")]
     // Specify more UI options using a declarative approach (http://documentation.devexpress.com/#Xaf/CustomDocument2701).
     [Indices("Id", "Name","DisplayName")]

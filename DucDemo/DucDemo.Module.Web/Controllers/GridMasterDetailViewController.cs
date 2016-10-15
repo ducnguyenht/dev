@@ -12,21 +12,41 @@ using DevExpress.ExpressApp.Model;
 
 namespace WebSolution.Module.Web {
     public class GridMasterDetailViewController : ViewController<ListView> {
+        bool flag = true;
+        ASPxGridViewDetailRowTemplate temp=null;
         protected override void OnViewControlsCreated() {
             base.OnViewControlsCreated();
-            if (View.Model.MasterDetailMode == MasterDetailMode.ListViewAndDetailView) {
-                ASPxGridListEditor listEditor = View.Editor as ASPxGridListEditor;
-                if (listEditor != null) {
-                    listEditor.Grid.SettingsDetail.ShowDetailButtons = true;
-                    listEditor.Grid.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
-                    listEditor.Grid.SettingsDetail.ShowDetailRow = true;
-                    listEditor.Grid.Templates.DetailRow = new ASPxGridViewDetailRowTemplate(View, Application);
+            if (flag)
+            {
+                if (View.Model.MasterDetailMode == MasterDetailMode.ListViewAndDetailView)
+                {
+                    ASPxGridListEditor listEditor = View.Editor as ASPxGridListEditor;
+                    if (listEditor != null)
+                    {
+                        listEditor.Grid.SettingsDetail.ShowDetailButtons = true;
+                        listEditor.Grid.SettingsDetail.AllowOnlyOneMasterRowExpanded = true;
+                        listEditor.Grid.SettingsDetail.ShowDetailRow = true;
+                        if (temp==null)
+	                    {
+                            temp = new ASPxGridViewDetailRowTemplate(View, Application);
+                           
+                            
+	                    }
+                        listEditor.Grid.Templates.DetailRow = temp;
+                        
+                        //flag = false;
+                    }
+                   
                 }
+              
             }
+            
         }
         class ASPxGridViewDetailRowTemplate : ITemplate {
             private ListView masterListViewCore;
             XafApplication App;
+            CollectionSourceBase cs;
+            bool isInit = false;
             public ASPxGridViewDetailRowTemplate(ListView masterListView,XafApplication app) {
                 masterListViewCore = masterListView;
                 App = app;
@@ -45,29 +65,17 @@ namespace WebSolution.Module.Web {
                         IObjectSpace os = App.CreateObjectSpace();
                         string listViewId = DevExpress.ExpressApp.Model.NodeGenerators.ModelNestedListViewNodesGeneratorHelper.GetNestedListViewId(mi);
                         Type type = mi.ListElementType;
-                        CollectionSourceBase cs = new PropertyCollectionSource(os, type, os.GetObject(masterObject), mi, CollectionSourceMode.Proxy);
+                        
+                        if (!isInit)
+                        {
+                            cs = new PropertyCollectionSource(os, type, os.GetObject(masterObject), mi, CollectionSourceMode.Proxy);
+                            cs.CollectionChanged += cs_CollectionChanged;
+                            os.Committing += os_Committing;
+                            isInit = true;
+                        }
+
                         ListView tempListView = WebApplication.Instance.CreateListView(listViewId, cs, false);
-                        //CollectionSource collectionSource = new CollectionSource(os, mi.ListElementType, true);
-                        //IObjectSpace os1 = App.CreateObjectSpace();
-                        //string listViewId = DevExpress.ExpressApp.Model.NodeGenerators.ModelNestedListViewNodesGeneratorHelper.GetNestedListViewId(mi);
-                        //PropertyCollectionSource cs =
-                        //App.CreatePropertyCollectionSource(
-                        //os, mi.ListElementType, os.GetObject(masterObject), mi, listViewId,
-                        //CollectionSourceMode.Proxy);//GetCollectionMode(MemberInfo)
                       
-                        //dynamic lst = os.GetObjects(type, new BinaryOperator(masterObject.GetType().Name, os.GetObject(masterObject), BinaryOperatorType.Equal));
-                        //if (String.IsNullOrEmpty(listViewId))
-                        //{
-                        //    listViewId = App.GetListViewId(propertyCollectionSource.ObjectTypeInfo.Type);
-                        //}
-
-
-
-                        //IModelListView modelListView = App.FindModelClass(type).DefaultListView;
-                        //modelListView.UseServerMode = true;
-                        //ListView tempListView = App.CreateListView(modelListView, cs, false);//lst propertyCollectionSource
-                        //tempListView.Model.UseServerMode = true;
-                        //detailsListView.Model.UseServerMode = true;
                         Frame detailsFrame = WebApplication.Instance.CreateFrame(TemplateContext.NestedFrame);
                         detailsFrame.SetView(tempListView);//tempListView detailsListView
                         //detailsListView.LayoutManager
@@ -82,10 +90,22 @@ namespace WebSolution.Module.Web {
                 }
             }
 
+            void os_Committing(object sender, System.ComponentModel.CancelEventArgs e)
+            {
+                //throw new NotImplementedException();
+            }
+
+            void cs_CollectionChanged(object sender, EventArgs e)
+            {
+                System.Diagnostics.Debug.WriteLine(cs.GetCount());
+            }
+
           
         }
     }
 }
+
+
 //IModelListView modelListView = mi.Model.View as IModelListView;
 //if (modelListView == null)
 //{

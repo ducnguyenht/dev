@@ -37,6 +37,7 @@ namespace DucDemo.Web
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
             }
 #endif
+            BaseObject.OidInitializationMode = OidInitializationMode.AfterConstruction;
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }

@@ -101,6 +101,11 @@ namespace DucDemo.Module.BusinessObjects.Operational
                 return GetCollection<BangDiem>("BangDiems");
             }
         }
+        protected override void OnSaving()
+        {
+
+            base.OnSaving();
+        }
         //private string _PersistentProperty;
         //[XafDisplayName("My display name"), ToolTip("My hint message")]
         //[ModelDefault("EditMask", "(000)-00"), Index(0), VisibleInListView(false)]

@@ -12,9 +12,14 @@ using DevExpress.ExpressApp.Model;
 
 namespace WebSolution.Module.Web {
     public class GridMasterDetailViewController : ViewController<ListView> {
+        public GridMasterDetailViewController()
+        {
+            //TargetViewNesting = Nesting.Nested;
+        }
         bool flag = true;
         ASPxGridViewDetailRowTemplate temp=null;
         protected override void OnViewControlsCreated() {
+
             base.OnViewControlsCreated();
             if (flag)
             {
@@ -28,12 +33,9 @@ namespace WebSolution.Module.Web {
                         listEditor.Grid.SettingsDetail.ShowDetailRow = true;
                         if (temp==null)
 	                    {
-                            temp = new ASPxGridViewDetailRowTemplate(View, Application);
-                           
-                            
+                            temp = new ASPxGridViewDetailRowTemplate(View, Application);      
 	                    }
                         listEditor.Grid.Templates.DetailRow = temp;
-                        
                         //flag = false;
                     }
                    
@@ -42,66 +44,76 @@ namespace WebSolution.Module.Web {
             }
             
         }
-        class ASPxGridViewDetailRowTemplate : ITemplate {
-            private ListView masterListViewCore;
-            XafApplication App;
-            CollectionSourceBase cs;
-            bool isInit = false;
-            public ASPxGridViewDetailRowTemplate(ListView masterListView,XafApplication app) {
-                masterListViewCore = masterListView;
-                App = app;
+       
+    }
+    public class ASPxGridViewDetailRowTemplate : ITemplate
+    {
+        private ListView masterListViewCore;
+        XafApplication App;
+        CollectionSourceBase cs;
+        bool isInit = false;
+        public ASPxGridViewDetailRowTemplate(ListView masterListView, XafApplication app)
+        {
+            masterListViewCore = masterListView;
+            App = app;
+        }
+        public void InstantiateIn(Control container)
+        {
+            GridViewDetailRowTemplateContainer templateContainer = (GridViewDetailRowTemplateContainer)container;
+            ASPxPageControl pageControl = RenderHelper.CreateASPxPageControl();
+            object masterObject = null;
+            if (masterListViewCore.ObjectSpace != null)
+            {
+                masterObject = masterListViewCore.ObjectSpace.GetObject(templateContainer.Grid.GetRow(templateContainer.VisibleIndex));
             }
-            public void InstantiateIn(Control container) {
-                GridViewDetailRowTemplateContainer templateContainer = (GridViewDetailRowTemplateContainer)container;
-                ASPxPageControl pageControl = RenderHelper.CreateASPxPageControl();
-                object masterObject = masterListViewCore.ObjectSpace.GetObject(templateContainer.Grid.GetRow(templateContainer.VisibleIndex));
-                pageControl.EnableCallBacks = true;
-                pageControl.Width = Unit.Percentage(100);
-                pageControl.ContentStyle.Paddings.Padding = Unit.Pixel(0);
-                container.Controls.Add(pageControl);
-                foreach (IMemberInfo mi in masterListViewCore.ObjectTypeInfo.Members) {
-                    if (mi.IsList && mi.IsPublic) {
-                        //IObjectSpace os = WebApplication.Instance.CreateObjectSpace();
-                        IObjectSpace os = App.CreateObjectSpace();
-                        string listViewId = DevExpress.ExpressApp.Model.NodeGenerators.ModelNestedListViewNodesGeneratorHelper.GetNestedListViewId(mi);
-                        Type type = mi.ListElementType;
-                        
-                        if (!isInit)
-                        {
-                            cs = new PropertyCollectionSource(os, type, os.GetObject(masterObject), mi, CollectionSourceMode.Proxy);
-                            cs.CollectionChanged += cs_CollectionChanged;
-                            os.Committing += os_Committing;
-                            isInit = true;
-                        }
+            pageControl.EnableCallBacks = true;
+            pageControl.Width = Unit.Percentage(100);
+            pageControl.ContentStyle.Paddings.Padding = Unit.Pixel(0);
+            container.Controls.Add(pageControl);
+            foreach (IMemberInfo mi in masterListViewCore.ObjectTypeInfo.Members)
+            {
+                if (mi.IsList && mi.IsPublic)
+                {
+                    //IObjectSpace os = WebApplication.Instance.CreateObjectSpace();
+                    IObjectSpace os = App.CreateObjectSpace();
+                    string listViewId = DevExpress.ExpressApp.Model.NodeGenerators.ModelNestedListViewNodesGeneratorHelper.GetNestedListViewId(mi);
+                    Type type = mi.ListElementType;
 
-                        ListView tempListView = WebApplication.Instance.CreateListView(listViewId, cs, false);
-                      
-                        Frame detailsFrame = WebApplication.Instance.CreateFrame(TemplateContext.NestedFrame);
-                        detailsFrame.SetView(tempListView);//tempListView detailsListView
-                        //detailsListView.LayoutManager
-                        detailsFrame.CreateTemplate();
-                        Control detailsTemplateControl = (Control)detailsFrame.Template;                    
-                        detailsTemplateControl.ID = string.Format("detailsTemplateControl_{0}", mi.Name);
-                        TabPage page = new TabPage(mi.Name);
-                        page.Controls.Add(detailsTemplateControl);
-                        pageControl.TabPages.Add(page);
-                        //((Control)detailsFrame.Template).FindControl("ToolBar").Visible = false;
+                    if (!isInit)
+                    {
+                        cs = new PropertyCollectionSource(os, type, os.GetObject(masterObject), mi, CollectionSourceMode.Proxy);
+                        cs.CollectionChanged += cs_CollectionChanged;
+                        os.Committing += os_Committing;
+                        isInit = true;
                     }
+
+                    ListView tempListView = WebApplication.Instance.CreateListView(listViewId, cs, false);
+
+                    Frame detailsFrame = WebApplication.Instance.CreateFrame(TemplateContext.NestedFrame);
+                    detailsFrame.SetView(tempListView);//tempListView detailsListView
+                    //detailsListView.LayoutManager
+                    detailsFrame.CreateTemplate();
+                    Control detailsTemplateControl = (Control)detailsFrame.Template;
+                    detailsTemplateControl.ID = string.Format("detailsTemplateControl_{0}", mi.Name);
+                    TabPage page = new TabPage(mi.Name);
+                    page.Controls.Add(detailsTemplateControl);
+                    pageControl.TabPages.Add(page);
+                    //((Control)detailsFrame.Template).FindControl("ToolBar").Visible = false;
                 }
             }
-
-            void os_Committing(object sender, System.ComponentModel.CancelEventArgs e)
-            {
-                //throw new NotImplementedException();
-            }
-
-            void cs_CollectionChanged(object sender, EventArgs e)
-            {
-                System.Diagnostics.Debug.WriteLine(cs.GetCount());
-            }
-
-          
         }
+
+        void os_Committing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        void cs_CollectionChanged(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(cs.GetCount());
+        }
+
+
     }
 }
 

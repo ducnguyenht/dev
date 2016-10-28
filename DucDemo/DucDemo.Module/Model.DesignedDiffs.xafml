@@ -15,6 +15,7 @@
     <SchemaModule Name="SystemModule" Version="13.2.7.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="Item_ImageAndFiles_ListView" MasterDetailMode="ListViewAndDetailView" />
     <ListView Id="Lop_ListView" UseServerMode="True" FreezeColumnIndices="True" MasterDetailMode="ListViewAndDetailView">
       <Columns>
         <ColumnInfo Id="DisplayName" Index="0" />

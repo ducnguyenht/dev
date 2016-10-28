@@ -198,6 +198,10 @@
       <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
       <Name>DucDemo.Module</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ReUseModule\ReUseModule.csproj">
+      <Project>{B9EF03FF-D05B-4FD4-A8E9-F90D819CB1DC}</Project>
+      <Name>ReUseModule</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

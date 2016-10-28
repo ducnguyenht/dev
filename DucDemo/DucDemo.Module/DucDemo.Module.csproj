@@ -84,8 +84,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\Operational\BangDiem.cs" />
+    <Compile Include="BusinessObjects\Operational\ImageAndFile.cs" />
+    <Compile Include="BusinessObjects\Operational\Item.cs" />
     <Compile Include="BusinessObjects\Operational\Lop.cs" />
     <Compile Include="BusinessObjects\Operational\Order.cs" />
+    <Compile Include="BusinessObjects\Operational\OtherFile.cs" />
     <Compile Include="BusinessObjects\Operational\Product.cs" />
     <Compile Include="BusinessObjects\Operational\SinhVien.cs" />
     <Compile Include="BusinessObjects\Operational\Truong.cs" />

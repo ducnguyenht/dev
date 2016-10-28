@@ -14,6 +14,7 @@ namespace DucDemo.Web
         private DevExpress.ExpressApp.SystemModule.SystemModule module1;
         private DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule module2;
         private DucDemo.Module.DucDemoModule module3;
+        private ReUseModule.ReUseModuleModule reUseModuleModule1;
         private DucDemo.Module.Web.DucDemoAspNetModule module4;
 
         public DucDemoAspNetApplication()
@@ -63,13 +64,16 @@ namespace DucDemo.Web
             this.module2 = new DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule();
             this.module3 = new DucDemo.Module.DucDemoModule();
             this.module4 = new DucDemo.Module.Web.DucDemoAspNetModule();
+            this.reUseModuleModule1 = new ReUseModule.ReUseModuleModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // DucDemoAspNetApplication
             // 
             this.ApplicationName = "DucDemo";
+            this.CollectionsEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
+            this.Modules.Add(this.reUseModuleModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.DucDemoAspNetApplication_DatabaseVersionMismatch);
